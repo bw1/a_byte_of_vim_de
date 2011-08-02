@@ -786,7 +786,7 @@ die Sie ausführen möchten? Vim's Lösung hierfür ist, daß Sie einen
 Normal-Modus, in dem Sie Befehle ausführen können, und einen EinfügeModus
 haben, um Texte zu schreiben. Zwischen diesen beiden Modi können Sie jederzeit
 hin- und her wechseln. Wenn Sie \red{i} drücken schaltet Vim in den Einfügemodus
-[i=insert], während die \red{<ESC>}-Taste zurück in den Normalmodus wechselt.
+[i=insert], während die \red{\red{$<$ESC$>$}}-Taste zurück in den Normalmodus wechselt.
 
 Wie erreichen nun herkömmliche Editoren diese Unterscheidung zwischen Befehls-
 und Texteingabe? Indem sie grafische Menüs und Tastaturkürzel verwenden. Das
@@ -861,7 +861,7 @@ wollen wir zwischenzeitlich mal was anderes machen, nämlich \textit{schreiben}.
 	4. Tippen Sie den Text
 		\red{Hallo Welt}.\\*
 		& \includegraphics[scale=0.6]{1-007}\\
-	5. \red{<ESC>}-Taste drücken \\*
+	5. \red{\red{$<$ESC$>$}}-Taste drücken \\*
 		& \includegraphics[scale=0.6]{1-008}\\
 	6. Tippen Sie \red{:write} und
 		drücken Sie die 'Enter'-Taste \\*
@@ -995,7 +995,6 @@ Normalmodus in den Einfügemodus zu wechseln:
 	\item Drücken Sie die \red{$<$ESC$>$}-Taste, um in den Normalmodus zurückzugelangen.
 	\item Geben Sie ein \red{:w}
 \end{itemize}
-
 Ach du Schreck! Sieht ganz so aus, als ob wir am Zeilenanfang ein Wort
 weggelassen haben, und unser \blue{Cursor} steht nun aber am Zeilenende. Was
 machen wir denn nun?
@@ -1009,149 +1008,135 @@ gelangen?
 
 Es stellt sich heraus, als ob die beste Lösung darin besteht \red{I} zu drücken
 (den Großbuchstaben):
-%lesezeichen
+\begin{itemize}
+	\item Drücken Sie \red{I}
+	\item Schreiben Sie \red{Dappin}
+	\item Und mit \red{$<$ESC$>$} schalten wir wieder in den Normalmodus.
+\end{itemize}
+Beachten Sie, daß wir einen anderen Operator verwendet haben, um in den
+Einfügemodus zu gelangen, dessen besonderes Merkmal ist, daß er den
+\blue{Cursor} an den Zeilenanfang setzt und dann in den Einfügemodus schaltet.
 
+Ganz wichtig ist auch, daß Sie in den Normalmodus zurückgehen, sobald Sie Ihre
+Texteingabe beendet haben. Sie profitieren davon, wenn Sie sich dies zur
+Angewohnheit werden lassen, weil sich der Großteil Ihrer Arbeit (also nach der
+Texteingabe) im Normalmodus abspielt -- da findet nämlich dann das
+'\textit{Umschreiben}', Editieren, und Verbessern statt.
 
-Drücken Sie I
-Schreiben Sie Dappin
-Und mit <ESC> schalten wir wieder in den Normalmodus.
+Jetzt sehen wir uns einmal eine weitere Variante des \red{i}-Befehls an. Die
+i-Taste setzt den \blue{Cursor} vor die aktuelle Stelle und schaltet dann in
+den Einfügemodus. Um den \blue{Cursor} hinter die aktuelle Position zu setzen,
+drücken Sie \red{a} ('a'fter).
+\begin{itemize}
+	\item Drücken Sie \red{a}
+	\item Tippen Sie \red{g} (um das Wort Dappin richtig zu ergänzen)
+	\item \red{$<$ESC$>$} drücken, um in den Normalmodus zu gelangen
+\end{itemize}
+Analog zur Beziehung zwischen den Operatoren \red{i} und \red{I}, ist die
+Beziehung zwischen den Kommandos \red{a} und \red{A}. Wenn Sie Text am
+Zeilenende anfügen möchten, drücken Sie den \red{A}-Operator.
+\begin{itemize}
+	\item Drücken Sie \red{A}
+	\item Geben Sie ein \red{.} (einen Punkt, um den Satz korrekt abzuschließen)
+	\item \red{$<$ESC$>$}- Taste drücken um in den Normalmodus zu gelangen
+\end{itemize}
+Um die vier Befehlsoperatoren, die wir bisher kennengelernt haben, zusammenzufassen:
 
-Beachten Sie, daß wir einen anderen Operator verwendet haben, um in den Einfügemodus zu gelangen,
-dessen besonderes Merkmal ist, daß er den Cursor an den Zeilenanfang setzt und dann in den Einfügemodus
-schaltet.
-Ganz wichtig ist auch, daß Sie in den Normalmodus zurückgehen, sobald Sie Ihre Texteingabe beendet
-haben. Sie profitieren davon, wenn Sie sich dies zur Angewohnheit werden lassen, weil sich der Großteil
-Ihrer Arbeit (also nach der Texteingabe) im Normalmodus abspielt  da findet nämlich dann das
-'Umschreiben', Editieren, und Verbessern statt.
-Jetzt sehen wir uns einmal eine weitere Variante des i-Befehls an. Die i-Taste setzt den Cursor vor die
-aktuelle Stelle und schaltet dann in den Einfügemodus. Um den Cursor hinter die aktuelle Position zu setzen,
-drücken Sie a ('a'fter).
+\begin{tabular}{ll}
+\\
+Befehl& Bewirkt\\
+\\
+i& fügt Text \textit{vor} dem \blue{Cursor} ein\\
+I& fügt Text am Zeilenanfang ein\\
+a& hängt Text \textit{nach} dem \blue{Cursor} an\\
+A& hängt Text am Zeilenende an\\
+\\
+\end{tabular}
 
+Kleine Eselsbrücke -- Die Großbuchstabenbefehle erledigen auch umfangreichere
+(größere) Aufgaben, als die Kleinbuchstabenoperatoren.
 
-
-
-Drücken Sie a
-Tippen Sie g (um das Wort Dappin richtig zu ergänzen)
-<ESC> drücken, um in den Normalmodus zu gelangen
-
-Analog zur Beziehung zwischen den Operatoren i und I, ist die Beziehung zwischen den Kommandos a und
-A. Wenn Sie Text am Zeilenende anfügen möchten, drücken Sie den A-Operator.
-
-
-
-
-Drücken Sie A
-Geben Sie ein . (einen Punkt, um den Satz korrekt abzuschließen)
-<ESC>- Taste drücken um in den Normalmodus zu gelangen
-
-Um die vier Befehlsoperatoren, die wir bisher kennengelernt haben, zusammenzufassen:
-Befehl
-
-Bewirkt
-
-i
-I
-a
-A
-
-fügt Text vor dem Cursor ein
-fügt Text am Zeilenanfang ein
-hängt Text nach dem Cursor an
-hängt Text am Zeilenende an
-
-Kleine Eselsbrücke  Die Großbuchstabenbefehle erledigen auch umfangreichere (größere) Aufgaben, als die
-Kleinbuchstabenoperatoren.
-Da wir nun im Schnellnavigieren auf der aktuellen Zeile geübt sind, sehen wir uns mal an, wie man sich zu
-neuen Zeilen hinbewegt. Wenn Sie eine neue Zeile eröffnen ['o'pen] wollen, um darauf zu schreiben, drücken
-Sie den o-Operator.
-
-
-
-
-Drücken Sie o
-Tippen Sie Ich bin ein Rapper.
-<ESC> drücken, um in den Normalmodus zu gelangen
-
-Hmmm, wär schon scharf, wenn wir den neuen Satz, den wir geschrieben haben, als eigenen Absatz haben
-könnten.
-
-
-
-Drücken Sie O (Großbuchstabe 'O')
-Drücken Sie <ESC> um in den Normalmodus zurückzugelangen.
-
+Da wir nun im Schnellnavigieren auf der aktuellen Zeile geübt sind, sehen wir
+uns mal an, wie man sich zu neuen Zeilen hinbewegt. Wenn Sie eine neue Zeile
+eröffnen ['\red{o}'pen] wollen, um darauf zu schreiben, drücken Sie den
+\red{o}-Operator.
+\begin{itemize}
+	\item Drücken Sie \red{o}
+	\item Tippen Sie \red{Ich bin ein Rapper.}
+	\item \red{$<$ESC$>$} drücken, um in den Normalmodus zu gelangen
+\end{itemize}
+Hmmm, wär schon scharf, wenn wir den neuen Satz, den wir geschrieben haben, als
+eigenen Absatz haben könnten.
+\begin{itemize}
+	\item Drücken Sie \red{O} (Großbuchstabe 'O')
+	\item Drücken Sie \red{$<$ESC$>$} um in den Normalmodus zurückzugelangen.
+\end{itemize}
 Fassen wir die beiden eben gelernten Befehlsoperatoren, nochmal zusammen:
-Befehl
 
-Wirkung
+\begin{tabular}{ll}
+\\
+Befehl & Wirkung\\
+\\
+o & eine neue Zeile unterhalb eröffnen\\
+O & eine neue Zeile oberhalb eröffnen\\
+\\
+\end{tabular}
 
-o
+Beachten Sie, daß die Großbuchstaben-, Kleinbuchstaben-Befehle, hinsichtlich
+der Richtung, in der sie die Zeilen eröffnen, das jeweilige Gegenteil sind.
 
-eine neue Zeile unterhalb eröffnen
+War da gerade was falsch in dem Text, den wir eben eingegeben haben? Aah, es
+sollte 'dapper' und nicht 'rapper' heißen! Wir müssen einen einzelnen
+Buchstaben ändern. Und was ist wohl die effektivste Methode hierfür?
 
-O
+Wir \textit{könnten} \red{i} drücken, um in den Einfügemodus zu schalten, oder
+\red{$<$Del$>$} um das r zu löschen, \red{d} tippen und dann wieder
+\red{$<$ESC$>$} drücken, um in den Einfügemodus zurückzugelangen. Aber das sind
+vier Einzelschritte, für so eine banale Korrektur! Gibts dafür was besseres?
+Hier können Sie den \red{s}-Operator nehmen ['s'ubstitute].
+\begin{itemize}
+	\item Bewegen Sie den Cursor zum Buchstaben r (oder drücken Sie einfach
+		\red{b} um an den Wortanfang zu gelangen [b='b'ack]
+	\item \red{s} drücken
+	\item \red{d} tippen
+	\item und mit \red{$<$ESC$>$} wieder zurück in den Einfügemodus
+\end{itemize}
+Na schön, das hat uns jetzt nicht wirklich viel gebracht. Aber stellen Sie sich
+bitte vor, Sie müssten eine solche Abfolge den ganzen Tag über, immer und immer
+wieder machen. So eine profane Arbeit schnellstmöglich zu erledigen, nützt uns,
+weil wir unsere Kraft auf schöpferische und interessantere Dinge lenken können.
+Wie Linus Torvalds sagt, \textit{"`Es geht nicht nur darum, Dinge schneller zu
+erledigen, aber weil es so schnell ist, wird es Ihre Arbeitsweise dramatisch
+ändern."'}
 
-eine neue Zeile oberhalb eröffnen
+Also nochmal, es gibt eine Großvariante des \red{s}-Operators, mit S tauschen
+Sie die ganze Zeile aus, anstatt den aktuellen Buchstaben.
+\begin{itemize}
+	\item Drücken Sie \red{S}
+	\item Tippen Sie \red{be a sinner}
+	\item Drücken Sie \red{$<$ESC$>$} um in den Normalmodus zu gelangen.
+\end{itemize}
 
-Beachten Sie, daß die Großbuchstaben-, Kleinbuchstaben-Befehle, hinsichtlich der Richtung, in der sie die
-Zeilen eröffnen, das jeweilige Gegenteil sind.
-War da gerade was falsch in dem Text, den wir eben eingegeben haben? Aah, es sollte 'dapper' und nicht
-'rapper' heißen! Wir müssen einen einzelnen Buchstaben ändern. Und was ist wohl die effektivste Methode
-hierfür?
-Wir könnten i drücken, um in den Einfügemodus zu schalten, oder <Del> um das r zu löschen, d tippen und
-dann wieder <ESC> drücken, um in den Einfügemodus zurückzugelangen. Aber das sind vier Einzelschritte,
-für so eine banale Korrektur! Gibts dafür was besseres? Hier können Sie den s-Operator nehmen
-['s'ubstitute].
+\begin{tabular}{ll}
+\\
+Befehl & Wirkung\\
+\\
+s & ersetzt den aktuellen Buchstaben\\
+S & ersetzt die aktuelle Zeile\\
+\\
+\end{tabular}
 
+Gehn wir nochmal zu unserer letzten Aktion zurück... Können wir das nicht
+effektiver machen, wo wir doch lediglich einen einzelnen Buchstaben austauschen
+wollen? Ja -- können wir. Wir nehmen dazu den \red{r}-Operator ['r'eplace].
 
-
-
-
-Bewegen Sie den Cursor zum Buchstaben r (oder drücken Sie einfach b um an den Wortanfang zu
-gelangen [b='b'ack]
-s drücken
-d tippen
-und mit <ESC> wieder zurück in den Einfügemodus
-
-Na schön, das hat uns jetzt nicht wirklich viel gebracht. Aber stellen Sie sich bitte vor, Sie müssten eine
-solche Abfolge den ganzen Tag über, immer und immer wieder machen. So eine profane Arbeit
-schnellstmöglich zu erledigen, nützt uns, weil wir unsere Kraft auf schöpferische und interessantere Dinge
-lenken können. Wie Linus Torvalds sagt, Es geht nicht nur darum, Dinge schneller zu erledigen, aber weil
-es so schnell ist, wird es Ihre Arbeitsweise dramatisch ändern.
-Also nochmal, es gibt eine Großvariante des s-Operators, mit S tauschen Sie die ganze Zeile aus, anstatt den
-aktuellen Buchstaben.
-
-
-
-
-Drücken Sie S
-Tippen Sie be a sinner
-Drücken Sie <ESC> um in den Normalmodus zu gelangen.
-
-Befehl
-
-Wirkung
-
-s
-
-ersetzt den aktuellen Buchstaben
-
-S
-
-ersetzt die aktuelle Zeile
-
-Gehn wir nochmal zu unserer letzten Aktion zurück... Können wir das nicht effektiver machen, wo wir doch
-lediglich einen einzelnen Buchstaben austauschen wollen? Ja  können wir. Wir nehmen dazu den r-Operator
-['r'eplace].
-
-
-
+%lesezeichen
 
 Bewegen Sie den Cursor auf den ersten Buchstaben des Wortes sinner.
 Drücken Sie r
 Tippen Sie d
 
-Gemerkt? Wir sind jetzt schon im Normalmodus, und das, ohne <ESC> zu drücken.
+Gemerkt? Wir sind jetzt schon im Normalmodus, und das, ohne \red{$<$ESC$>$} zu drücken.
 Auch für r gibt es eine Großversion, die nennt sich R, und ersetzt fortlaufende Buchstaben.
 
 
@@ -1161,7 +1146,7 @@ Auch für r gibt es eine Großversion, die nennt sich R, und ersetzt fortlaufende 
 Bewegen Sie den Cursor auf das 'i' in sinner
 Drücken Sie R
 Tippen Sie app (das Wort wird nun zu 'dapper')
-Drücken Sie <ESC> um in den Normalmodus zu gelangen.
+Drücken Sie \red{$<$ESC$>$} um in den Normalmodus zu gelangen.
 
 Befehl
 
@@ -1203,7 +1188,7 @@ ans Ende des 5. Wortes zu kommen, gezählt von der aktuellen Position des Cursors
 Ende des relevanten Textes zu gelangen, und dann c zu drücken um den Text zu ändern ['c'hange]. Das ist
 schon wirtschaftlicher.
 Bei dieser speziellen Operation (dem c-Befehl), landen Sie nach Abschluß im Einfügemodus, also drücken
-Sie <ESC>, um in den Normalmodus zurückzugelangen.
+Sie \red{$<$ESC$>$}, um in den Normalmodus zurückzugelangen.
 Der v-Befehl arbeitet Buchstaben bezogen. Wollen Sie Zeilen bezogen arbeiten, nehmen Sie den
 Großbuchstaben V.
 
@@ -1531,7 +1516,7 @@ passionate.
 Be a dapper.
 Drücken Sie v, um in den visuellen Modus zu gelangen, und tippen Sie ap, um 'a' 'p'aragraph (Absatz) zu
 selektieren. Drücken Sie ~, um die Groß- / Kleinbuchstaben zu verkehren. Wenn Sie die Selektion aufheben
-wollen, drücken Sie einfach <ESC>.
+wollen, drücken Sie einfach \red{$<$ESC$>$}.
 Dapping means being determined about being determined and being passionate about being
 passionate.
 bE A DAPPER.
@@ -1873,7 +1858,7 @@ Editieren wir nun die erste Zeile:
 1. Drücken Sie S, um die ganze Zeile zu ersetzen (substitute).
 2. Geben Sie den Text Durch reifliche Überlegung, habe ich mir einen neuen Satz geprägt, um meine
 Herangehensweise zu festigen:.
-3. Drücken Sie <ESC>
+3. Drücken Sie \red{$<$ESC$>$}
 Jetzt denken Sie über die Änderung, die wir gerade gemacht haben nach. Ist der Satz besser? Hmm.. war der
 Text vorher besser? Wie schalten wir jetzt hin und her?
 Drücken Sie u, um die letzte Änderung rückgängig zu machen, und zu sehen, was wir vorher hatten. Sie
@@ -2321,14 +2306,14 @@ lassen wollten, dann wird es haarig.
 4. Geben Sie w ein, um zum nächsten Wort zu springen.
 5. Tippen Sie cw um das Wort zu ändern.
 6. Geben Sie was ein.
-7. Drücken Sie <ESC>.
+7. Drücken Sie \red{$<$ESC$>$}.
 8. Geben Sie w ein, um zum nächsten Wort zu springen.
 9. Tippen Sie cw um das Wort zu ändern.
 10. Tippen Sie a.
-11. Drücken Sie <ESC>.
+11. Drücken Sie \red{$<$ESC$>$}.
 12. Tippen Sie A um am Zeilenende Text einzugeben.
 13. Geben Sie ein in Akbar's court.
-14. Drücken Sie <ESC>.
+14. Drücken Sie \red{$<$ESC$>$}.
 15. Drücken Sie q um die Aufzeichnung zu beenden.
 Sieht ganz nach einer langen Prozedur aus, aber manchmal ist das einfacher als dass man sich irgendwelche
 komplizierten Ersetzungsbefehle zusammenkocht!
