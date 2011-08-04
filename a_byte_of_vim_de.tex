@@ -11,6 +11,7 @@
 \newcommand{\Vim}{\textit{\large{V}\small{im}}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{\texttt{#1}}}
+\newcommand{\tsc}[1]{\colorbox[rgb]{0.9,0.9,0.9}{\footnotesize\texttt{#1}}}
 
 \graphicspath{{bilder/}}
 
@@ -1129,180 +1130,193 @@ S & ersetzt die aktuelle Zeile\\
 Gehn wir nochmal zu unserer letzten Aktion zurück... Können wir das nicht
 effektiver machen, wo wir doch lediglich einen einzelnen Buchstaben austauschen
 wollen? Ja -- können wir. Wir nehmen dazu den \red{r}-Operator ['r'eplace].
-
-%lesezeichen
-
-Bewegen Sie den Cursor auf den ersten Buchstaben des Wortes sinner.
-Drücken Sie r
-Tippen Sie d
-
+\begin{itemize}
+	\item Bewegen Sie den \blue{Cursor} auf den ersten Buchstaben des Wortes sinner.
+	\item Drücken Sie \red{r}
+	\item Tippen Sie \red{d}
+\end{itemize}
 Gemerkt? Wir sind jetzt schon im Normalmodus, und das, ohne \red{$<$ESC$>$} zu drücken.
-Auch für r gibt es eine Großversion, die nennt sich R, und ersetzt fortlaufende Buchstaben.
 
+Auch für \red{r} gibt es eine Großversion, die nennt sich \red{R}, und ersetzt
+fortlaufende Buchstaben.
+\begin{itemize}
+	\item Bewegen Sie den \blue{Cursor} auf das 'i' in sinner
+	\item Drücken Sie \red{R}
+	\item Tippen Sie \red{app} (das Wort wird nun zu 'dapper')
+	\item Drücken Sie \red{$<$ESC$>$} um in den Normalmodus zu gelangen.
+\end{itemize}
 
-
-
-
-Bewegen Sie den Cursor auf das 'i' in sinner
-Drücken Sie R
-Tippen Sie app (das Wort wird nun zu 'dapper')
-Drücken Sie \red{$<$ESC$>$} um in den Normalmodus zu gelangen.
-
-Befehl
-
-Wirkung
-
-r
-
-den aktuellen Buchstaben ersetzen
-
-R
-
-fortlaufende Buchstaben ersetzen
+\begin{tabular}{ll}
+\\
+Befehl & Wirkung\\
+\\
+r & den aktuellen Buchstaben ersetzen\\
+R & fortlaufende Buchstaben ersetzen\\
+\\
+\end{tabular}
 
 Der Text sollte nun so aussehen:
-Dapping means being determined about being determined and being passionate about being passionate.
-Be a dapper.
-Puh! Damit haben wir vieles abgedeckt in diesem Kapitel, aber ich garantiere Ihnen, das ist der einzige,
-schwierigste Teil.
 
-Wenn Sie das erstmal verstanden haben, verstehen Sie Herz \& Seele der Arbeitsweise des Vim, und die ganze
+"`Dapping means being determined about being determined and being passionate
+about being passionate.  Be a dapper."'
 
-andere Pracht und Herrlichkeit des Vim, ist dann nur noch das Sahnehäuptchen oben drauf.
-Um es noch einmal zu sagen; das Verständnis über Modi, und wie das Hin- und Herschalten zwischen Modi
-funktioniert, ist der Schlüssel ein Vimmer zu werden. Wenn Sie also die obigen Beispiele noch nicht ganz
-verinnerlicht haben, lesen Sie sie ruhig nochmal, und nehmen Sie sich alle dafür notwendige Zeit. Wenn Sie
-mehr lesen möchten über die Einzelheiten dieser Befehle, schauen Sie sich :help inserting und :help replacing
-an.
-Visueller Modus
-Stellen Sie sich vor, Sie wollen ein paar Worte markieren, um sie durch einen völlig neuen Text zu ersetzen,
-den Sie schreiben wollen. Was tun Sie?
-Eine Methode wäre es, mit der Maus auf den Anfang des in betracht kommenden Textes zu klicken, die linke
-Maustaste gedrückt zu halten, die Maus dann bis ans Ende des zu wählenden Textes zu ziehen, und die linke
-Maustaste wieder loszulassen. Das sieht nach schrecklich viel Ablenkung aus.
-Wir könnten die Entf- oder die Zurück-Taste nehmen, um alle Buchstaben zu löschen, aber das ist noch
-umständlicher.
-Die beste Methode wäre es wohl, den Cursor auf den Textanfang zu setzen, v zu drücken, um den Visuellen
-Modus aufzurufen, die Pfeiltasten oder jeden anderen Textbewegungsbefehl (sagen wir mal, 5e drücken, um
-ans Ende des 5. Wortes zu kommen, gezählt von der aktuellen Position des Cursors) zu benutzen, um an das
-Ende des relevanten Textes zu gelangen, und dann c zu drücken um den Text zu ändern ['c'hange]. Das ist
-schon wirtschaftlicher.
-Bei dieser speziellen Operation (dem c-Befehl), landen Sie nach Abschluß im Einfügemodus, also drücken
-Sie \red{$<$ESC$>$}, um in den Normalmodus zurückzugelangen.
-Der v-Befehl arbeitet Buchstaben bezogen. Wollen Sie Zeilen bezogen arbeiten, nehmen Sie den
-Großbuchstaben V.
+Puh! Damit haben wir vieles abgedeckt in diesem Kapitel, aber ich garantiere
+Ihnen, das ist der einzige, schwierigste Teil.
 
-Zusammenfassung
+Wenn Sie das erstmal verstanden haben, verstehen Sie Herz \& Seele der
+Arbeitsweise des Vim, und die ganze andere Pracht und Herrlichkeit des Vim, ist
+dann nur noch das Sahnehäuptchen oben drauf.  Um es noch einmal zu sagen; das
+Verständnis über Modi, und wie das Hin- und Herschalten zwischen Modi
+funktioniert, ist der Schlüssel ein Vimmer zu werden. Wenn Sie also die obigen
+Beispiele noch nicht ganz verinnerlicht haben, lesen Sie sie ruhig nochmal, und
+nehmen Sie sich alle dafür notwendige Zeit. Wenn Sie mehr lesen möchten über
+die Einzelheiten dieser Befehle, schauen Sie sich \red{:help inserting} und
+\red{:help replacing} an.
 
-Hier ist eine Zeichnung, die die Beziehung zwischen den verschiedenen Modi deutlich macht:
+\subsection{Visueller Modus}
+Stellen Sie sich vor, Sie wollen ein paar Worte markieren, um sie durch einen
+völlig neuen Text zu ersetzen, den Sie schreiben wollen. Was tun Sie?
 
-(Das Bild wurde mit Vim und Dr.Chip's DrawIt[1] Plugin erstellt.)
-Sehen Sie sich :help vim-modes-intro und :help mode-switching für die Einzelheiten der verschiedenen Modi
-an, bzw., wie man zwischen ihnen hin- und herschaltet.
-Wenn Sie jetzt immer noch nicht überzeugt davon sind, daß das Moduskonzept von Vim für die Vielfältigkeit
-und Einfachheit von zentraler Bedeutung sind, lesen Sie bitte die Artikel Why Vi [2] und weshalb das
-Vi-Eingabemodell [3] die bessere Art zu editieren ist.
+Eine Methode wäre es, mit der Maus auf den Anfang des in betracht kommenden
+Textes zu klicken, die linke Maustaste gedrückt zu halten, die Maus dann bis
+ans Ende des zu wählenden Textes zu ziehen, und die linke Maustaste wieder
+loszulassen. Das sieht nach schrecklich viel Ablenkung aus.
 
-Externe Links
-\begin{verbatim}
-[1] http://vim.sourceforge.net/scripts/script.php?script_id=40
-[2] http://www.viemu.com/a-why-vi-vim.html
-[3] http://blog.ngedit.com/2005/06/03/the-vi-input-model/
-\end{verbatim}
+Wir könnten die \red{Entf-} oder die \red{Zurück-}Taste nehmen, um alle
+Buchstaben zu löschen, aber das ist \textit{noch} umständlicher.
+
+Die beste Methode wäre es wohl, den \blue{Cursor} auf den Textanfang zu setzen,
+\red{v} zu drücken, um den Visuellen Modus aufzurufen, die Pfeiltasten oder
+jeden anderen Textbewegungsbefehl (sagen wir mal, \red{5e} drücken, um ans Ende
+des 5. Wortes zu kommen, gezählt von der aktuellen Position des \blue{Cursors})
+zu benutzen, um an das Ende des relevanten Textes zu gelangen, und dann c zu
+drücken um den Text zu ändern ['c'hange]. Das ist schon wirtschaftlicher.
+
+Bei dieser speziellen Operation (dem \red{c}-Befehl), landen Sie nach Abschluß
+im Einfügemodus, also drücken Sie \red{$<$ESC$>$}, um in den Normalmodus
+zurückzugelangen.
+
+Der \red{v}-Befehl arbeitet Buchstaben bezogen. Wollen Sie Zeilen bezogen
+arbeiten, nehmen Sie den Großbuchstaben \red{V}.
+
+\subsection{Zusammenfassung}
+
+Hier ist eine Zeichnung, die die Beziehung zwischen den verschiedenen Modi
+deutlich macht:
+
+\includegraphics[scale=0.6]{1-011}
+
+(Das Bild wurde mit Vim und Dr.Chip's DrawIt
+\footnote{\url{http://vim.sourceforge.net/scripts/script.php?script_id=40}}
+\blue{Plugin} erstellt.)
+
+Sehen Sie sich \red{:help vim-modes-intro} und \red{:help mode-switching} für
+die Einzelheiten der verschiedenen Modi an, bzw., wie man zwischen ihnen hin-
+und herschaltet.
+
+Wenn Sie jetzt immer noch nicht überzeugt davon sind, daß das Moduskonzept von
+Vim für die Vielfältigkeit und Einfachheit von zentraler Bedeutung sind, lesen
+Sie bitte die Artikel {\color{red}"`Why Vi"'}
+\footnote{\url{http://www.viemu.com/a-why-vi-vim.html}} und weshalb das
+\textit{Vi-Eingabemodell} 
+\footnote{\url{http://blog.ngedit.com/2005/06/03/the-vi-input-model/}} die
+bessere Art zu editieren ist.
+
+%Externe Links
 
 \section{Tippkompetenz}
 
-Einführung
-Gerade eben haben wir gelernt, zwischen den drei grundlegenden Modi in Vim hin- und herzuschalten. Ist
-das nicht schwierig, sich all die Tastenkombinationen zu merken? Wie behält man sich, welcher Schlüssel für
-welche Operation ist? Nun, das ist die Schlüsselfrage. Und die Antwort darauf ist; Sie sollten sich eben
-nicht erinnern, sondern Ihre Finger sollten automatisch wissen, was zu tun ist! Es muss (buchstäblich)
-immer zur Hand sein.
-Wie stellen wir das also an? Indem wir es uns zur Angewohnheit machen. Das Gehen wird uns Menschen
-auch nicht in die Wiege gelegt, aber nach ein paar Versuchen, und durch Gewohnheit, lernen wir gehen.
-Genauso ist es mit Vim, nur daß es weniger anstrengend ist.
-Vim wurde konzipiert für Leute, die mit der Tastatur vertraut sind. Und warum? Weil wir die meiste Zeit mit
-dem Editieren von Aufgaben verbringen, was den bedingungslosen und ausgiebigsten Gebrauch der Tastatur
-mit sich bringt, und je schneller wir tippen können, umso schneller sind wir mit unserer Arbeit fertig.
-Fangen wir mal mit einer grundlegenden Technik an, damit Sie sich mit der Tastatur etwas wohler fühlen.
-Die Grundreihen-Technik
-Setzen Sie Ihre Finger auf die Grundreihe[1] der Tastatur, und zwar so, daß die Finger Ihrer linken Hand auf
-den Tasten ASDF, und die Finger Ihrer rechten Hand auf JKLÖ [ Ö=deutsche Tastatur] liegen, wie im Bild
-zu sehen (Künstler unbekannt).[2]
-Das Vertrautsein Ihrer Hände in
-dieser Position, ist einer der
-wichtigsten Schritte, um die
-Tastatur wirklich nutzbringend
-einsetzen zu können.
-Die dahinter stehende Idee ist,
-daß Sie in der Lage sein sollten,
-jede Taste mit dem
-nächstgelegenen Finger
-anzuschlagen, und das Ihr Finger
-danach automatisch in die
-Ursprungslage zurückfindet.
-Das scheint zuerst schwierig, aber versuchen Sie das ein paar mal, und dann merken Sie, daß Sie so viel
-schneller tippen können. Beachten Sie, daß die meisten Tastaturen auf den Tasten F und J Markierungen
-haben, die Ihnen dabei helfen, diese Grundposition zu finden.Versuchen Sie jetzt mal die Alphabete A-Z mit
-der Grundreihen-Technik zu tippen. Übrigens; es steht auch ein freies Tipptraining[3] im Internet zur
-Verfügung, welches diese grundlegenden Schreibtechniken erklärt. Ich möchte Sie ermutigen, das nur mal für
-zehn Minuten auszuprobieren und kennenzulernen.
+\subsection{Einführung}
+Gerade eben haben wir gelernt, zwischen den drei grundlegenden Modi in Vim hin-
+und herzuschalten. Ist das nicht schwierig, sich all die Tastenkombinationen zu
+merken? Wie behält man sich, welcher Schlüssel für welche Operation ist? Nun,
+das ist die "`Schlüsselfrage"'. Und die Antwort darauf ist; Sie sollten sich
+eben nicht erinnern, sondern Ihre Finger sollten automatisch wissen, was zu tun
+ist! Es muss (buchstäblich) immer \textit{zur Hand} sein.
 
-Der grafische Tastaturspickzettel des Vim
+Wie stellen wir das also an? Indem wir es uns zur Angewohnheit machen. Das
+\textit{Gehen} wird uns Menschen auch nicht in die Wiege gelegt, aber nach ein
+paar Versuchen, und durch Gewohnheit, lernen wir gehen.  Genauso ist es mit
+Vim, nur daß es weniger anstrengend ist.
 
-Wenn Sie wissen möchten,
-wie man mit dem Vim jede
-Taste einer nutzvollen
-Funktion zuordnen lässt,
-werfen Sie einen Blick
-auf diesen grafischen
-Tastaturspickzettel von 'jng'.[4]
-Obwohl Sie da jede Menge
-Befehle aufgelistet sehen,
-genügt es erst einmal die
-grundlegenden Tasten 'hjkl',
-die den Pfeiltasten (links,
-rechts, oben, unten)
-entsprechen, zu lernen.
-Darüber lernen Sie dann noch
-mehr im nächsten Kapitel.
-Zusammenfassung
-Seien Sie sich darüber im Klaren, daß die Effektivität den Vim zu nutzen proportional ist, zu Ihren
-Fähigkeiten mit der Tastatur.
+Vim wurde konzipiert für Leute, die mit der Tastatur vertraut sind. Und warum?
+Weil wir die meiste Zeit mit dem Editieren von Aufgaben verbringen, was den
+bedingungslosen und ausgiebigsten Gebrauch der Tastatur mit sich bringt, und je
+schneller wir tippen können, umso schneller sind wir mit unserer Arbeit fertig.
 
-Externe Links
-\begin{verbatim}
-[1] http://en.wikipedia.org/wiki/Home_row
-[2] http://www.bigpants.ca/juggling/images/Controls_Keyboard_HomeRow.gif
-[3] http://www.typeonline.co.uk/lesson1.html
-[4] http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html
-\end{verbatim}
+Fangen wir mal mit einer grundlegenden Technik an, damit Sie sich mit der
+Tastatur etwas wohler fühlen.
+
+\subsection{Die Grundreihen-Technik}
+Setzen Sie Ihre Finger auf die Grundreihe
+\footnote{\url{http://en.wikipedia.org/wiki/Home_row}}
+der Tastatur, und zwar so, daß die
+Finger Ihrer linken Hand auf den Tasten \red{ASDF}, und die Finger Ihrer
+rechten Hand auf \red{JKLÖ} [\textrightarrow Ö=deutsche Tastatur] liegen, wie
+im Bild zu sehen (Künstler unbekannt).
+\footnote{\url{http://www.bigpants.ca/juggling/images/Controls_Keyboard_HomeRow.gif}}
+Das Vertrautsein Ihrer Hände in dieser Position, ist einer der wichtigsten
+Schritte, um die Tastatur wirklich nutzbringend einsetzen zu können.
+
+\includegraphics[scale=0.6]{1-012}
+
+Die dahinter stehende Idee ist, daß Sie in der Lage sein sollten, jede Taste
+mit dem nächstgelegenen Finger anzuschlagen, und das Ihr Finger danach
+automatisch in die Ursprungslage zurückfindet.
+
+Das scheint zuerst schwierig, aber versuchen Sie das ein paar mal, und dann
+merken Sie, daß Sie so viel schneller tippen können. Beachten Sie, daß die
+meisten Tastaturen auf den Tasten \red{F} und \red{J} Markierungen haben, die
+Ihnen dabei helfen, diese Grundposition zu finden.Versuchen Sie jetzt mal die
+Alphabete \red{A-Z} mit der Grundreihen-Technik zu tippen. Übrigens; es steht
+auch ein freies Tipptraining
+\footnote{\url{http://www.typeonline.co.uk/lesson1.html}}
+im Internet zur Verfügung, welches diese
+grundlegenden Schreibtechniken erklärt. Ich möchte Sie ermutigen, das nur mal
+für zehn Minuten auszuprobieren und kennenzulernen.
+
+\subsection{Der grafische Tastaturspickzettel des Vim}
+
+Wenn Sie wissen möchten, wie man mit dem Vim jede Taste einer nutzvollen
+Funktion zuordnen lässt, werfen Sie einen Blick auf diesen grafischen
+Tastaturspickzettel von 'jng'.
+\footnote{\url{http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html}}
+Obwohl Sie da jede Menge Befehle aufgelistet
+sehen, genügt es erst einmal die grundlegenden Tasten 'hjkl', die den
+Pfeiltasten (links, rechts, oben, unten) entsprechen, zu lernen.  Darüber
+lernen Sie dann noch mehr im nächsten Kapitel.
+
+\includegraphics[scale=0.6]{1-013}
+
+\subsection{Zusammenfassung}
+Seien Sie sich darüber im Klaren, daß die Effektivität den Vim zu nutzen
+proportional ist, zu Ihren Fähigkeiten mit der Tastatur.
+
+%Externe Links
 
 \section{Navigation}
-Einführung
-Wenn Sie erstmal den Anfangstext geschrieben haben, verlangt das Editieren und Umschreiben viele
-Bewegungen zwischen den verschiedenen Teilen des Dokuments. Sie schreiben zum Beispiel an einer
-Geschichte, und plötzlich fällt Ihnen ein neuer Handlungsstrang ein, aber um den zu entwickeln, müssen Sie
-zu dem Teilstück zurückgehen, wo der Protagonist in die neue Stadt kommt (oder sowas in der Art)... Wie
-bewegen Sie sich in Ihrem Text so schnell, daß Sie Ihren Gedankengang nicht gleich wieder verlieren?
+\subsection{Einführung}
+Wenn Sie erstmal den Anfangstext geschrieben haben, verlangt das Editieren und
+Umschreiben viele Bewegungen zwischen den verschiedenen Teilen des Dokuments.
+Sie schreiben zum Beispiel an einer Geschichte, und plötzlich fällt Ihnen ein
+neuer Handlungsstrang ein, aber um den zu entwickeln, müssen Sie zu dem
+Teilstück zurückgehen, wo der Protagonist in die neue Stadt kommt (oder sowas
+in der Art)... Wie bewegen Sie sich in Ihrem Text so schnell, daß Sie Ihren
+Gedankengang nicht gleich wieder verlieren?
+
 Hier sind ein paar Beispiele, die die Schnelligkeit des Vim demonstrieren sollen.
-
-
-
-
-
-
-
-Den Cursor zum nächsten Wort bewegen? Drücken Sie w.
-Zum nächsten Absatz gehen? Drücken Sie \}.
-Zum dritten Erscheinen des Buchstabens 'h' gehen? Drücken Sie 3fh.
-35 Zeilen nach unten gehen? Drücken Sie 35j.
-Wollen Sie nach einer der obigen Bewegungen, wieder zur Ausgangsposition? Drücken Sie ctrl-o.
-Lust, zu lernen, wie das alles funktioniert? Tauchen wir ab.
-
-Zunächst öffnen (erstellen) Sie eine Datei mit Namen chandrayaan.txt und geben den folgenden Text ein (aus
-
-der Wikipedia):[1]
+\begin{itemize}
+	\item Den \blue{Cursor} zum nächsten Wort bewegen? Drücken Sie \red{w}.
+	\item Zum nächsten Absatz gehen? Drücken Sie \red{\}}.
+	\item Zum dritten Erscheinen des Buchstabens 'h' gehen? Drücken Sie \red{3fh}.
+	\item 35 Zeilen nach unten gehen? Drücken Sie \red{35j}.
+	\item Wollen Sie nach einer der obigen Bewegungen, wieder zur
+		Ausgangsposition? Drücken Sie \red{ctrl-o}.
+	\item Lust, zu lernen, wie das alles funktioniert? Tauchen wir ab.
+\end{itemize}
+Zunächst öffnen (erstellen) Sie eine Datei mit Namen chandrayaan.txt und geben
+den folgenden Text ein (aus der Wikipedia):[1]
+\begin{quote}
 Chandrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen Indischen
 Raumfahrtagentur, der ISRO (Indian Space Research Organisation). Die unbemannte
 Monderforschungsmission umfasst einen Mondumkreiser und einen Stoßkörper. Der
@@ -1311,6 +1325,7 @@ vom Satish Dhawan Raumfahrtzentrum, Sriharikota, Andrah Pradesh um 6:23 Uhr IST 
 UTC) hochgeschossen. Der Raumflugkörper wurde erfolgreich in die Mondumlaufbahn am 8.
 November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes um
 20:31 Uhr, am 14. November 2008 abgesetzt.
+
 Der ferngesteuerte Satellit hatte zum Startzeitpunkt eine Masse von 1,380 kg (3,042 lb) und
 675 kg (1,488 lb) in der Mondumlaufbahn, und trägt hochauflösende Gerätschaften für den
 sichtbaren Bereich (Infrarotbereich), und für harte und weiche Röntgenstrahlungsfrequenzen.
@@ -1320,129 +1335,148 @@ Topografie anzufertigen. Die Polregionen sind dabei von besonderem Interesse, da
 möglicherweise Eis enthalten. Die Mondmission befördert fünf ISRO-Ladungen und sechs
 Ladungen aus anderen internationalen Raumfahrtagenturen einschließlich der NASA, ESA,
 und der bulgarischen Raumfahrtagentur, die kostenlos transportiert wurden.
-Den Cursor bewegen nach Vim-Art
-Die grundlegendsten Tasten, die Sie benutzen sollten sind 'hjkl'. Diese vier Tasten entsprechen jeweils den
-Pfeiltasten links, runter, hoch und rechts. Beachten Sie, daß sich diese Tasten bereits unter den Fingern Ihrer
-rechten Hand befinden, wenn Sie die Hand schon in der Grundhaltung haben.
-Aber warum denn die Pfeiltasten nicht direkt benutzen? Das Problem hierbei ist, daß sie in einem eigenen
-Bereich der Tastatur untergebracht sind, und das würde wieder eine Handbewegung erforderlich machen.
-Dann könnten Sie auch gleich wieder die Maus nehmen.
-Halten Sie fest, die Finger Ihrer rechten Hand sollten sich immer auf den Tasten jklö befinden (und der
-Daumen auf der Leertaste). Jetzt wollen wir die vier Tasten mal kennenlernen.
+\end{quote}
+\subsection{Den \blue{Cursor} bewegen nach Vim-Art}
+Die grundlegendsten Tasten, die Sie benutzen sollten sind '\red{hjkl}'. Diese
+vier Tasten entsprechen jeweils den Pfeiltasten links, runter, hoch und rechts.
+Beachten Sie, daß sich diese Tasten bereits unter den Fingern Ihrer rechten
+Hand befinden, wenn Sie die Hand schon in der Grundhaltung haben.
+
+Aber warum denn die Pfeiltasten nicht direkt benutzen? Das Problem hierbei ist,
+daß sie in einem eigenen Bereich der Tastatur untergebracht sind, und das würde
+wieder eine Handbewegung erforderlich machen.  Dann könnten Sie auch gleich
+wieder die Maus nehmen.
+
+Halten Sie fest, die Finger Ihrer rechten Hand sollten sich immer auf den
+Tasten \red{jklö} befinden (und der Daumen auf der Leertaste). Jetzt wollen wir
+die vier Tasten mal kennenlernen.
+
+\includegraphics[scale=0.4]{1-014}
 
 h,j,k,l anstatt der Pfeiltasten benutzen
 
-h
+\begin{longtable}{lp{13cm}}
+\\
+h & Sie müssen Ihren Zeigefinger nach links ausstrecken, (der ist auf 'j') um
+'h' zu drücken. Dies ist die am weitesten links liegende Taste, gibt also an,
+daß es nach links geht.\\
+j & Das fallende 'j', weist die Richtung nach unten.\\
+k & Das nach oben weisende 'k' heißt, es geht nach oben.\\
+l & Der am weitesten rechts stehende Buchstabe 'l' signalisiert, es geht nach rechts.\\
+\\
+\end{longtable}
 
-Sie müssen Ihren Zeigefinger nach links ausstrecken, (der ist auf 'j') um 'h' zu drücken. Dies ist die am
-weitesten links liegende Taste, gibt also an, daß es nach links geht.
+Beachten Sie, daß wir die Operation wiederholen können, indem wir eine Zahl
+davor setzen. Zum Beispiel, \red{2j} wird den Befehl '\red{j}' zweimal
+ausführen.
 
-j
+Öffnen Sie nun die \red{chandrayaan.txt}-Datei und probieren Sie diese Tasten aus:
+\begin{itemize}
+	\item Setzen Sie Ihre Schreibmarke auf das erste 'C' des Dokuments.
+	\item Geben Sie \red{2j} ein und die aktuelle lange Zeile und die Leerzeile
+		sollte übersprungen werden, und Sie sollten nun auf der zweiten Zeile,
+		d.h. den zweiten Absatz gelangt sein.
+	\item Geben Sie \red{2k} ein, um an Ihren Ausgangspunkt zurückzukehren. Sie
+		können aber auch ctrl-o drücken, um zurückzuspringen.
+	\item Geben Sie \red{5l} ein, um 5 Zeichen nach rechts zu gehen.
+	\item Geben Sie \red{5h} ein, um 5 Zeichen nach links zu gehen, oder Sie drücken ctrl-o.
+\end{itemize}
 
-Das fallende 'j', weist die Richtung nach unten.
+Machen Sie es sich zur Angewohnheit die Tasten '\red{hjkl}' anstatt der
+Pfeiltasten zu benutzen. Nach ein paar Versuchen werden Sie gemerkt haben,
+wieviel schneller Sie mit diesen Tasten sein können.
 
-k
+Es gibt, in dieser Hinsicht, noch mehr einfache Tasten, die die folgenden
+Spezialbewegungen ersetzen. All dies dient dazu, Handbewegungen zu reduzieren.
+In diesem besonderen Fall neigen die Leute dazu nach diesen Spezialtasten auf
+die Jagd zu gehen, aber das können wir alles weglassen.
 
-Das nach oben weisende 'k' heißt, es geht nach oben.
+\noindent
+\begin{tabular}[c]{ll}
+\\
+Herkömmlich & Vim\\
+'Pos1'-Taste springt zum Zeilenanfang & \^-Taste (denken Sie an 'verankert am Start')\\
+'Ende'-Taste springt zum Zeilenende & \$-Taste (denken Sie an 'Der Dollar stoppt hier')\\
+'Bild hoch'-Taste, eine Seite nach oben & ctrl-b das bedeutet, eine Seite zurück (backward)\\
+'Bild runter'-Taste, eine Seite nach unten & ctrl-f das bedeutet, eine Seite weiter (forward)\\
+\\
+\end{tabular}
 
-l
+Wenn Sie die Zeilennummer ganz genau kennen, zu der Sie springen möchten, sagen
+wir mal Zeile 50, tippen Sie \red{50G} und Vim springt direkt zur Zeile 50.
+Wenn keine Nummer angegeben wurde, kommen Sie mit \red{G} zur letzten Zeile
+Ihres Dokumentes. Wie kommen Sie an den Anfang Ihrer Datei? Einfach \red{1G}
+tippen. Sehen Sie, was man mit \textit{einer einzigen} Taste alles erreichen
+kann?
+\begin{itemize}
+	\item Setzen Sie den \blue{Cursor} auf die erste Zeile, indem Sie \red{1G} eingeben.
+	\item 20 Buchstaben nach rechts, indem Sie \red{20l} eingeben.
+	\item Zurückgehen zum ersten Buchstaben mit \red{\^}.
+	\item Mit \red{\$} zum letzten Buchstaben springen.
+	\item Geben Sie \red{G} ein, um zur letzten Zeile zu gelangen.
+\end{itemize}
+Was ist, wenn Sie sich in die Mitte des Textes bewegen wollen, der gerade Ihren
+Bildschirm füllt?
+\begin{itemize}
+	\item Geben Sie \red{H} ein, um so '\red{h}'och wie möglich zu springen
+		(erste Zeile des Bildschirms)
+	\item Geben Sie \red{M} ein, um in die '\red{M}'itte zu springen
+	\item Geben Sie \red{L} ein, um so tief ('\red{l}'ow) wie möglich zu
+		springen (letzte Bildschirmzeile)
+\end{itemize}
+Es kann Ihnen nicht entgangen sein, welchen Nachdruck wir auf das
+Blindschreiben gelegt haben, und daß Sie mit Ihren Händen die Grundhaltung noch
+nie verlassen mussten. Das ist eine gute Sache.
 
-Der am weitesten rechts stehende Buchstabe 'l' signalisiert, es geht nach rechts.
+\subsection{Worte, Sätze, Absätze}
 
-Beachten Sie, daß wir die Operation wiederholen können, indem wir eine Zahl davor setzen. Zum Beispiel,
+Wir haben gesehen, wie man navigiert, bezogen auf Buchstaben und Zeilen. Aber
+wir neigen dazu unseren Text aus Wörtern bestehend zu betrachten, und wie wir
+diese Wörter zusammensetzen - Sätze, Absätze, Abschnitte, usw. Warum also,
+sollte man solche Textteile nicht als "`Textobjekte"' sehen?
 
-2j wird den Befehl 'j' zweimal ausführen.
-Öffnen Sie nun die chandrayaan.txt-Datei und probieren Sie diese Tasten aus:
-
-
-
-
-
-
-Setzen Sie Ihre Schreibmarke auf das erste 'C' des Dokuments.
-Geben Sie 2j ein und die aktuelle lange Zeile und die Leerzeile sollte übersprungen werden, und Sie
-sollten nun auf der zweiten Zeile, d.h. den zweiten Absatz gelangt sein.
-Geben Sie 2k ein, um an Ihren Ausgangspunkt zurückzukehren. Sie können aber auch ctrl-o drücken,
-um zurückzuspringen.
-Geben Sie 5l ein, um 5 Zeichen nach rechts zu gehen.
-Geben Sie 5h ein, um 5 Zeichen nach links zu gehen, oder Sie drücken ctrl-o.
-
-Machen Sie es sich zur Angewohnheit die Tasten 'hjkl' anstatt der Pfeiltasten zu benutzen. Nach ein paar
-Versuchen werden Sie gemerkt haben, wieviel schneller Sie mit diesen Tasten sein können.
-Es gibt, in dieser Hinsicht, noch mehr einfache Tasten, die die folgenden Spezialbewegungen ersetzen. All
-dies dient dazu, Handbewegungen zu reduzieren. In diesem besonderen Fall neigen die Leute dazu nach
-diesen Spezialtasten auf die Jagd zu gehen, aber das können wir alles weglassen.
-Herkömmlich
-
-Vim
-
-'Pos1'-Taste springt zum Zeilenanfang
-
-\^-Taste (denken Sie an 'verankert am Start')
-
-'Ende'-Taste springt zum Zeilenende
-
-\$-Taste (denken Sie an 'Der Dollar stoppt hier')
-
-'Bild hoch'-Taste, eine Seite nach oben
-
-ctrl-b das bedeutet, eine Seite zurück (backward)
-
-'Bild runter'-Taste, eine Seite nach unten
-
-ctrl-f das bedeutet, eine Seite weiter (forward)
-
-Wenn Sie die Zeilennummer ganz genau kennen, zu der Sie springen möchten, sagen wir mal Zeile 50, tippen
-Sie 50G und Vim springt direkt zur Zeile 50. Wenn keine Nummer angegeben wurde, kommen Sie mit G zur
-letzten Zeile Ihres Dokumentes. Wie kommen Sie an den Anfang Ihrer Datei? Einfach 1G tippen. Sehen Sie,
-was man mit einer einzigen Taste alles erreichen kann?
-
-
-
-
-
-
-Setzen Sie den Cursor auf die erste Zeile, indem Sie 1G eingeben.
-20 Buchstaben nach rechts, indem Sie 20l eingeben.
-Zurückgehen zum ersten Buchstaben mit \^.
-Mit \$ zum letzten Buchstaben springen.
-Geben Sie G ein, um zur letzten Zeile zu gelangen.
-
-Was ist, wenn Sie sich in die Mitte des Textes bewegen wollen, der gerade Ihren Bildschirm füllt?
-
-
-
-
-Geben Sie H ein, um so 'h'och wie möglich zu springen (erste Zeile des Bildschirms)
-Geben Sie M ein, um in die 'M'itte zu springen
-Geben Sie L ein, um so tief ('l'ow) wie möglich zu springen (letzte Bildschirmzeile)
-
-Es kann Ihnen nicht entgangen sein, welchen Nachdruck wir auf das Blindschreiben gelegt haben, und daß
-Sie mit Ihren Händen die Grundhaltung noch nie verlassen mussten. Das ist eine gute Sache.
-
-Worte, Sätze, Absätze
-
-Wir haben gesehen, wie man navigiert, bezogen auf Buchstaben und Zeilen. Aber wir neigen dazu unseren
-Text aus Wörtern bestehend zu betrachten, und wie wir diese Wörter zusammensetzen - Sätze, Absätze,
-Abschnitte, usw. Warum also, sollte man solche Textteile nicht als "`Textobjekte"' sehen?
+\begin{flushleft}
 Nehmen wir mal die ersten paar Worte unseres Beispieltextes:
-Die Polregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Zuerst setzen Sie den Cursor auf den ersten Buchstaben durch Drücken von \^.
-[D]ie Polregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Wir benutzen jetzt eckige Klammern, um die aktuelle Cursorposition hervorzuheben.
-Wollen Sie zum nächsten 'W'ort? Drücken Sie w. Der Cursor sollte nun auf dem 'P' von 'P'olregionen sein.
-Die [P]olregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Wie wärs, wenn Sie jetzt mal 2 Wörter weiterspringen? Fügen Sie einfach das Zählpräfix für 'w' hinzu, also:
-2w.
-Die Polregionen sind [d]abei von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Ähnlich verhält es sich, wenn Sie sich ans 'E'nde des nächsten Wortes bewegen möchten. Drücken Sie e.
-Die Polregionen sind dabe[i] von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Um ein Wort zurückzuspringen, drücken Sie b [b=backward]. Mit einem Zähler davor, 2b, springen Sie 2
-Worte zurück.
-Die Polregionen [s]ind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.
-Für Details, sehen Sie sich auch :help word-motions an.
-Wir haben gesehen, wie man buchstabenweise und wortweise navigieren kann, jetzt gehen wir weiter zu
-Sätzen.
+
+\tsc{Die Polregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+\vspace{5pt}
+Zuerst setzen Sie den \blue{Cursor} auf den ersten Buchstaben durch Drücken von \red{\^}.
+
+\tsc{[D]ie Polregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+Wir benutzen jetzt eckige Klammern, um die aktuelle \blue{Cursor}position hervorzuheben.
+
+\vspace{5pt}
+Wollen Sie zum nächsten 'W'ort? Drücken Sie \red{w}. Der \blue{Cursor} sollte
+nun auf dem 'P' von 'P'olregionen sein.
+
+\tsc{Die [P]olregionen sind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+\vspace{5pt}
+Wie wärs, wenn Sie jetzt mal 2 Wörter weiterspringen? Fügen Sie einfach das
+Zählpräfix für 'w' hinzu, also: \red{2w}.
+
+\tsc{Die Polregionen sind [d]abei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+\vspace{5pt}
+Ähnlich verhält es sich, wenn Sie sich ans 'E'nde des nächsten Wortes bewegen
+möchten. Drücken Sie \red{e}.
+
+\tsc{Die Polregionen sind dabe[i] von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+\vspace{5pt}
+Um ein Wort zurückzuspringen, drücken Sie \red{b} [b=backward]. Mit einem
+Zähler davor, \red{2b}, springen Sie 2 Worte zurück.
+
+\tsc{Die Polregionen [s]ind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
+
+\vspace{5pt}
+Für Details, sehen Sie sich auch \red{:help word-motions} an.
+\end{flushleft}
+Wir haben gesehen, wie man buchstabenweise und wortweise navigieren kann, jetzt
+gehen wir weiter zu Sätzen.
+\begin{quote}
 [C]handrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen Indischen
 Raumfahrtagentur, der ISRO (Indian Space Research Organisation). Die unbemannte
 Monderforschungsmission umfasst einen Mondumkreiser und einen Stoßkörper. Der
@@ -1451,11 +1485,12 @@ vom Satish Dhawan Raumfahrtzentrum, Sriharikota, Andrah Pradesh um 6:23 Uhr IST 
 UTC) hochgeschossen. Der Raumflugkörper wurde erfolgreich in die Mondumlaufbahn am 8.
 November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes um
 20:31 Uhr, am 14. November 2008 abgesetzt.
-Setzen Sie den Cursor auf den ersten Buchstaben (\^).
+\end{quote}
+Setzen Sie den \blue{Cursor} auf den ersten Buchstaben (\red{\^}).
+Um zum nächsten Satz zu springen, drücken Sie \red{)}.
 
-Um zum nächsten Satz zu springen, drücken Sie ).
-
-Chandrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen Indischen
+\begin{quote}
+Chandrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen Indischen
 Raumfahrtagentur, der ISRO (Indian Space Research Organisation). [D]ie unbemannte
 Monderforschungsmission umfasst einen Mondumkreiser und einen Stoßkörper. Der
 Raumflugkörper wurde durch eine modifizierte Version der PSLV XL am 22. Oktober 2008
@@ -1463,17 +1498,30 @@ vom Satish Dhawan Raumfahrtzentrum, Sriharikota, Andrah Pradesh um 6:23 Uhr IST 
 UTC) hochgeschossen. Der Raumflugkörper wurde erfolgreich in die Mondumlaufbahn am 8.
 November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes um
 20:31 Uhr, am 14. November 2008 abgesetzt.
+\end{quote}
+
 Wie cool ist das denn?
-Um zum vorhergehenden Satz zu springen, drücken Sie (.
-Na los, probieren Sie es aus, und erfahren Sie selbst, wie schnell Sie damit navigieren können. Nochmal, Sie
-können einen Zähler voranstellen, wie 3), um 3 Sätze weiterzuspringen.
-Jetzt nehmen Sie mal den ganzen Text, und versuchen Sie sich absatzweise zu bewegen. Drücken Sie \} um
-zum nächsten und \{, um zum vorherigen Absatz zu springen.
-Beachten Sie, daß die 'größeren' Klammern auf die größeren Textobjekte angewandt werden. Wenn Ihnen
-dies eh schon aufgefallen ist, na dann Herzlichen Glückwunsch, damit denken Sie nämlich bereits wie ein
-Gewinner, oder besser: wie ein Vimmer.
-Nochmal: versuchen Sie erst gar nicht, sich diese Operatoren zu merken, versuchen Sie es, sich derart zur
-Gewohnheit zu machen, daß Sie diese Tasten ganz automatisch verwenden.
+
+Um zum vorhergehenden Satz zu springen, drücken Sie \red{(}.
+
+Na los, probieren Sie es aus, und erfahren Sie selbst, wie schnell Sie damit
+navigieren können. Nochmal, Sie können einen Zähler voranstellen, wie \red{3)},
+um 3 Sätze weiterzuspringen.
+
+Jetzt nehmen Sie mal den ganzen Text, und versuchen Sie sich absatzweise zu
+bewegen. Drücken Sie \red{\}} um zum nächsten und \red{\{}, um zum vorherigen Absatz zu
+springen.
+
+Beachten Sie, daß die 'größeren' Klammern auf die größeren Textobjekte
+angewandt werden. Wenn Ihnen dies eh schon aufgefallen ist, na dann
+\textit{Herzlichen Glückwunsch}, damit denken Sie nämlich bereits wie ein
+\textit{Gewinner}, oder besser: \textit{wie ein Vimmer}.
+
+Nochmal: versuchen Sie erst gar nicht, sich diese Operatoren zu
+\textit{merken}, versuchen Sie es, sich derart zur Gewohnheit zu machen, daß
+Sie diese Tasten ganz automatisch verwenden.
+%lesezeichen 28 32
+
 Für Details, sehen Sie sich auch :help cursor-motions an.
 Setzen Sie eine Marke
 Sie schreiben einen Text, aber plötzlich fällt Ihnen ein, daß Sie noch einen damit verbundenen Abschnitt im
