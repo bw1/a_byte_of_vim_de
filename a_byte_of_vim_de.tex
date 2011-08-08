@@ -2896,7 +2896,7 @@ Funktionsweise:
 	\item Wir rufen die \red{setline()}-Funktion auf, um die Zeile in Vim mit
 		der modifizierten Zeichenkette zu ersetzen.
 \end{itemize}
-%lesezeichen 56 63
+%56 63
 
 \noindent
 Um diesen Befehl auszuführen:
@@ -3002,10 +3002,14 @@ sollte sowas wie \red{Length of the current line is 54} anzeigen.
 
 Jetzt steigen wir aber hinab in die Funktionalitätstiefen des Programmes.
 \red{Yahoo! Search} hat was, das nennt sich VergleichbareVorschlag-Suche
-(RelatedSuggestion query)[1], auf die wir durch einen Webservice Zugriff haben.
-Auf diesen Webservice kann man zugreifen indem man eine Python-API* nutzt, die
-von \red{Yahoo!  Search pYSearch}[2] zur Verfügung gestellt wird: {\scriptsize
-*(API=Application Programming Interface  Programmierschnittstelle)}\\
+(RelatedSuggestion query)
+\footnote{\url{http://developer.yahoo.com/search/web/V1/relatedSuggestion.html}}
+, auf die wir durch einen Webservice Zugriff haben.  Auf diesen Webservice kann
+man zugreifen indem man eine Python-API* nutzt, die von \red{Yahoo!  Search
+pYSearch}
+\footnote{\url{http://pysearch.sourcefroge.net}}
+zur Verfügung gestellt wird: {\scriptsize *(API=Application Programming
+Interface  Programmierschnittstelle)}\\
 \includegraphics[scale=0.5]{1-073}
 
 Beachten Sie, dass wir die aktuelle Zeile in Vim, als den aktuellen Text
@@ -3017,88 +3021,114 @@ Search nach Sätzen abzufragen, die mit der Abfrage in Zusammenhang stehen, die
 wir festlegen. Die Ergebnisse kriegen wir zurück, indem wir
 \red{parse\_results()} auf das resultierende Objekt anwenden. Die Ergebnisse
 legen wir dann zurück, und zeigen sie dem Benutzer an.
+\begin{enumerate}
+	\item Führen Sie aus \red{:source related.vim}
+	\item Tippen Sie den Text \red{c v raman}.
+	\item Führen Sie \red{:call Related()} aus
+	\item Was dabei rauskommt, sollte ungefähr so aussehen:
+\end{enumerate}
+\includegraphics[scale=0.5]{1-074}
 
-1.
-2.
-3.
-4.
+\subsection{Zusammenfassung}
+Wir haben einen Ausflug in die Welt des '\textit{Skripte schreibens}'
+unternommen, und zwar sowohl mit Vim's eigener Skriptsprache, als auch mit
+eigenständigen Skripting- und Programmiersprachen. Das ist wichtig, weil die
+Funktionalität des Vim unbegrenzt erweitert werden kann.
 
-Führen Sie aus :source related.vim
-Tippen Sie den Text c v raman.
-Führen Sie :call Related() aus
-Was dabei rauskommt, sollte ungefähr so aussehen:
+Sehen Sie hierzu auch \red{:help eval}, \red{:help python-commands}, \red{:help
+perl-using} und \red{:help ruby-commands} für Einzelheiten.
 
-Zusammenfassung
-Wir haben einen Ausflug in die Welt des 'Skripte schreibens' unternommen, und zwar sowohl mit Vim's
-eigener Skriptsprache, als auch mit eigenständigen Skripting- und Programmiersprachen. Das ist wichtig,
-weil die Funktionalität des Vim unbegrenzt erweitert werden kann.
-Sehen Sie hierzu auch :help eval, :help python-commands, :help perl-using und :help ruby-commands für
-Einzelheiten.
-Externe Links
+%Externe Links
+%Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Scripting&oldid=1208
+%Principal Authors: Swaroop
 
 \section{Plugins}
-Einführung
-Wie wir im vorhergehenden Kapitel gesehen haben, helfen uns Skripte, die bestehende Funktionalität des
-Vim zu erweitern, um mehr Aufgaben zu erledigen. Diese Skripte, die die Funktionalität erweitern, bzw.
-hinzufügen, nennen wir "`Plugins"' ( to plug in = einstöpseln).
-Es gibt verschiedene Arten von Plugins, die man schreiben kann:
- vimrc
- globales Plugin
- dateispezifisches Plugin
- Syntaxhervorhebungs-Plugin
- Compiler-Plugin
-Sie können nicht nur Ihre eigenen Plugins schreiben, sondern auch die von anderen geschriebenen Plugins,
-herunterladen und benutzen.[1]
-Individualisierung des Vim mit der vimrc
-Wenn ich eine neue Linux-Distribution installiere, oder Windows neu aufsetze, ist das erste, was ich mache,
-nachdem ich Vim installiert habe, mir meine aktuellste vimrc aus meiner Sicherungskopie zu krallen, und
-Vim erst dann benutze. Warum das wichtig ist? Weil die vimrc-Datei viele Einstellungen enthält, die ich mag,
-und das macht den Vim für mich erst brauchbar, und (in der Bedienung) angenehm.
+\subsection{Einführung}
+Wie wir im vorhergehenden Kapitel gesehen haben, helfen uns Skripte, die
+bestehende Funktionalität des Vim zu erweitern, um mehr Aufgaben zu erledigen.
+Diese Skripte, die die Funktionalität erweitern, bzw.  hinzufügen, nennen wir
+"`\textit{Plugins}"' (\textrightarrow to plug in = einstöpseln).
 
-Es gibt zwei Dateien, die Sie erstellen können, um Vim ganz nach Ihrem Geschmack einzurichten:
-1. vimrc - für allgemeine Einstellungen
-2. gvimrc - für Einstellungen des grafischen Vim
+\noindent
+Es gibt verschiedene Arten von \blue{\textit{Plugins}}, die man schreiben kann:
+\begin{itemize}
+	\item vimrc
+	\item globales \blue{\textit{Plugin}}
+	\item dateispezifisches \blue{\textit{Plugin}}
+	\item Syntaxhervorhebungs-\blue{\textit{Plugin}}
+	\item Compiler-\blue{\textit{Plugin}}
+\end{itemize}
+Sie können nicht nur Ihre eigenen \blue{\textit{Plugins}} schreiben, sondern
+auch die von anderen geschriebenen \blue{\textit{Plugins}}, herunterladen und
+benutzen.[1]
+
+\subsection{Individualisierung des Vim mit der vimrc}
+Wenn ich eine neue Linux-Distribution installiere, oder Windows neu aufsetze,
+ist das erste, was ich mache, nachdem ich Vim installiert habe, mir meine
+aktuellste \textit{vimrc} aus meiner Sicherungskopie zu krallen, und Vim erst
+dann benutze. Warum das wichtig ist? Weil die \textit{vimrc}-Datei viele
+Einstellungen enthält, die ich mag, und das macht den Vim für mich erst
+brauchbar, und (in der Bedienung) angenehm.
+
+Es gibt zwei Dateien, die Sie erstellen können, um Vim ganz nach Ihrem
+Geschmack einzurichten:
+\begin{enumerate}
+	\item \red{vimrc} - für allgemeine Einstellungen
+	\item \red{gvimrc} - für Einstellungen des grafischen Vim
+\end{enumerate}
 Die sind gespeichert als:
+\begin{itemize}
+	\item \red{\%HOME\%/\_vimrc} und \red{\%HOME\%/\_gvimrc} bei Windows, und
+	\item \red{\$HOME/.vimrc} und \red{\$HOME/.gvimrc} auf Unixoiden Systemen
+		(GNU/ Linux/ BSD/ MacOSX)
+\end{itemize}
+Schauen Sie sich \red{:help vimrc} an, für den exakten Speicherort Ihres
+Systems.
 
+Diese vimrc und gvimrc-Dateien können jegliche Vim-Befehle enthalten. Folgendes
+soll hierbei gelten: einfache Einstellungen nehmen wir in der vimrc vor,
+kompliziertere Dinge lesen wir mit \blue{\textit{Plugins}} ein.
 
+Hier ist z.B. ein Auszug aus meiner \textit{vimrc}:\\
+\includegraphics[scale=0.5]{1-076}\\
+\includegraphics[scale=0.5]{1-077}\\
+\includegraphics[scale=0.5]{1-078}
 
-%HOME%/_vimrc und %HOME%/_gvimrc bei Windows, und
-$HOME/.vimrc und $HOME/.gvimrc auf Unixoiden Systemen (GNU/Linux/BSD/MacOSX)
+Beachten Sie, dass diesen Befehlen der vorangestellte Doppelpunkt fehlt. Der
+Doppelpunkt ist nicht zwingend bei Dateiskripten, weil hier angenommen wird,
+dass es sich um Befehle des Normalmodus handelt.
 
-Schauen Sie sich :help vimrc an, für den exakten Speicherort Ihres Systems.
-Diese vimrc und gvimrc-Dateien können jegliche Vim-Befehle enthalten. Folgendes soll hierbei gelten:
-einfache Einstellungen nehmen wir in der vimrc vor, kompliziertere Dinge lesen wir mit Plugins ein.
-Hier ist z.B. ein Auszug aus meiner vimrc:
+Wenn Sie den eingehenden Gebrauch jeder einzelnen oben erwähnten Einstellung
+erlernen wollen, verweise ich auf \red{:help}.
 
-Beachten Sie, dass diesen Befehlen der vorangestellte Doppelpunkt fehlt. Der Doppelpunkt ist nicht
-zwingend bei Dateiskripten, weil hier angenommen wird, dass es sich um Befehle des Normalmodus handelt.
-Wenn Sie den eingehenden Gebrauch jeder einzelnen oben erwähnten Einstellung erlernen wollen, verweise
-ich auf :help.
-Noch einen Teil aus meiner gvimrc:
+Noch einen Teil aus meiner \textit{gvimrc}:\\
+\includegraphics[scale=0.5]{1-079}
 
-Da draussen gibt es jede Menge an Beispielen von vimrc's[2] auf die Sie unbedingt mal einen Blick werfen
-sollten, um die zahlreichen Arten von individuellen Einstellungsmöglichkeiten kennenzulernen, und sich
-dann genau diejenigen herauszupicken, die Ihnen am besten gefallen, um Sie in Ihre eigene vimrc
-einzubauen.
+Da draussen gibt es jede Menge an Beispielen von \textit{vimrc's}[2] auf die
+Sie unbedingt mal einen Blick werfen sollten, um die zahlreichen Arten von
+individuellen Einstellungsmöglichkeiten kennenzulernen, und sich dann genau
+diejenigen herauszupicken, die Ihnen am besten gefallen, um Sie in Ihre eigene
+vimrc einzubauen.
+
 Ein paar gute, die ich vormals gefunden habe, sind:
+\begin{itemize}
+	\item \red{vi-improved.org}'s[3] vimrc
+	\item \red{Amir Salihefendic}'s[4] vimrc
+\end{itemize}
+Es ist ein bekanntes Faktum, dass durch die \textit{vimrc} eines Benutzers
+darauf geschlossen werden kann, wie lange derjenige/diejenige Vim schon
+benutzt.
 
-
-
-vi-improved.org's[3] vimrc
-Amir Salihefendic's[4] vimrc
-
-Es ist ein bekanntes Faktum, dass durch die vimrc eines Benutzers darauf geschlossen werden kann, wie
-lange derjenige/diejenige Vim schon benutzt.
-
-Globales Plugin
-Globale Plugins werden benutzt, um allgemeine Funktionen zur Verfügung zu stellen. Globale Plugins liegen
-an zwei Orten:
+\subsection{Globales \blue{Plugin}}
+Globale \blue{\textit{Plugins}} werden benutzt, um allgemeine Funktionen zur
+Verfügung zu stellen. Globale \blue{\textit{Plugins}} liegen an zwei Orten:
+%lesezeichen 66 70
 1. \verb $VIMRUNTIME/plugin/ für Standardplugins, die Vim schon bei seiner Installation einrichtet.
-2. Um Ihre eigenen Plugins bzw. Plugins, die Sie von irgendwo heruntergeladen haben, zu installieren,
-nehmen Sie Ihr eigenes Plugin-Verzeichnis:
+2. Um Ihre eigenen \blue{\textit{Plugins}} bzw. \blue{\textit{Plugins}}, die Sie von irgendwo heruntergeladen haben, zu installieren,
+nehmen Sie Ihr eigenes \blue{\textit{Plugin}}-Verzeichnis:
  \verb $HOME/.vim/plugin/  auf Unixoiden Systemen (GNU/Linux/BSD/MacOSX)
  \verb %HOME%/vimfiles/plugin/  für Windows
- Sehen sich sich :help runtimepath für Einzelheiten zu Ihren Plugin-Verzeichnissen an.
+ Sehen sich sich :help runtimepath für Einzelheiten zu Ihren \blue{\textit{Plugin}}-Verzeichnissen an.
 Jetzt wollen wir so ein Plugin einmal anwenden.
 Ein nützliches Plugin ist \verb highlight_current_line.vim[5]  von Ansuman Mohanty, das genau das tut, was der
 Name schon suggeriert. Laden Sie sich neuste Version der Datei \verb highlight_current_line.vim  herunter, und
