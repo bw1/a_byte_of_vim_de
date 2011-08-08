@@ -4,7 +4,8 @@
 \usepackage[latin9]{inputenc}
 \usepackage{ngerman}
 \usepackage[pdftex]{graphicx}
-\usepackage{textcomp}
+\usepackage{textcomp} %symbole
+\usepackage{latexsym} %symbole
 \usepackage[ urlcolor=blue, colorlinks=true, linkcolor=blue ]{hyperref}
 \usepackage{longtable}
 
@@ -389,7 +390,7 @@ Allerdings gibt es auch ein paar Probleme, wenn man so ein Buch übersetzt
 wären da die vielen Beispiele aus dem Buch, die man
 aufgefordert wird nachzuvollziehen, weil man den Vim nun mal am besten dadurch
 kennenlernt, dass man ihn anwendet. Wann immer es also darum geht, selbst etwas
-einzutippen, habe ich dies mit \textcolor{red}{roter Farbe} deutlich
+einzutippen, habe ich dies mit \red{roter Farbe} deutlich
 gemacht.
 
 Und letztlich ist da das Problem der vielen Anglizismen, die (gerade im
@@ -1499,7 +1500,6 @@ UTC) hochgeschossen. Der Raumflugkörper wurde erfolgreich in die Mondumlaufbahn 
 November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes um
 20:31 Uhr, am 14. November 2008 abgesetzt.
 \end{quote}
-
 Wie cool ist das denn?
 
 Um zum vorhergehenden Satz zu springen, drücken Sie \red{(}.
@@ -1520,1088 +1520,1504 @@ angewandt werden. Wenn Ihnen dies eh schon aufgefallen ist, na dann
 Nochmal: versuchen Sie erst gar nicht, sich diese Operatoren zu
 \textit{merken}, versuchen Sie es, sich derart zur Gewohnheit zu machen, daß
 Sie diese Tasten ganz automatisch verwenden.
-%lesezeichen 28 32
+%28 32
 
-Für Details, sehen Sie sich auch :help cursor-motions an.
-Setzen Sie eine Marke
-Sie schreiben einen Text, aber plötzlich fällt Ihnen ein, daß Sie noch einen damit verbundenen Abschnitt im
-selben Dokument noch auf den neuesten Stand bringen müssen, aber Sie wollen Ihrer aktuellen Position nicht
-verlustig gehen, weil Sie später genau an dieser Stelle weitermachen wollen. Was tun Sie jetzt?
-Normalerweise würde dies bedeuten, zu diesem Abschnitt zu fahren, ihn auf den neuesten Stand bringen, und
-dann zum Ausgangspunkt zurückzufahren. Alles ein bisschen viel Aufwand, und abgesehen davon neigen wir
-dazu zu vergessen, von wo wir gekommen sind.
-Mit Vim können wir das alles ein bisschen intelligenter anstellen. Bewegen Sie den Cursor zur 3. Zeile des
-folgenden Textes (die Worte von John Lennon). Verwenden Sie ma, um eine Markierung mit dem Namen 'a'
-zu erstellen. Setzen Sie den Cursor hin, wo immer Sie wollen, z.B. 4j.
+Für Details, sehen Sie sich auch \red{:help cursor-motions} an.
+\subsection{Setzen Sie eine Marke}
+Sie schreiben einen Text, aber plötzlich fällt Ihnen ein, daß Sie noch einen
+damit verbundenen Abschnitt im selben Dokument noch auf den neuesten Stand
+bringen müssen, aber Sie wollen Ihrer aktuellen Position nicht verlustig gehen,
+weil Sie später genau an dieser Stelle weitermachen wollen. Was tun Sie jetzt?
+
+Normalerweise würde dies bedeuten, zu diesem Abschnitt zu fahren, ihn auf den
+neuesten Stand bringen, und dann zum Ausgangspunkt zurückzufahren. Alles ein
+bisschen viel Aufwand, und abgesehen davon neigen wir dazu zu vergessen, von wo
+wir gekommen sind.
+
+Mit Vim können wir das alles ein bisschen intelligenter anstellen. Bewegen Sie
+den \blue{Cursor} zur 3. Zeile des folgenden Textes (die Worte von John
+Lennon). Verwenden Sie \red{ma}, um eine Markierung mit dem Namen '\red{a}' zu
+erstellen. Setzen Sie den Cursor hin, wo immer Sie wollen, z.B. \red{4j}.
+\begin{quote}
 Bin ganz gespannt auf meine nächst Enttäuschung. --Ashleigh Brilliant
-Jedermanns Gedächtnis ist sein privates Schrifttum. --Aldous Huxley
-Leben ist das, was mit dir gerade passiert, während du damit beschäftigt bist andere Pläne zu
-schmieden. --John Lennon
-Das Leben ist wirklich einfach, aber wir bestehen darauf es kompliziert zu machen.
---Konfuzius
-Verweile nicht in der Vergangenheit, träume nicht von der Zukunft, fokussiere den Geist auf
-den gegenwärtigen Augenblick. --Buddha
-Je mehr Entscheidungen man gezwungen ist alleine zu treffen, desto mehr gewahr wird man
-sich seiner Freiheit etwas auszuwählen. --Thornton Wilder
-Drücken Sie 'a (einfaches Gänsefüsschen gefolgt vom Namen der Markierung), und - Bitte sehr - schon
-springt Vim (zurück) zu der markierten Zeile.
 
-Sie können hierfür jedes Alphabet nehmen (a-z A-Z), um eine Markierung zu kennzeichnen, was bedeutet,
-daß Sie bis zu 52 Markierungen für jede Datei vergeben können.
-Herumspringen
-Mit den verschiedenen Bewegungsbefehlen, die wir erlernt haben, wollen wir oft zum vorhergehenden, oder
-zum nächsten Ort nach einem Bewegungsbefehl springen. Um dies zu tun, drücken Sie einfach ctrl-o um zur
-vorhergehenden Position, und ctrl-i, um wieder vorwärts, zur nächsten Position zu springen.
-Textteile
-Es gibt zahlreiche Wege, Textobjekte im Vim zu definieren, um sie anschließend einem Befehl zu übergeben.
-Sie wollen z.B. einen Textteil sichtbar selektieren und anschließend alle Großbuchstaben in Kleinbuchstaben,
-bzw. umgekehrt, mit dem ~ Operator (Tildezeichen) umwandeln.
-Öffnen Sie die dapping.txt-Datei, die wir im vorhergehenden Kapitel erstellt haben. Benutzen Sie die
-zahlreichen Tastaturbefehle, um auf den ersten Buchstaben des Wortes 'dapper' im zweiten Absatz zu
-springen. Tipp: versuchen Sie \}, j, w.
-Dapping means being determined about being determined and being passionate about being
-passionate.
+Jedermanns Gedächtnis ist sein privates Schrifttum. --Aldous Huxley
+
+Leben ist das, was mit dir gerade passiert, während du damit beschäftigt bist
+andere Pläne zu schmieden. --John Lennon
+
+Das Leben ist wirklich einfach, aber wir bestehen darauf es kompliziert zu
+machen.  --Konfuzius
+
+Verweile nicht in der Vergangenheit, träume nicht von der Zukunft, fokussiere
+den Geist auf den gegenwärtigen Augenblick. --Buddha
+
+Je mehr Entscheidungen man gezwungen ist alleine zu treffen, desto mehr gewahr
+wird man sich seiner Freiheit etwas auszuwählen. --Thornton Wilder
+\end{quote}
+Drücken Sie \red{'a} (einfaches Gänsefüsschen gefolgt vom Namen der
+Markierung), und - Bitte sehr - schon springt Vim (zurück) zu der markierten
+Zeile.
+
+Sie können hierfür jedes Alphabet nehmen (a-z A-Z), um eine Markierung zu
+kennzeichnen, was bedeutet, daß Sie bis zu 52 Markierungen für jede Datei
+vergeben können.
+
+\subsection{Herumspringen}
+Mit den verschiedenen Bewegungsbefehlen, die wir erlernt haben, wollen wir oft
+zum vorhergehenden, oder zum nächsten Ort nach einem Bewegungsbefehl springen.
+Um dies zu tun, drücken Sie einfach \red{ctrl-o} um zur vorhergehenden
+Position, und \red{ctrl-i}, um wieder vorwärts, zur nächsten Position zu springen.
+
+\subsection{Textteile}
+Es gibt zahlreiche Wege, Textobjekte im Vim zu definieren, um sie anschließend
+einem Befehl zu übergeben.  Sie wollen z.B. einen Textteil sichtbar selektieren
+und anschließend alle Großbuchstaben in Kleinbuchstaben, bzw. umgekehrt, mit
+dem \red{~} Operator (Tildezeichen) umwandeln.
+
+Öffnen Sie die \red{dapping.txt}-Datei, die wir im vorhergehenden Kapitel
+erstellt haben. Benutzen Sie die zahlreichen Tastaturbefehle, um auf den ersten
+Buchstaben des Wortes '\red{dapper}' im zweiten Absatz zu springen. Tipp:
+versuchen Sie \red{\}}, \red{j}, \red{w}.
+\begin{quote}
+Dapping means being determined about being determined and being passionate
+about being passionate.
+
 Be a dapper.
-Drücken Sie v, um in den visuellen Modus zu gelangen, und tippen Sie ap, um 'a' 'p'aragraph (Absatz) zu
-selektieren. Drücken Sie ~, um die Groß- / Kleinbuchstaben zu verkehren. Wenn Sie die Selektion aufheben
+\end{quote}
+Drücken Sie \red{v}, um in den visuellen Modus zu gelangen, und tippen Sie
+\red{ap}, um '\red{a}' '\red{p}'aragraph (Absatz) zu selektieren. Drücken Sie
+~, um die Groß- / Kleinbuchstaben zu verkehren. Wenn Sie die Selektion aufheben
 wollen, drücken Sie einfach \red{$<$ESC$>$}.
-Dapping means being determined about being determined and being passionate about being
-passionate.
+\begin{quote}
+Dapping means being determined about being determined and being passionate
+about being passionate.
+
 bE A DAPPER.
-Andere Textobjektgedächtniskürzel sind aw, was 'a' 'w'ord bedeutet, a"' heißt eine in Anführungsstriche
-gesetzte Zeichenfolge (wie "`Dies ist eine in Anführungsstriche gesetzte Zeichenfolge"'), ab bedeutet 'a'
-'b'lock, was wiederum heißt, alles innerhalb eines Klammernpaares, usw.
-Sehen Sie sich hierzu auch :help object-motions und :help text-objects für nähere Einzelheiten an.
-Zusammenfassung
-Wir haben die mannigfachen Möglichkeiten gesehen, die uns Vim bereitstellt, um uns innerhalb eines Textes
-zu bewegen (navigieren). Es ist nicht nötig, sich jeden einzelnen dieser Navigationsbefehle im Kopf zu
-behalten, vielmehr sollten Sie sich diese Befehle angewöhnen, wann immer Sie die Gelegenheit dazu haben,
-speziell die Befehle, die für Sie am wichtigsten sind. Und wenn Sie sich daran gewöhnt haben, werden auch
-die Handbewegungen weniger, Sie werden schneller, und letztendlich verbringen Sie mehr Zeit damit,
-darüber nachzudenken, was Sie gerade schreiben, als darüber, welches Programm Sie zum Schreiben nutzen.
-Sehen Sie sich hierzu :help various-motions als auch :help motion für interessantere Bewegungsarten an.
+\end{quote}
+Andere Textobjektgedächtniskürzel sind \red{aw}, was '\red{a}' '\red{w}'ord
+bedeutet, \red{a\"}' heißt eine in Anführungsstriche gesetzte Zeichenfolge (wie
+"`Dies ist eine in Anführungsstriche gesetzte Zeichenfolge"'), \red{ab}
+bedeutet '\red{a}' '\red{b}'lock, was wiederum heißt, alles innerhalb eines
+Klammernpaares, usw.
+
+Sehen Sie sich hierzu auch \red{:help object-motions} und \red{:help
+text-objects} für nähere Einzelheiten an.
+
+\subsection{Zusammenfassung}
+Wir haben die mannigfachen Möglichkeiten gesehen, die uns Vim bereitstellt, um
+uns innerhalb eines Textes zu bewegen (navigieren). Es ist nicht nötig, sich
+jeden einzelnen dieser Navigationsbefehle im Kopf zu behalten, vielmehr sollten
+Sie sich diese Befehle angewöhnen, wann immer Sie die Gelegenheit dazu haben,
+speziell die Befehle, die für Sie am wichtigsten sind. Und wenn Sie sich daran
+gewöhnt haben, werden auch die Handbewegungen weniger, Sie werden schneller,
+und letztendlich verbringen Sie mehr Zeit damit, darüber nachzudenken, was Sie
+gerade schreiben, als darüber, welches Programm Sie zum Schreiben nutzen.
+
+Sehen Sie sich hierzu \red{:help various-motions} als auch \red{:help motion}
+für interessantere Bewegungsarten an.
 
 \section{Hilfe}
 
-Einführung
-Vim kennt eine solche Fülle von Befehlen, Tastaturkürzel, Zwischenspeicher, usw. Es ist unmöglich sich
-daran zu erinnern, wie die alle funktionieren. Tatsächlich ist es nicht mal nützlich, alle zu kennen.
-Idealerweise wissen Sie, wo Sie nach einer bestimmten Funktion in Vim zu suchen haben, wann immer Sie
-sie brauchen.
-Sie möchten es z.B. vermeiden, jedesmal einen langen Namen tippen zu müssen, und dann fällt Ihnen
-siedendheiß ein, daß es eine Abkürzungsfunktion in Vim gibt, die Ihnen hilft genau dieses Problem zu lösen,
-aber Sie wissen nicht mehr, wie die Funktion angewandt wird. Was tun Sie?
-Jetzt schauen wir uns mal die verschiedenen Möglichkeiten an, Hilfe zu finden, wie man Vim benutzen kann.
-Der :help-Befehl
-Die erste und wichtigste Anlaufstelle, zu versuchen, Hilfe zu finden, ist die programmimmanente
-Dokumentation, und Vim besitzt eine der bestverständlichsten Benutzerhandbücher, die ich je gesehen habe.
-In unserem Fall, tippen Sie einfach :help abbreviation und Sie werden zur Hilfe für Abkürzungen geführt,
-und hier können sie nun lesen, wie Sie die :ab und :iab-Befehle verwenden.
-Manchmal ist es genau so einfach, wie eben. Wenn Sie nicht wissen wonach Sie suchen, dann geben Sie
-einfach :help user-manual ein und blättern sich durch die Inhaltsliste des gesamten Benutzerhandbuches, und
-lesen das Kapitel, von dem Sie glauben, daß es Sie der Lösung Ihres Problems, an dem Sie gerade arbeiten,
-am nächsten bringt.
-Wie man das :help topic [ Thema] liest
-Nehmen wir mal einen Textauszug von :help abbriviate:
+\subsection{Einführung}
+Vim kennt eine solche Fülle von Befehlen, Tastaturkürzel, Zwischenspeicher,
+usw. Es ist unmöglich sich daran zu erinnern, wie die alle funktionieren.
+Tatsächlich ist es nicht mal nützlich, alle zu kennen.  Idealerweise wissen
+Sie, wo Sie nach einer bestimmten Funktion in Vim zu suchen haben, wann immer
+Sie sie brauchen.
 
-Beachten Sie, daß es einen festgelegten Standard bezüglich des Vim-Hilfesystems gibt, um es uns leicht zu
-machen, genau die Teile herauszufinden, die wir benötigen, anstatt zu versuchen, den Befehl komplett zu
-verstehen.
+Sie möchten es z.B. vermeiden, jedesmal einen langen Namen tippen zu müssen,
+und dann fällt Ihnen siedendheiß ein, daß es eine Abkürzungsfunktion in Vim
+gibt, die Ihnen hilft genau dieses Problem zu lösen, aber Sie wissen nicht
+mehr, wie die Funktion angewandt wird. Was tun Sie?
+
+Jetzt schauen wir uns mal die verschiedenen Möglichkeiten an, Hilfe zu finden,
+wie man Vim benutzen kann.
+
+\subsection{Der \red{:help}-Befehl}
+Die erste und wichtigste Anlaufstelle, zu versuchen, Hilfe zu finden, ist die
+programmimmanente Dokumentation, und Vim besitzt eine der bestverständlichsten
+Benutzerhandbücher, die ich je gesehen habe.
+
+In unserem Fall, tippen Sie einfach \red{:help abbreviation} und Sie werden zur
+Hilfe für Abkürzungen geführt, und hier können sie nun lesen, wie Sie die
+\red{:ab} und \red{:iab}-Befehle verwenden.
+
+Manchmal ist es genau so einfach, wie eben. Wenn Sie nicht wissen wonach Sie
+suchen, dann geben Sie einfach \red{:help user-manual} ein und blättern sich
+durch die Inhaltsliste des gesamten Benutzerhandbuches, und lesen das Kapitel,
+von dem Sie glauben, daß es Sie der Lösung Ihres Problems, an dem Sie gerade
+arbeiten, am nächsten bringt.
+
+\subsection{Wie man das \red{:help topic} [\textrightarrow Thema] liest}
+Nehmen wir mal einen Textauszug von \red{:help abbriviate}:\\
+\includegraphics[scale=0.6]{1-015}
+
+Beachten Sie, daß es einen festgelegten Standard bezüglich des Vim-Hilfesystems
+gibt, um es uns leicht zu machen, genau die Teile herauszufinden, die wir
+benötigen, anstatt zu versuchen, den Befehl komplett zu verstehen.
+
 Die erste Zeile erklärt die Schreibweise, d.h., wie der Befehl anzuwenden ist.
-Die eckigen Klammern in :ab[breviate] weisen darauf hin, daß der letzte Teil des vollen Names beliebig ist.
-Sie müssen mindestens :ab eingeben, damit Vim den Befehl als solchen erkennen kann. Sie können aber auch
-:abb oder :abbr oder :abbre usw. verwenden, bis zum vollen Namen :abbreviate. Die meisten Leute neigen
-zur kürzest möglichen Form.
-Die eckigen Klammern in [<expr>] weisen, auch hier, darauf hin, daß 'expression' wahlfrei ist.
-
-Die geschweiften Klammern in {lhs} {rhs} besagen, daß es sich hier um Platzhalter für aktuell einzufügende
-Argumente handelt. Die Namen sind Abkürzungen für 'linker Hand' bzw. 'rechter Hand' [left hand side / right
-
-hand side].
-Was auf die erste Zeile folgt, ist ein eingerückter Absatz, der kurz erklärt, was dieser Befehl tut.
-Beachten Sie, den zweiten Absatz, der Sie auf weitere Informationen hinweist. Sie können den Cursor auf
-den Text zwischen den beiden Pipe-Symbolen [ | ] setzen und dann ctrl-] drücken, um dem Link des
-zugeordneten :help topic [Hilfethemas] zu folgen. Zurück gelangen Sie mit ctrl-O. (ctrl-o, wie im Originaltext ist
-offensichtlich falsch!).
-
-Das :hilfeallgemeinerregulärerausdruckanzeige-Kommando
-Ok - das war jetzt kein Übersetzungsgeniestreich. Tatsächlich steht 'grep' aber für general regular expression print (also 'Anzeige' /Ausgabe eines allgemeinen,
-regulären Ausdrucks). :helpgrep ist demzufolge eine Befehlskombination von help \& grep.
-
-Wenn Sie den Namen des Themas nicht kennen, dann können Sie das ganze Dokument nach einem Satz
-durchsuchen, mit Hilfe von :helpgrep. Angenommen Sie möchten wissen, wie Sie nach dem Beginn eines
-Wortes zu suchen haben, tippen Sie einfach :helpgrep beginning of a word. Sie können :cnext und :cprev
-nutzen, um zum nächsten/vorhergehenden Teil der Dokumentation zu springen, wo dieser Satz auftaucht. Um
-eine komplette Liste zu sehen, wo der Satz jeweils auftaucht, nehmen Sie :clist.
-Schnelle Hilfe
-Erstellen Sie eine Datei (z.B. mit dem Namen quickhelp) mit Vim, und geben Sie den folgenden Text ein.
-
-Verlassen Sie den Einfügemodus mit ESC und geben Sie die gleiche Zeile im Befehlsmodus nochmal ein.
-Setzen Sie nun den Cursor irgendwo auf das Wort keywordprg und drücken Sie einfach K. Sofort gelangen
-Sie zur Hilfe für dieses Wort. Dieses Tastaturkürzel verhindert, daß Sie :help keywordprg tippen müssen.
-Internetforum und IRC ( Internet Relay Chat)
-Sollten Sie immer noch nicht in der Lage sein, herauszufinden, was Sie tun wollen, dann wird das
-nächstbeste wohl sein, andere Vim-Benutzer zu kontaktieren um Ihnen auszuhelfen. Keine Bange, das ist
-ganz einfach, und die Hilfsbereitschaft anderer 'Vimmer' ist erstaunlich.
-Suchen Sie in einem ersten Schritt nach der Vim-Mailingliste, um herauszufinden, ob jemand Ihre Frage
-bereits beantwortet hat. Gehen Sie auf die Vim-Gruppen-Such-Seite[1], und geben Sie die Schlüsselwörter
-Ihrer Frage ein. Meistens werden viele allgemeine Fragen bereits beantwortet sein, da dies so eine
-hochfrequentierte Mailingliste ist, d.h. viele, viele Leute stellen in dieser Gruppe Fragen und geben
-Antworten.
-Wenn Sie keine passende Antwort finden, dann besuchen Sie das Vim IRC-Forum. Öffnen Sie eine IRCAnwendung wie z.B. XChat[2] (gibt's für Windows, Linux, BSD) oder Colloguy[3] (für Mac OS X), verbinden
-Sie sich mit dem "`FreeNode"'-Netzwerk, betreten den \#vim Kanal, stellen manierlich Ihre Frage, und warten
-dann, bis jemand antwortet. Meistens wird jemand innerhalb von Minuten antworten.
-Wenn niemand Ihre Frage beantwortet, sind wahrscheinlich alle gerade beschäftigt. Dann stellen Sie Ihre
-Frage zu einem späteren Zeitpunkt nochmals oder formen die Frage so um, daß es anderen leicht fällt Ihnen
-zu helfen. Ansonsten hinterlassen Sie eine Nachricht in der oben erwähnten Mailingliste.
-
-Zusammenfassung
-Es gibt eine Fülle von Informationen, wie sich die Dinge bei der Benutzung des Vim erledigen lassen, und
-
-viele Vimmer helfen Ihnen dabei auch gerne. Die Vim-Gemeinschaft ist eine der größten Stärken des VimEditors. Nutzen Sie also die bestehenden Hilfsquellen weidlich, und treten auch Sie dieser Gemeinschaft bei.
-Wahres Entzücken liegt eher im Herausfinden als im Wissen. --Isaac Asimov
-Externe Links
-\begin{verbatim}
-[1] http:/ / tech. groups. yahoo. com/ group/ vim/ msearch_adv
-[2] http:/ / www. silverex. org/ download/
-[3] http:/ / colloquy. info/
-Source: http:/ / www. swaroopch. com/ mediawiki/ index. php? title=Vim_
-en:Help&oldid=1229
-\end{verbatim}
-Principal Authors: Swaroop
-\section{Grundlagen des Bearbeitens von Dateien [ Editing]}
-Einführung
-Jetzt lernen wir mal die grundlegenden Editierungsbefehle in Vim für das Lesen und Schreiben von Dateien,
-Herausschneiden/Kopieren/Einfügen/Rückgängig machen/das *Rückgängig machen des Rückgängig
-machens und Suchen. (*Wenn jemand einen besseren Vorschlag für "`undo/redo"' hat, kann er sich ja bei mir melden - Der Übersetzer)
-Lesen und Schreiben von Dateien
-Zwischenspeicher
-Wenn Sie eine Datei bearbeiten, bringt Vim den Textinhalt der Datei von der Festplatte in den Arbeitsspeicher
-des Computers. Dies bedeutet das eine Kopie der Datei im Speicher des Rechners angelegt wird, und jegliche
-Änderungen die Sie vornehmen, auch im Arbeitsspeicher des Computers vollzogen, und Ihnen unmittelbar
-angezeigt werden. Nachdem Sie die Datei bearbeitet haben, können Sie sie abspeichern, was bedeutet, dass
-Vim den im Arbeitsspeicher befindlichen Text in die Datei auf der Festplatte zurückschreibt. Der
-Arbeitsspeicher des Rechners, der hier temporär genutzt wird, wird als Zwischenspeicher bezeichnet
-["`buffer"']. Es ist dieses nämliche Konzept, das uns zwingt Dateien sämtlicher Editoren oder
-Textverarbeitungssysteme mit denen wir arbeiten zu "`Speichern"'.
-Öffnen Sie Vim, schreiben Sie die Worte Hallo Welt und speichern Sie es als hallo.txt ab. Eine kleine
-Erinnerungshilfe, wie man dies tut, gibt's im Kapitel 'Erste Schritte'.
-Auslagern
-Nun werden Sie bemerkt haben, daß im selben Verzeichnis eine weitere Datei erstellt wurde, die sowas wie
-.hallo.txt.swp heißt. Führen Sie den folgenden Befehl aus, um den exakten Namen der Datei herauszufinden:
-
-Was ist das denn für eine Datei? Vim behält eine Sicherungskopie des Zwischenspeichers in einer Datei, die
-es in regelmäßigen Abständen auf die Festplatte schreibt, damit Sie, sollte doch einmal etwas schiefgehen
-(daß der Rechner oder sogar Vim selbst abschmiert) eine Sicherungskopie der Änderungen haben, seit Ihrem
-
-letzen Abspeichern der Originaldatei. Diese Datei nennt sich "`Auslagerungs-Datei"', weil Vim den Inhalt des
-Zwischenspeichers im Arbeitsspeicher des Rechners kontinuierlich mit dem Inhalt der Datei auf der
-Festplatte austauscht. Sehen Sie hierzu auch :help swap-file für weitere Details.
-Sichere meine Datei
-Jetzt wo die Datei geladen wurde, lassen Sie uns eine geringfügige Änderung vornehmen. Drücken Sie die
-~-Taste [Das Tildezeichen kriegen Sie, indem Sie AltGr gedrückt halten und zweimal hintereinander die
-Tildetaste drücken!], um das Zeichen, auf dem der Cursor steht, von Großbuchstabe auf Kleinbuchstabe vice
-versa zu ändern. Sie werden bemerkt haben, daß Vim die Datei nun als verändert markiert hat (ein + Zeichen
-erscheint z.B. in der Titelleiste der grafischen Version des Vim). Jetzt können Sie die Datei mit einem
-anderen Editor öffnen, und überprüfen, daß noch nichts verändert wurde. Das heißt, Vim hat die Änderungen
-lediglich im Zwischenspeicher vorgenommen, aber noch nicht auf die Festplatte geschrieben.
-Wir können den Zwischenspeicher in die Originaldatei auf der Festplatte zurückschreiben, indem wir dies
-ausführen:
-
-Hinweis
-Um sich das Speichern einfacher zu machen, fügen Sie Ihrer vimrc folgendes hinzu:
 
-Jetzt drücken Sie einfach nur noch ctrl-s, um die Datei abzuspeichern.
-Arbeiten in meinem Verzeichnis
-Vim startet voreingestellt in Ihrem Heimatverzeichnis, und alle Operationen werden in diesem Verzeichnis
-durchgeführt.
-Um Dateien aus anderen Verzeichnissen zu öffnen, können Sie volle oder relative Pfadangaben benutzen, wie
-solche:
-
-oder Sie veranlassen Vim, in dieses Verzeichnis zu wechseln:
-
-:cd ist die Abkürzung für wechsle Verzeichnis ['c'hange 'd'irectory]
-
-Um herauszufinden in welchem aktuellen Verzeichnis Vim gerade nach Dateien sucht:
-
-:pwd ist die Abkürzung für zeige das aktuelle Verzeichnis [ 'p'rint 'w'orking' 'd'irectory]
-Herausschneiden, Kopieren und Einfügen
-Wie Sean Connery im Film 'Forrester gefunden'[1] sagt:
-Nicht denken - das kommt später. Schreibe Deinen ersten Entwurf mit dem Herzen.
-Verbesserungen machst Du mit dem Kopf. Der Anfang des Schreibens ist.. zu schreiben,
-nicht nachzudenken!
-Wenn wir redigieren, ordnen wir die Absätze oder Abschnitte immer wieder um, d.h. wir müssen in der Lage
-sein Text herauszuschneiden, zu kopieren und einzufügen. Für Vim gilt hier eine leicht unterschiedliche
-Terminologie:
-Klicki-Bunti
-
-die Welt des Vim
-
-Operation
-
-herausschneiden
-
-löschen
-
-d
-
-kopieren
-
-'etwas herausziehen'  'to yank'
-
-y
-
-einfügen
-
-einfügen  'to paste'
-
-p
-
-In der normalen Terminologie der grafischen Benutzeroberfläche, bedeutet Text 'herausschneiden', den Text
-zu entfernen und ihn ans *Klemmbrett zu schieben (* clipboard heißt wörtlich Klemmbrett, bezeichnet aber auch nur einen Bereich des
-Arbeitsspeichers.). Dieselbe Operation in Vim bedeutet, daß der Text aus dem Dateizwischenspeicher gelöscht, und
-in einem 'Register' (einen Teil des Computerarbeitsspeichers) gelagert wird. Und weil wir uns das Register,
-wo wir Text ablegen können, aussuchen können, nennt es sich Lösch-Operation.
-Ganz vergleichbar, bedeutet in der normalen Terminologie der grafischen Benutzeroberfläche, 'Kopieren'
-von Text, daß eine Kopie des Textes ans Klemmbrett platziert wird. Vim tut dasselbe, es zieht den Text
-heraus (to yank) und legt ihn in einem Register ab.
-Keinen Bedeutungsunterschied im Sprachgebrauch gibt es für den Begriff Einfügen.
-Wir haben gesehen, wie Sie Herausschneiden-/Kopieren-/und Einfüge-Operationen mit Vim erledigen. Aber
-wie legen Sie fest, auf welchen Text diese Befehle angewandt werden? Also - das haben wir ja bereits im
-vorhergehenden Abschnitt über Textobjekte behandelt.
-Kombinieren wir nun die Befehlsschreibweise mit der Textobjektschreibweise, bedeutet dies, daß wir eine
-schier endlose Zahl an Möglichkeiten haben, um Texte zu manipulieren. Schauen wir uns mal ein paar
-Beispiele an.
-Schreiben Sie diesen Text (genauso wie er hier steht) mit Vim:
-
-Setzen Sie den Cursor an die oberste, linkste Stelle, indem Sie 1G drücken und | was Sie zur ersten Zeile,
-bzw. zur ersten Reihe bringt.
-Nehmen wir mal den ersten Fall: Ein 'r' haben wir zuviel getippt, das müssen wir löschen. Drücken Sie 3w,
-
-um drei Worte vorwärts zu springen.
-Jetzt müssen wir einen Buchstaben an der aktuellen Position des Cursors löschen.
-Beachten Sie, daß es hier zwei Teile gibt:
-Operation
-
-Text Objekt/Bewegung
-
-Löschen
-
-Ein Buchstabe an aktueller Position
-
-d
-
-l
-
-Um einen Buchstaben zu löschen, drücken wir also lediglich dl ! Wie Sie sehen, benutzen wir hier l , obwohl
-dies ein Bewegungsbefehl ist.
-Jetzt fällt uns auf, daß das ganze Wort eigentlich überflüßig ist, da wir es doppelt haben. Überlegen Sie mal
-ganz scharf; was wäre wohl die schnellste Tastenkombination, um dies zu korrigieren?
-Denken Sie ruhig ein Weilchen darüber nach, um das selber rauszukriegen. Wenn nicht, lesen Sie bitte weiter.
-Operation
-
-Text Objekt/Bewegung
-
-Löschen
-
-Ein Buchstabe an aktueller Position
-
-d
-
-w
-
-Also: dw drücken, und  Voila!  schon haben Sie ein Wort gelöscht. So einfach und wunderschön. Die Schönheit an solch
-einfachen Konzepten liegt aber gerade darin, daß sie miteinander kombiniert werden können, um einen derartigen Bereich an
-Möglichkeiten bereitzustellen.
-Wie erreichen wir nun dasselbe für Zeilen? Nun, Zeilen sind in Vim etwas ganz besonderes, weil Zeilen üblicherweise das sind,
-wie wir über unseren Text denken. Kurz gesagt, wenn Sie den Befehlsnamen zweimal verwenden, wird er auf die Zeile angewandt.
-Also dd löscht die aktuelle Zeile und yy zieht die aktuelle Zeile heraus (kopiert sie).
-Unser Beispiel in Vim sollte nun so aussehen:
-
-Gehen Sie, durch drücken von j auf die zweite Zeile, und drücken Sie dd , jetzt sollte sie gelöscht sein. Sie sollten jetzt das hier
-sehen:
-
-Betrachten wir mal einen größeren Fall: Wie ziehen wir den aktuellen Abschnitt heraus (kopieren)?
-
-Operation
-
-Text Objekt/Bewegung
-
-Kopieren
-
-aktueller Absatz
-
-y
-
-ap
-
-yap kopiert also den aktuellen Absatz. Jetzt wo wir den Text kopiert haben  wie fügen wir ihn wieder ein?
-Einfach mit 'p'!
-Sie sollten jetzt dies hier sehen:
-
-Beachten Sie, daß die Leerzeile auch kopiert wird, wenn wir yap ausführen, p fügt diese zusätzliche Leerzeile
-mit hinzu.
-Es gibt zwei Einfügemethoden, die genauso funktionieren, wie die beiden Einfügearten, die wir vorher schon
-gesehen haben:
-p (Kleinbuchstabe)
-
-Einfügen nach der aktuellen Schreibmarkenposition
-
-P (Großbuchstabe)
-
-Einfügen vor der aktuellen Schreibmarkenposition
-
-Wenn man diese Idee nun erweitert, dann ergeben sich daraus ganz starke Möglichkeiten.
-Zwei Buchstaben vertauschen? Drücken Sie xp.
-
-
-
-x  ein Buchstabe an der aktuellen Position löschen
-p  einfügen nach der aktuellen Position
-
-Wie vertauschen Sie zwei Wörter? Drücken Sie dwwP.
-
-
-
-
-
-d  löschen
-w  ein Wort
-w  zum nächsten Wort bewegen
-P  einfügen vor der aktuellen Position
-
-Das Wichtige hierbei ist, diese Befehle nicht auswendig zu lernen. Diese Befehlskombinationen und TextObjekt/Bewegungen sollten Ihnen in Fleisch und Blut übergehen, ohne daß Sie darüber nachdenken müssen.
-Und genau das passiert auch, wenn Sie sie sich durch Benutzung zur Gewohnheit machen.
-Markieren Sie Ihr Gebiet
-Sie schreiben gerade, und plötzlich bemerken Sie, daß Sie Sätze in einem vorhergehenden Abschnitt ändern
-müssen, um das zu unterstreichen, was Sie in diesem Abschnitt schreiben. Das Problem hierbei ist, daß Sie
-sich daran erinnern müssen, wo Sie jetzt gerade sind, damit Sie später an diese Stelle zurückkehren können.
-Kann Vim diese Arbeit nicht für mich übernehmen? Vim kann - mit der Verwendung von Markierungen.
-Eine Markierung können Sie erstellen, indem Sie m drücken, gefolgt vom Namen der Markierung, die ein
-
-einzelner Buchstabe ist, von a-z bzw. A-Z. Drücken Sie z.B. ma, wird eine Markierung namens 'a' erstellt.
-Das Drücken von 'a bringt den Cursor auf die Zeile der Markierung. Drücken Sie `a werden Sie exakt zur
-Zeile und Reihe der Markierung gebracht.
-Das beste daran ist, daß Sie jederzeit danach zu diesen Markierungen springen können.
-Sehen Sie sich hierzu auch :help mark-motions an.
-Eine Zeitmaschine mit 'rückgängig' / 'wiederholen' [ undo/redo]
-Nehmen wir mal an, Sie redigieren einen Absatz, aber es endet damit, daß Sie sich böse verzetteln, mit dem
-was Sie versucht haben umzuändern, und jetzt möchten Sie zu Ihrem früheren Ausgangspunkt zurückkehren.
-An diesem Punkt können wir nun das, was wir eben getan haben, rückgängig machen. Wenn wir aber wieder
-zurückkehren wollen, zu dem was wir jetzt haben, dann können wir die Änderungen, die wir gemacht haben,
-wiederholen. Beachten Sie, eine Änderung, bedeutet eine Änderung am Text. Bewegungen der Schreibmarke,
-und andere Dinge, die nicht in direktem Zusammenhang mit dem Text stehen, werden nicht berücksichtigt.
-Nehmen Sie mal diesen Text hier:
-Ich habe für mich einen Satz geprägt - 'Cut to the G':
-1. Konzentrieren  concentrate
-2. Verstehen  understand
-3. Nachdenken  think
-4. Dinge erledigen  get things done
-Schritt 4 gefällt Ihnen vielleicht am besten, aber die Schritte 2 und 3 sind genauso wichtig. Wie
-Abraham Lincoln einmal sagte: "`Wenn ich acht Stunden Zeit habe, um einen Baum zu fällen, dann
-würde ich sechs Stunden meine Axt schärfen."' Und um zu diesem Punkt zu kommen, müssen Sie
-Punkt 1 beherzigen, was dann auf eine Sache hinausläuft - Es ist die Welt der Gedanken. Deshalb ist
-es so schwierig.
-Editieren wir nun die erste Zeile:
-1. Drücken Sie S, um die ganze Zeile zu ersetzen (substitute).
-2. Geben Sie den Text Durch reifliche Überlegung, habe ich mir einen neuen Satz geprägt, um meine
-Herangehensweise zu festigen:.
-3. Drücken Sie \red{$<$ESC$>$}
-Jetzt denken Sie über die Änderung, die wir gerade gemacht haben nach. Ist der Satz besser? Hmm.. war der
-Text vorher besser? Wie schalten wir jetzt hin und her?
-Drücken Sie u, um die letzte Änderung rückgängig zu machen, und zu sehen, was wir vorher hatten. Sie
-werden jetzt den Text Ich habe für mich einen Satz geprägt - 'Cut to the G': sehen. Um zur letzten Änderung
-zurückzukommen, drücken Sie ctrl-r, um nun die Zeile Durch reifliche Überlegung, habe ich mir einen neuen
-Satz geprägt, um meine Herangehensweise zu festigen: zu sehen. Ganz wichtig hierbei ist, daß Vim
-unbegrenzt 'rückgängig' / 'wiederholen'-Änderungen zur Verfügung stellt, in der Praxis ist es aber durch die
-undolevels-Einstellungen in Vim, und der Menge an zur Verfügung stehendem Arbeitsspeicher Ihres
-Rechners begrenzt.
-
-Jetzt wollen wir uns mal ein paar Dinger reinziehen, die die fortschrittliche 'rückgängig' / 'wiederholen'-
-
-Funktion erst so richtig herausstellt. Eine Sache, auf die andere Editoren neidisch sein werden: Vim ist nicht
-nur Ihr Editor, sondern er arbeitet auch wie eine Zeitmaschine.
-Zum Beispiel,
-
-wirft Sie zeitlich 4 Minuten zurück, d.h. zum Status vor 4 Minuten.
-Die Stärke hierbei ist, daß es sämtlichen 'rückgängig' / 'wiederholen'-Aktionen überlegen ist. Wenn Sie z.B.
-eine Änderung machen, dann rückgängig machen, und dann weiter redigieren, dann ist diese Änderung mit
-dem einfachen u-Operator, nie wiederzuerlangen. Aber mit Vim ist es möglich den :earlier-Befehl zu
-benutzen.
-Sie können in der Zeit auch vorwärts gehen:
-
-was Sie zum Zustand 45 Sekunden später bringen wird.
-Eine einfachere Herangehensweise, 5 Änderungen zurückzugehen, ist natürlich:
-
-Hiermit können Sie sich die Baumstruktur ansehen:
-
-Sehen Sie sich :help :undolist an, um eine Erklärung des Ergebnisses dieses Befehls zu erhalten.
-Sehen Sie sich \verb :help \verb :undo-redo und \verb/:help usr_32.txt/ an, für weitere Einzelheiten.
-Eine starke Suchmaschine aber kein .com
-Vim beinhaltet eine starke Suchmaschine, die Sie nutzen können, um genau das zu finden wonach Sie
-suchen. Es dauert ein wenig, bis man sich an die ihr innewohnenden Stärken gewöhnt hat.
-Fangen wir also an.
-Kommen wir zu unserem vertrautem Beispiel zurück:
-[Hier nehme ich den Originaltext, sonst lässt sich nämlich die Übung kaum machen. d.Übersetzer]
-
-I have coined a phrase for myself  'CUT to the G':
-1. Concentrate
-2. Understand
-3. Think
-4. Get Things Done
-Step 4 is eventually what gets you most moving, but Steps 2 and 3 are equally
-important. As Abraham Lincoln once said If I had eight hours to chop down a
-tree, I'd spend six hours sharpening my axe. And to get to this stage, you need to
-do Step 1 which boils down to one thing  I'ts all in the mind. That's why it's so
-hard.
-
-Mal angenommen, wir wollen nach dem Wort Step suchen. Tippen Sie dazu im Normalmodus /Step<RET>
-( RETURN-Taste drücken). Das bringt Sie zum ersten Erscheinen dieser Buchstabenansammlung.
-Drücken Sie n, um zum nächsten Treffer zu gelangen und N für die entgegengesetzte Suchrichtung, d.h. den
-vorherigen Treffer.
-Was, wenn Sie nur einen Teil des Satzes kennen, oder die exakte Schreibweise nicht kennen? Wäre es nicht
-hilfreich, wenn Vim mit der Suche schon mal anfangen könnte, während Sie noch den Suchbegriff eintippen?
-Mit
-
-können Sie das einschalten.
-Sie können Vim auch beibringen, daß er die Groß-, Kleinschreibung Ihres Suchbegriffes ignoriert:
-
-Oder Sie nehmen:
-
-Smartcase eingeschaltet:
-
-
-
-
-Wenn Sie nach /step, also alles in Kleinbuchstaben eingegeben suchen, dann wird nach jeglicher
-Kombination in Klein- und Großbuchstaben gesucht. Das wird z.B. alle vier folgenden Treffer liefern
-- Step, Stephen, stepbrother, misstep.
-Wenn Sie nach /Step suchen, der eingegebene Begriff enthält also einen Großbuchstaben, dann wird
-NUR nach Text gesucht, das dem Muster exakt entspricht. Treffer wären, in diesem Beispiel also,
-Step und Stephen, aber nicht stepbrother oder misstep.
-
-Hinweis
-Ich rate Ihnen an, diese beiden Zeilen in Ihre vimrc-Datei (erkläre ich später, aber eine schnelle
-Einführung erhalten Sie mit :help vimrc-intro) zu übernehmen, damit dies von vornherein
-eingeschaltet ist.
-Jetzt, da wir 'Suchen', dem Prinzip nach verstanden haben, erforschen wir die wahren Suchfähigkeiten des
-Vim. Beachten Sie als erstes, was Sie Vim liefern, kann nicht nur ein einfacher Satz, sondern ein Ausdruck
-sein. Ein Ausdruck erlaubt Ihnen nämlich die Art von Text festzulegen, nach dem gesucht wird, und nicht
-bloß den genauen Text.
-Sie werden bemerkt haben, daß /step Ihnen steps genauso als Treffer anzeigt wie step und sogar footstep,
-wenn es ein solches Wort gibt. Was, wenn Sie nun nach dem exakten Wort step suchen möchten, ohne Teil
-eines anderen Wortes zu sein? Dann nehmen Sie das hier \verb /\<step\> .
-Das \verb \< und \verb \> weisen jeweils auf den
-Anfang und das Ende eines Wortes hin.
-Oder Sie wollen mal nach einer Nummer suchen. \verb /\d wird nach einer 'Ziffer' suchen. Aber eine Zahl ist nur
-eine Gruppe zusammengesetzter Ziffern. Damit können wir festlegen eine oder mehr Ziffern zusammen als
-\verb /\d\+ . Wenn wir nach der Null bzw. mehr Buchstaben suchen, nehmen wir den * anstelle des +.
-Es gibt eine ganze Bandbreite solch zauberhaften Zeugs, das wir uns für unsere Suchmuster zu eigen machen
-können. Schlagen Sie es nach :help pattern.
-Zusammenfassung
-
-Wir haben einige der grundlegenden Editierungsbefehle erforscht, die wir bei unserer täglichen Arbeit mit
-Vim nutzen werden. Ganz wichtig, daß Sie diese Konzepte nochmals durchgehen, und sie sich zur
-Gewohnheit machen. Es ist nicht wichtig, jeden einzelnen Befehl mit all seinen Optionen und Feinheiten
-auswendig zu kennen. Wenn Sie nur wissen wie Sie den Befehl verwenden, und wenn Sie wissen wo Sie zu
-suchen haben, für das was Sie gerade brauchen, dann sind Sie eine richtiger Vimmer.
-Jetzt legen Sie aber los  fangen Sie an zu editieren!
-
-\section{Vielfältigkeit}
-Wenn Sie ein langes Dokument bearbeiten, wäre es dann nicht einfacher Sie könnten alle Abschnitte
-schließen, und sich auf eines zu einer Zeit konzentrieren?
-Das nennen wir in Vim Zusammenfalten.
-Nehmen wir das Beispiel, wo Ihr Dokument derart strukturiert ist, daß jede Textebene ein Stück weiter
-eingerückt ist, so wie das folgende Stück Text:
-
-Hinweis
-Dieser Text stammt von WikiQuote[1]
-Nachdem Sie diesen Text eingetippt haben, geben Sie ein :set foldmethod=indent, platzieren Ihren Cursor auf
-den Text, den Sie einrücken möchten, drücken zc und sehen den Text nun einfalten. Mit zo, klappen Sie den
-Text wieder aus.
-Persönlich bevorzuge ich die Leertaste als Tastaturkürzel, um Einfaltungen zu öffen und zu schließen. Dies
-erreichen Sie, indem Sie folgendes in Ihre vimrc-Datei hinzufügen:
-Die grundlegenden Kommandos sind zo und zc, mit denen wir Einfaltungen öffnen bzw. schließen. Sie
-können za benutzen, um zwischen öffnen/schließen einer Einfaltung hin- und herzuwechseln ('a'lternate). Sie
-können es sich sogar noch einfacher machen, indem Sie die Leertaste im Normalmodus nutzen, um eine
-Faltung zu öffnen und zu schließen:
-
-Einfaltungen sind ein ganz großes Thema für sich, mit mehreren Möglichkeiten (händisch, Markierung,
-Ausdruck), und zahlreichen Möglichkeiten Hierachien von Einfaltungen zu öffnen und zu schließen, usw.
-Schauen Sie sich hierzu auch :help foldings an.
-Mehrere Zwischenspeicher
-Angenommen Sie wollen mehr als eine Datei zur selben Zeit, mit demselben Vim editieren. Wie machen Sie
-das?
-Rufen Sie sich in Erinnerung, daß Vim Dateien in Zwischenspeicher lädt. Vim kann auch mehrere Zwischenspeicher zur selben Zeit laden. Damit können Sie also mehrere Dateien zur gleichen Zeit geöffnet haben,
-zwischen denen Sie hin- und herschalten können.
-Sagen wir mal, Sie haben zwei Dateien, part1.txt und part2.txt:
-
-part1.txt
-
-part2.txt
-
-Führen Sie nun :e part1.txt aus, und dann :e part2.txt. Machen Sie sich bewußt, daß Sie nun die zweite Datei
-zum Editieren geöffnet haben. Wie schalten Sie nun rüber zur ersten Datei? In diesem besonderen Fall
-können Sie einfach dies ausführen :b 1, um die Zahl des Zwischenspeichers zu wechseln ('b'uffer Nummer
-'1'). Sie können auch :e part1.txt ausführen, um den existierenden Zwischenspeicher sichtbar zu machen.
-Sie sehen jetzt, welche Zwischenspeicher geladen wurden und, im Zusammenhang damit, welche Dateien
-gerade bearbeitet werden, indem Sie dies ausführen :buffers oder in einer kürzeren Form :ls ( list buffers).
-Zwischenspeicher werden automatisch entfernt, wenn Sie Vim schließen. Sie müssen also nichts besonderes
-mehr tun, außer sicher zu gehen, daß Sie Ihre Dateien abgespeichert haben. Wie auch immer: Wenn Sie einen
-Zwischenspeicher wirklich entfernen wollen, z.B. um Arbeitsspeicher freizugeben, dann können Sie :bd 1
-nehmen, (bd  buffer delete) für Zwischenspeicher Nummer 1, usw.
-Sehen Sie sich auch :help buffer-list an, für die zahlreichen Dinge, die Sie mit Zwischenspeicher tun können.
-Mehrere Fenster
-Wir haben gesehen, wie wir mehrere Dateien gleichzeitig bearbeiten, was aber, wenn wir zwei verschiedene
-Dateien gleichzeitig sehen wollen? Sie möchten z.B. zwei verschiedene Kapitel Ihres Buches geöffnet vor
-sich haben, damit Sie das zweite Kapitel so schreiben können, daß es mit den Worten und Beschreibungen
-des ersten Kapitels übereinstimmt. Oder Sie möchten etwas aus der ersten, in die zweite Datei Kopieren /
+Die eckigen Klammern in \red{:ab[breviate]} weisen darauf hin, daß der letzte
+Teil des vollen Names beliebig ist.  Sie müssen mindestens \red{:ab} eingeben,
+damit Vim den Befehl als solchen erkennen kann. Sie können aber auch \red{:abb}
+oder \red{:abbr} oder \red{:abbre} usw. verwenden, bis zum vollen Namen
+\red{:abbreviate}. Die meisten Leute neigen zur kürzest möglichen Form.
+
+Die eckigen Klammern in \red{[<expr>]} weisen, auch hier, darauf hin, daß
+'\red{expression}' wahlfrei ist.
+
+Die geschweiften Klammern in \red{\{lhs\} \{rhs\}} besagen, daß es sich hier um
+Platzhalter für aktuell einzufügende Argumente handelt. Die Namen sind
+Abkürzungen für 'linker Hand' bzw. 'rechter Hand' [left hand side / right hand
+side].
+
+Was auf die erste Zeile folgt, ist ein eingerückter Absatz, der kurz erklärt,
+was dieser Befehl tut.
+
+Beachten Sie, den zweiten Absatz, der Sie auf weitere Informationen hinweist.
+Sie können den \blue{Cursor} auf den Text zwischen den beiden Pipe-Symbolen [
+\red{|} ] setzen und dann \red{ctrl-]} drücken, um dem \blue{Link} des
+zugeordneten \red{:help topic} [Hilfethemas] zu folgen. Zurück gelangen Sie mit
+\red{ctrl-o}.
+%(ctrl-o, wie im Originaltext ist offensichtlich falsch!).
+
+\subsection{Das :hilfeallgemeinerregulärerausdruckanzeige-Kommando}
+{\scriptsize Ok - das war jetzt kein Übersetzungsgeniestreich. Tatsächlich steht
+'grep' aber für \red{g}eneral \red{r}egular \red{e}xpression \red{p}rint (also
+'Anzeige' /Ausgabe eines allgemeinen, regulären Ausdrucks). \red{:helpgrep} ist
+demzufolge eine Befehlskombination von help \& grep.}
+
+Wenn Sie den Namen des Themas nicht kennen, dann können Sie das ganze Dokument
+nach einem Satz durchsuchen, mit Hilfe von \red{:helpgrep}. Angenommen Sie
+möchten wissen, wie Sie nach dem Beginn eines Wortes zu suchen haben, tippen
+Sie einfach \red{:helpgrep beginning of a word}. Sie können \red{:cnext} und
+\red{:cprev} nutzen, um zum nächsten/vorhergehenden Teil der Dokumentation zu
+springen, wo dieser Satz auftaucht. Um eine komplette Liste zu sehen, wo der
+Satz jeweils auftaucht, nehmen Sie \red{:clist}.
+
+\subsection{Schnelle Hilfe}
+Erstellen Sie eine Datei (z.B. mit dem Namen quickhelp) mit Vim, und geben Sie
+den folgenden Text ein.\\
+\includegraphics[scale=0.6]{1-016}
+Verlassen Sie den Einfügemodus mit \red{$<$ESC$>$} und geben Sie die gleiche
+Zeile im Befehlsmodus nochmal ein.
+
+Setzen Sie nun den \blue{Cursor} irgendwo auf das Wort \red{keywordprg} und
+drücken Sie einfach \red{K}. Sofort gelangen Sie zur Hilfe für dieses Wort.
+Dieses Tastaturkürzel verhindert, daß Sie \red{:help keywordprg} tippen müssen.
+
+%naja
+\subsection{Internetforum und IRC (\textrightarrow Internet Relay Chat)}
+Sollten Sie immer noch nicht in der Lage sein, herauszufinden, was Sie tun
+wollen, dann wird das nächstbeste wohl sein, andere Vim-Benutzer zu
+kontaktieren um Ihnen auszuhelfen. Keine Bange, das ist ganz einfach, und die
+Hilfsbereitschaft anderer '\textit{Vimmer}' ist erstaunlich.
+
+Suchen Sie in einem ersten Schritt nach der Vim-Mailingliste, um
+herauszufinden, ob jemand Ihre Frage bereits beantwortet hat. Gehen Sie auf die
+Vim-Gruppen-Such-Seite
+\footnote{\url{http://tech.groups.yahoo.com/group/vim/msearch_adv}}
+, und geben Sie die Schlüsselwörter Ihrer Frage ein.
+Meistens werden viele allgemeine Fragen bereits beantwortet sein, da dies so
+eine hochfrequentierte Mailingliste ist, d.h. viele, viele Leute stellen in
+dieser Gruppe Fragen und geben Antworten.
+
+Wenn Sie keine passende Antwort finden, dann besuchen Sie das Vim IRC-Forum.
+Öffnen Sie eine IRCAnwendung wie z.B. XChat
+\footnote{\url{http://www.silverex.org/download/}}
+(gibt's für Windows, Linux, BSD)
+oder Colloguy \footnote{\url{http://colloquy.info/}}
+(für Mac OS X), verbinden Sie sich mit dem "`FreeNode"'-Netzwerk, betreten den
+\red{\#vim} Kanal, stellen manierlich Ihre Frage, und warten dann, bis jemand
+antwortet. Meistens wird jemand innerhalb von Minuten antworten.
+
+Wenn niemand Ihre Frage beantwortet, sind wahrscheinlich alle gerade
+beschäftigt. Dann stellen Sie Ihre Frage zu einem späteren Zeitpunkt nochmals
+oder formen die Frage so um, daß es anderen leicht fällt Ihnen zu helfen.
+Ansonsten hinterlassen Sie eine Nachricht in der oben erwähnten Mailingliste.
+
+\subsection{Zusammenfassung}
+Es gibt eine Fülle von Informationen, wie sich die Dinge bei der Benutzung des
+Vim erledigen lassen, und viele \textit{Vimmer} helfen Ihnen dabei auch gerne.
+Die Vim-Gemeinschaft ist eine der größten Stärken des VimEditors. Nutzen Sie
+also die bestehenden Hilfsquellen weidlich, und treten auch Sie dieser
+Gemeinschaft bei.
+\begin{quote}
+	Wahres Entzücken liegt eher im \textit{Herausfinden} als im
+	\textit{Wissen}. --Isaac Asimov
+\end{quote}
+%Externe Links
+%Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Help&oldid=1229
+%Principal Authors: Swaroop
+\section{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
+\subsection{Einführung}
+Jetzt lernen wir mal die grundlegenden Editierungsbefehle in Vim für das Lesen
+und Schreiben von Dateien, Herausschneiden/Kopieren/Einfügen/Rückgängig
+machen/das *Rückgängig machen des Rückgängig machens und Suchen. {\scriptsize
+(*Wenn jemand einen besseren Vorschlag für "`undo/redo"' hat, kann er sich ja
+bei mir melden - Der Übersetzer)}
+\subsection{Lesen und Schreiben von Dateien}
+\subsubsection{Zwischenspeicher}
+Wenn Sie eine Datei bearbeiten, bringt Vim den Textinhalt der Datei von der
+Festplatte in den Arbeitsspeicher des Computers. Dies bedeutet das eine Kopie
+der Datei im Speicher des Rechners angelegt wird, und jegliche Änderungen die
+Sie vornehmen, auch im Arbeitsspeicher des Computers vollzogen, und Ihnen
+unmittelbar angezeigt werden. Nachdem Sie die Datei bearbeitet haben, können
+Sie sie abspeichern, was bedeutet, dass Vim den im Arbeitsspeicher befindlichen
+Text in die Datei auf der Festplatte zurückschreibt. Der Arbeitsspeicher des
+Rechners, der hier temporär genutzt wird, wird als Zwischenspeicher bezeichnet
+["`buffer"']. Es ist dieses nämliche Konzept, das uns zwingt Dateien sämtlicher
+Editoren oder Textverarbeitungssysteme mit denen wir arbeiten zu "`Speichern"'.
+
+Öffnen Sie Vim, schreiben Sie die Worte \red{Hallo Welt} und speichern Sie es
+als \red{hallo.txt} ab. Eine kleine Erinnerungshilfe, wie man dies tut, gibt's
+im Kapitel 'Erste Schritte'.
+
+\subsubsection{Auslagern}
+Nun werden Sie bemerkt haben, daß im selben Verzeichnis eine weitere Datei
+erstellt wurde, die sowas wie \red{.hallo.txt.swp} heißt. Führen Sie den
+folgenden Befehl aus, um den exakten Namen der Datei herauszufinden:\\
+\includegraphics[scale=0.6]{1-017}
+Was ist das denn für eine Datei? Vim behält eine Sicherungskopie des
+Zwischenspeichers in einer Datei, die es in regelmäßigen Abständen auf die
+Festplatte schreibt, damit Sie, sollte doch einmal etwas schiefgehen (daß der
+Rechner oder sogar Vim selbst abschmiert) eine Sicherungskopie der Änderungen
+haben, seit Ihrem letzen Abspeichern der Originaldatei. Diese Datei nennt sich
+"`Auslagerungs-Datei"', weil Vim den Inhalt des Zwischenspeichers im
+Arbeitsspeicher des Rechners kontinuierlich mit dem Inhalt der Datei auf der
+Festplatte austauscht. Sehen Sie hierzu auch \red{:help swap-file} für weitere
+Details.
+
+%33 37
+\subsubsection{Sichere meine Datei}
+Jetzt wo die Datei geladen wurde, lassen Sie uns eine geringfügige Änderung
+vornehmen. Drücken Sie die \red{~}-Taste [Das Tildezeichen kriegen Sie, indem
+Sie \red{AltGr} gedrückt halten und zweimal hintereinander die Tildetaste
+drücken!], um das Zeichen, auf dem der \blue{Cursor} steht, von Großbuchstabe
+auf Kleinbuchstabe vice versa zu ändern. Sie werden bemerkt haben, daß Vim die
+Datei nun als \textit{verändert} markiert hat (ein \red{+} Zeichen erscheint
+z.B. in der Titelleiste der grafischen Version des Vim). Jetzt können Sie die
+Datei mit einem anderen Editor öffnen, und überprüfen, daß noch nichts
+verändert wurde. Das heißt, Vim hat die Änderungen lediglich im
+Zwischenspeicher vorgenommen, aber noch nicht auf die Festplatte geschrieben.
+
+Wir können den Zwischenspeicher in die Originaldatei auf der Festplatte
+zurückschreiben, indem wir dies ausführen:\\
+\includegraphics[scale=0.6]{1-018}
+\subsubsection{Hinweis}
+Um sich das Speichern einfacher zu machen, fügen Sie Ihrer \red{vimrc}
+folgendes hinzu:\\
+\includegraphics[scale=0.6]{1-019}
+Jetzt drücken Sie einfach nur noch \red{ctrl-s}, um die Datei abzuspeichern.
+
+\subsubsection{Arbeiten in meinem Verzeichnis}
+Vim startet voreingestellt in Ihrem Heimatverzeichnis, und alle Operationen
+werden in diesem Verzeichnis durchgeführt.
+
+Um Dateien aus anderen Verzeichnissen zu öffnen, können Sie volle oder relative
+Pfadangaben benutzen, wie solche:\\
+\includegraphics[scale=0.6]{1-021}
+Oder Sie veranlassen Vim, in dieses Verzeichnis zu wechseln:\\
+\includegraphics[scale=0.6]{1-022}
+\red{:cd} ist die Abkürzung für \textit{wechsle} Verzeichnis ['\red{c}'hange
+'\red{d}'irectory]
+
+Um herauszufinden in welchem aktuellen Verzeichnis Vim gerade nach Dateien
+sucht:\\
+\includegraphics[scale=0.6]{1-023}
+\red{:pwd} ist die Abkürzung für \textit{zeige das aktuelle Verzeichnis}
+[\textrightarrow '\red{p}'rint '\red{w}'orking' '\red{d}'irectory]
+\subsubsection{Herausschneiden, Kopieren und Einfügen}
+Wie Sean Connery im Film \textit{'Forrester gefunden'}
+\footnote{\url{http://www.imdb.com/title/tt0181536/}}
+sagt:
+\begin{quote}
+\textit{Nicht denken - das kommt später. Schreibe Deinen ersten Entwurf mit
+dem Herzen.  Verbesserungen machst Du mit dem Kopf. Der Anfang des Schreibens
+ist.. zu schreiben, nicht nachzudenken!
+}
+\end{quote}
+Wenn wir redigieren, ordnen wir die Absätze oder Abschnitte immer wieder um,
+d.h. wir müssen in der Lage sein Text herauszuschneiden, zu kopieren und
+einzufügen. Für Vim gilt hier eine leicht unterschiedliche Terminologie:
+
+\begin{tabular}{lll}
+\\
+\textbf{Klicki-Bunti} & \textbf{die Welt des Vim} & \textbf{Operation}\\
+herausschneiden & löschen & d \\
+kopieren & 'etwas herausziehen'  'to yank' & y \\
+einfügen & einfügen  'to paste' & p\\
+\\
+\end{tabular}
+
+In der normalen Terminologie der grafischen Benutzeroberfläche, bedeutet Text
+\textit{'herausschneiden'}, den Text zu entfernen und ihn ans *Klemmbrett zu
+schieben {\scriptsize(* clipboard heißt wörtlich Klemmbrett, bezeichnet aber
+auch nur einen Bereich des Arbeitsspeichers.)}. Dieselbe Operation in Vim
+bedeutet, daß der Text aus dem Dateizwischenspeicher gelöscht, und in einem
+'Register' (einen Teil des Computerarbeitsspeichers) gelagert wird. Und weil
+wir uns das Register, wo wir Text ablegen können, aussuchen können, nennt es
+sich Lösch-Operation.
+
+Ganz vergleichbar, bedeutet in der normalen Terminologie der grafischen
+Benutzeroberfläche, 'Kopieren' von Text, daß eine Kopie des Textes ans
+Klemmbrett platziert wird. Vim tut dasselbe, es zieht den Text heraus
+(\textit{to yank}) und legt ihn in einem Register ab.
+
+Keinen Bedeutungsunterschied im Sprachgebrauch gibt es für den Begriff
 Einfügen.
-Im letzten Abschnitt, haben wir dieselbe Ansicht benutzt, um mehrere Zwischenspeicher zu bearbeiten.
-Vim nennt diese Ansichten Fenster. Der Begriff Fenster sollte hier *nicht* mit dem Fenster Ihrer
-Desktop-Anwendung verwechselt werden, womit man in der Regel das ganze Programm meint. Bei 'Fenster'
-denken Sie bitte einfach an 'Ansichten' auf verschiedene Dateien.
-Nehmen wir also nochmal dieselben Textbeispiele aus dem vorherigen Abschnitt part1.txt und part2.txt.
-Laden Sie zuerst part1.txt mit :e part1.txt.
 
-Jetzt lassen Sie uns einen neuen Zwischenspeicher öffnen, indem wir das Fenster teilen um ein neues Fenster
-zu erstellen  führen Sie :new aus.
-Jetzt sollten Sie in der Lage sein, im neuen Zwischenspeicher, im neuen Fenster, jegliches normales Editieren
-zu bewerkstelligen, abgesehen davon, daß Sie den Text nicht abspeichern können, weil mit dem Zwischenspeicher noch kein Name verknüpft ist. Um den Zwischenspeicher abzuspeichern, nehmen Sie :w test.txt.
-Wie wechseln Sie zwischen diesen
-beiden Fenstern hin und her?
-Benutzen Sie einfach
-ctrl-w <Bewegungstaste>, um
-zwischen den Fenstern umzuschalten.
-Bewegungstaste meint hier h, j, k, l
-oder sogar die Pfeiltasten
-(lediglich  macht in diesem
-Beispiel Sinn). Merken Sie sich,
-ctrl-w-Operationen nehmen Bezug
-auf 'Fenster' ( 'w'indows).
-Als ein schneller Tastaturschlüssel
-können Sie ctrl-w auch zweimal
-drücken (also ctrl-w ctrl-w), um
-durch alle geöffneten Fenster zu
-zirkulieren.
-Ein Sonderfall, bei dem mehrere
-Fenster nützlich sind, liegt vor,
-wenn Sie sich zwei verschiedene
-Teile der selben Datei gleichzeitig
-ansehen wollen. Führen Sie einfach :sp aus, um ein geteiltes ( 'sp'lit) Fenster zu erstellen, und dann können
-Sie jedes Fenster an eine andere Position rollen, und weiterarbeiten. Weil beide Fenster im gleichen
-Zwischenspeicher liegen, werden Änderungen des einen Fensters unmittelbar im anderen Fenster abgebildet.
-Alternativ zu :sp können Sie auch ctrl-w s benutzen.
-Eine vertikale Aufteilung bekommen Sie mit :vsp oder ctrl-w v. Um ein Fenster zu schließen, führen Sie, wie
-gewohnt, :q aus.
-Nachdem wir nun gesehen haben, wie man mehrere Fenster öffnet und benutzt, wollen wir mit der Ansicht
-noch ein bisschen weiter herumspielen.
+Wir haben gesehen, wie Sie Herausschneiden-/Kopieren-/und Einfüge-Operationen
+mit Vim erledigen. Aber wie legen Sie fest, auf welchen Text diese Befehle
+angewandt werden? Also - das haben wir ja bereits im vorhergehenden Abschnitt
+über Textobjekte behandelt.
 
+Kombinieren wir nun die Befehlsschreibweise mit der Textobjektschreibweise,
+bedeutet dies, daß wir eine schier endlose Zahl an Möglichkeiten haben, um
+Texte zu manipulieren. Schauen wir uns mal ein paar Beispiele an.
 
+Schreiben Sie diesen Text (genauso wie er hier steht) mit Vim:\\
+\includegraphics[scale=0.6]{1-024}
 
+Setzen Sie den \blue{Cursor} an die oberste, linkste Stelle, indem Sie \red{1G}
+drücken und \red{|} was Sie zur ersten Zeile, bzw. zur ersten Reihe bringt.
 
+Nehmen wir mal den ersten Fall: Ein 'r' haben wir zuviel getippt, das müssen
+wir löschen. Drücken Sie \red{3w}, um drei Worte vorwärts zu springen.
 
+Jetzt müssen wir einen Buchstaben an der aktuellen Position des \blue{Cursors}
+löschen.
 
+Beachten Sie, daß es hier zwei Teile gibt:
 
+\begin{tabular}{ll}
+\\
+Operation & Text Objekt/Bewegung\\
+Löschen & Ein Buchstabe an aktueller Position\\
+\red{d} & \red{l}\\
+\\
+\end{tabular}
 
-Nehmen wir mal an, Sie haben zwei geteilte Fenster, die Sie aber verkehren möchten, so daß Sie Ihre
-Augen auf den oberen bzw. unteren Teil Ihres Bildschirms lenken können, gemäß Ihrer
-Voreinstellung. Drücken Sie ctrl-w r, um die Fenster zu vertauschen ( 'r'otate).
-Wollen Sie das aktuelle Fenster zur höchstmöglichen Stelle bringen? Drücken Sie ctrl-w K.
-Wollen Sie die Größe eines Fensters verändern, um es größer oder kleiner zu machen? Führen Sie
-:resize 10 aus, um die Ansicht auf 10 Zeilen zu bringen, usw.
-Wollen Sie das aktuelle Fenster auf Maximalgröße bringen, damit Sie sich besser konzentrieren
-können? Drücken Sie \verb|ctrl-w _|. Beim Unterstrich denken Sie einfach daran, daß die anderen Fenster so
-klein wie möglich werden sollen.
-Wollen Sie die Fenster wieder auf 'gleiche' Höhe bringen? Drücken Sie \verb/ctrl-w =/.
+Um einen Buchstaben zu löschen, drücken wir also lediglich \red{dl} ! Wie Sie
+sehen, benutzen wir hier \red{l} , obwohl dies ein Bewegungsbefehl ist.
 
-Sehen Sie sich hierzu :help windows an, um nähere Einzelheiten zu erfahren, was Sie mit Fenstern alles tun
+Jetzt fällt uns auf, daß das ganze Wort eigentlich überflüßig ist, da wir es
+doppelt haben. Überlegen Sie mal ganz scharf; was wäre wohl die schnellste
+Tastenkombination, um dies zu korrigieren?
+
+Denken Sie ruhig ein Weilchen darüber nach, um das selber rauszukriegen. Wenn
+nicht, lesen Sie bitte weiter.
+
+\begin{tabular}{ll}
+\\
+Operation & Text Objekt/Bewegung\\
+Löschen & Ein Buchstabe an aktueller Position\\
+d & w\\
+\\
+\end{tabular}
+
+Also: \red{dw} drücken, und -- Voila! --  schon haben Sie ein Wort gelöscht. So
+einfach und wunderschön. Die Schönheit an solch einfachen Konzepten liegt aber
+gerade darin, daß sie miteinander kombiniert werden können, um einen derartigen
+Bereich an Möglichkeiten bereitzustellen.
+
+Wie erreichen wir nun dasselbe für Zeilen? Nun, Zeilen sind in Vim etwas ganz
+besonderes, weil Zeilen üblicherweise das sind, wie wir über unseren Text
+denken. Kurz gesagt, wenn Sie den Befehlsnamen zweimal verwenden, wird er auf
+die Zeile angewandt.  Also \red{dd} löscht die aktuelle Zeile und \red{yy}
+zieht die aktuelle Zeile heraus (\textit{kopiert sie}).
+
+Unser Beispiel in Vim sollte nun so aussehen:\\
+\includegraphics[scale=0.6]{1-025}
+
+Gehen Sie, durch drücken von \red{j} auf die zweite Zeile, und drücken Sie
+\red{dd} , jetzt sollte sie gelöscht sein. Sie sollten jetzt das hier sehen:\\
+\includegraphics[scale=0.6]{1-026}
+
+Betrachten wir mal einen größeren Fall: Wie ziehen wir den aktuellen Abschnitt
+heraus (\red{kopieren})?
+
+\begin{tabular}{ll}
+\\
+Operation & Text Objekt/Bewegung\\
+Kopieren & aktueller Absatz\\
+y & ap\\
+\\
+\end{tabular}
+
+\red{yap} kopiert also den aktuellen Absatz. Jetzt wo wir den Text kopiert
+haben -- wie fügen wir ihn wieder ein?  Einfach mit '\red{p}'!
+
+Sie sollten jetzt dies hier sehen:\\
+\includegraphics[scale=0.6]{1-027}
+
+Beachten Sie, daß die Leerzeile auch kopiert wird, wenn wir \red{yap}
+ausführen, \red{p} fügt diese zusätzliche Leerzeile mit hinzu.
+
+Es gibt zwei Einfügemethoden, die genauso funktionieren, wie die beiden
+Einfügearten, die wir vorher schon gesehen haben:
+
+\begin{tabular}{ll}
+\\
+p (Kleinbuchstabe) & Einfügen nach der aktuellen Schreibmarkenposition\\
+P (Großbuchstabe) & Einfügen vor der aktuellen Schreibmarkenposition\\
+\\
+\end{tabular}
+
+Wenn man diese Idee nun erweitert, dann ergeben sich daraus ganz starke
+Möglichkeiten.
+
+Zwei Buchstaben vertauschen? Drücken Sie \red{xp}.
+\begin{itemize}
+	\item x\textrightarrow  ein Buchstabe an der aktuellen Position löschen
+	\item p\textrightarrow  einfügen nach der aktuellen Position
+\end{itemize}
+Wie vertauschen Sie zwei Wörter? Drücken Sie \red{dwwP}.
+\begin{itemize}
+	\item d\textrightarrow  löschen
+	\item w\textrightarrow  ein Wort
+	\item w\textrightarrow  zum nächsten Wort bewegen
+	\item P\textrightarrow  einfügen vor der aktuellen Position
+\end{itemize}
+Das Wichtige hierbei ist, diese Befehle \textit{nicht} auswendig zu lernen.
+Diese Befehlskombinationen und TextObjekt/Bewegungen sollten Ihnen in Fleisch
+und Blut übergehen, ohne daß Sie darüber nachdenken müssen.  Und genau das
+passiert auch, wenn Sie sie sich durch Benutzung zur Gewohnheit machen.
+
+\subsection{Markieren Sie Ihr Gebiet}
+Sie schreiben gerade, und plötzlich bemerken Sie, daß Sie Sätze in einem
+vorhergehenden Abschnitt ändern müssen, um das zu unterstreichen, was Sie in
+diesem Abschnitt schreiben. Das Problem hierbei ist, daß Sie sich daran
+erinnern müssen, wo Sie jetzt gerade sind, damit Sie später an diese Stelle
+zurückkehren können.  Kann Vim diese Arbeit nicht für mich übernehmen? Vim kann
+- mit der Verwendung von Markierungen.
+
+Eine Markierung können Sie erstellen, indem Sie \red{m} drücken, gefolgt vom
+Namen der Markierung, die ein einzelner Buchstabe ist, von \red{a-z} bzw.
+\red{A-Z}. Drücken Sie z.B. \red{ma}, wird eine Markierung namens '\red{a}'
+erstellt.
+
+Das Drücken von \red{'a} bringt den \blue{Cursor} auf die Zeile der Markierung.
+Drücken Sie `a werden Sie exakt zur Zeile und Reihe der Markierung gebracht.
+
+Das beste daran ist, daß Sie jederzeit danach zu diesen Markierungen springen
 können.
 
-Mehrere Tabs ( Reiter)
-Wenn Sie Firefox benutzen, haben Sie vielleicht schon einmal die Möglichkeit der Tabs genutzt, die es Ihnen,
-in einem einzigen Fenster erlauben, mehrere Webseiten aufzurufen, womit Sie zwischen diesen Webseiten
-hin- und herschalten können, ohne sich darüber den Kopf zu zerbrechen, zwischen mehreren Fenstern
-umzuschalten. Tja also, mit Vim funktionieren diese Tabs ganz genauso, nur mit dem Unterschied, daß sie
-'Tab-Seiten' genannt werden.
-Führen Sie aus :tabnew um einen neuen
-Tab mit neuem Zwischenspeicher
-zu öffnen (entsprechend zu :new).
-Wie wechseln Sie zwischen den Tabs?
+Sehen Sie sich hierzu auch \red{:help mark-motions} an.
+
+\subsection{Eine Zeitmaschine mit 'rückgängig' / 'wiederholen' [\textrightarrow undo/redo]}
+Nehmen wir mal an, Sie redigieren einen Absatz, aber es endet damit, daß Sie
+sich böse verzetteln, mit dem was Sie versucht haben umzuändern, und jetzt
+möchten Sie zu Ihrem früheren Ausgangspunkt zurückkehren.  An diesem Punkt
+können wir nun das, was wir eben getan haben, \textit{rückgängig} machen. Wenn
+wir aber wieder zurückkehren wollen, zu dem was wir jetzt haben, dann können
+wir die Änderungen, die wir gemacht haben, \textit{wiederholen}. Beachten Sie,
+eine Änderung, bedeutet eine Änderung am Text. Bewegungen der Schreibmarke, und
+andere Dinge, die nicht in direktem Zusammenhang mit dem Text stehen, werden
+nicht berücksichtigt.
+
+Nehmen Sie mal diesen Text hier:
+\begin{quote}
+Ich habe für mich einen Satz geprägt - 'Cut to the G':
+
+1. Konzentrieren \textrightarrow concentrate
+
+2. Verstehen \textrightarrow understand
+
+3. Nachdenken \textrightarrow think
+
+4. Dinge erledigen \textrightarrow get things done
+
+Schritt 4 gefällt Ihnen vielleicht am besten, aber die Schritte 2 und 3 sind
+genauso wichtig. Wie Abraham Lincoln einmal sagte: "`Wenn ich acht Stunden Zeit
+habe, um einen Baum zu fällen, dann würde ich sechs Stunden meine Axt
+schärfen."' Und um zu diesem Punkt zu kommen, müssen Sie Punkt 1 beherzigen,
+was dann auf eine Sache hinausläuft - \textit{Es ist die Welt der Gedanken}.
+Deshalb ist es so schwierig.
+\end{quote}
+Editieren wir nun die erste Zeile:
+\begin{enumerate}
+	\item Drücken Sie \red{S}, um die ganze Zeile zu ersetzen
+		(\textit{substitute}).
+	\item Geben Sie den Text \red{Durch reifliche Überlegung, habe ich mir
+		einen neuen Satz geprägt, um meine Herangehensweise zu festigen:}.
+	\item Drücken Sie \red{$<$ESC$>$}
+\end{enumerate}
+Jetzt denken Sie über die Änderung, die wir gerade gemacht haben nach. Ist der
+Satz besser? Hmm.. war der Text vorher besser? Wie schalten wir jetzt hin und
+her?
+
+Drücken Sie \red{u}, um die letzte Änderung rückgängig zu machen, und zu sehen,
+was wir vorher hatten. Sie werden jetzt den Text \red{Ich habe für mich einen
+Satz geprägt - 'Cut to the G':} sehen. Um zur letzten Änderung zurückzukommen,
+drücken Sie \red{ctrl-r}, um nun die Zeile \red{Durch reifliche Überlegung,
+habe ich mir einen neuen Satz geprägt, um meine Herangehensweise zu festigen:}
+zu sehen. Ganz wichtig hierbei ist, daß Vim unbegrenzt 'rückgängig' /
+'wiederholen'-Änderungen zur Verfügung stellt, in der Praxis ist es aber durch
+die \red{undolevels}-Einstellungen in Vim, und der Menge an zur Verfügung
+stehendem Arbeitsspeicher Ihres Rechners begrenzt.
+
+Jetzt wollen wir uns mal ein paar Dinger reinziehen, die die fortschrittliche
+'rückgängig' / 'wiederholen'- Funktion erst so richtig herausstellt. Eine
+Sache, auf die andere Editoren neidisch sein werden: Vim ist nicht nur Ihr
+Editor, sondern er arbeitet auch wie eine Zeitmaschine.
+
+Zum Beispiel,\\
+\includegraphics[scale=0.6]{1-028}
+
+wirft Sie zeitlich 4 Minuten zurück, d.h. zum Status vor 4 Minuten.
+
+Die Stärke hierbei ist, daß es sämtlichen 'rückgängig' / 'wiederholen'-Aktionen
+überlegen ist. Wenn Sie z.B.  eine Änderung machen, dann rückgängig machen, und
+dann weiter redigieren, dann ist diese Änderung mit dem einfachen
+\red{u}-Operator, nie wiederzuerlangen. Aber mit Vim ist es möglich den
+\red{:earlier}-Befehl zu benutzen.
+
+Sie können in der Zeit auch vorwärts gehen:\\
+\includegraphics[scale=0.6]{1-029}
+
+was Sie zum Zustand 45 Sekunden später bringen wird.  Eine einfachere
+Herangehensweise, 5 Änderungen zurückzugehen, ist natürlich:\\
+\includegraphics[scale=0.6]{1-031}
+
+Hiermit können Sie sich die Baumstruktur ansehen:\\
+\includegraphics[scale=0.6]{1-030}
+
+Sehen Sie sich \red{:help :undolist} an, um eine Erklärung des Ergebnisses
+dieses Befehls zu erhalten.  Sehen Sie sich \red{:help :undo-redo} und
+\red{:help usr\_32.txt} an, für weitere Einzelheiten.
+
+\subsection{Eine starke Suchmaschine aber kein .com}
+Vim beinhaltet eine starke Suchmaschine, die Sie nutzen können, um genau das zu
+finden wonach Sie suchen. Es dauert ein wenig, bis man sich an die ihr
+innewohnenden Stärken gewöhnt hat.  Fangen wir also an.
+
+Kommen wir zu unserem vertrautem Beispiel zurück:
+
+{\scriptsize [Hier nehme ich den Originaltext, sonst lässt sich nämlich die
+Übung kaum machen. d.Übersetzer]}
+\begin{quote}
+I have coined a phrase for myself  'CUT to the G':
+
+1. Concentrate
+
+2. Understand
+
+3. Think
+
+4. Get Things Done
+
+Step 4 is eventually what gets you most moving, but Steps 2 and 3 are equally
+important. As Abraham Lincoln once said If I had eight hours to chop down a
+tree, I'd spend six hours sharpening my axe. And to get to this stage, you need
+to do Step 1 which boils down to one thing  I'ts all in the mind. That's why
+it's so hard.
+\end{quote}
+
+Mal angenommen, wir wollen nach dem Wort Step suchen. Tippen Sie dazu im
+Normalmodus \red{/Step$<$RET$>$} (\textrightarrow RETURN-Taste drücken). Das
+bringt Sie zum ersten Erscheinen dieser Buchstabenansammlung.  Drücken Sie
+\red{n}, um zum nächsten Treffer zu gelangen und \red{N} für die
+entgegengesetzte Suchrichtung, d.h. den vorherigen Treffer.
+
+Was, wenn Sie nur einen Teil des Satzes kennen, oder die exakte Schreibweise
+nicht kennen? Wäre es nicht hilfreich, wenn Vim mit der Suche schon mal
+anfangen könnte, während Sie noch den Suchbegriff eintippen?
+
+Mit\\
+\includegraphics[scale=0.6]{1-032}
+
+können Sie das einschalten.
+
+Sie können Vim auch beibringen, daß er die Groß-, Kleinschreibung Ihres
+Suchbegriffes ignoriert:\\
+\includegraphics[scale=0.6]{1-033}
+
+Oder Sie nehmen:\\
+\includegraphics[scale=0.6]{1-034}
+
+Smartcase eingeschaltet:
+\begin{itemize}
+	\item Wenn Sie nach \red{/step}, also alles in Kleinbuchstaben eingegeben
+		suchen, dann wird nach jeglicher Kombination in Klein- und
+		Großbuchstaben gesucht. Das wird z.B. alle vier folgenden Treffer
+		liefern - "`Step"', "`Stephen"', "`stepbrother"', "`misstep"'.
+	\item Wenn Sie nach \red{/Step} suchen, der eingegebene Begriff enthält
+		also einen Großbuchstaben, dann wird NUR nach Text gesucht, das dem
+		Muster exakt entspricht. Treffer wären, in diesem Beispiel also,
+		"`Step"' und "`Stephen"', aber \textit{nicht} "`stepbrother"' oder
+		"`misstep"'.
+\end{itemize}
+
+\begin{description}
+	\item [Hinweis]Ich rate Ihnen an, diese beiden Zeilen in Ihre vimrc-Datei
+		(erkläre ich später, aber eine schnelle Einführung erhalten Sie mit
+		\red{:help vimrc-intro}) zu übernehmen, damit dies von vornherein
+		eingeschaltet ist.
+\end{description}
+
+Jetzt, da wir '\textit{Suchen}', dem Prinzip nach verstanden haben, erforschen
+wir die wahren Suchfähigkeiten des Vim. Beachten Sie als erstes, was Sie Vim
+liefern, kann nicht nur ein einfacher Satz, sondern ein "`Ausdruck"' sein. Ein
+Ausdruck erlaubt Ihnen nämlich die \textit{Art} von Text festzulegen, nach dem
+gesucht wird, und nicht bloß den genauen Text.
+
+Sie werden bemerkt haben, daß \red{/step} Ihnen \red{steps} genauso als Treffer
+anzeigt wie \red{step} und sogar \red{footstep}, wenn es ein solches Wort gibt.
+Was, wenn Sie nun nach dem exakten Wort \red{step} suchen möchten, ohne Teil
+eines anderen Wortes zu sein? Dann nehmen Sie das hier
+\red{/$\backslash<$step$\backslash>$}.  Das \red{$\backslash<$} und
+\red{$\backslash>$} weisen jeweils auf den Anfang und das Ende eines "`Wortes"'
+hin.
+
+Oder Sie wollen mal nach einer Nummer suchen. {\color{red}\verb /\d } wird nach
+einer 'Ziffer' suchen. Aber eine Zahl ist nur eine Gruppe zusammengesetzter
+Ziffern. Damit können wir festlegen eine oder mehr Ziffern zusammen als
+{\color{red} \verb /\d\+ }. Wenn wir nach der Null bzw. mehr Buchstaben suchen,
+nehmen wir den \red{*} anstelle des \red{+}.
+
+Es gibt eine ganze Bandbreite solch zauberhaften Zeugs, das wir uns für unsere
+Suchmuster zu eigen machen können. Schlagen Sie es nach \red{:help pattern}.
+
+\subsection{Zusammenfassung}
+
+Wir haben einige der grundlegenden Editierungsbefehle erforscht, die wir bei
+unserer täglichen Arbeit mit Vim nutzen werden. \textit{Ganz wichtig, daß Sie
+diese Konzepte nochmals durchgehen, und sie sich zur Gewohnheit machen}. Es ist
+nicht wichtig, jeden einzelnen Befehl mit all seinen Optionen und Feinheiten
+auswendig zu kennen. Wenn Sie nur wissen wie Sie den Befehl verwenden, und wenn
+Sie wissen wo Sie zu suchen haben, für das was Sie gerade brauchen, dann sind
+Sie eine richtiger \textit{Vimmer.} Jetzt legen Sie aber los -- fangen Sie an
+zu editieren!
+%External links
+%Source:
+%http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Editing_Basics&oldid=1235
+%Principal Authors:Swaroop
+\section{Vielfältigkeit}
+Wenn Sie ein langes Dokument bearbeiten, wäre es dann nicht einfacher Sie
+könnten alle Abschnitte schließen, und sich auf eines zu einer Zeit
+konzentrieren?
+
+Das nennen wir in Vim Zusammenfalten.
+
+Nehmen wir das Beispiel, wo Ihr Dokument derart strukturiert ist, daß jede
+Textebene ein Stück weiter eingerückt ist, so wie das folgende Stück Text:\\
+\includegraphics[scale=0.6]{1-036}\\
+\includegraphics[scale=0.6]{1-037}
+
+\begin{description}
+	\item [Hinweis] Dieser Text stammt von WikiQuote
+		\footnote{\url{http://en.wikiquote.org/wiki/The_Fellowship_of_the_Ring}}
+\end{description}
+Nachdem Sie diesen Text eingetippt haben, geben Sie ein \red{:set
+foldmethod=indent}, platzieren Ihren \blue{Cursor} auf den Text, den Sie
+einrücken möchten, drücken \red{zc} und sehen den Text nun einfalten. Mit
+\red{zo}, klappen Sie den Text wieder aus.
+
+Persönlich bevorzuge ich die Leertaste als Tastaturkürzel, um Einfaltungen zu
+öffen und zu schließen. Dies erreichen Sie, indem Sie folgendes in Ihre
+vimrc-Datei hinzufügen:
+
+Die grundlegenden Kommandos sind \red{zo} und \red{zc}, mit denen wir
+Einfaltungen öffnen bzw. schließen. Sie können za benutzen, um zwischen
+öffnen/schließen einer Einfaltung hin- und herzuwechseln ('\red{a}'lternate).
+Sie können es sich sogar noch einfacher machen, indem Sie die Leertaste im
+Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen:\\
+\includegraphics[scale=0.6]{1-038}
+
+Einfaltungen sind ein ganz großes Thema für sich, mit mehreren Möglichkeiten
+(händisch, Markierung, Ausdruck), und zahlreichen Möglichkeiten Hierachien von
+Einfaltungen zu öffnen und zu schließen, usw.  Schauen Sie sich hierzu auch
+\red{:help foldings} an.
+
+\subsection{Mehrere Zwischenspeicher}
+Angenommen Sie wollen mehr als eine Datei zur selben Zeit, mit demselben Vim
+editieren. Wie machen Sie das?
+
+Rufen Sie sich in Erinnerung, daß Vim Dateien in Zwischenspeicher lädt. Vim
+kann auch mehrere Zwischenspeicher zur selben Zeit laden. Damit können Sie also
+mehrere Dateien zur gleichen Zeit geöffnet haben, zwischen denen Sie hin- und
+herschalten können.
+
+Sagen wir mal, Sie haben zwei Dateien, \red{part1.txt} und \red{part2.txt}:
+
+% nix schoen
+\red{part1.txt}\\
+\includegraphics[scale=0.6]{1-039}
+
+\red{part2.txt}\\
+\includegraphics[scale=0.6]{1-040}
+
+Führen Sie nun \red{:e part1.txt} aus, und dann \red{:e part2.txt}. Machen Sie
+sich bewußt, daß Sie nun die zweite Datei zum Editieren geöffnet haben. Wie
+schalten Sie nun rüber zur ersten Datei? In diesem besonderen Fall können Sie
+einfach dies ausführen \red{:b 1}, um die Zahl des Zwischenspeichers zu
+wechseln ('\red{b}'uffer Nummer '\red{1}'). Sie können auch \red{:e part1.txt}
+ausführen, um den existierenden Zwischenspeicher sichtbar zu machen.  Sie sehen
+jetzt, welche Zwischenspeicher geladen wurden und, im Zusammenhang damit,
+welche Dateien gerade bearbeitet werden, indem Sie dies ausführen
+\red{:buffers} oder in einer kürzeren Form \red{:ls} (\textrightarrow
+\textit{list} buffers).  Zwischenspeicher werden automatisch entfernt, wenn Sie
+Vim schließen. Sie müssen also nichts besonderes mehr tun, außer sicher zu
+gehen, daß Sie Ihre Dateien abgespeichert haben. Wie auch immer: Wenn Sie einen
+Zwischenspeicher wirklich entfernen wollen, z.B. um Arbeitsspeicher
+freizugeben, dann können Sie \red{:bd 1} nehmen, (\textit{bd \textrightarrow
+buffer delete}) für Zwischenspeicher Nummer 1, usw.
+
+Sehen Sie sich auch \red{:help buffer-list} an, für die zahlreichen Dinge, die
+Sie mit Zwischenspeicher tun können.
+
+\subsection{Mehrere Fenster}
+Wir haben gesehen, wie wir mehrere Dateien gleichzeitig bearbeiten, was aber,
+wenn wir zwei verschiedene Dateien gleichzeitig sehen wollen? Sie möchten z.B.
+zwei verschiedene Kapitel Ihres Buches geöffnet vor sich haben, damit Sie das
+zweite Kapitel so schreiben können, daß es mit den Worten und Beschreibungen
+des ersten Kapitels übereinstimmt. Oder Sie möchten etwas aus der ersten, in
+die zweite Datei Kopieren / Einfügen.
+
+Im letzten Abschnitt, haben wir dieselbe Ansicht benutzt, um mehrere
+Zwischenspeicher zu bearbeiten.  Vim nennt diese Ansichten Fenster. Der Begriff
+Fenster sollte hier *nicht* mit dem Fenster Ihrer Desktop-Anwendung verwechselt
+werden, womit man in der Regel das ganze Programm meint. Bei 'Fenster' denken
+Sie bitte einfach an 'Ansichten' auf verschiedene Dateien.
+
+Nehmen wir also nochmal dieselben Textbeispiele aus dem vorherigen Abschnitt
+\red{part1.txt} und \red{part2.txt}.  Laden Sie zuerst \red{part1.txt} mit
+\red{:e part1.txt}.
+
+Jetzt lassen Sie uns einen neuen Zwischenspeicher öffnen, indem wir das Fenster
+teilen um ein neues Fenster zu erstellen -- führen Sie \red{:new} aus.
+
+Jetzt sollten Sie in der Lage sein, im neuen Zwischenspeicher, im neuen
+Fenster, jegliches normales Editieren zu bewerkstelligen, abgesehen davon, daß
+Sie den Text nicht abspeichern können, weil mit dem Zwischenspeicher noch kein
+Name verknüpft ist. Um den Zwischenspeicher abzuspeichern, nehmen Sie \red{:w
+test.txt}.
+
+%43 48
+\vspace{10pt}
+\noindent
+\begin{minipage}{7cm}
+Wie wechseln Sie zwischen diesen beiden Fenstern hin und her?  Benutzen Sie
+einfach \red{ctrl-w <Bewegungstaste>}, um zwischen den Fenstern umzuschalten.
+
+Bewegungstaste meint hier \red{h}, \red{j}, \red{k}, \red{l} oder sogar die
+Pfeiltasten (lediglich $\uparrow \downarrow$ macht in diesem Beispiel Sinn).
+Merken Sie sich, \red{ctrl-w}-Operationen nehmen Bezug auf 'Fenster'
+(\textrightarrow '\red{w}'indows).
+
+Als ein schneller Tastaturschlüssel können Sie \red{ctrl-w} auch zweimal
+drücken (also \red{ctrl-w ctrl-w}), um durch alle geöffneten Fenster zu
+zirkulieren.
+
+Ein Sonderfall, bei dem mehrere Fenster nützlich sind, liegt vor, wenn Sie sich
+zwei verschiedene Teile der selben Datei gleichzeitig ansehen wollen. Führen
+Sie einfach \red{:sp} aus, um ein geteiltes (\textrightarrow '\red{sp}'lit)
+Fenster zu erstellen, und dann können Sie jedes Fenster an eine andere Position
+rollen, und weiterarbeiten. Weil beide "`Fenster"' im gleichen Zwischenspeicher
+liegen, werden Änderungen des einen Fensters unmittelbar im anderen Fenster
+abgebildet.  Alternativ zu \red{:sp} können Sie auch \red{ctrl-w s} benutzen.
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.47]{1-041}
+\end{minipage}
+
+\vspace{10pt}
+\noindent
+Eine vertikale Aufteilung bekommen Sie mit \red{:vsp} oder \red{ctrl-w v}. Um
+ein Fenster zu schließen, führen Sie, wie gewohnt, \red{:q} aus.
+
+Nachdem wir nun gesehen haben, wie man mehrere Fenster öffnet und benutzt,
+wollen wir mit der Ansicht noch ein bisschen weiter herumspielen.
+\begin{itemize}
+	\item Nehmen wir mal an, Sie haben zwei geteilte Fenster, die Sie aber
+		verkehren möchten, so daß Sie Ihre Augen auf den oberen bzw. unteren
+		Teil Ihres Bildschirms lenken können, gemäß Ihrer Voreinstellung.
+		Drücken Sie \red{ctrl-w r}, um die Fenster zu vertauschen (
+		'\red{r}'otate).
+	\item Wollen Sie das aktuelle Fenster zur höchstmöglichen Stelle bringen?
+		Drücken Sie \red{ctrl-w K}.
+	\item Wollen Sie die Größe eines Fensters verändern, um es größer oder
+		kleiner zu machen? Führen Sie \red{:resize 10} aus, um die Ansicht auf
+		10 Zeilen zu bringen, usw.
+	\item Wollen Sie das aktuelle Fenster auf Maximalgröße bringen, damit Sie
+		sich besser konzentrieren können? Drücken Sie \red{ctrl-w\_}. Beim
+		Unterstrich denken Sie einfach daran, daß die anderen Fenster so klein
+		wie möglich werden sollen.
+	\item Wollen Sie die Fenster wieder auf 'gleiche' Höhe bringen? Drücken Sie
+		\red{ctrl-w =}.
+\end{itemize}
+Sehen Sie sich hierzu \red{:help windows} an, um nähere Einzelheiten zu
+erfahren, was Sie mit Fenstern alles tun können.
+
+\subsection{Mehrere \blue{Tabs} (\textrightarrow Reiter)}
+Wenn Sie Firefox benutzen, haben Sie vielleicht schon einmal die Möglichkeit
+der \blue{Tabs} genutzt, die es Ihnen, in einem einzigen Fenster erlauben,
+mehrere Webseiten aufzurufen, womit Sie zwischen diesen Webseiten hin- und
+herschalten können, ohne sich darüber den Kopf zu zerbrechen, zwischen mehreren
+Fenstern umzuschalten. Tja also, mit Vim funktionieren diese \blue{Tabs} ganz
+genauso, nur mit dem Unterschied, daß sie \textit{'\blue{Tab}-Seiten'} genannt
+werden.
+
+\vspace{10pt}
+\noindent
+\begin{minipage}{6cm}
+Führen Sie aus \red{:tabnew} um einen neuen
+\blue{Tab} mit neuem Zwischenspeicher
+zu öffnen (entsprechend zu \red{:new}).
+Wie wechseln Sie zwischen den \blue{Tabs}?
 Durch drücken von gt, um zum nächsten
-Tab zu gehen ( 'g'o 't'ab), und gT,
+\blue{Tab} zu gehen ( '\red{g}'o '\red{t}'ab), und \red{gT},
 um die Laufrichtung zu ändern (also
-zum vorherigen Tab).
+zum vorherigen \blue{Tab}).
 Ich persönlich bevorzuge die Tasten
-alt-j und alt-k für die gleichen
+\red{alt-j} und \red{alt-k} für die gleichen
 Operationen, die analog für die
-Buchstabenbewegungen (j und k) gelten,
-und auch ctrl-w j und ctrl-w k, um
+Buchstabenbewegungen (\red{j} und \red{k}) gelten,
+und auch \red{ctrl-w j} und \red{ctrl-w k}, um
 Fenster (horizontal) zu teilen. Um dies
 zu aktivieren, fügen Sie die folgenden
-Zeilen in Ihre vimrc ein:
+Zeilen in Ihre \textit{vimrc} ein:
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.3]{1-043}
+\end{minipage}
 
-Um einen Tab zu schließen, führen Sie :tabc oder :q aus.
-Sie können sogar Texte, die in einem neuen Fenster geöffnet würden, stattdessen in einem neuen Tab öffnen.
-Zum Beispiel :help tabpage öffnet die Hilfe in einem horizontal geteilten Fenster. Um es aber in einem neuen
-Tab zu sehen, nehmen Sie das hier :tab help tabpage.
-Wenn Sie Tabs umordnen möchten, dann machen Sie das mit :tabmove. Um z.B. den ersten Tab an die erste
-Stelle zu schieben, benutzen Sie :tabmove 0 usw.
-Sehen Sie sich :help tabpage für weitere Einzelheiten zu Tab-Seiten und anderen Operationen, die Sie damit
-ausführen können an, wie :tabdo um an allen geöffneten Tab-Seiten zu arbeiten. Für die individuelle
-Gestaltung der Titelleiste der Tab-Seiten gehen Sie zu :help setting-guitablabel usw.
+\vspace{10pt}
+\noindent
+\includegraphics[scale=0.5]{1-045}
 
-Zusammenfassung
-Vim bietet viele Möglichkeiten um mehrere Dateien gleichzeitig zu bearbeiten  Zwischenspeicher, Fenster
-und Tabs. Diese Funktionen zu nutzen, hängt ganz von Ihrem persönlichen Geschmack ab. Wenn Sie z.B.
-mehrere Tabs benutzen, umgehen Sie damit die Benutzung von mehreren Fenstern. Wichtig ist, das zu
-nutzen, was für Sie am angenehmsten und bequemsten ist.
-Externe Verknüpfungen
+\noindent
+Um einen \blue{Tab} zu schließen, führen Sie \red{:tabc} oder \red{:q} aus.
 
+Sie können sogar Texte, die in einem neuen Fenster geöffnet würden, stattdessen
+in einem neuen \blue{Tab} öffnen.  Zum Beispiel \red{:help tabpage} öffnet die
+Hilfe in einem horizontal geteilten Fenster. Um es aber in einem neuen
+\blue{Tab} zu sehen, nehmen Sie das hier \red{:tab help tabpage}.
+
+Wenn Sie \blue{Tabs} umordnen möchten, dann machen Sie das mit \red{:tabmove}.
+Um z.B. den ersten \blue{Tab} an die erste Stelle zu schieben, benutzen Sie
+\red{:tabmove 0} usw.
+
+Sehen Sie sich \red{:help tabpage} für weitere Einzelheiten zu
+\blue{Tab}-Seiten und anderen Operationen, die Sie damit ausführen können an,
+wie \red{:tabdo} um an allen geöffneten \blue{Tab}-Seiten zu arbeiten. Für die
+individuelle Gestaltung der Titelleiste der \blue{Tab}-Seiten gehen Sie zu
+\red{:help setting-guitablabel} usw.
+
+\subsection{Zusammenfassung}
+Vim bietet viele Möglichkeiten um mehrere Dateien gleichzeitig zu bearbeiten
+Zwischenspeicher, Fenster und \blue{Tabs}. Diese Funktionen zu nutzen, hängt
+ganz von Ihrem persönlichen Geschmack ab. Wenn Sie z.B.  mehrere \blue{Tabs}
+benutzen, umgehen Sie damit die Benutzung von mehreren Fenstern. Wichtig ist,
+das zu nutzen, was für Sie am angenehmsten und bequemsten ist.
+
+%Externe Verknüpfungen
+%Source:
+%http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Multiplicity&oldid=1074
+%Principal Authors: Swaroop
+
+%45 46
 \section{Persönliche Informationsverwaltung}
-Einführung
-Ein Kapitel über 'persönliche Informationsverwaltung' in einem Buch über ein Editorprogramm befremdet
-ein wenig. Nicht wahr? Nun, es gibt jede Menge professionelle Programme, die eine persönliche
-Informationsverwaltung für sich proklamieren. Jetzt wollen wir mal sehen, ob wir einen einfachen Texteditor
-wie Vim, zu diesem Zweck benutzen können.
-Bei persönlicher Informationsverwaltung geht es darum alle Sie betreffenden Informationen zu
-organisieren  als da wären eine 'zu erledigen-Liste' ( todo-list), Tagebucheintragungen, Referenzmaterial
-(wichtige Telephonnummern), Schmierzettel, usw. Dies alles an einem schönen Ort zu verstauen, kann schon
-verdammt praktisch sein. Dies, und ein paar andere Plugins, schauen wir uns jetzt mal mit Vim an.
-Ich glaube ein persönliches Informationsverwaltungssystem organisiert man am besten wie ein Wiki. Ein
-Wiki ist eine schnelle Methode, verschiedene Dokumente zu verknüpfen, die zwar miteinander in
-Zusammenhang stehen, davon unabhängig aber auch für sich selbst stehen. Und so überrascht es nicht, daß
-das Wort 'wiki', in der hawaiianischen Sprache 'schnell' bedeutet. Denken Sie an eine Webseite  es gibt eine
-'Heimatseite' ( Homepage), und es gibt, im Zusammenhang stehende Seiten, dargestellt als Links, und jede
-dieser Seiten hat ihren eigenen Inhalt, kann aber wiederum auf andere Links verweisen. Ist das nicht eine
-einfache Methode, Webseiten zu organisieren? Wie wärs jetzt, wenn Sie dies auch mit Ihren persönlichen
-Informationen tun könnten? Lesen Sie sich mal diesen LifeHack-Artikel durch 'Wikify Your Life: How to
-Organize Everything'[1]. Da gibt es ein paar großartige Beispiele, was Sie alles tun können.
-Aber braucht es dafür wirklich ein besonderes Wiki-Programm? Was, wenn Sie das gleiche, mit einfachen
-Textdateien, bei der Benutzung von Vim tun könnten? Tauchen wir ab.
+\subsection{Einführung}
+Ein Kapitel über 'persönliche Informationsverwaltung' in einem Buch über ein
+Editorprogramm befremdet ein wenig. Nicht wahr? Nun, es gibt jede Menge
+"`professionelle Programme"', die eine persönliche Informationsverwaltung für
+sich proklamieren. Jetzt wollen wir mal sehen, ob wir einen einfachen
+Texteditor wie Vim, zu diesem Zweck benutzen können.
 
-Viki installieren
-Hinweis
-Das \$vimfiles-Verzeichnis steht in Verbindung mit \verb ~/ \verb .vim auf Linux\verb /Mac, \verb C:\Documents und
-\verb Settings\<Ihr-Benutzername>\vimfiles auf Windows und
-\verb C:\Users\<Ihr-Benutzername>\vimfiles auf Windows Vista. Sehen Sie hierzu :help vimfiles für
-nähere Einzelheiten.
-Wir installieren jetzt Viki samt den benötigten Plugins:
-1. Laden Sie multvals.vim[2] herunter und speichern Sie es als 
-	\verb|$vimfiles/plugin/multvals.vim|
-2. Laden Sie genutils.zip[3] herunter, und entpacken Sie diese Datei nach 
-	\verb|$vimfiles|
-3. Laden Sie Viki.zip[4] herunter, und entpacken Sie auch diese Datei nach \verb $vimfiles (Stellen Sie sicher,
-daß alle Verzeichnisse und Dateien unter dem Verzeichnisnamen 'Viki' direkt im
-\verb $vimfiles-Verzeichnis liegen.)
-Losgelegt
-1.
-2.
-3.
-4.
-5.
-6.
+Bei persönlicher Informationsverwaltung geht es darum alle Sie betreffenden
+Informationen zu organisieren -- als da wären eine \textit{'zu erledigen-Liste'
+(\textrightarrow todo-list)}, Tagebucheintragungen, Referenzmaterial (wichtige
+Telephonnummern), Schmierzettel, usw. Dies alles an einem schönen Ort zu
+verstauen, kann schon verdammt praktisch sein. Dies, und ein paar andere
+\blue{Plugins}, schauen wir uns jetzt mal mit Vim an.
 
-Öffnen Sie die grafische Version des Vim ( gvim)
-\begin{verbatim}
-:e test.txt
-:set filetype=viki
-\end{verbatim}
-Geben Sie den folgenden Text ein: 
-\begin{verbatim}
-[[http://deplate.sourceforge.net/Markup.html][Viki syntax]]
-:w
-\end{verbatim}
-Stellen Sie den Cursor auf den obigen Text und drücken Sie ctrl+Enter oder alternativ dazu, drücken
-Sie \verb|\vf|
-7. Jetzt sollte sich ein Browser öffnen, mit der eben genannten Webseite.
-Ebenso können Sie jeden Dateinamen (mit gültiger Pfadangabe) eingegeben  ob es sich nun um eine .docDatei oder eine .pdf-Datei handelt. Mit ctrl+Enter öffnen Sie die Datei mit dem entsprechenden Programm.
-Die Idee dabei ist, daß Sie einfache Textdateien benutzen können, um all Ihre Gedanken zu bündeln, und mit
-ctrl+Enter verzweigen Sie, wohin immer Sie wollen.
-Beachten Sie, daß wir oben die eckigen Klammern paarweise eingeben mussten, um das Ziel des Links und
-die den Link beschreibenden Worte zu identifizieren. Dies ist die grundlegende Schreibweise der
+Ich glaube ein persönliches Informationsverwaltungssystem organisiert man am
+besten wie ein \textit{Wiki}. Ein \textit{Wiki} ist eine schnelle Methode,
+verschiedene Dokumente zu verknüpfen, die zwar miteinander in Zusammenhang
+stehen, davon unabhängig aber auch für sich selbst stehen. Und so überrascht es
+nicht, daß das Wort \textit{'wiki'}, in der hawaiianischen Sprache
+\textit{'schnell'} bedeutet. Denken Sie an eine Webseite -- es gibt eine
+\textit{'Heimatseite'} (\textrightarrow Homepage), und es gibt, im Zusammenhang
+stehende Seiten, dargestellt als \blue{Links}, und jede dieser Seiten hat ihren
+eigenen Inhalt, kann aber wiederum auf andere \blue{Links} verweisen. Ist das
+nicht eine einfache Methode, Webseiten zu organisieren? Wie wärs jetzt, wenn
+Sie dies auch mit Ihren persönlichen Informationen tun könnten? Lesen Sie sich
+mal diesen \textit{LifeHack}-Artikel durch \textit{'Wikify Your Life: How to
+Organize Everything'}
+\footnote{\url{http://www.lifehack.org/articles/lifehack/wikify-your-life-how-to-organize-everything.html}}.
+Da gibt es ein paar großartige Beispiele, was Sie alles tun können.
+
+Aber braucht es dafür wirklich ein besonderes \textit{Wiki-Programm}? Was, wenn
+Sie das gleiche, mit einfachen Textdateien, bei der Benutzung von Vim tun
+könnten? Tauchen wir ab.
+
+\subsection{Viki installieren}
+\begin{description}
+\item [Hinweis] Das \$vimfiles-Verzeichnis steht in Verbindung mit 
+	\verb|~/| \verb .vim  auf Linux \verb /Mac,  \verb C:\Documents  und 
+	\verb Settings\<Ihr-Benutzername>\vimfiles  auf Windows und 
+	\verb C:\Users\<Ihr-Benutzername>\vimfiles  auf Windows Vista. Sehen Sie
+	hierzu \red{:help vimfiles} für nähere Einzelheiten.
+\end{description}
+
+\noindent
+Wir installieren jetzt Viki samt den benötigten \blue{Plugins}:
+\begin{enumerate}
+	\item Laden Sie \red{multvals.vim}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=171}}
+		herunter und speichern Sie es als
+		\red{\$vimfiles/plugin/multvals.vim}
+	\item Laden Sie \red{genutils.zip}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=197}}
+		herunter, und entpacken Sie diese
+		Datei nach \red{\$vimfiles}
+	\item Laden Sie \red{Viki.zip}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=861}}
+		herunter, und entpacken Sie auch diese
+		Datei nach \red{\$vimfiles} (Stellen Sie sicher, daß alle Verzeichnisse
+		und Dateien unter dem Verzeichnisnamen 'Viki' direkt im
+		\red{\$vimfiles}-Verzeichnis liegen.)
+\end{enumerate}
+\subsubsection*{Losgelegt}
+\begin{enumerate}
+	\item Öffnen Sie die grafische Version des Vim ( gvim)
+	\item \red{:e test.txt}
+	\item \red{:set filetype=viki}
+	\item Geben Sie den folgenden Text ein: 
+		[[\url{http://deplate.sourceforge.net/Markup.html}][Viki syntax]]
+	\item \red{:w}
+	\item Stellen Sie den \blue{Cursor} auf den obigen Text und drücken Sie
+		\red{ctrl+Enter} oder alternativ dazu, drücken Sie {color{red} \verb|\vf|}
+	\item Jetzt sollte sich ein \blue{Browser} öffnen, mit der eben genannten
+		Webseite.
+\end{enumerate}
+Ebenso können Sie jeden Dateinamen (mit gültiger Pfadangabe) eingegeben -- ob
+es sich nun um eine .doc-Datei oder eine .pdf-Datei handelt. Mit
+\red{ctrl+Enter} öffnen Sie die Datei mit dem entsprechenden Programm.  Die
+Idee dabei ist, daß Sie einfache Textdateien benutzen können, um all Ihre
+Gedanken zu bündeln, und mit \red{ctrl+Enter} verzweigen Sie, wohin immer Sie
+wollen.
+
+Beachten Sie, daß wir oben die eckigen Klammern paarweise eingeben mussten, um
+das Ziel des \red{Links} und die den Link beschreibenden Worte zu
+identifizieren. Dies ist die grundlegende Schreibweise der
 Seitenbeschreibungssprache, die wir als nächstes untersuchen werden.
-Seitenbeschreibungssprache
-Die Viki-Syntaxseite[5] (die Sie mit Ihrem Browser gerade geöffnet haben) erklärt, wie Sie den Text schreiben
-müssen, damit Viki Teile Ihres Satzbaus hervorheben kann, als auch wie der Link zwischen 'wikiseiten' zu
-bewerkstelligen ist, und sogar wie Sie Viki-spezifische Kommentare schreiben können.
-Die grundlegenden Kenntnisse der Satzbauhervorhebung sind nützlich, weil Sie nicht ausschließlich auf Ihre
-geistige Vorstellungskraft angewiesen sind, sondern die Teile Ihrer Textdatei mit Ihren eigenen Augen
-betrachten können. Nehmen Sie z.B. die '*Zu erledigen-Liste', um daraus einen Dateikopf zu machen, und
-dann erstellen Sie mit Bindestrichen eine Liste:
 
-KamelSchrift abschalten
-Schreiben mit KamelSchrift kann in Viki einen Link erstellen, aber ich persönlich mag das nicht. Ich will, daß
-nur ausdrücklich bezeichnete Links wie [[KamelSchrift]] erlaubt sind, um Fälle zu vermeiden, wo ich einen
-echten Namen - mit KamelSchrift - benutzt habe, der aber kein Link sein soll (z.B. das Wort JavaScript).
-Um die KamelSchrift-Schreibweise zu unterbinden tippen Sie,
-\verb|:edit $vimfiles/plugin/viki.vim|, und ändern die folgende Zeile (Zeile 120 gemäß dieses Schreibens):
+\subsection{Seitenbeschreibungssprache}
+Die Viki-Syntaxseite\footnote{\url{http://deplate.sourceforge.net/Markup.html}}
+(die Sie mit Ihrem \blue{Browser} gerade geöffnet
+haben) erklärt, wie Sie den Text schreiben müssen, damit \textit{Viki} Teile
+Ihres Satzbaus hervorheben kann, als auch wie der Link zwischen 'wikiseiten' zu
+bewerkstelligen ist, und sogar wie Sie \textit{Viki}-spezifische Kommentare
+schreiben können.  Die grundlegenden Kenntnisse der Satzbauhervorhebung sind
+nützlich, weil Sie nicht ausschließlich auf Ihre geistige Vorstellungskraft
+angewiesen sind, sondern die Teile Ihrer Textdatei mit Ihren eigenen Augen
+betrachten können. Nehmen Sie z.B. die '*Zu erledigen-Liste', um daraus einen
+Dateikopf zu machen, und dann erstellen Sie mit Bindestrichen eine Liste:\\
+\includegraphics[scale=0.5]{1-048}
 
-zu
+\subsection{KamelSchrift abschalten}
+Schreiben mit KamelSchrift kann in \textit{Viki} einen \blue{Link} erstellen,
+aber ich persönlich mag das nicht. Ich will, daß nur ausdrücklich bezeichnete
+\blue{Links} wie [[KamelSchrift]] erlaubt sind, um Fälle zu vermeiden, wo ich
+einen echten Namen - mit KamelSchrift - benutzt habe, der aber kein \blue{Link}
+sein soll (z.B. das Wort "`JavaScript"').  Um die KamelSchrift-Schreibweise zu
+unterbinden tippen Sie, \red{:edit \$vimfiles/plugin/viki.vim}, und ändern die
+folgende Zeile (Zeile 120 gemäß dieses Schreibens):\\
+\includegraphics[scale=0.5]{1-050}
 
-Haben Sie gesehen  das 'c' ist weg!
-Was erledigt kriegen
-Einer der Hauptgründe, dieses 'viki' für mich selbst zur erstellen, ist die Pflege eines 'Dinge geregelt kriegen'Systems ( GTD=Getting Things Done).
-GTD ist ein System, das von David Allen entwickelt wurde, damit Sie Ihren 'Kram' in den Griff kriegen 
+zu\\
+\includegraphics[scale=0.5]{1-051}
+
+Haben Sie gesehen -- das 'c' ist weg!
+
+\subsection{Was erledigt kriegen}
+Einer der Hauptgründe, dieses \textit{'viki'} für mich selbst zur erstellen, ist die Pflege eines 'Dinge geregelt kriegen'--Systems (\textrightarrow "`GTD"'=Getting Things Done).
+"`GTD"' ist ein System, das von David Allen entwickelt wurde, damit Sie Ihren \textit{'Kram'} in den Griff kriegen --
 was, von Ihren Karriereplänen bis zur täglichen Hausarbeit, alles einschließt. Eine gute Einführung in dieses
-System finden Sie auf www.bnet.com.[6]
-Aus David Allens Buch:
-Machen Sie Ihren Kopf komplett frei. Treffen Sie Entscheidungen über notwendige
-Handlungen, wenn sie auftauchen  und nicht wenn sie Ihnen um die Ohren fliegen.
-Organisieren Sie Erinnerungshilfen Ihrer Projekte, und die anstehenden
-Entscheidungen in dazu passenden Kategorien. Halten Sie Ihr System auf dem
-Laufenden, komplett, und ausreichend überprüft, um jederzeit Ihren spontanen
-Entscheidungen, was Sie gerade tun (oder nicht tun), zu vertrauen.
-Das GTD-System besteht im Wesentlichen darin, Ihre Daten in bestimmte Seiten/Verzeichnisse zu
-organisieren:
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+System finden Sie auf \url{www.bnet.com}
+\footnote{\url{http://www.bnet.com/2403-13074_23-52958.html}}.
+\begin{description}
+	\item [Aus David Allens Buch:] "`Machen Sie Ihren Kopf komplett frei.
+		Treffen Sie Entscheidungen über notwendige Handlungen, wenn sie
+		auftauchen  und nicht wenn sie Ihnen um die Ohren fliegen.
+		Organisieren Sie Erinnerungshilfen Ihrer Projekte, und die anstehenden
+		Entscheidungen in dazu passenden Kategorien. Halten Sie Ihr System auf
+		dem Laufenden, komplett, und ausreichend überprüft, um jederzeit Ihren
+		spontanen Entscheidungen, was Sie gerade tun (oder nicht tun), zu
+		vertrauen."'
+\end{description}
 
-Sammeleimer
-Projektliste
-Nächste Handlungen
-Kalender
-Irgendwann/vielleicht
-Nachschlagewerk
-Warten auf
+Das GTD-System besteht im Wesentlichen darin, Ihre Daten in bestimmte
+Seiten/Verzeichnisse zu organisieren:
+\begin{enumerate}
+	\item Sammeleimer
+	\item Projektliste
+	\item Nächste Handlungen
+	\item Kalender
+	\item Irgendwann/vielleicht
+	\item Nachschlagewerk
+	\item Warten auf
+\end{enumerate}
+Ich habe ein \textit{Viki} erstellt, das diesem System gerecht wird, mit
+folgender Methode:
+\begin{enumerate}
+	\item Zuallererst erstellen Sie eine StartSeite, die buchstäblich die
+		Startseite zu Ihrem persönlichen Organisationssystem ist (hiermit
+		einfach "`Ihr Viki"' genannt).
+	\item Danach erstellen Sie eine Liste für die Hauptabschnitte Ihres Vikis:\\
+\includegraphics[scale=0.5]{1-052}
 
-Ich habe ein Viki erstellt, das diesem System gerecht wird, mit folgender Methode:
-1. Zuallererst erstellen Sie eine StartSeite, die buchstäblich die Startseite zu Ihrem persönlichen
-Organisationssystem ist (hiermit einfach Ihr Viki genannt).
-2. Danach erstellen Sie eine Liste für die Hauptabschnitte Ihres Vikis:
-
-3. Entsprechend, verschachteln Sie so tief Sie wollen, erstellen Sie z.B. ein [[Referenz.Karriere]], um
-Ihre Karrierepläne hinzuschmieren, und [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes
-Projekt sammeln, usw.
-4. Jedesmal wenn Sie sich was notieren wollen, benutzen Sie die [[Sammeln]]-Seite, und dann tun Sie,
-organisieren Sie, überprüfen Sie, und letztendlich, unternehmen Sie Ihre nächsten physischen
-Handlungen.
-5. Es braucht seine Zeit, bis Sie sich daran gewöhnt haben, dieses System zu benutzen, aber wenn Sie
-sich daran gewöhnt haben, kriegen Sie damit einen klaren Kopf, Vertrauen darin, alle Faktoren in
-Ihrem Leben berücksichtigt zu haben, und, das wichtigste, einen Sinn für die wichtigen Dinge in
-Ihrem Leben.
+	\item Entsprechend, verschachteln Sie so tief Sie wollen, erstellen Sie
+		z.B. ein [[Referenz.Karriere]], um Ihre Karrierepläne hinzuschmieren,
+		und [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes Projekt
+		sammeln, usw.
+	\item Jedesmal wenn Sie sich was notieren wollen, benutzen Sie die
+		[[Sammeln]]-Seite, und dann tun Sie, organisieren Sie, überprüfen Sie,
+		und letztendlich, unternehmen Sie Ihre nächsten physischen Handlungen.
+	\item Es braucht seine Zeit, bis Sie sich daran gewöhnt haben, dieses
+		System zu benutzen, aber wenn Sie sich daran gewöhnt haben, kriegen Sie
+		damit einen klaren Kopf, Vertrauen darin, alle Faktoren in Ihrem Leben
+		berücksichtigt zu haben, und, das wichtigste, einen Sinn für die
+		wichtigen Dinge in Ihrem Leben.
+\end{enumerate}
 Beachten Sie, wie wir ein ganzes System mit einfachem Text verwalten!
-Zusammenfassung
-Wir haben gerade gesehen, wie Sie mit Vim ein persönliches Informationsverwaltungssystem[7] erstellen
-können. Schon faszinierend, dass wir dazu keinerlei komplizierte Programme für so ein System benötigen;
-einfache Textdateien und Vim erledigt den Rest.
-Sehen Sie sich Abhijit Nadgouda's Artikel über die Benutzung des Vim für ein persönliches Wiki für einen
-alternativen Weg, dasselbe Problem zu lösen, durch die Benutzung programmimmanenter Vim-Funktionen
-an.
+\subsection{Zusammenfassung}
+Wir haben gerade gesehen, wie Sie mit Vim ein persönliches
+Informationsverwaltungssystem
+\footnote{\url{http://ifacethoughts.net/2008/05/02/vim-as-a-personal-wiki/}}
+erstellen können. Schon faszinierend, dass wir
+dazu keinerlei komplizierte Programme für so ein System benötigen; einfache
+Textdateien und Vim erledigt den Rest.
 
-Externe Links
-\begin{verbatim}
-[1] http:/ / www. lifehack. org/ articles/ lifehack/
-wikify-your-life-how-to-organize-everything. html
-[2] http:/ / www. vim. org/ scripts/ script. php?script_id=171
-[3] http:/ / www. vim. org/ scripts/ script. php?script_id=197
-[4] http:/ / www. vim. org/ scripts/ script. php?script_id=861
-[5] http:/ / deplate. sourceforge. net/ Markup. html
-[6] http:/ / www. bnet. com/ 2403-13074_23-52958. html
-[7] http:/ / ifacethoughts. net/ 2008/ 05/ 02/ vim-as-a-personal-wiki/
-Source: http:/ / www. swaroopch. com/ mediawiki/ index. php? title=Vim_ en:Personal_
-Information_ Management&oldid=1142
-\end{verbatim}
-Principal Authors: Swaroop, Fuzzymonk
+Sehen Sie sich Abhijit Nadgouda's Artikel über die Benutzung des Vim für ein
+persönliches Wiki für einen alternativen Weg, dasselbe Problem zu lösen, durch
+die Benutzung programmimmanenter Vim-Funktionen an.
+
+%Externe Links
+%Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Personal_Information_Management&oldid=1142
+%Principal Authors: Swaroop, Fuzzymonk
+
+%49 54
 
 \section{Scripting}
-(lat: scribere = Schreiben. 'Script' = Unix-Programm. Scriptdatei. Scriptsprache. Beim 'Scripting' handelt es
-sich also um das Verfassen einer Skriptdatei in einer Skriptsprache, und damit um das Erstellen (Schreibens)
-eines Programmes für unixoide Systeme.) Auszüge aus: http://de.wikipedia.org/wiki/Skript
-Einführung
-Wenn Sie irgendein Programm individuell einrichten möchten, werden Sie mit höchster Wahrscheinlichkeit
-die verschiedenen Einstellungen in dem Programm ändern, um es Ihren Bedürfnissen und Ihrem Geschmack
-anzupassen. Was aber, wenn Ihnen das nicht ausreicht? Zum Beispiel, Bedingungen überprüfen wie wenn
-GUI-Version, benutze dieses Farbschema, ansonsten benutze dieses Farbschema? Hier kommt nun
-Scripting ins Spiel. Scripting bedeutet eigentlich, eine Sprache zu benutzen, wo Sie Bedingungen
-festlegen, und Befehle zusammen in einer 'Skript'-Datei ablegen können.
-Man kann sich beim 'scripting' in Vim von zwei Seiten annähern. Zum einen kann man die programmimmanente Vim-Skriptsprache verwenden, oder man benutzt eine vollwertige Programmiersprache wie z.B.
-Python oder Perl, die mittels Modulen Zugriff auf die Vim-Innereien haben (vorausgesetzt Vim wurde mit
-den entsprechenden Compileroptionen in Maschinensprache übersetzt).
-Dieses Kapitel setzt einiges Programmierwissen voraus. Wenn Sie noch keine Programmiererfahrung haben,
-werden Sie trotzdem verstehen worum es geht, obwohl das vielleicht etwas knapp werden könnte. Wenn Sie
-programmieren lernen möchten, darf ich Sie auf mein anderes freies Buch A Byte of Python hinweisen.
-Für wiederverwendbare Funktionalität gibt es in Vim zwei Wege: Makros anwenden und Skripte schreiben.
-Makros
-Um Makros zu benutzen, können wir Befehlsabfolgen aufzeichnen, und sie dann in verschiedenen
-Zusammenhängen, ablaufen lassen.
-Nehmen wir als Beispiel mal diesen Text hier:
+(lat: \textit{scribere} = Schreiben. 'Script' = Unix-Programm. Scriptdatei.
+Scriptsprache. Beim 'Scripting' handelt es sich also um das Verfassen einer
+Skriptdatei in einer Skriptsprache, und damit um das Erstellen (Schreibens)
+eines Programmes für unixoide Systeme.) {\scriptsize Auszüge aus:
+\url{http://de.wikipedia.org/wiki/Skript}}
 
+\subsection{Einführung}
+Wenn Sie irgendein Programm individuell einrichten möchten, werden Sie mit
+höchster Wahrscheinlichkeit die verschiedenen Einstellungen in dem Programm
+ändern, um es Ihren Bedürfnissen und Ihrem Geschmack anzupassen. Was aber, wenn
+Ihnen das nicht ausreicht? Zum Beispiel, Bedingungen überprüfen wie \red{wenn
+GUI-Version, benutze dieses Farbschema, ansonsten benutze dieses Farbschema}?
+Hier kommt nun \textit{"`Scripting"'} ins Spiel. Scripting bedeutet eigentlich,
+eine Sprache zu benutzen, wo Sie Bedingungen festlegen, und Befehle zusammen in
+einer 'Skript'-Datei ablegen können.
+
+Man kann sich beim 'scripting' in Vim von zwei Seiten annähern. Zum einen kann
+man die programmimmanente Vim-Skriptsprache verwenden, oder man benutzt eine
+vollwertige Programmiersprache wie z.B.  Python oder Perl, die mittels Modulen
+Zugriff auf die Vim-Innereien haben (vorausgesetzt Vim wurde mit den
+entsprechenden Compileroptionen in Maschinensprache übersetzt).
+
+Dieses Kapitel setzt einiges Programmierwissen voraus. Wenn Sie noch keine
+Programmiererfahrung haben, werden Sie trotzdem verstehen worum es geht, obwohl
+das vielleicht etwas knapp werden könnte. Wenn Sie programmieren lernen
+möchten, darf ich Sie auf mein anderes freies Buch "`A Byte of Python"'
+hinweisen.
+
+Für wiederverwendbare Funktionalität gibt es in Vim zwei Wege: Makros anwenden
+und Skripte schreiben.
+
+\subsection{Makros}
+Um Makros zu benutzen, können wir Befehlsabfolgen aufzeichnen, und sie dann in
+verschiedenen Zusammenhängen, ablaufen lassen.
+
+Nehmen wir als Beispiel mal diesen Text hier:\\
+\includegraphics[scale=0.5]{1-053}
+
+\noindent
 Da gibt es viel zu korrigieren.
-1.
-2.
-3.
-4.
+\begin{enumerate}
+	\item Ändern Sie den ersten Buchstaben des Satzes in einen Großbuchstaben um.
+	\item Ändern Sie '\red{is}' zu '\red{was}'
+	\item Ändern Sie '\red{the}' zu '\red{a}'.
+	\item Beenden Sie den Satz mit in "`\red{Akbar's court}"'.
+\end{enumerate}
 
-Ändern Sie den ersten Buchstaben des Satzes in einen Großbuchstaben um.
-Ändern Sie 'is' zu 'was'
-Ändern Sie 'the' zu 'a'.
-Beenden Sie den Satz mit in Akbar's court.
+Eine Möglichkeit wäre eine Serie von Ersetzungsbefehlen zu verwenden, wie
+\verb|:s/^\\w/\\u\\0/| aber dafür bräuchten wir vier Ersetzungsbefehle, und
+wenn der Ersetzungsbefehl Textstücke ändert, die wir unverändert lassen
+wollten, dann wird es haarig.
 
-Eine Möglichkeit wäre eine Serie von Ersetzungsbefehlen zu verwenden, wie \verb|:s/^\\w/\\u\\0/| aber dafür
-bräuchten wir vier Ersetzungsbefehle, und wenn der Ersetzungsbefehl Textstücke ändert, die wir unverändert
-lassen wollten, dann wird es haarig.
+\noindent
+Da sind Makros schon besser.\\
+\begin{enumerate}
+	\item Setzen Sie Ihren \blue{Cursor} auf den ersten Buchstaben, der ersten
+		Zeile: \red{tansen is the singer}
+	\item Tippen Sie im Normalmodus \red{qa} um die Aufzeichnung des Makros mit
+		der Bezeichnung \red{a} zu starten.
+	\item Tippen Sie \red{gUl} um den ersten Buchstaben in einen Großbuchstaben
+		umzuwandeln.
+	\item Geben Sie \red{w} ein, um zum nächsten Wort zu springen.
+	\item Tippen Sie \red{cw} um das Wort zu ändern.
+	\item Geben Sie \red{was} ein.
+	\item Drücken Sie \red{$<$ESC$>$}.
+	\item Geben Sie \red{w} ein, um zum nächsten Wort zu springen.
+	\item Tippen Sie \red{cw} um das Wort zu ändern.
+	\item Tippen Sie \red{a}.
+	\item Drücken Sie \red{$<$ESC$>$}.
+	\item Tippen Sie \red{A} um am Zeilenende Text einzugeben.
+	\item Geben Sie ein \red{in Akbar's court}.
+	\item Drücken Sie \red{$<$ESC$>$}.
+	\item Drücken Sie \red{q} um die Aufzeichnung zu beenden.
+\end{enumerate}
+Sieht ganz nach einer langen Prozedur aus, aber manchmal ist das einfacher als
+dass man sich irgendwelche komplizierten Ersetzungsbefehle zusammenkocht!
 
-Da sind Makros schon besser.
-1. Setzen Sie Ihren Cursor auf den ersten Buchstaben, der ersten Zeile: tansen is the singer
-2. Tippen Sie im Normalmodus qa um die Aufzeichnung des Makros mit der Bezeichnung a zu starten.
-3. Tippen Sie gUl um den ersten Buchstaben in einen Großbuchstaben umzuwandeln.
-4. Geben Sie w ein, um zum nächsten Wort zu springen.
-5. Tippen Sie cw um das Wort zu ändern.
-6. Geben Sie was ein.
-7. Drücken Sie \red{$<$ESC$>$}.
-8. Geben Sie w ein, um zum nächsten Wort zu springen.
-9. Tippen Sie cw um das Wort zu ändern.
-10. Tippen Sie a.
-11. Drücken Sie \red{$<$ESC$>$}.
-12. Tippen Sie A um am Zeilenende Text einzugeben.
-13. Geben Sie ein in Akbar's court.
-14. Drücken Sie \red{$<$ESC$>$}.
-15. Drücken Sie q um die Aufzeichnung zu beenden.
-Sieht ganz nach einer langen Prozedur aus, aber manchmal ist das einfacher als dass man sich irgendwelche
-komplizierten Ersetzungsbefehle zusammenkocht!
-Zum Schluß sollte die Zeile jedenfalls so aussehen:
+Zum Schluß sollte die Zeile jedenfalls so aussehen:\\
+\includegraphics[scale=0.5]{1-054}
 
-Super! Jetzt wollen wir dies auch auf die anderen Zeilen anwenden. Bewegen Sie sich einfach zum ersten
-Buchstaben der zweiten Zeile und drücken Sie @a. Na bitte  die Zeile sollte sich ändern zu:
+Super! Jetzt wollen wir dies auch auf die anderen Zeilen anwenden. Bewegen Sie
+sich einfach zum ersten Buchstaben der zweiten Zeile und drücken Sie \red{@a}.
+Na bitte -- die Zeile sollte sich ändern zu:\\
+\includegraphics[scale=0.5]{1-055}
 
-Das zeigt, dass Makros komplizierte Operationen aufzeichnen, und sehr leicht wiedergegeben werden
-können. Damit kann der Benutzer komplizierte Editierarbeiten an vielen Stellen erneut ablaufen lassen. Das
-ist eine Methode von Wiederbenutzung der Änderungen, die Sie am Text vornehmen können. Als nächstes
-werden wir formalere Wege kennen lernen, Text zu manipulieren.
-Hinweis
-Wenn Sie einfach nur die letzte Aktion wiederholen möchten, und nicht eine ganze Serie von
-Aktionen, müssen Sie dafür kein Makro benutzen. Drücken Sie einfach den . (Punkt).
-Elementarskripting
-Vim hat eine programmimmanente Skriptsprache, mit deren Hilfe Sie Ihre eigenen Skripte schreiben können,
-um Entscheidungen zu treffen, Dinge tun, und den Text zu manipulieren.
+Das zeigt, dass Makros komplizierte Operationen aufzeichnen, und sehr leicht
+wiedergegeben werden können. Damit kann der Benutzer komplizierte
+Editierarbeiten an vielen Stellen erneut ablaufen lassen. Das ist eine Methode
+von Wiederbenutzung der Änderungen, die Sie am Text vornehmen können. Als
+nächstes werden wir formalere Wege kennen lernen, Text zu manipulieren.
+\begin{description}
+	\item [Hinweis] Wenn Sie einfach nur die letzte Aktion wiederholen möchten,
+		und nicht eine ganze Serie von Aktionen, müssen Sie dafür kein Makro
+		benutzen. Drücken Sie einfach den . (Punkt).
+\end{description}
 
-Aktionen
-Wie ändern Sie das Farbschema, das Vim benutzt? Führen Sie dies aus:
+\subsection{Elementarskripting}
+Vim hat eine programmimmanente Skriptsprache, mit deren Hilfe Sie Ihre eigenen
+Skripte schreiben können, um Entscheidungen zu treffen, Dinge "`tun"', und den
+Text zu manipulieren.
 
-Hier benutze ich das 'Wüsten'-Farbschema, welches auch mein Lieblingsschema ist. Die anderen, zur
-Verfügung stehenden Schemata können Sie sich ansehen mit :colorscheme. Und mit der <TAB>-Taste
-können Sie alle Schemata durchlaufen.
-Was ist denn, wenn Sie wissen möchten, wieviele Buchstaben die aktuelle Zeile enthält?
+\subsection{Aktionen}
+Wie ändern Sie das Farbschema, das Vim benutzt? Führen Sie dies aus:\\
+\includegraphics[scale=0.5]{1-056}
 
-Beachten Sie die Namen 'strlen' und 'getline'. Das sind Funktionen. Funktionen sind fertig erstellte
-Skriptstücke, denen man bereits einen Namen gegeben hat, damit wir sie immer wieder benutzen können. Die
-getline-Funktion z.B. holt sich eine Zeile, und mit dem . (Punkt) deuten wir schon an welche, nämlich die
-aktuelle Zeile. Das Ergebnis, das wir von der getline-Funktion kriegen, reichen wir an die strlen-Funktion
-weiter, welche die Buchstaben in dem Text zählt, und schließlich übergeben wir das Ergebnis der strlenFunktion an den :echo-Befehl, der uns das Resultat einfach nur anzeigt. Vergegenwärtigen Sie sich den
-Informationsfluß dieses Befehls.
-strlen(getline(.)) nennt man einen Ausdruck. Die Ergebnisse solcher Ausdrücke können wir speichern,
-indem wir Variablen benutzen. Variablen tun das, was der Name schon andeutet  Sie sind Namen, die auf
-Werte zeigen, und diese Werte können alles mögliche sein, d.h. es variiert. Die Länge können wir z.B. so
-speichern:
+Hier benutze ich das 'Wüsten'-Farbschema, welches auch mein Lieblingsschema
+ist. Die anderen, zur Verfügung stehenden Schemata können Sie sich ansehen mit
+\red{:colorscheme}. Und mit der \red{$<$TAB$>$}-Taste können Sie alle Schemata
+durchlaufen.
 
-Wenn Sie diese Zeile ausführen, angewandt auf die zweite Zeile oberhalb dieses Textes, kriegen Sie
-folgendes Ergebnis:
+Was ist denn, wenn Sie wissen möchten, wieviele Buchstaben die aktuelle Zeile
+enthält?\\
+\includegraphics[scale=0.5]{1-057}
+
+Beachten Sie die Namen '\red{strlen}' und '\red{getline}'. Das sind Funktionen.
+Funktionen sind fertig erstellte Skriptstücke, denen man bereits einen Namen
+gegeben hat, damit wir sie immer wieder benutzen können. Die
+\red{getline}-Funktion z.B. holt sich eine Zeile, und mit dem \red{.} (Punkt)
+deuten wir schon an welche, nämlich die aktuelle Zeile. Das Ergebnis, das wir
+von der \red{getline}-Funktion kriegen, reichen wir an die
+\red{strlen}-Funktion weiter, welche die Buchstaben in dem Text zählt, und
+schließlich übergeben wir das Ergebnis der strlenFunktion an den
+\red{:echo}-Befehl, der uns das Resultat einfach nur anzeigt. Vergegenwärtigen
+Sie sich den Informationsfluß dieses Befehls.
+
+strlen(getline("'."')) nennt man einen Ausdruck. Die Ergebnisse solcher
+Ausdrücke können wir speichern, indem wir Variablen benutzen.
+\textit{Variablen} tun das, was der Name schon andeutet -- Sie sind Namen, die
+auf Werte zeigen, und diese Werte können alles mögliche sein, d.h. es variiert.
+Die Länge können wir z.B. so speichern:\\
+\includegraphics[scale=0.5]{1-058}
+
+Wenn Sie diese Zeile ausführen, angewandt auf die zweite Zeile oberhalb dieses
+Textes, kriegen Sie folgendes Ergebnis:\\
+\includegraphics[scale=0.5]{1-059}
 
 Beachten Sie, wie wir Variablen in anderen 'Ausdrücken' verwenden können.
-Die Möglichkeiten, was Sie mit Hilfe dieser Variablen, Ausdrücke und Befehle erreichen können, sind
-endlos.
-Vim stellt über Präfixe viele Typen von Variablen zur Verfügung, wie \$, für Umgebunsvariablen, \&, für
-Optionen, und @, für Register:
 
-Sehen Sie sich auch :help function-list an, mit einer riesigen Liste von verfügbaren Funktionen.
+Die Möglichkeiten, was Sie mit Hilfe dieser Variablen, Ausdrücke und Befehle
+erreichen können, sind endlos.
 
-Sie können auch Ihre eigenen Funktionen erstellen:
+Vim stellt über Präfixe viele Typen von Variablen zur Verfügung, wie \$, für
+Umgebunsvariablen, \&, für Optionen, und @, für Register:\\
+\includegraphics[scale=0.5]{1-060}
 
-Jetzt setzen Sie Ihren Cursor mal auf irgendeine Zeile und führen den folgenden Befehl aus:
+Sehen Sie sich auch \red{:help} function-list an, mit einer riesigen Liste von
+verfügbaren Funktionen.
+
+Sie können auch Ihre eigenen Funktionen erstellen:\\
+\includegraphics[scale=0.5]{1-061}
+
+Jetzt setzen Sie Ihren \blue{Cursor} mal auf irgendeine Zeile und führen den
+folgenden Befehl aus:\\
+\includegraphics[scale=0.5]{1-062}
 
 Sie sollten eine Nummer ausgedruckt sehen.
-Funktionsnamen müssen mit einem Großbuchstaben beginnen. Dies dient der Unterscheidung der
-programmimmanenten Funktionen, die mit einem Kleinbuchstaben beginnen, und benutzerdefinierten
-Funktionen, die mit einem Großbuchstaben beginnen.
-Wenn Sie die Ausführung einer Funktion einfach nur aufrufen wollen, ohne dass die Inhalte angezeigt
-werden, können Sie folgendes tun :call CurrentLineLength().
-Entscheidungen
-Angenommen Sie möchten ein anderes Farbschema anzeigen, abhängig davon, ob Vim im Terminal oder in
-der grafischen Variante läuft, d.h. Sie brauchen das Skript, um Entscheidungen zu fällen. Dann nehmen Sie
-dies hier:
 
+Funktionsnamen müssen mit einem Großbuchstaben beginnen. Dies dient der
+Unterscheidung der programmimmanenten Funktionen, die mit einem Kleinbuchstaben
+beginnen, und benutzerdefinierten Funktionen, die mit einem Großbuchstaben
+beginnen.
+
+Wenn Sie die Ausführung einer Funktion einfach nur aufrufen wollen, ohne dass
+die Inhalte angezeigt werden, können Sie folgendes tun \red{:call
+CurrentLineLength()}.
+
+\subsection{Entscheidungen}
+Angenommen Sie möchten ein anderes Farbschema anzeigen, abhängig davon, ob Vim
+im Terminal oder in der grafischen Variante läuft, d.h. Sie brauchen das
+Skript, um Entscheidungen zu fällen. Dann nehmen Sie dies hier:\\
+\includegraphics[scale=0.5]{1-063}
+
+\noindent
 Das funktioniert so:
+\begin{itemize}
+	\item has() ist eine Funktion, die angewandt wird, um zu entscheiden, ob
+		eine bestimmte Fähigkeit des Vim unterstützt wird, der auf dem
+		aktuellen Computer gerade installiert ist.  Sehen Sie hierzu \red{:help
+		feature-list} um die verfügbaren Programmfähigkeiten kennenzulernen.
+	\item Die \red{if}-Anweisung überprüft die gegebene Bedingung. Wenn die
+		Bedingung erfüllt ist, setzen wir bestimmte Dinge in gang.
+		"`\red{Else}"', heißt, wir nehmen die Alternative.
+	\item Denken Sie daran, dass zu einer \red{if}-Anweisung auch ein
+		entsprechendes \red{endif} gehört.
+	\item Und es gibt natürlich auch noch \red{elseif}, wenn Sie mehrere
+		Bedingungen und Aktionen verketten möchten.
+\end{itemize}
 
+\noindent
+Die Schleifenausdrücke '\red{for}' und '\red{while}' kennt Vim auch:\\
+\includegraphics[scale=0.5]{1-064}
 
+\noindent
+Das kommt dabei heraus:\\
+\includegraphics[scale=0.5]{1-065}
 
+Mit den programmimmanenten Funktionen des Vim, kann dasselbe auch so
+geschrieben werden:\\
+\includegraphics[scale=0.5]{1-066}
+\begin{itemize}
+	\item range() ist eine programmimmanente Funktion, mit der man eine Reihe
+		von Zahlen generiert. Sehen Sie sich hierzu auch \red{:help range()}
+		an.
+	\item Die \red{continue} und \red{break} Ausdrücke stehen auch zur Verfügung.
+\end{itemize}
 
+\subsection{Datenstrukturen}
+Das Erstellen von Skripten mit Vim unterstützt auch Listen und Wörterbücher.
+Bei Verwendung jener, können Sie komplizierte Programme und Datenstrukturen
+aufbauen.\\
+\includegraphics[scale=0.5]{1-067}
 
+Es stehen viele Funktionen zur Verfügung  schauen Sie sich die Abschnitte
+'\red{List manipulation}' und '\red{Dictionary manipulation}' in \red{:help
+function-list} an.
 
-has() ist eine Funktion, die angewandt wird, um zu entscheiden, ob eine bestimmte Fähigkeit des Vim
-unterstützt wird, der auf dem aktuellen Computer gerade installiert ist.
-Sehen Sie hierzu :help feature-list um die verfügbaren Programmfähigkeiten kennenzulernen.
-Die if-Anweisung überprüft die gegebene Bedingung. Wenn die Bedingung erfüllt ist, setzen wir
-bestimmte Dinge in gang. Else, heißt, wir nehmen die Alternative.
-Denken Sie daran, dass zu einer if-Anweisung auch ein entsprechendes endif gehört.
-Und es gibt natürlich auch noch elseif, wenn Sie mehrere Bedingungen und Aktionen verketten
-möchten.
+\subsection{Ein Vim-Skript schreiben}
+Wir schreiben jetzt ein Skript, das man in Vim laden kann, und deren
+Funktionalität wir dann aufrufen können, wann immer wir es wollen. Das ist was
+anderes, als das Skript innerhalb von Vim zu schreiben, und unmittelbar
+auszuführen, wie wir es bis jetzt getan haben.
 
-Die Schleifenausdrücke 'for' und 'while' kennt Vim auch:
+Gehen wir mal ein einfaches Problem an -- wie wär's damit: Der erste Buchstabe
+eines jeden Wortes, eines ausgewählten Zeilenbereiches, soll in einen
+Großbuchstaben umgewandelt werden. Der Anwendungsfall ist einfach  Wenn ich
+Titelköpfe in einem Dokument schreibe, sieht das mit Großbuchstaben besser aus,
+aber ich bin zu faul, um das selbst zu tun. Ich kann den Text also in
+Kleinbuchstaben eintippen, und dann einfach die Funktion aufrufen, um ihn mit
+Großbuchstaben zu versehen.
 
-Das kommt dabei heraus:
+Wir fangen mit einem einfachen Vorlageskript an. Speichern Sie das folgende
+Skript als \red{captitalize.vim}:\\
+\includegraphics[scale=0.5]{1-070}
 
-Mit den programmimmanenten Funktionen des Vim, kann dasselbe auch so geschrieben werden:
-
-
-
-
-range() ist eine programmimmanente Funktion, mit der man eine Reihe von Zahlen generiert. Sehen
-Sie sich hierzu auch :help range() an.
-Die continue und break Ausdrücke stehen auch zur Verfügung.
-
-Datenstrukturen
-Das Erstellen von Skripten mit Vim unterstützt auch Listen und Wörterbücher. Bei Verwendung jener,
-können Sie komplizierte Programme und Datenstrukturen aufbauen.
-
-Es stehen viele Funktionen zur Verfügung  schauen Sie sich die Abschnitte 'List manipulation' und
-'Dictionary manipulation' in :help function-list an.
-Ein Vim-Skript schreiben
-Wir schreiben jetzt ein Skript, das man in Vim laden kann, und deren Funktionalität wir dann aufrufen
-können, wann immer wir es wollen. Das ist was anderes, als das Skript innerhalb von Vim zu schreiben, und
-unmittelbar auszuführen, wie wir es bis jetzt getan haben.
-Gehen wir mal ein einfaches Problem an  wie wär's damit: Der erste Buchstabe eines jeden Wortes, eines
-ausgewählten Zeilenbereiches, soll in einen Großbuchstaben umgewandelt werden. Der Anwendungsfall ist
-einfach  Wenn ich Titelköpfe in einem Dokument schreibe, sieht das mit Großbuchstaben besser aus, aber
-ich bin zu faul, um das selbst zu tun. Ich kann den Text also in Kleinbuchstaben eintippen, und dann einfach
-die Funktion aufrufen, um ihn mit Großbuchstaben zu versehen.
-Wir fangen mit einem einfachen Vorlageskript an. Speichern Sie das folgende Skript als captitalize.vim:
-
-Funktionsweise:
-
-
-
-
-
-
-
-Die erste Zeile der Datei sollte ein Kommentar sein, der erklärt, worum es überhaupt geht.
-2-3 Standardköpfe werden erwähnt, die die Datei betreffen, wie z.B. 'Last Changed:', das erklärt wie
-alt das Skript ist. Der 'Maintainer:'-Hinweis, damit Endanwender den Skriptautor kontaktieren
-können, sollten irgendwelche Probleme aufgetaucht sein, oder wenn man sich auch einfach nur
-bedanken möchte.
-Die 'Lizenz'-Kopfzeile muss nicht unbedingt angegeben werden, ist aber stark empfohlen. Ein von
-Ihnen geschriebenes Vim-Skript oder Plugin, könnte auch für viele andere von Nutzen sein, weshalb
-Sie für das Skript eine Lizenz festlegen können. In der Folge können andere Leute Ihre Arbeit
-verbessern, und davon profitieren letztendlich wieder Sie selbst.
-Ein Skript kann mehrere Male geladen sein. Wenn Sie z.B. zwei verschiedene Dateien in einer VimSitzung öffnen, und beide sind .html-Dateien, dann öffnet Vim das HTML-Syntaxhervorhebungsskript für beide Dateien. Um zu vermeiden, das gleiche Skript zweimal auszuführen, und die Dinge
-umzubennenen, bauen wir eine Sicherung ein, indem wir überprüfen, ob es den Namen
-\verb 'loaded_capitalize' schon gibt, und schließen es, wenn es bereits geladen wurde.
+\noindent
+Funktionsweise:
+\begin{itemize}
+	\item Die erste Zeile der Datei sollte ein Kommentar sein, der erklärt,
+		worum es überhaupt geht.
+	\item 2-3 Standardköpfe werden erwähnt, die die Datei betreffen, wie z.B.
+		'Last Changed:', das erklärt wie alt das Skript ist. Der
+		'Maintainer:'-Hinweis, damit Endanwender den Skriptautor kontaktieren
+		können, sollten irgendwelche Probleme aufgetaucht sein, oder wenn man
+		sich auch einfach nur bedanken möchte.
+	\item Die 'Lizenz'-Kopfzeile muss nicht unbedingt angegeben werden, ist
+		aber stark empfohlen. Ein von Ihnen geschriebenes Vim-Skript oder
+		\blue{Plugin}, könnte auch für viele andere von Nutzen sein, weshalb
+		Sie für das Skript eine Lizenz festlegen können. In der Folge können
+		andere Leute Ihre Arbeit verbessern, und davon profitieren letztendlich
+		wieder Sie selbst.
+	\item Ein Skript kann mehrere Male geladen sein. Wenn Sie z.B. zwei
+		verschiedene Dateien in einer VimSitzung öffnen, und beide sind
+		.html-Dateien, dann öffnet Vim das HTML-Syntaxhervorhebungsskript für
+		beide Dateien. Um zu vermeiden, das gleiche Skript zweimal auszuführen,
+		und die Dinge umzubennenen, bauen wir eine Sicherung ein, indem wir
+		überprüfen, ob es den Namen '\red{loaded\_capitalize}' schon gibt, und
+		schließen es, wenn es bereits geladen wurde.
+\end{itemize}
 
 Jetzt machen wir weiter, indem wir die aktuelle Funktion schreiben.
-Wir können eine Funktion festlegen, um die Umformung  Umwandlung des ersten Buchstaben eines jeden
-Wortes in einen Großbuchstaben  zu erreichen, und diese Funktion nennen wir Capitalize(). Da sich die
-Funktion auf einen Bereich bezieht, können wir festlegen, dass sie in einem Bereich von Zeilen arbeitet.
 
-Funktionsweise:
+Wir können eine Funktion festlegen, um die Umformung -- Umwandlung des ersten
+Buchstaben eines jeden Wortes in einen Großbuchstaben  zu erreichen, und diese
+Funktion nennen wir \red{Capitalize()}. Da sich die Funktion auf einen Bereich
+bezieht, können wir festlegen, dass sie in einem Bereich von Zeilen arbeitet.\\
+\includegraphics[scale=0.5]{1-072}
 
+\noindent
+Funktionsweise:
+\begin{itemize}
+	\item \red{a:firstline} und \red{a:lastline} stellen die Argumente der
+		Funktion dar, die auf den Anfang, bzw. das Ende des Zeilenbereiches
+		verweisen.
+	\item Um jede Zeile im Bereich abzuarbeiten, benutzen wir eine For-Schleife
+		(das machen wir mit \red{getline()}).
+	\item Wir benutzen die \red{substitute()}-Funktion, um einen regulären
+		Ausdruck Suchen-und-Ersetzen an der Zeichenkette durchzuführen. Hier
+		schreiben wir die Funktion so, dass sie nach Worten sucht (das
+		'{\color{red}\verb \\w\\+ }' zeigt dies an), was ein Wort bedeutet (d.h.
+		ein zusammenhängender Satz von Zeichen, die Teil eines Wortes sind).
+	\item Wenn solche Worte gefunden wurden, werden sie mit 
+		{\color{red}\verb \\u\\0 } umgewandelt - das 
+		{\color{red}\verb \\u } heißt: wandle den ersten Buchstaben, der auf
+		diese Sequenz folgt in einen Großbuchstaben um. Das 
+		{\color{red}\verb \\0 } zeigt auf das Ergebnis, das von
+		\red{substitute()} gefunden wurde, die mit den Worten zusammenhängen.
+		Damit ändern wir den ersten Buchstaben jeden Wortes in einen
+		Großbuchstaben um.
+	\item Wir rufen die \red{setline()}-Funktion auf, um die Zeile in Vim mit
+		der modifizierten Zeichenkette zu ersetzen.
+\end{itemize}
+%lesezeichen 56 63
 
-
-
-
-
-
-
-a:firstline und a:lastline stellen die Argumente der Funktion dar, die auf den Anfang, bzw. das Ende
-des Zeilenbereiches verweisen.
-Um jede Zeile im Bereich abzuarbeiten, benutzen wir eine For-Schleife (das machen wir mit
-getline()).
-Wir benutzen die substitute()-Funktion, um einen regulären Ausdruck Suchen-und-Ersetzen an der
-Zeichenkette durchzuführen. Hier schreiben wir die Funktion so, dass sie nach Worten sucht (das
-'\\w\\+' zeigt dies an), was ein Wort bedeutet (d.h. ein zusammenhängender Satz von Zeichen, die Teil
-eines Wortes sind).
-Wenn solche Worte gefunden wurden, werden sie mit \\u\\0 umgewandelt - das \\u heißt: wandle den
-ersten Buchstaben, der auf diese Sequenz folgt in einen Großbuchstaben um. Das \\0 zeigt auf das
-Ergebnis, das von substitute() gefunden wurde, die mit den Worten zusammenhängen. Damit ändern
-wir den ersten Buchstaben jeden Wortes in einen Großbuchstaben um.
-Wir rufen die setline()-Funktion auf, um die Zeile in Vim mit der modifizierten Zeichenkette zu
-ersetzen.
-
+\noindent
 Um diesen Befehl auszuführen:
-1. Öffnen Sie Vim und geben Sie irgendeinen Text ein, wie 'das ist ein Test'.
-2. Führen Sie aus :source capitalize.vim - das liest die Datei ein, so als ob die Befehle innerhalb Vims
-ausgeführt werden, wie wir es schon zuvor getan haben.
-3. Führen Sie aus :call Captialize().
-4. In der Zeile sollte nun 'das ist ein Test' stehen.
-Jedesmal :call Captialize() auszuführen, ist jedoch ermüdend, und deshalb weisen wir dem Aufruf ein
-Tastaturkürzel zu:
+\begin{enumerate}
+	\item Öffnen Sie Vim und geben Sie irgendeinen Text ein, wie '\red{das ist
+		ein Test}'.
+	\item Führen Sie aus \red{:source capitalize.vim} -- das liest die Datei
+		ein, so als ob die Befehle innerhalb Vims ausgeführt werden, wie wir es
+		schon zuvor getan haben.
+	\item Führen Sie aus \red{:call Captialize()}.
+	\item In der Zeile sollte nun '\red{das ist ein Test}' stehen.
+\end{enumerate}
+Jedesmal \red{:call Captialize()} auszuführen, ist jedoch ermüdend, und deshalb
+weisen wir dem Aufruf ein Tastaturkürzel zu:\\
+\includegraphics[scale=0.5]{1-073}
 
-
+\begin{itemize}
+	\item Die Funktion '\red{Capitalize}' haben wir einfach in
+		'\red{s:Capitalize}' geändert -- dies um anzuzeigen, dass die Funktion
+		innerhalb des verfassten Skripts lokal verwandt wird, und sie global
+		nicht zur Verfügung stehen sollte, weil wir ein 'Kreuzen' mit anderen
+		Skripten damit vermeiden wollen.
+	\item Mit dem \red{map}-Befehl definieren wir das Tastaturkürzel.
+	\item Die \red{$<$Leader$>$}-Taste ist üblicherweise der linksseitige
+		Schrägstrich (\textrightarrow backslash).
+	\item Wir bilden nun \red{$<$Leader$>$c} (also den \red{Leader}-Schlüssel,
+		gefolgt von der '\red{c}'-Taste) auf eine Funktion ab.
+	\item Wir benutzen \red{$<$Plug$>$Capitalize} um auf die
+		\red{Capitalize()}-Funktion zu zeigen, die in einem \blue{Plugin}, also
+		in unserem eigenen Skript beschrieben ist.
+	\item Jedes Skript besitzt eine ID (Identität), repräsentiert durch
+		\red{$<$SID$>$}. Wir können jetzt also den Befehl
+		\red{$<$SID$>$Capitalize} auf einen Aufruf der lokalen Funktion
+		\red{Capitalize()} abbilden.
+\end{itemize}
 
+Nun wiederholen Sie mal diese zuvor erwähnten Schritte, um das Skript zu
+testen. Doch jetzt können Sie {\color{red} \verb \\c } ausführen anstatt
+\red{:call Capitalize()} einzugeben, um Zeilen in Großbuchstaben umzuwandeln.
 
+Diese letzten Schritte waren jetzt vielleicht ein bisschen kompliziert, aber
+das war nur um zu zeigen, dass es eine Fülle von Möglichkeiten gibt,
+Vim-Skripte zu erstellen, mit denen man komplexe Dinge erledigen kann.  Wenn
+irgendetwas nicht klappt in Ihren Skripten, können Sie sich mit \red{v:errmsg}
+die letzte Fehlermeldung anzeigen lassen, die Ihnen vielleicht eine Idee davon
+gibt, was schiefgelaufen ist.  Beachten Sie, dass Sie mit \red{:help} Hilfe zu
+allem finden können, das wir oben schon diskutiert haben, von {\color{red}
+\verb|:help \\w|}  zu \red{:help setline()}.
 
+\subsection{Das Verwenden eigenständiger Programmiersprachen}
+Viele Leute haben keine Lust, Zeit damit zu verbringen, Vims eigene
+Skriptsprache zu erlernen, und ziehen es vor eine Programmiersprache zu
+verwenden, die sie bereits kennen, um \blue{Plugins} für Vim in dieser Sprache
+zu schreiben. Das ist möglich, weil Vim das Schreiben von \blue{Plugins} in
+Python, Perl, Ruby und vielen anderen Sprachen unterstützt.
 
+In diesem Kapitel schauen wir auf ein einfaches, in \textit{Python}
+geschriebenes, Programmerweiterungsmodul, aber wir könnten genauso gut jede
+andere unterstützte Programmiersprache nehmen.
 
+Wie schon erwähnt, wenn Sie Bock haben Python zu lernen, interessiert Sie
+möglicherweise mein anderes freies Buch "`\blue{A Byte Of Python}"'.
 
+Zuerst müssen wir mal checken, ob Python auf Ihrem System schon eingerichtet
+ist.\\
+\includegraphics[scale=0.5]{1-071}
 
-Die Funktion 'Capitalize' haben wir einfach in 's:Capitalize' geändert - dies um anzuzeigen, dass die
-Funktion innerhalb des verfassten Skripts lokal verwandt wird, und sie global nicht zur Verfügung
-stehen sollte, weil wir ein 'Kreuzen' mit anderen Skripten damit vermeiden wollen.
-Mit dem map-Befehl definieren wir das Tastaturkürzel.
-Die <Leader>-Taste ist üblicherweise der linksseitige Schrägstrich ( backslash).
-Wir bilden nun <Leader>c (also den Leader-Schlüssel, gefolgt von der 'c'-Taste) auf eine Funktion ab.
-Wir benutzen <Plug>Capitalize um auf die Capitalize()-Funktion zu zeigen, die in einem Plugin, also
-in unserem eigenen Skript beschrieben ist.
-Jedes Skript besitzt eine ID (Identität), repräsentiert durch <SID>. Wir können jetzt also den Befehl
-<SID>Capitalize auf einen Aufruf der lokalen Funktion Capitalize() abbilden.
+Wenn Sie hier eine 1 zurückkriegen, kann's losgehen, ansonsten sollten Sie
+\textit{Python} auf Ihrem Rechner installieren, und es dann nochmal versuchen.
 
-Nun wiederholen Sie mal diese zuvor erwähnten Schritte, um das Skript zu testen. Doch jetzt können Sie \\c
-ausführen anstatt :call Capitalize() einzugeben, um Zeilen in Großbuchstaben umzuwandeln.
-Diese letzten Schritte waren jetzt vielleicht ein bisschen kompliziert, aber das war nur um zu zeigen, dass es
-eine Fülle von Möglichkeiten gibt, Vim-Skripte zu erstellen, mit denen man komplexe Dinge erledigen kann.
-Wenn irgendetwas nicht klappt in Ihren Skripten, können Sie sich mit v:errmsg die letzte Fehlermeldung
-anzeigen lassen, die Ihnen vielleicht eine Idee davon gibt, was schiefgelaufen ist.
+Angenommen, Sie stellen einen \blue{Blog} ins Internet. Ein Blogger möchte in
+der Regel, dass soviel Leute wie nur möglich, seinen/ihren \blue{Blog} lesen.
+Eine Methode, solche \blue{Blogs} im Internet zu finden, ist, eine Suchmaschine
+abzufragen. Wenn Sie also über ein Thema schreiben, (sagen wir mal, 'C V
+Raman', der berühmte indische Physiker, der einen Nobelpreis für seine Arbeit
+über die 'Streuung von Licht' gewonnen hat), dann wollen Sie vielleicht
+wichtige Sätze verwenden, damit mehr Leute Ihren \blue{Blog} finden, wenn sie
+nach diesem Thema suchen. Wenn jemand z.B. nach 'c v raman' sucht, könnte ihnen
+auch der 'raman-effekt' einfallen, deshalb möchten Sie dies in Ihrem
+\blue{Blog}-Eintrag erwähnen.
 
-Beachten Sie, dass Sie mit :help Hilfe zu allem finden können, das wir oben schon diskutiert haben, von
-:help \\w zu :help setline().
-Das Verwenden eigenständiger Programmiersprachen
-Viele Leute haben keine Lust, Zeit damit zu verbringen, Vims eigene Skriptsprache zu erlernen, und ziehen
-es vor eine Programmiersprache zu verwenden, die sie bereits kennen, um Plugins für Vim in dieser Sprache
-zu schreiben. Das ist möglich, weil Vim das Schreiben von Plugins in Python, Perl, Ruby und vielen anderen
-Sprachen unterstützt.
-In diesem Kapitel schauen wir auf ein einfaches, in Python geschriebenes, Programmerweiterungsmodul,
-aber wir könnten genauso gut jede andere unterstützte Programmiersprache nehmen.
-Wie schon erwähnt, wenn Sie Bock haben Python zu lernen, interessiert Sie möglicherweise mein anderes
-freies Buch "`A Byte Of Python"'.
-Zuerst müssen wir mal checken, ob Python auf Ihrem System schon eingerichtet ist.
+Wie finden wir nun solche, im Zusammenhang stehenden, Sätze? Wie sich
+herausstellt ist die Lösung recht einfach, dank \red{Yahoo! Search}.
 
-Wenn Sie hier eine 1 zurückkriegen, kann's losgehen, ansonsten sollten Sie Python auf Ihrem Rechner
-installieren, und es dann nochmal versuchen.
-Angenommen, Sie stellen einen Blog ins Internet. Ein Blogger möchte in der Regel, dass soviel Leute wie
-nur möglich, seinen/ihren Blog lesen. Eine Methode, solche Blogs im Internet zu finden, ist, eine
-Suchmaschine abzufragen. Wenn Sie also über ein Thema schreiben, (sagen wir mal, 'C V Raman', der
-berühmte indische Physiker, der einen Nobelpreis für seine Arbeit über die 'Streuung von Licht' gewonnen
-hat), dann wollen Sie vielleicht wichtige Sätze verwenden, damit mehr Leute Ihren Blog finden, wenn sie
-nach diesem Thema suchen. Wenn jemand z.B. nach 'c v raman' sucht, könnte ihnen auch der 'raman-effekt'
-einfallen, deshalb möchten Sie dies in Ihrem Blog-Eintrag erwähnen.
-Wie finden wir nun solche, im Zusammenhang stehenden, Sätze? Wie sich herausstellt ist die Lösung recht
-einfach, dank Yahoo! Search.
-Zuerst wollen wir mal herausfinden, wie wir Python dazu nutzen können um auf den aktuellen Text
-zuzugreifen, um die im Zusammenhang stehenden Sätze zu generieren.
+Zuerst wollen wir mal herausfinden, wie wir \textit{Python} dazu nutzen können
+um auf den aktuellen Text zuzugreifen, um die im Zusammenhang stehenden Sätze
+zu generieren.\\
+\includegraphics[scale=0.5]{1-072}
 
-Die grundsätzliche Herangehensweise Plugins in mit Schnittstellen ausgestattete Programmiersprachen zu
-schreiben, ist die gleiche wie unter programmimmanenten Skriptsprachen.
-Der Hauptunterschied besteht darin, dass wir den in Python programmierten Code, dem Python-Interpreter
-übergeben müssen. Dies wird mit einer EOF-Anweisung, wie oben gezeigt, erreicht. Der ganze Text des
-python <<EOF-Befehls, bis hin zum EOF, wird dem Python-Interpreter übergeben.
-Sie können dieses Programm ausprobieren, indem Sie Vim wieder separat öffnen, und ausführen :source
-related.vim, und dann :call Related(). Dies sollte sowas wie Length of the current line is 54 anzeigen.
-Jetzt steigen wir aber hinab in die Funktionalitätstiefen des Programmes. Yahoo! Search hat was, das nennt
-sich VergleichbareVorschlag-Suche (RelatedSuggestion query)[1], auf die wir durch einen Webservice Zugriff
-haben. Auf diesen Webservice kann man zugreifen indem man eine Python-API* nutzt, die von Yahoo!
-Search pYSearch[2] zur Verfügung gestellt wird: *(API=Application Programming Interface  Programmierschnittstelle)
+Die grundsätzliche Herangehensweise \blue{Plugins} in mit Schnittstellen
+ausgestattete Programmiersprachen zu schreiben, ist die gleiche wie unter
+programmimmanenten Skriptsprachen.
 
-Beachten Sie, dass wir die aktuelle Zeile in Vim, als den aktuellen Text verwenden, der uns interessiert. Dies
-können Sie auf jeden beliebigen Text anwenden, wie z.B. das aktuelle Wort, usw.
-Wir benutzen die yahoo.search.web.RelatedSuggestion Klasse um Yahoo! Search nach Sätzen abzufragen,
-die mit der Abfrage in Zusammenhang stehen, die wir festlegen. Die Ergebnisse kriegen wir zurück, indem
-wir \verb parse_results() auf das resultierende Objekt anwenden. Die Ergebnisse legen wir dann zurück, und zeigen
-sie dem Benutzer an.
+Der Hauptunterschied besteht darin, dass wir den in \textit{Python}
+programmierten Code, dem \textit{Python}-Interpreter übergeben müssen. Dies
+wird mit einer EOF-Anweisung, wie oben gezeigt, erreicht. Der ganze Text des
+\red{python <<EOF}-Befehls, bis hin zum \red{EOF}, wird dem
+\textit{Python}-Interpreter übergeben.
+
+Sie können dieses Programm ausprobieren, indem Sie Vim wieder separat öffnen,
+und ausführen \red{:source related.vim}, und dann \red{:call Related()}. Dies
+sollte sowas wie \red{Length of the current line is 54} anzeigen.
+
+Jetzt steigen wir aber hinab in die Funktionalitätstiefen des Programmes.
+\red{Yahoo! Search} hat was, das nennt sich VergleichbareVorschlag-Suche
+(RelatedSuggestion query)[1], auf die wir durch einen Webservice Zugriff haben.
+Auf diesen Webservice kann man zugreifen indem man eine Python-API* nutzt, die
+von \red{Yahoo!  Search pYSearch}[2] zur Verfügung gestellt wird: {\scriptsize
+*(API=Application Programming Interface  Programmierschnittstelle)}\\
+\includegraphics[scale=0.5]{1-073}
+
+Beachten Sie, dass wir die aktuelle Zeile in Vim, als den aktuellen Text
+verwenden, der uns interessiert. Dies können Sie auf jeden beliebigen Text
+anwenden, wie z.B. das aktuelle Wort, usw.
+
+Wir benutzen die \red{yahoo.search.web.RelatedSuggestion} Klasse um Yahoo!
+Search nach Sätzen abzufragen, die mit der Abfrage in Zusammenhang stehen, die
+wir festlegen. Die Ergebnisse kriegen wir zurück, indem wir
+\red{parse\_results()} auf das resultierende Objekt anwenden. Die Ergebnisse
+legen wir dann zurück, und zeigen sie dem Benutzer an.
+
 1.
 2.
 3.
