@@ -3447,7 +3447,7 @@ eine Ahnung davon erhalten wie erweiterbar Vim ist, und wie wir \blue{Plugins}
 schreiben können, um uns das Leben zu erleichtern.
 
 %externe links
-%lesezeichen 77 81
+%77 81
 \section{ein Editor für Programmierer}
 \subsection{Einführung}
 Vim neigt schwer dazu von Programmierern eingesetzt zu werden. Die
@@ -3962,75 +3962,139 @@ und Peteris Krumins's Blog.
 %extern links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Programmers_Editor&oldid=1245
 %Principal Authors: Swaroop
+%90 97
 
 \section{Mehr}
-Einführung
-Wir haben so viele Funktionen des Vim erforscht, aber wir haben immer noch nicht alle abgedeckt, also
-lassen Sie uns einen wilden Ritt durch die verschiedenen Themen machen, die nützlich und lustig sind.
-Moduszeile
-Was, wenn Sie festlegen möchten, dass eine bestimmte Datei, während des editierens, immer reine Tabs und
-keine Leerzeichen benutzen soll? Können wir dies innerhalb der Datei erzwingen?
-Ja! Legen Sie einfach ein vim: noexpandtab innerhalb der ersten oder letzten beiden Zeilen Ihrer Datei ab.
-Ein Beispiel:
+\subsection{Einführung}
+Wir haben so viele Funktionen des Vim erforscht, aber wir haben immer noch
+nicht alle abgedeckt, also lassen Sie uns einen wilden Ritt durch die
+verschiedenen Themen machen, die nützlich und lustig sind.
 
-Diese hinzugefügte Zeile nennt sich Moduszeile.
-Vim für unterwegs
-Wenn Sie öfters an ganz unterschiedlichen Computern sitzen, ist es dann nicht eine Qual, wenn Sie Ihre
-Vim-Einstellungen für jeden Rechner immer wieder auf den gleichen Stand bringen müssen? Wär's nicht
-sinnvoll, wenn Sie den Vim auf Ihrem eigenen USB-Stick ( disk deliberately changed to stick!) mit sich herumtragen
-könnten? Genau dafür gibt es Portable Gvim.[1]
-Einfach in ein Verzeichnis auf dem USB-Stick entpacken, und GvimPortable.exe ausführen. Sie können
-sogar Ihre eingene vimrc und andere damit in Zusammenhang stehende Dateien auf dem Stick abspeichern,
+\subsection{Moduszeile}
+Was, wenn Sie festlegen möchten, dass eine bestimmte Datei, während des
+editierens, immer reine \textit{Tabs} und keine Leerzeichen benutzen soll?
+Können wir dies innerhalb der Datei erzwingen?
+
+Ja! Legen Sie einfach ein \red{vim: noexpandtab} innerhalb der ersten oder
+letzten beiden Zeilen Ihrer Datei ab.
+
+Ein Beispiel:\\
+\includegraphics[scale=0.5]{1-120}
+%da is was faul
+
+Diese hinzugefügte Zeile nennt sich "`Moduszeile"'.
+
+\subsection{Vim für unterwegs}
+Wenn Sie öfters an ganz unterschiedlichen Computern sitzen, ist es dann nicht
+eine Qual, wenn Sie Ihre Vim-Einstellungen für jeden Rechner immer wieder auf
+den gleichen Stand bringen müssen? Wär's nicht sinnvoll, wenn Sie den Vim auf
+Ihrem eigenen USB-Stick {\scriptsize \textit{(\textrightarrow disk deliberately
+changed to stick!)}} mit sich herumtragen könnten? Genau dafür gibt es
+\textit{Portable Gvim}.[1]
+
+Einfach in ein Verzeichnis auf dem USB-Stick entpacken, und
+\red{GvimPortable.exe} ausführen. Sie können sogar Ihre eingene \textit{vimrc}
+und andere damit in Zusammenhang stehende Dateien auf dem Stick abspeichern,
 und überall dort, wo ein Microsoft Windows Computer steht, benutzen.
-Plugins aufrüsten ( upgrade)
-Jeder ausreichend fortgeschrittene Vim-Anwender würde einen ganzen Haufen von Plugins und Skripten
-verwenden, die er in seinem ~/.vim oder ~/vimfiles-Verzeichnis ablegt. Was, wenn wir die alle aufrüsten
-wollen, auf die letzte Version? Sie könnten natürlich für jedes einzelne die Skriptseite aufrufen, herunterladen, und sie installieren. Aber es gibt eine bessere Methode  Führen Sie einfach :GLVS aus (das steht für
-'G'et 'L'atest 'V'im 'S'cripts).
-:help getscripts gibt Ihnen die Details.
-Es gibt Skripte mit denen Sie sogar von Vim twittern können [2]!
-Dr. Chip's Plugins
-Dr. Chip hat ein paar ganz erstaunliche Plugins [3], über die Jahre, geschrieben. Meine Lieblingsskripte sind
-drawit.vim, womit Sie textbasierte Zeichnungen erstellen können, wie die ganzen ASCII-Diagramme, die Sie
-schon zuvor gesehen haben.
 
-Ein anderes Lieblingsskript ist Align.vim [4], mit dem Sie aufeinanderfolgende Zeilen bündig ausrichten
-können. Nehmen wir mal dieses Stück Programmiercode:
+\subsection{\blue{Plugins} aufrüsten (\textrightarrow upgrade)}
+Jeder ausreichend fortgeschrittene Vim-Anwender würde einen ganzen Haufen von
+\blue{Plugins} und Skripten verwenden, die er in seinem \red{~/.vim} oder
+\red{~/vimfiles}-Verzeichnis ablegt. Was, wenn wir die alle aufrüsten wollen,
+auf die letzte Version? Sie könnten natürlich für jedes einzelne die
+Skriptseite aufrufen, herunterladen, und sie installieren. Aber es gibt eine
+bessere Methode -- Führen Sie einfach \red{:GLVS} aus (das steht für
+'\red{G}'et '\red{L}'atest '\red{V}'im '\red{S}'cripts).
 
-Markieren Sie einfach die drei Zeilen visuell (v im Normalmodus), und drücken Sie dann \t=, und  tataa! 
-es ändert sich zu dem hier:
+\red{:help getscripts} gibt Ihnen die Details.
 
-Das ist viel leichter zu lesen, als der Ausgangstext, und Ihr Programmcode sieht dadurch professioneller aus.
-Gehen Sie auf Dr. Chips Seite  da gibt es noch jede Menge interessanter Plugins.
-Aus Vim heraus bloggen ( Blog oder Weblog = World Wide Web Log aus: www.wikipedia.de)
-Wenn Sie das Vimpress-Plugin [5] verwenden, können Sie Ihren Wordpress-Blog direkt mit dem Vim
-erledigen.
-Firefox soll sich wie Vim verhalten
-Mit dem Vimperator-Zusatzplugin [6] können Sie Ihren Firefox vim-ähnliches Verhalten beibringen, komplett
-mit allen Modi, Tastaturkürzel um Verknüpfungen anzusteuern, Statuszeile, Tab-Ergängung und sogar
+Es gibt Skripte mit denen Sie sogar von Vim \textit{\blue{twittern}} können
+[2]!  \subsection{Dr. Chip's \blue{Plugins}} "`Dr. Chip"' hat ein paar ganz
+erstaunliche \blue{Plugins} [3], über die Jahre, geschrieben. Meine
+Lieblingsskripte sind \red{drawit.vim}, womit Sie textbasierte Zeichnungen
+erstellen können, wie die ganzen ASCII-Diagramme, die Sie schon zuvor gesehen
+haben.
+
+Ein anderes Lieblingsskript ist \red{Align.vim} [4], mit dem Sie
+aufeinanderfolgende Zeilen bündig ausrichten können. Nehmen wir mal dieses
+Stück Programmiercode:\\
+\includegraphics[scale=0.5]{1-121}
+
+Markieren Sie einfach die drei Zeilen visuell (\red{v} \textit{im
+Normalmodus}), und drücken Sie dann {\color{red}\verb|\t=|}, und -- tataa! --
+es ändert sich zu dem hier:\\
+\includegraphics[scale=0.5]{1-122}
+
+Das ist viel leichter zu lesen, als der Ausgangstext, und Ihr Programmcode
+sieht dadurch professioneller aus.
+
+Gehen Sie auf Dr. Chips Seite  da gibt es noch jede Menge interessanter \blue{Plugins}.
+
+\subsection{Aus Vim heraus bloggen}
+(\textrightarrow Blog oder Weblog = World Wide Web Log {\scriptsize aus:
+\url{www.wikipedia.de})
+
+Wenn Sie das \red{Vimpress}-\blue{Plugin} [5] verwenden, können Sie Ihren
+\textit{Wordpress}-Blog direkt mit dem Vim erledigen.
+
+\subsection{Firefox soll sich wie Vim verhalten}
+Mit dem \red{Vimperator}-Zusatz\blue{plugin} [6] können Sie Ihren Firefox
+vim-ähnliches Verhalten beibringen, komplett mit allen Modi, Tastaturkürzel um
+Verknüpfungen anzusteuern, Statuszeile, Tab-Ergängung und sogar
 Markierungsunterstützung!
-Bram's Gesprächsrunde über die sieben Angewohnheiten
-Bram Moolenaar, der den Vim programmiert hat, hat vor langer Zeit einen Artikel geschrieben mit dem Titel
-Seven habits of effective text editing [7] ( 'Sieben Angewohnheiten für das effektive Editieren von
-Textdateien '  http://aaron-mueller.de/artikel/seven-habits-german), der erklärt, wie man einen guten Editor (wie den Vim)
-benutzt.
-Bram hat kürzlich einen Vortrag mit dem Titel Seven habits of effective text editing 2.0[8] wo er sowohl die
-neueren Funktionen des Vim beschreibt, als auch wie man den Vim effektiv benutzt. Das ist ein guter Vortrag
-für jeden normalen Vim-Anwender.
-Was beisteuern zu Vim
-Sie können auf vielerlei Art etwas zu Vim beisteuern, indem Sie z.B. an der Entwicklung selbst mitarbeiten[9],
-Plugins und Farbschemata schreiben [10], Tipps beisteuern [11] und bei der Dokumentation helfen [12].
-Wenn Sie bei der Entwicklung des Vim mitarbeiten möchten - :help development.
 
-Die Gemeinschaft ( community)
-Viele Vim-Anwender hängen in der vim@vim.org-Mailingliste rum [13] wo Fragen und Zweifel nachgefragt,
-und beantwortet werden. Die beste Art, mehr über Vim zu lernen, und anderen Anfängern den Vim
-beizubringen, ist es, sich immer wieder Emails aus der Mailingliste durchzulesen (und darauf zu antworten).
-Auf delicious [14] und reddit [15] finden Sie weitere Artikel und Besprechungen.
-Zusammenfassung
-Wir haben einen großen Bereich Vim-bezogenen Stoffs gesehen, und wie wir davon profitieren. Fühlen Sie
-sich ermutigt diese, und viele weitere Skripte zu erkunden [16] um Ihnen das Editieren leichter und bequemer
-zu machen.
+\subsection{Bram's Gesprächsrunde über die sieben Angewohnheiten}
+Bram Moolenaar, der den Vim programmiert hat, hat vor langer Zeit einen Artikel
+geschrieben mit dem Titel \textit{"`Seven habits of effective text editing"'
+[7] (\textrightarrow 'Sieben Angewohnheiten für das effektive Editieren von
+Textdateien ' \textrightarrow {\scriptsize
+\url{http://aaron-mueller.de/artikel/seven-habits-german}})}, der erklärt, wie
+man einen guten Editor (wie den Vim) benutzt.
+
+Bram hat kürzlich einen Vortrag mit dem Titel \textit{"`Seven habits of
+effective text editing 2.0"'}[8] wo er sowohl die neueren Funktionen des Vim
+beschreibt, als auch wie man den Vim effektiv benutzt. Das ist ein guter
+Vortrag für jeden normalen Vim-Anwender.
+
+\subsection{Was beisteuern zu Vim}
+Sie können auf vielerlei Art etwas zu Vim beisteuern, indem Sie z.B. an der
+Entwicklung selbst mitarbeiten[9], \blue{Plugins} und Farbschemata schreiben
+[10], Tipps beisteuern [11] und bei der Dokumentation helfen [12].
+
+Wenn Sie bei der Entwicklung des Vim mitarbeiten möchten - \red{:help development}.
+
+\subsection{Die Gemeinschaft (\textrightarrow community)}
+Viele Vim-Anwender hängen in der vim@vim.org-Mailingliste rum [13] wo Fragen
+und Zweifel nachgefragt, und beantwortet werden. Die beste Art, mehr über Vim
+zu lernen, und anderen Anfängern den Vim beizubringen, ist es, sich immer
+wieder \blue{Emails} aus der Mailingliste durchzulesen (und darauf zu
+antworten).
+
+Auf \textit{delicious} [14] und \textit{reddit} [15] finden Sie weitere Artikel
+und Besprechungen.
+
+\subsection{Zusammenfassung}
+Wir haben einen großen Bereich Vim-bezogenen Stoffs gesehen, und wie wir davon
+profitieren. Fühlen Sie sich ermutigt diese, und viele weitere Skripte zu
+erkunden [16] um Ihnen das Editieren leichter und bequemer zu machen.
+%lesezeichen 93 99
+%externe links
+%[1] \footnote{\url{http://portablegvim.sourceforge.net}}
+%[2] \footnote{\url{http://www.vim.org/scripts/script.php?script_id=1853}}
+%[3] \footnote{\url{http://mysite.verizon.net/astronaut/vim/}}
+%[4] \footnote{\url{http://www.vim.org/scripts/script.php?script_id=294}}
+%[5] \footnote{\url{http://www.vim.org/scripts/script.php?script_id=1953}}
+%[6] \footnote{\url{http://vimperator.mozdev.org/}}
+%[7] \footnote{\url{http://www.moolenaar.net/habits.html}}
+%[8] \footnote{\url{http://video.google.com/videoplay?docid=2538831956647446078&amp;q=%22Google+engEDU%22}}
+%[9] \footnote{\url{http://groups.google.com/group/vim_dev}}
+%[10] \footnote{\url{http://www.vim.org/scripts/}}
+%[11] \footnote{\url{http://vim.wikia.com}}
+%[12] \footnote{\url{http://vimdoc.sourceforge.net}}
+%[13] \footnote{\url{http://www.vim.org/maillist.php#vim}}
+%[14] \footnote{\url{http://delicious.com/popular/vim}}
+%[15] \footnote{\url{http://www.reddit.com/r/vim/}}
+%[16] \footnote{\url{http://www.vim.org/scripts/}}
 
 \section{Ausblick}
 Einführung
