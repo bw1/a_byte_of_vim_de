@@ -3060,7 +3060,7 @@ Es gibt verschiedene Arten von \blue{\textit{Plugins}}, die man schreiben kann:
 \end{itemize}
 Sie können nicht nur Ihre eigenen \blue{\textit{Plugins}} schreiben, sondern
 auch die von anderen geschriebenen \blue{\textit{Plugins}}, herunterladen und
-benutzen.[1]
+benutzen. \footnote{\url{http://www.vim.org/scripts/index.php}}
 
 \subsection{Individualisierung des Vim mit der vimrc}
 Wenn ich eine neue Linux-Distribution installiere, oder Windows neu aufsetze,
@@ -3104,16 +3104,19 @@ erlernen wollen, verweise ich auf \red{:help}.
 Noch einen Teil aus meiner \textit{gvimrc}:\\
 \includegraphics[scale=0.5]{1-079}
 
-Da draussen gibt es jede Menge an Beispielen von \textit{vimrc's}[2] auf die
-Sie unbedingt mal einen Blick werfen sollten, um die zahlreichen Arten von
-individuellen Einstellungsmöglichkeiten kennenzulernen, und sich dann genau
+Da draussen gibt es jede Menge an Beispielen von \textit{vimrc's}
+\footnote{\url{http://dotfiles.org/.vimrc}}
+auf die Sie unbedingt mal einen Blick werfen sollten, um die zahlreichen Arten
+von individuellen Einstellungsmöglichkeiten kennenzulernen, und sich dann genau
 diejenigen herauszupicken, die Ihnen am besten gefallen, um Sie in Ihre eigene
 vimrc einzubauen.
 
 Ein paar gute, die ich vormals gefunden habe, sind:
 \begin{itemize}
-	\item \red{vi-improved.org}'s[3] vimrc
-	\item \red{Amir Salihefendic}'s[4] vimrc
+	\item \red{vi-improved.org}'s
+		\footnote{\url{http://www.vi-improved.org/vimrc.php}} vimrc
+	\item \red{Amir Salihefendic}'s
+		\footnote{\url{http://amix.dk/vim/vimrc.html}} vimrc
 \end{itemize}
 Es ist ein bekanntes Faktum, dass durch die \textit{vimrc} eines Benutzers
 darauf geschlossen werden kann, wie lange derjenige/diejenige Vim schon
@@ -3122,7 +3125,7 @@ benutzt.
 \subsection{Globales \blue{Plugin}}
 Globale \blue{\textit{Plugins}} werden benutzt, um allgemeine Funktionen zur
 Verfügung zu stellen. Globale \blue{\textit{Plugins}} liegen an zwei Orten:
-%lesezeichen 66 70
+%66 70
 \begin{enumerate}
 	\item \red{\$VIMRUNTIME/plugin/} für Standard\blue{plugins}, die Vim schon
 		bei seiner Installation einrichtet.
@@ -3140,7 +3143,8 @@ Verfügung zu stellen. Globale \blue{\textit{Plugins}} liegen an zwei Orten:
 
 Jetzt wollen wir so ein \blue{\textit{Plugin}} einmal anwenden.
 
-Ein nützliches \blue{\textit{Plugin}} ist \red{highlight\_current\_line.vim}[5]
+Ein nützliches \blue{\textit{Plugin}} ist \red{highlight\_current\_line.vim}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1652}}
 von Ansuman Mohanty, das genau das tut, was der Name schon suggeriert. Laden
 Sie sich neuste Version der Datei \red{highlight\_current\_line.vim}  herunter,
 und legen Sie sie in Ihr \blue{\textit{Plugin}}-Verzeichnis (wie oben erwähnt).
@@ -3184,7 +3188,9 @@ ist, der die Seite schreibt.
 Wollen mal sehen inwiefern \red{ftplugins} einem Vim-Benutzer beim Verfassen
 von XML helfen kann.
 \begin{enumerate}
-	\item Laden Sie sich zuerstmal das \red{xmledit ftplugin}[6] runter, und
+	\item Laden Sie sich zuerstmal das \red{xmledit ftplugin}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=301}}
+		runter, und
 		werfen Sie es in Ihr \red{~/.vim/ftplugin/Verzeichnis}.
 	\item Fügen Sie Ihrer \red{~/.vimrc} noch folgende Zeile hinzu:\\
 		\includegraphics[scale=0.5]{1-083}\\ 
@@ -3251,8 +3257,11 @@ welche Farben den Marken-Namen zugewiesen werden sollen, etc.
 
 \subsection{Ein \blue{Syntax}schema benutzen}
 Lassen Sie uns so eine \blue{Syntax}datei einmal hautnah bei der Arbeit
-erleben. Laden Sie sich \red{mkd.vim}[7] herunter - das ist ein
-\blue{Syntax}-Skript für die \textit{Markdown}-\blue{Syntax}.[8]
+erleben. Laden Sie sich \red{mkd.vim}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1242}}
+herunter - das ist ein
+\blue{Syntax}-Skript für die \textit{Markdown}-\blue{Syntax}.
+\footnote{\url{http://daringfireball.net/projects/markdown/}}
 \textit{Markdown} ist im Grunde ein Format, das es Ihnen ermöglicht einfachen
 Text einzugeben, der später in HTML umgewandelt wird.
 \begin{enumerate}
@@ -3267,7 +3276,9 @@ Text einzugeben, der später in HTML umgewandelt wird.
 \end{enumerate}
 \subsection{Ein Syntaxschema schreiben}
 Lassen Sie uns jetzt versuchen eine eigene \blue{Syntax}datei für das
-\textit{AmiFormat}[9]-Textformat zu schreiben.
+\textit{AmiFormat}%
+\footnote{\url{http://orangoo.com/labs/AmiNation/AmiFormat/}}%
+-Textformat zu schreiben.
 
 Bei der \textit{Syntax}hervorhebung dreht es sich im Kern um zwei Schritte -
 zuerst müssen wir die Art des Textformates bestimmen, nachdem wir suchen, und
@@ -3315,13 +3326,15 @@ und Endmuster (was sehr einfach ist, in unserem Fall), und dann verknüpfen wir
 dies mit der schon vorhandenen '\red{Identifier}'-Klasse.
 
 So ähnlich können wir auch vorgehen um Definitionen zu anderen Textteilen
-hinzuzufügen, so wie es im \textit{AmiFormat}-Nachschlagehandbuch[10]
+hinzuzufügen, so wie es im \textit{AmiFormat}-Nachschlagehandbuch
+\footnote{\url{http://orangoo.com/labs/AmiNation/AmiFormat/online\%20reference/}}
 beschrieben ist, und das endgültige Skript könnte dann so aussehen:\\
 \includegraphics[scale=0.5]{1-094}\\
 \includegraphics[scale=0.5]{1-095}
 
 Jetzt wo das Skript tatsächlich funktioniert, habe ich es in die
-Vim-Skripte-Abteilung[11] hochgeladen, und zwar als ich es geschrieben habe!
+Vim-Skripte-Abteilung\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1745}}
+hochgeladen, und zwar als ich es geschrieben habe!
 Jetzt kann jeder auf dem Planeten die
 \textit{AmiFormat}-\blue{Syntax}hervorhebung in Vim benutzen.
 
@@ -3354,7 +3367,9 @@ nach HTML umwandeln wollen, benutzen Sie ein Umwandlungsprogramm.
 Lassen Sie uns die Benutzung eines Compiler-\blue{Plugins} für Python untersuchen.
 
 \begin{enumerate}
-	\item Laden Sie sich das \red{compiler/python.vim}[12]-Skript herunter und
+	\item Laden Sie sich das \red{compiler/python.vim}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1439}}
+		-Skript herunter und
 		schieben Sie es in Ihr \red{~/.vim/compiler/}-Verzeichnis.
 	\item Fügen Sie die folgende Zeile in Ihre \red{~/.vimrc} ein:\\
 		\includegraphics[scale=0.5]{1-096}
@@ -3383,7 +3398,9 @@ Datei 'gemacht' werden soll, d.h. wie sie zu kompilieren ist, und die zweite
 ist \red{errorformat}, welche die Form der Compilerfehlerausgabe bestimmt.
 
 Ich habe  mit den gleichen beiden Variablen -- ein Compiler-\blue{Plugin} für
-\textit{Adobe Flex}[13] geschrieben.
+\textit{Adobe Flex}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1746}}
+geschrieben.
 
 Für weitere Details, sehen Sie sich hierzu auch \red{:help write-compiler-plugin} und \red{:help quickfix} an, wie Sie
 Ihre eigenen Compiler-\blue{Plugins} schreiben.
@@ -3391,389 +3408,560 @@ Ihre eigenen Compiler-\blue{Plugins} schreiben.
 \subsection{Hausaufgabe : Schreiben Sie ein globales \blue{Plugin}}
 Um Ihre neuerworbenen \blue{Plugin}-Programmierfähigkeiten zu praktizieren,
 versuchen Sie sich mal an dieser Übung:
+\begin{quote}
+Schreiben Sie ein Plugin, dass sämtliche doppelten Zeilen, und überflüssige
+Leerzeilen des Dokumentes löscht.
 
-Schreiben Sie ein Plugin, dass sämtliche doppelten Zeilen, und überflüssige Leerzeilen des
-Dokumentes löscht.
-
-Entweder Sie benutzen hierfür Vim's eigene Skriptsprache oder jede andere Sprache, die eine Schnittstelle zu
-Vim hat.
-Wenn Sie einen kleinen 'Anstubser' brauchen, nehmen Sie diesen Tipp[14].
+Entweder Sie benutzen hierfür Vim's eigene Skriptsprache oder jede andere
+Sprache, die eine Schnittstelle zu Vim hat.
+\end{quote}
+Wenn Sie einen kleinen 'Anstubser' brauchen, nehmen Sie diesen Tipp
+\footnote{\url{http://vim.wikia.com/wiki/Remove_unwanted_empty_lines}}.
 Oder wie wär's hiermit?
-Schreiben Sie ein Skript um sich die Bedeutung und Synonyme für das aktuelle Wort unter der
-Schreibmarke zu holen.
-Nochmal; den 'Anstubser' kriegen Sie über mein lookup.vim-Plugin[15].
-Plugins abschalten
-Angenommen Sie finden, dass Vim schräge Dinge tut, und Sie haben als Ursache hierfür ein Plugin in
-Verdacht, dann können Sie Vim zu einer selektiven Initialisierung veranlassen, mit dem -u
-Befehlszeilenargument.
-vim -u NONE z.B., startet den Vim ohne irgenwelche Initialisierungsskripte auszuführen. Das ist der reine
-Vim, wie er in seinem Rohzustand läuft. Benutzen Sie vim -u ihre-minimale-initialisierung.vim, um
-ausschließlich ganz bestimmte Initialisierungen laufen zu lassen, die Sie benötigen. Diese Möglichkeit hilft
-Ihnen bei der Fehlerbeseitigung, wenn irgendwelche Probleme im Vim auftauchen oder durch ein Plugin
+\begin{quote}
+Schreiben Sie ein Skript um sich die Bedeutung und Synonyme für das aktuelle
+Wort unter der Schreibmarke zu holen.
+\end{quote}
+Nochmal; den 'Anstubser' kriegen Sie über mein lookup.vim-Plugin
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=2001}}.
+
+\subsection{\blue{Plugins} abschalten}
+Angenommen Sie finden, dass Vim schräge Dinge tut, und Sie haben als Ursache
+hierfür ein \blue{Plugin} in Verdacht, dann können Sie Vim zu einer selektiven
+Initialisierung veranlassen, mit dem \red{-u} Befehlszeilenargument.
+
+\red{vim -u NONE} z.B., startet den Vim ohne irgenwelche
+Initialisierungsskripte auszuführen. Das ist der reine Vim, wie er in seinem
+Rohzustand läuft. Benutzen Sie\\ \red{vim -u ihre-minimale-initialisierung.vim},
+um ausschließlich ganz bestimmte Initialisierungen laufen zu lassen, die Sie
+benötigen. Diese Möglichkeit hilft Ihnen bei der Fehlerbeseitigung, wenn
+irgendwelche Probleme im Vim auftauchen oder durch ein \blue{Plugin}
 eingeschleppt wurden.
-Sehen Sie hierzu :help -u und :help starting für Einzelheiten.
-Zusammenfassung
-Wir haben die verschiedenen Arten von Plugins gesehen, die es für den Vim gibt, wie man solche Plugins
-benutzt und schreibt. Jetzt haben wir eine Ahnung davon erhalten wie erweiterbar Vim ist, und wie wir
-Plugins schreiben können, um uns das Leben zu erleichtern.
 
+Sehen Sie hierzu \red{:help -u} und \red{:help} starting für Einzelheiten.
+
+\subsection{Zusammenfassung}
+Wir haben die verschiedenen Arten von \blue{Plugins} gesehen, die es für den
+Vim gibt, wie man solche \blue{Plugins} benutzt und schreibt. Jetzt haben wir
+eine Ahnung davon erhalten wie erweiterbar Vim ist, und wie wir \blue{Plugins}
+schreiben können, um uns das Leben zu erleichtern.
+
+%externe links
+%lesezeichen 77 81
 \section{ein Editor für Programmierer}
-Einführung
-Vim neigt schwer dazu von Programmierern eingesetzt zu werden. Die Funktionalität, die Bedienerfreundlichkeit, und Flexibilität, die Vim mitliefert, machen ihn zu einer guten Wahl für Leute die häufig
-programmieren. Das sollte nicht allzu überraschend sein, da Programmieren auch viel mit Editieren zu tun
-hat.
-Lassen Sie es mich noch einmal wiederholen, dass Schreibfertigkeit für einen Programmierer von
-entscheidender Bedeutung ist. Wenn Sie unsere obigen Ausführungen noch nicht überzeugen konnten, dann
-wird es hoffentlich dieser Artikel von Jeff Atwood  'We are Typist First, Programmers Second' [1] ( 'Zu
-allererst sind wir Tipper, dann Programmierer').
-Wenn Sie keinerlei Programmiererfahrung besitzen, können Sie dieses Kapitel natürlich überspringen.
-Für alle, die ins Programmieren ganz verliebt sind, lassen Sie uns eintauchen: in Sachen Programmieren hat
-es Vim echt drauf.
-Einfaches Zeugs
-Die einfachste Funktion von Vim, die Sie für sich nutzbar machen können beim Programmieren, ist die
-Syntaxhervorhebung. Dies ermöglicht Ihnen Ihren Code 'sichtbar' zu machen, und damit können Sie Ihren
-Code auch schneller lesen und schreiben, und Sie machen weniger ganz offensichtliche Fehler.
-Syntaxhervorhebung
-Angenommen Sie editieren eine
-vim-syntax-Datei. Führen Sie
-:set filetype=vim aus, und sehen Sie
-wie Vim Farbe hinzufügt. Ähnlich
-ist es, wenn Sie eine Python-Datei
-editieren. Führen Sie
-:set filetype=python aus.
-Um eine Liste der zur Verfügung
-stehenden Sprachtypen zu sehen
-überprüfen Sie das
-\verb $VIMRUNTIME/syntax/ -Verzeichnis.
-Tipp
-Wenn Sie die ganze Pracht
-der Syntaxhervorhebung für
-jegliche Unix-Shell-Ausgabe
-haben wollen, leiten Sie es
-einfach durch die Röhre
-( to pipe) an Vim, z.B.
-svn diff | vim -R -. Beachten
-Sie den Bindestrich am Ende,
-der Vim sagt, dass er Text von
-seiner Standardeingabe einlesen soll.
+\subsection{Einführung}
+Vim neigt schwer dazu von Programmierern eingesetzt zu werden. Die
+Funktionalität, die Bedienerfreundlichkeit, und Flexibilität, die Vim
+mitliefert, machen ihn zu einer guten Wahl für Leute die häufig programmieren.
+Das sollte nicht allzu überraschend sein, da Programmieren auch viel mit
+Editieren zu tun hat.
 
-Intelligentes Einrücken
-Der Code eines erfahrenen Programmierers ist normalerweise sauber eingerückt, was ihm ein 'uniformes'
-Aussehen verleiht, und die Struktur offensichtlicher erscheinen lässt. Vim erledigt das Einrücken für Sie,
-während Sie sich schön auf Ihren Code konzentrieren.
-Wenn Sie eine bestimmte Zeile einrücken und möchten, dass die nachfolgenden Zeilen auf gleicher Höhe
-eingerückt werden, dann können Sie die :set autoindent-Einstellung verwenden.
-Wenn Sie mit einem neuen Block von Anweisungen anfangen, und die nächste Zeile automatisch zur
-nächsten Stufe eingerückt haben wollen, verwenden Sie die :set smartindent-Einstellung. Beachten Sie
-hierbei, dass das Verhalten dieser Einstellung, von der jeweiligen Programmiersprache abhängt, die gerade
+Lassen Sie es mich noch einmal wiederholen, dass Schreibfertigkeit für einen
+Programmierer von entscheidender Bedeutung ist. Wenn Sie unsere obigen
+Ausführungen noch nicht überzeugen konnten, dann wird es hoffentlich dieser
+Artikel von \textit{Jeff Atwood -- 'We are Typist First, Programmers Second'}
+\footnote{\url{http://www.codinghorror.com/blog/archives/001188.html}}
+(\textit{\textrightarrow 'Zu allererst sind wir Tipper, dann
+Programmierer'}).
+
+Wenn Sie keinerlei Programmiererfahrung besitzen, können Sie dieses Kapitel
+natürlich überspringen.
+
+Für alle, die ins Programmieren ganz verliebt sind, lassen Sie uns eintauchen:
+in Sachen \textit{Programmieren} hat es Vim echt drauf.
+
+\subsection{Einfaches Zeugs}
+Die einfachste Funktion von Vim, die Sie für sich nutzbar machen können beim
+Programmieren, ist die Syntaxhervorhebung. Dies ermöglicht Ihnen Ihren Code
+'sichtbar' zu machen, und damit können Sie Ihren Code auch schneller lesen und
+schreiben, und Sie machen weniger ganz offensichtliche Fehler.
+
+\subsubsection{\blue{Syntax}hervorhebung}
+\begin{minipage}{7cm}
+Angenommen Sie editieren eine vim-\blue{syntax}-Datei. Führen Sie \red{:set
+filetype=vim} aus, und sehen Sie wie Vim Farbe hinzufügt. Ähnlich ist es, wenn
+Sie eine Python-Datei editieren. Führen Sie \red{:set filetype=python} aus.
+
+Um eine Liste der zur Verfügung stehenden Sprachtypen zu sehen überprüfen Sie
+das \red{\$VIMRUNTIME/syntax/} -Verzeichnis.
+\begin{description}
+	\item [Tipp] Wenn Sie die ganze Pracht der \blue{Syntax}hervorhebung für
+		jegliche Unix-Shell-Ausgabe haben wollen, leiten Sie es einfach durch
+		die Röhre (\textrightarrow to pipe) an Vim, z.B.  \red{svn diff | vim
+		-R -}. Beachten Sie den Bindestrich am Ende, der Vim sagt, dass er Text
+		von seiner Standardeingabe einlesen soll.
+\end{description}
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.56]{1-101}
+\end{minipage}
+
+\subsubsection{Intelligentes Einrücken}
+Der Code eines erfahrenen Programmierers ist normalerweise sauber eingerückt,
+was ihm ein 'uniformes' Aussehen verleiht, und die Struktur offensichtlicher
+erscheinen lässt. Vim erledigt das Einrücken für Sie, während Sie sich schön
+auf Ihren Code konzentrieren.
+
+Wenn Sie eine bestimmte Zeile einrücken und möchten, dass die nachfolgenden
+Zeilen auf gleicher Höhe eingerückt werden, dann können Sie die \red{:set
+autoindent}-Einstellung verwenden.
+
+Wenn Sie mit einem neuen Block von Anweisungen anfangen, und die nächste Zeile
+automatisch zur nächsten Stufe eingerückt haben wollen, verwenden Sie die
+\red{:set smartindent}-Einstellung. Beachten Sie hierbei, dass das Verhalten
+dieser Einstellung, von der jeweiligen Programmiersprache abhängt, die gerade
 benutzt wird.
-Hüpfen
-Wenn die Programmiersprache Ihrer Wahl geschwungene Klammern benutzt, um Anweisungsblöcke
-abzugrenzen, setzen Sie Ihren Cursor auf eine der geschwungenen Klammern, und drücken Sie den
-%-Schlüssel, um zur entsprechenden geschwungenen Klammer zu springen. Mit diesem 'Hüpf'-Schlüssel
-können Sie schnell zwischen Blockanfang und Blockende springen.
-Shell-Befehle
-Shell-Befehle können Sie vom Vim aus mit dem :!-Kommando ausführen.
-Zum Beispiel, wenn der date-Befehl auf Ihrem Betriebssystem verfügbar ist, führen Sie :!date aus, und schon
-sollten Sie das Datum und die aktuelle Uhrzeit sehen.
-Das ist nützlich in Situationen, wo Sie mal schnell was in Ihrem Dateisystem checken wollen, z.B. den Inhalt
-des gerade benutzten Verzeichnisses mit :!ls oder :!dir usw.
-Wenn Sie Zugriff auf eine vollständige Shell haben möchten, führen Sie :sh aus.
-Wir können diese Einrichtung nutzen um den aktuell bearbeitenden Text durch externe Filter laufen zu
-lassen. Wenn Sie z.B. einen Haufen Zeilen haben, die Sie sortieren möchten, können Sie das hier ausführen
-:%!sort. Dies übergibt den aktuellen Text an den sort-Befehl der Shell, und die Ausgabe dieses Befehls ersetzt
-dann den aktuellen Inhalt der Datei.
-Herumspringen
+
+\subsubsection{Hüpfen}
+Wenn die Programmiersprache Ihrer Wahl geschwungene Klammern benutzt, um
+Anweisungsblöcke abzugrenzen, setzen Sie Ihren \blue{Cursor} auf eine der
+geschwungenen Klammern, und drücken Sie den \%-Schlüssel, um zur entsprechenden
+geschwungenen Klammer zu springen. Mit diesem '\textit{Hüpf}'-Schlüssel können
+Sie schnell zwischen Blockanfang und Blockende springen.
+
+\subsubsection{\blue{Shell}-Befehle}
+\blue{Shell}-Befehle können Sie vom Vim aus mit dem \red{:!}-Kommando ausführen.
+
+Zum Beispiel, wenn der \red{date}-Befehl auf Ihrem Betriebssystem verfügbar
+ist, führen Sie \red{:!date} aus, und schon sollten Sie das Datum und die
+aktuelle Uhrzeit sehen.
+
+Das ist nützlich in Situationen, wo Sie mal schnell was in Ihrem Dateisystem
+checken wollen, z.B. den Inhalt des gerade benutzten Verzeichnisses mit
+\red{:!ls} oder \red{:!dir} usw.
+
+Wenn Sie Zugriff auf eine vollständige \blue{Shell} haben möchten, führen Sie
+\red{:sh} aus.
+
+Wir können diese Einrichtung nutzen um den aktuell bearbeitenden Text durch
+externe Filter laufen zu lassen. Wenn Sie z.B. einen Haufen Zeilen haben, die
+Sie sortieren möchten, können Sie das hier ausführen \red{:\%!sort}. Dies
+übergibt den aktuellen Text an den \red{sort}-Befehl der Shell, und die Ausgabe
+dieses Befehls ersetzt dann den aktuellen Inhalt der Datei.
+
+\subsubsection{Herumspringen}
 Es gibt viele Möglichkeiten im Programmcode herumzuspringen.
+\begin{itemize}
+	\item Setzen Sie Ihren \blue{Cursor} auf einen Dateinamen im Code und
+		drücken Sie dann \red{gf}, um die Datei zu öffnen.
+	\item Setzen Sie Ihren \blue{Cursor} auf einen Variablennamen und drücken
+		Sie \red{gd}, um sich zur lokalen Definition des Variablennamens zu
+		bewegen. \red{gD} erreicht dasselbe für die globale Deklaration, indem
+		es die Datei von Anfang an durchsucht.
+	\item Benutzen Sie \red{]]}, um sich zur nächsten \red{\{} der ersten Reihe
+		zu bewegen. Es gibt noch jede Menge ähnliche Bewegungsarten  für
+		Einzelheiten, sehen Sie sich hierzu \red{:help object-motions} an.
+	\item Sehen Sie sich \red{:help 29.3}, \red{:help 29.4}, und \red{:help
+		29.5} für mehr solcher Kommandos. Zum Beispiel \red{[I} zeigt Ihnen
+		alle Zeilen an, die das Schlüsselwort enthalten unter dem
+		\blue{Cursor}!
+\end{itemize}
 
+\subsection{Teile des Codes durchstöbern}
+\subsubsection{Dateisystem}
+Benutzen Sie \red{:Vex} oder \red{:Sex} um das Dateisystem innerhalb von Vim zu
+durchstöbern, und anschließend die entsprechende Datei zu öffnen.
 
+\subsubsection{ctags (\textrightarrow etwa: C-Kennzeichnungen / C-Markierungen)}
+Wir haben nun gesehen, wie wir einfache Bewegungen innerhalb ein und derselben
+Datei bewerkstelligen.  Aber was ist, wenn wir uns zwischen unterschiedlichen
+Dateien bewegen und Querverweise haben wollen?  Dann können wir hierfür
+\textit{\blue{tags}} benutzen.
 
+Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.\\
+\begin{minipage}{7cm}
+\begin{enumerate}
+	\item Installieren Sie das üppig überbordende (\textit{\textrightarrow
+		exuberant}) \textit{\red{ctags}}
+		\footnote{\url{http://ctags.sourceforge.net}} -Programm.
+	\item Installieren Sie das \red{taglist.vim}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=273}}
+		-Plugin. Schlagen Sie die "`Installationserläuterungen"' in der
+		Skriptseite nach.
+	\item Führen Sie aus \red{:TlistToggle}, um das Taglist-Fenster zu öffnen.
+		Na bitte -- jetzt können Sie die einzelnen Teile Ihres Programmes, wie
+		Makros, Typendefinitionen, Variablen und Funktionen durchgehen.
+	\item Sie können \red{:tag foo} verwenden, um zur Definition \textit{foo}
+		zu springen.
+	\item Platzieren Sie Ihren \blue{Cursor} auf irgendein Symbol und drücken
+		Sie \red{ctrl-]}, um zur Definition dieses Symbols zu springen. Drücken
+		Sie \red{ctrl-t}, um zum vorherigen Code zurückzukehren.
+	\item Benutzen Sie \red{ctrl-w ]} um zur Symbolbeschreibung zu springen, in
+		einem geteilten Fenster.
+	\item Benutzen Sie \red{:tnext}, \red{:tprev}, \red{:tfirst}, \red{:tlast},
+		um sich zu den entsprechenden Markierungen hinzubewegen.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.5]{1-102}
+\end{minipage}
 
+\vspace{5pt}
+\noindent
+Beachten Sie bitte, dass das herrlich überschäumende und prickelnde Programm
+\textit{Ctags}, zum Zeitpunkt der Fertigstellung dieses Buches, 33
+Programmiersprachen unterstützt, und es leicht auf weitere Programmiersprachen
+erweitert werden kann.
+\red{:help taglist-intro} gibt Ihnen hierzu die Einzelheiten.
 
-
-Setzen Sie Ihren Cursor auf einen Dateinamen im Code und drücken Sie dann gf, um die Datei zu
-öffnen.
-Setzen Sie Ihren Cursor auf einen Variablennamen und drücken Sie gd, um sich zur lokalen Definition
-des Variablennamens zu bewegen. gD erreicht dasselbe für die globale Deklaration, indem es die
-Datei von Anfang an durchsucht.
-Benutzen Sie ]], um sich zur nächsten { der ersten Reihe zu bewegen. Es gibt noch jede Menge
-ähnliche Bewegungsarten  für Einzelheiten, sehen Sie sich hierzu :help object-motions an.
-Sehen Sie sich :help 29.3, :help 29.4, und :help 29.5 für mehr solcher Kommandos. Zum Beispiel [I
-zeigt Ihnen alle Zeilen an, die das Schlüsselwort enthalten unter dem Cursor!
-
-Teile des Codes durchstöbern
-Dateisystem
-Benutzen Sie :Vex oder :Sex um das Dateisystem innerhalb von Vim zu durchstöbern, und anschließend die
-entsprechende Datei zu öffnen.
-ctags ( etwa: C-Kennzeichnungen / C-Markierungen)
-Wir haben nun gesehen, wie wir einfache Bewegungen innerhalb ein und derselben Datei bewerkstelligen.
-Aber was ist, wenn wir uns zwischen unterschiedlichen Dateien bewegen und Querverweise haben wollen?
-Dann können wir hierfür tags benutzen.
-Für einfaches Durchsuchen einer Datei, nehmen wir das taglist.vim-Plugin.
-1. Installieren Sie das üppig
-überbordende ( exuberant)
-ctags [2]-Programm.
-2. Installieren Sie das
-taglist.vim[3] -Plugin. Schlagen
-Sie die
-Installationserläuterungen
-in der Skriptseite nach.
-3. Führen Sie aus :TlistToggle,
-um das Taglist-Fenster zu öffnen.
-Na bitte  jetzt können Sie die
-einzelnen Teile Ihres Programmes,
-wie Makros, Typendefinitionen,
-Variablen und Funktionen
-durchgehen.
-4. Sie können :tag foo
-verwenden, um zur Definition foo
-zu springen.
-5. Platzieren Sie Ihren Cursor auf irgendein Symbol und drücken Sie ctrl-], um zur Definition dieses
-Symbols zu springen. Drücken Sie ctrl-t, um zum vorherigen Code zurückzukehren.
-6. Benutzen Sie ctrl-w ] um zur Symbolbeschreibung zu springen, in einem geteilten Fenster.
-7. Benutzen Sie :tnext, :tprev, :tfirst, :tlast, um sich zu den entsprechenden Markierungen
-hinzubewegen.
-Beachten Sie bitte, dass das herrlich überschäumende und prickelnde Programm Ctags, zum Zeitpunkt der
-Fertigstellung dieses Buches, 33 Programmiersprachen unterstützt, und es leicht auf weitere
-Programmiersprachen erweitert werden kann.
-:help taglist-intro gibt Ihnen hierzu die Einzelheiten.
-
-cscope (wie ctags aber gedopt  :help cscope)
+\subsubsection{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
 Um in der Lage zu sein, dateiübergreifend zu Defintionen zu springen, brauchen wir ein Programm wie
-cscope. Wie auch immer, der Name deutet es ja schon an, dieses spezielle Programm arbeitet nur in
-Zusammenhang mit der Programmiersprache C.
-1. Installieren Sie cscope. Bemühen
-Sie :help cscope-info und :help
-cscope-win32 was die Installation
-betrifft.
-2. Kopieren Sie \verb cscope_maps.vim[4]  in
-Ihr ~/.vim/plugin-Verzeichnis.
-3. Wechseln Sie in Ihr Quellcodeverzeichnis und führen Sie
-cscope -R -b aus, um den
-Datenbestand (die Datenbank)
-'r'ekursiv für alle Unterverzeichnisse zu erstellen ( 'b'uild).
-4. Starten Sie den Vim erneut, und
-öffnen Sie eine Quellcodedatei.
-5. Führen Sie :cscope show aus, um sich
-bestätigen zu lassen, dass eine cscope-Verbindung erstellt wurde.
-6. Führen Sie :cscope find symbol foo aus, um das Symbol foo zu lokalisieren. Der Befehl lässt sich auf
-folgende Weise abkürzen :cs f s foo.
+\textit{cscope}. Wie auch immer, der Name deutet es ja schon an, dieses
+spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
+\begin{minipage}{7cm}
+\begin{enumerate}
+	\item Installieren Sie \textit{cscope}. Bemühen Sie \red{:help cscope-info}
+		und \red{:help cscope-win32} was die Installation betrifft.
+	\item Kopieren Sie \red{cscope\_maps.vim}
+		\footnote{\url{http://cscope.sourceforge.net/cscope_maps.vim}} in Ihr
+		\red{~/.vim/plugin}-Verzeichnis.
+	\item Wechseln Sie in Ihr Quellcodeverzeichnis und führen Sie \red{cscope
+		-R -b} aus, um den Datenbestand (die Datenbank) '\red{r}'ekursiv für
+		alle Unterverzeichnisse zu erstellen (\textrightarrow '\red{b}'uild).
+	\item Starten Sie den Vim erneut, und öffnen Sie eine Quellcodedatei.
+	\item Führen Sie \red{:cscope show} aus, um sich bestätigen zu lassen, dass
+		eine cscope-Verbindung erstellt wurde.
+	\item Führen Sie \red{:cscope find symbol foo} aus, um das Symbol foo zu
+		lokalisieren. Der Befehl lässt sich auf folgende Weise abkürzen
+		\red{:cs f s foo}.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.5]{1-103}
+\end{minipage}\\
 Sie können auch:
+\begin{itemize}
+	\item Diese Definition finden - \red{:cs f g}
+	\item Funktionen finden, die von dieser Funktion aufgerufen wurden - \red{:cs f d}
+	\item Funktionen finden, die diese Funktion aufrufen - \red{:cs f c}
+	\item Diese Zeichenkette finden - \red{:cs f t}
+	\item Dieses egrep-Muster finden - \red{:cs f e}
+\end{itemize}
+Sehen Sie sich hierzu auch \red{:help cscope-suggestions} für die angeratene
+Benutzung von cscope im Vim an.
 
+Und das \textit{QuellCodeGehorsams-Programmerweiterungsmodul}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1638}}
+{\scriptsize (\textrightarrow Source Code Obedience plugin)} ist es sicherlich
+auch wert, einmal ausprobiert zu werden, da es einfache Tastaturschlüssel für
+cscope/ctags zur Verfügung stellt.
 
+Wo wir schon mal bei der Programmiersprache C sind  das \red{c.vim}
+\footnote{\url{http://vim.sourceforge.net/scripts/script.php?script_id=213}}
+-Plugin kann auch verdammt praktisch sein.
 
+\subsection{Kompilierung ( Programmübersetzung)}
+Im vorhergehenden Kapitel haben wir schon die Bedeutung von \red{:make}
+bezüglich der Programme, die wir schreiben gesehen, also wiederholen wir es
+hier nicht.
 
+\subsection{Schreiben  leicht gemacht}
+\subsubsection{Omnicompletion (\textrightarrow etwa: die Allesvervollständigung)}
+Eine der Funktionen, nach denen am meisten verlangt wurde, und die dem Vim 7
+hinzugefügt wurde, ist \textit{"`omnicompletion"'}, bei der Text
+auto-vervollständigt werden kann, auf Grundlage des aktuellen Kontextes.  Wenn
+Sie z.B. einen langen Variablennamen verwenden, und diesen Variablennamen
+wiederholt benutzen, können Sie ein Tastaturkürzel nehmen, um Vim nach einer
+Auto-Vervollständigung zu fragen, und Vim erledigt den Rest.
 
+Vim erreicht dies über ftplugins, besonders diejenigen mit dem Namen
+\red{ftplugin/<Sprache>complete.vim}, wie \red{pythoncomplete.vim}.
 
-Diese Definition finden - :cs f g
-Funktionen finden, die von dieser Funktion aufgerufen wurden - :cs f d
-Funktionen finden, die diese Funktion aufrufen - :cs f c
-Diese Zeichenkette finden - :cs f t
-Dieses egrep-Muster finden - :cs f e
+Anfangen wollen wir mit einem einfachen Pythonprogramm:\\
+\includegraphics[scale=0.5]{1-104}
 
-Sehen Sie sich hierzu auch :help cscope-suggestions für die angeratene Benutzung von cscope im Vim an.
-Und das QuellCodeGehorsams-Programmerweiterungsmodul [5] ( Source Code Obedience plugin) ist es sicherlich auch
-wert, einmal ausprobiert zu werden, da es einfache Tastaturschlüssel für cscope/ctags zur Verfügung stellt.
-Wo wir schon mal bei der Programmiersprache C sind  das c.vim[6]-Plugin kann auch verdammt praktisch
-sein.
-Kompilierung ( Programmübersetzung)
-Im vorhergehenden Kapitel haben wir schon die Bedeutung von :make bezüglich der Programme, die wir
-schreiben gesehen, also wiederholen wir es hier nicht.
+\vspace{5pt}
+\noindent
+\begin{minipage}{7cm}
+Nachdem Sie dieses Programm eingegeben haben, beginnen Sie eine neue Zeile in
+derselben Datei. Tippen Sie '\red{he}' und drücken Sie \red{ctrl-x ctrl-o}, was
+Ihnen Vorschläge für die Autovervollständigung anzeigen wird.
 
-Schreiben  leicht gemacht
-Omnicompletion ( etwa: die Allesvervollständigung)
-Eine der Funktionen, nach denen am meisten verlangt wurde, und die dem Vim 7 hinzugefügt wurde, ist
-omnicompletion, bei der Text auto-vervollständigt werden kann, auf Grundlage des aktuellen Kontextes.
-Wenn Sie z.B. einen langen Variablennamen verwenden, und diesen Variablennamen wiederholt benutzen,
-können Sie ein Tastaturkürzel nehmen, um Vim nach einer Auto-Vervollständigung zu fragen, und Vim
-erledigt den Rest.
-Vim erreicht dies über ftplugins, besonders diejenigen mit dem Namen ftplugin/<Sprache>complete.vim, wie
-pythoncomplete.vim.
-Anfangen wollen wir mit einem einfachen Pythonprogramm:
+Wenn Sie eine Fehlermeldung wie \red{E764: Option 'omnifunc' is not set}, dann
+führen Sie \red{:runtime! autoload/} \red{pythoncomplete.vim} aus, um das
+omnicompletion-Plugin zu laden.
 
-Nachdem Sie dieses Programm
-eingegeben haben, beginnen Sie
-eine neue Zeile in derselben
-Datei. Tippen Sie 'he' und
-drücken Sie ctrl-x ctrl-o, was
-Ihnen Vorschläge für die
-Autovervollständigung
-anzeigen wird.
-Wenn Sie eine Fehlermeldung
-wie E764: Option 'omnifunc'
-is not set, dann führen Sie
-:runtime! autoload/
-pythoncomplete.vim aus, um
-das omnicompletion-Plugin
-zu laden.
-Damit Sie dies nicht jedesmal
-tun müssen, fügen Sie folgende
-Zeile in Ihre ~/.vimrc ein:
+Damit Sie dies nicht jedesmal tun müssen, fügen Sie folgende Zeile in Ihre
+\red{~/.vimrc} ein:
+\end{minipage}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.5]{1-105}
+\end{minipage}
+
+\vspace{5pt}
+\noindent
+%da is nowas
 autocmd FileType python runtime! autoload/pythoncomplete.vim
-Vim benutzt automatisch den ersten Vorschlag, mit ctrl-n und ctrl-p, können Sie zur nächsten, bzw.
-vorherigen Auswahl wechseln.
-Wenn Sie die Benutzung von omnicompletion abbrechen möchten, drücken Sie einfach ESC.
-Schlagen Sie :help new-omni-completion für Näheres sowohl zu den unterstützten Sprachen nach (C, HTML,
-JavaScript, PHP, Python, Ruby, SQL, XML,...), als auch, wie Sie Ihre eigenen omnicompletion-Skripte
-schreiben können.
 
-Hinweis
-Wenn es für Sie bequemer ist die Pfeiltasten zu benutzen, um Ihre Auswahl von der omnicompletionListe zu treffen, sehen Sie sich hierfür Vim-Tipp 1228[7] an.
-Ich bevorzuge ein einfaches ctrl-Leertaste statt der sperrigen ctrl-x ctrl-o-Tastenkombination. Mit einem
-Eintrag in Ihre vimrc, können Sie das auch haben:
+Vim benutzt automatisch den ersten Vorschlag, mit \red{ctrl-n} und
+\red{ctrl-p}, können Sie zur nächsten, bzw.  vorherigen Auswahl wechseln.
 
-Das PySmell[8] -Plugin, könnte in dieser Hinsicht hilfreich sein für Vim-Benutzer, die in Python
-programmieren.
-Schnipsel benutzen
-Codeschnipsel sind kleine Stücke Programmiercodes, bei denen Sie dazu neigen, sie immer wieder neu zu
-schreiben. Wie alle guten, faulen Programmierer, können Sie dazu ein Plugin benutzen. In unserem Fall
-nehmen wir das phantastische SnippetsEmu-Plugin.
-1. Laden Sie sich das snippetsEmu-Plugin[9] herunter.
-2. Erstellen Sie Ihr ~/.vim/after/-Verzeichnis, so es nicht bereits existiert
-3. Starten Sie Vim indem Sie diesen Pluginnamen in der Kommandozeile hinzufügen. Zum Beispiel;
-gvim \verb snippy_bundles.vba .
-4. Führen Sie aus :source \%. Der 'vimball' ( .vba=vimball) entpackt sich nun, und legt die vielen
-Dateien in den richtigen Verzeichnissen ab.
-5. Wiederholen Sie denselben Arbeitsgang für \verb snippy_plugin.vba .
-So! Jetzt probieren wir das Plugin mal aus.
-1. Öffnen Sie eine neue Datei, sagen wir mal, test.py.
-2. Drücken Sie die Tasten d, e, f und dann <tab>.
-3. Bitte schön! Haben Sie gesehen, wie snippetsEmu bereits die Struktur Ihrer Funktion erstellt hat?
-Jetzt sollten Sie dies hier in Ihrer Datei sehen:
+Wenn Sie die Benutzung von omnicompletion abbrechen möchten, drücken Sie
+einfach \red{$<$ESC$>$}.
 
-4. Ihr Cursor steht jetzt auf dem Funktionsnamen, d.h. fname.
-5. Tippen Sie den Funktionsnamen, sagen wir, test.
-6. Drücken Sie <tab> und der Cursor bewegt sich automatisch zu den Argumenten. 'tab' nochmal
-drücken, um sich zum nächsten Punkt zu bewegen, der ausgefüllt werden muss.
-7. Jetzt geben Sie einen Kommentar ein: Einfach Hallo sagen.
-8. Nochmal auf 'tab' drücken, und print 'Hallo Welt' eingeben.
-9. Auf 'tab' drücken.
-10. Fertig ist Ihr Programm!
-Sehen sollten Sie jetzt:
+Schlagen Sie \red{:help new-omni-completion} für Näheres sowohl zu den
+unterstützten Sprachen nach (C, HTML, JavaScript, PHP, Python, Ruby, SQL,
+XML,...), als auch, wie Sie Ihre eigenen omnicompletion-Skripte schreiben
+können.
 
-Das beste daran ist, dass SnippetsEmu eine Standardkonvention ermöglicht, die man zu befolgen hat, und
-dass niemand in der Arbeitsgruppe dies 'vergisst'.
-Schnipsel erstellen
-Wir machen jetzt mal unsere eigenen Schnipsel. Lassen Sie uns einmal den Fall durchgehen, wo ich dazu
-neige, immer wieder dieselbe Art folgenden Programmcodes in ActionScript3 zu schreiben:
+\begin{description}
+	\item [Hinweis] Wenn es für Sie bequemer ist die Pfeiltasten zu benutzen,
+		um Ihre Auswahl von der omnicompletion-Liste zu treffen, sehen Sie sich
+		hierfür Vim-Tipp 1228
+		\footnote{\url{http://www.vim.org/tips/tip.php?tip_id=1228}} an.
+\end{description}
+Ich bevorzuge ein einfaches \red{ctrl-Leertaste} statt der sperrigen
+\red{ctrl-x ctrl-o}-Tastenkombination. Mit einem Eintrag in Ihre
+\textit{vimrc}, können Sie das auch haben:\\
+\includegraphics[scale=0.5]{1-106}
 
-Das ist eine einfache getter/setter-Kombination, die eine stützende Variable benutzt. Das Problem ist nur,
-dass das fürchterlich viel 'Textbausteincode' ist, den man immer wieder schreiben muss. Das wollen wir
+Das \textit{PySmell}
+\footnote{\url{http://code.google.com/p/pysmell/}}
+-Plugin, könnte in dieser Hinsicht hilfreich sein für
+Vim-Benutzer, die in Python programmieren.
+
+\subsubsection{Schnipsel benutzen}
+Codeschnipsel sind kleine Stücke Programmiercodes, bei denen Sie dazu neigen,
+sie immer wieder neu zu schreiben. Wie alle guten, faulen Programmierer, können
+Sie dazu ein \blue{Plugin} benutzen. In unserem Fall nehmen wir das
+phantastische \red{SnippetsEmu}-Plugin.
+
+\begin{enumerate}
+	\item Laden Sie sich das \red{snippetsEmu}-\blue{Plugin}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1318}}
+		herunter.
+	\item Erstellen Sie Ihr \red{~/.vim/after/}-Verzeichnis, so es nicht
+		bereits existiert
+	\item Starten Sie Vim indem Sie diesen \blue{Plugin}namen in der
+		Kommandozeile hinzufügen. Zum Beispiel; \red{gvim snippy\_bundles.vba}.
+	\item Führen Sie aus \red{:source \%}. Der 'vimball'
+		(\textit{\textrightarrow .vba=vimball}) entpackt sich nun, und legt die
+		vielen Dateien in den richtigen Verzeichnissen ab.
+	\item Wiederholen Sie denselben Arbeitsgang für \red{snippy\_plugin.vba}.
+\end{enumerate}
+So! Jetzt probieren wir das \blue{Plugin} mal aus.
+\begin{enumerate}
+	\item Öffnen Sie eine neue Datei, sagen wir mal, \red{test.py}.
+	\item Drücken Sie die Tasten \red{d}, \red{e}, \red{f} und dann
+		\red{$<$tab$>$}.
+	\item Bitte schön! Haben Sie gesehen, wie snippetsEmu bereits die Struktur
+		Ihrer Funktion erstellt hat?  Jetzt sollten Sie dies hier in Ihrer
+		Datei sehen:\\
+		\includegraphics[scale=0.5]{1-107}
+	\item Ihr \blue{Cursor} steht jetzt auf dem Funktionsnamen, d.h. \red{fname}.
+	\item Tippen Sie den Funktionsnamen, sagen wir, \red{test}.
+	\item Drücken Sie \red{$<$tab$>$} und der \blue{Cursor} bewegt sich
+		automatisch zu den Argumenten. '\red{tab}' nochmal drücken, um sich zum
+		nächsten Punkt zu bewegen, der ausgefüllt werden muss.
+	\item Jetzt geben Sie einen Kommentar ein: \red{Einfach Hallo sagen}.
+	\item Nochmal auf '\red{tab}' drücken, und \red{print 'Hallo Welt'} eingeben.
+	\item Auf '\red{tab}' drücken.
+	\item Fertig ist Ihr Programm!
+\end{enumerate}
+Sehen sollten Sie jetzt:\\
+\includegraphics[scale=0.5]{1-108}
+
+Das beste daran ist, dass SnippetsEmu eine Standardkonvention ermöglicht, die
+man zu befolgen hat, und dass niemand in der Arbeitsgruppe dies 'vergisst'.
+
+\subsubsection{Schnipsel erstellen}
+Wir machen jetzt mal unsere eigenen Schnipsel. Lassen Sie uns einmal den Fall
+durchgehen, wo ich dazu neige, immer wieder dieselbe Art folgenden
+Programmcodes in ActionScript3 zu schreiben:\\
+\includegraphics[scale=0.5]{1-109}
+
+Das ist eine einfache \textit{getter/setter-Kombination}, die eine stützende
+Variable benutzt. Das Problem ist nur, dass das fürchterlich viel
+'Textbausteincode' ist, den man immer wieder schreiben muss. Das wollen wir
 automatisieren.
-Die SnippetsEmu-Sprachschnipsel-Plugins nehmen st als Startmarkierung, und et als Endmarkierung. Das
-sind die gleichen pfeiltypischen Symbole die Sie im Zwischenraum unseres Codes sehen.
-Fangen wir mit einem einfachen Beispiel an.
 
-Fügen Sie die obige Zeile in Ihr \verb ~/.vim/after/ftplugin/actionscript_snippets.vim  ein.
-Jetzt öffnen Sie eine neue Datei, sagen wir, test.as, und dann tippen Sie pubfun und <tab> und sehen es
-erweitert zu:
+Die SnippetsEmu-Sprachschnipsel-\blue{Plugins} nehmen \red{st} als
+Startmarkierung, und \red{et} als Endmarkierung. Das sind die gleichen
+pfeiltypischen Symbole die Sie im Zwischenraum unseres Codes sehen.
 
-Der Cursor wird auf den Funktionsnamen gesetzt 'tab', um den Rückgabetyp der Funktion zu bekommen
-nochmal 'tab', um den Funktionskörper einzugeben.
-Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:
+Fangen wir mit einem einfachen Beispiel an.\\
+\includegraphics[scale=0.5]{1-110}
 
-Hinweis
-Alle Schnipsel für dieses Plugin müssen in einer einzigen Zeile eingegeben werden. Das ist
-eine technische Schranke.
+Fügen Sie die obige Zeile in Ihr
+\red{~/.vim/after/ftplugin/actionscript\_snippets.vim}  ein.
+
+Jetzt öffnen Sie eine neue Datei, sagen wir, \red{test.as}, und dann tippen Sie
+\red{pubfun} und \red{$<$tab$>$} und sehen es erweitert zu:\\
+\includegraphics[scale=0.5]{1-111}
+
+Der \blue{Cursor} wird auf den Funktionsnamen gesetzt '\red{tab}', um den
+Rückgabetyp der Funktion zu bekommen nochmal '\red{tab}', um den
+Funktionskörper einzugeben.
+
+Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:\\
+\includegraphics[scale=0.5]{1-112}
+\begin{description}
+	\item [Hinweis] Alle Schnipsel für dieses \blue{Plugin} \textit{müssen} in
+		einer einzigen Zeile eingegeben werden. Das ist eine technische
+		Schranke.
+\end{description}
 Folgen Sie derselben Prozedur wie oben, um das neue Schnipsel zu benutzen:
-1. Fügen Sie diese Zeile in Ihr \verb ~/.vim/after/ftplugin/actionsscript_snippets.vim  ein.
-2. Öffnen Sie eine neue Datei, wie test.as.
-3. Tippen Sie getset, drücken Sie <tab> und Sie werden das hier sehen:
+\begin{enumerate}
+	\item Fügen Sie diese Zeile in Ihr
+		\red{~/.vim/after/ftplugin/actionsscript\_snippets.vim} ein.
+	\item Öffnen Sie eine neue Datei, wie \red{test.as}.
+	\item Tippen Sie \red{getset}, drücken Sie \red{$<$tab$>$} und Sie werden
+		das hier sehen:\\
+		\includegraphics[scale=0.5]{1-113}
+	\item Geben Sie \red{color} ein und drücken Sie \red{$<$tab$>$}. Beachten
+		Sie, dass der Variablenname \textit{color} überall ersetzt worden ist.
+	\item Tippen Sie \red{Number} und drücken Sie \red{$<$tab$>$}. Der Code
+		sieht nun so aus:\\
+		\includegraphics[scale=0.5]{1-114}
+\end{enumerate}
 
-4. Geben Sie color ein und drücken Sie <tab>. Beachten Sie, dass der Variablenname color überall
-ersetzt worden ist.
-5. Tippen Sie Number und drücken Sie <tab>. Der Code sieht nun so aus:
+Beachten Sie, wieviele Tastaturanschläge wir vermieden haben! Mit einer
+einzigen Vim-Skript-Zeile haben wir etwa 11 Zeilen, sich wiederholenden
+Programmiercodes ersetzt.
 
-Beachten Sie, wieviele Tastaturanschläge wir vermieden haben! Mit einer einzigen Vim-Skript-Zeile haben
-wir etwa 11 Zeilen, sich wiederholenden Programmiercodes ersetzt.
-Mit solchen Schnipseln können wir unsere Programmierfaulheit betonen, und dies hilft uns dabei, uns auf die
-eigentliche Programmiertätigkeit zu konzentrieren.
-Sehen Sie sich hierzu \verb|:help snippets_emu.txt| für weitere Einzelheiten an (Diese Hilfedatei steht Ihnen nur
-dann zur Verfügung, wenn Sie das Plugin installiert haben).
-Integrierte Entwicklungsumgebung ( IDE=integrated developer environment)
-Mit ein paar Plugins kann Vim als Entwicklungsumgebung genutzt werden.
-Projekt Plugin
-Das Projekt Plugin wird verwendet, um eine Art Projekt-Manager-Benutzung für den Vim zu erschaffen.
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+Mit solchen Schnipseln können wir unsere Programmierfaulheit betonen, und dies
+hilft uns dabei, uns auf die eigentliche Programmiertätigkeit zu konzentrieren.
 
-Laden Sie sich das project plugin [10] herunter.
-Entpacken Sie es in Ihrem ~/vim/-Verzeichnis.
-Führen Sie :helptags ~/.vim/doc/ aus.
-Laden Sie sich den Vim-Quellcode von http://www.vim.org/subversion.php herunter.
-Führen Sie :Project aus. Es öffnet sich links eine Seitenleiste, die Ihnen als 'Projekt-Fenster' dient.
-Führen Sie \\c aus (Gegenschrägstrich, gefolgt von 'c').
-Beantworten Sie die folgenden Optionen
- Eingangsname, sagen wir \verb|'vim7_src'|
- Verzeichnis, z.B. C:\\repo\\vim7\\src\\
- CD-Option, das gleiche wie für Verzeichnis, oben Filter-Option, sagen wir *.h *.c.
-8. Sie sehen wie sich die Seitenleiste auffüllt mit der Liste der Dateien, die mit dem Filter in dem
-angegebenen Verzeichnis übereinstimmen.
-9. Mit den Pfeiltasten (oder j/k) können Sie in der Dateiliste rauf und runter fahren, mit Drücken der
-<enter>-Taste öffnen Sie die Datei im Hauptfenster.
-Das gibt Ihnen die vertraute IDE-artige Schnittstelle, und das Gute daran ist, es gibt keine ausgefallenen
-Konfigurationsdateien oder schwachsinnige Pfadeinrichtungen in Entwicklungsumgebungen, die immer
-solche Belange haben. Die Funktionsweise des Projekt-Plugins ist einfach und geradeheraus.
-Sie können die Standardfaltungsbefehle nehmen, um Projekte und ihre Einzelheiten zu öffnen und zu
-schließen.
-Sie können auch Skripte ausführen am Anfang und Ende der Benutzung eines Projektes, damit richten Sie
-den Pfad ein, oder setzen Compileroptionen etc.
-Sehen Sie sich hierzu :help project.txt an.
-Programmcode aus dem Text heraus starten
-Sie können Programmcode direkt aus Vim heraus starten, indem Sie Plugins wie EvalSelection.vim[11]
-verwenden oder noch einfacher: inc-python.vim[12].
+Sehen Sie sich hierzu \red{:help snippets\_emu.txt} für weitere Einzelheiten an
+(Diese Hilfedatei steht Ihnen nur dann zur Verfügung, wenn Sie das
+\blue{Plugin} installiert haben).
 
-Integration von SCM ( SCM=software configuration management)
-Wenn Sie damit anfangen eine Datei zu editieren, können Sie sie sogar automatisch durch Perforce
-überprüfen lassen, indem Sie das perforce-Plugin[13] verwenden. Ganz ähnlich verhält es sich mit dem
-CVS/SVN/SVK/Git Integrations-Plugin.[14]
-Mehr
-Um weitere Plugins ausfindig zu machen, die ein IDE-artiges Verhalten im Vim erzeugen, sehen Sie sich hier
-um:
- Vim Tip: Der Vim als eierlegende Wollmilchsau-Entwicklungsumgebung[15]
- C++/Python Vim+IDE Plugin-Liste.[16]
-Es gibt noch mehr sprachspezifische Plugins, mit denen Sie raffinierte Dinge tun können. Im Falle von
-Python könnten diese Plugins hilfreich sein:
+\subsection{Integrierte Entwicklungsumgebung (\textrightarrow IDE=integrated developer environment)}
 
+Mit ein paar \blue{Plugins} kann Vim als Entwicklungsumgebung genutzt werden.
 
+\subsubsection{Projekt \blue{Plugin}}
+Das Projekt \blue{Plugin} wird verwendet, um eine Art Projekt-Manager-Benutzung
+für den Vim zu erschaffen.
+\begin{enumerate}
+	\item Laden Sie sich das \red{project plugin} 
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=69}}
+		herunter.
+	\item Entpacken Sie es in Ihrem \red{~/vim/}-Verzeichnis.
+	\item Führen Sie \red{:helptags ~/.vim/doc/} aus.
+	\item Laden Sie sich den Vim-Quellcode von
+		\url{http://www.vim.org/subversion.php} herunter.
+	\item Führen Sie \red{:Project} aus. Es öffnet sich links eine
+		Seitenleiste, die Ihnen als 'Projekt-Fenster' dient.
+	\item Führen Sie {\color{red}\verb|\\c|} aus (Gegenschrägstrich, gefolgt
+		von '\red{c}').
+	\item Beantworten Sie die folgenden Optionen
+	\begin{itemize}
+		\item Eingangsname, sagen wir '\red{vim7\_src}'
+		\item Verzeichnis, z.B. {\color{red}\verb|C:\repo\vim7\src\|}
+		\item CD-Option, das gleiche wie für Verzeichnis, oben-
+		\item Filter-Option, sagen wir \red{*.h *.c}.
+	\end{itemize}
+	\item Sie sehen wie sich die Seitenleiste auffüllt mit der Liste der
+		Dateien, die mit dem Filter in dem angegebenen Verzeichnis
+		übereinstimmen.
+	\item Mit den Pfeiltasten (oder \red{j/k}) können Sie in der Dateiliste
+		rauf und runter fahren, mit Drücken der \red{$<$enter$>$}-Taste öffnen
+		Sie die Datei im Hauptfenster.
+\end{enumerate}
+Das gibt Ihnen die vertraute IDE-artige Schnittstelle, und das Gute daran ist,
+es gibt keine ausgefallenen Konfigurationsdateien oder schwachsinnige
+\textit{Pfadeinrichtungen} in Entwicklungsumgebungen, die immer solche Belange
+haben. Die Funktionsweise des Projekt-\blue{Plugins} ist einfach und
+geradeheraus.
 
+Sie können die Standardfaltungsbefehle nehmen, um Projekte und ihre
+Einzelheiten zu öffnen und zu schließen.
 
+Sie können auch Skripte ausführen am Anfang und Ende der Benutzung eines
+Projektes, damit richten Sie den Pfad ein, oder setzen Compileroptionen etc.
 
-SuperTab[17] erlaubt Ihnen Omni-completion durch einfaches Drücken von 'tab' aufzurufen, und die
-verschiedenen Optionen mit den Pfeiltasten auszuwählen.
-\verb python_calltips[18]  zeigt ein Fenster im unteren Bereich, das Ihnen eine Liste
-von Möglichkeiten für
-Ergänzungen gibt. Richtig klasse hierbei ist  im Vergleich zu Omni-completion  dass Sie sich die
-Dokumentation für jede dieser Möglichkeiten anschauen können.
-VimPdb[19] hilft Ihnen beim Ausbessern von Pythonprogrammen, ohne Vim zu verlassen.
+Sehen Sie sich hierzu \red{:help project.txt} an.
+\subsubsection{Programmcode aus dem Text heraus starten}
+Sie können Programmcode direkt aus Vim heraus starten, in dem Sie
+\blue{Plugins} wie \red{EvalSelection.vim}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=889}}
+verwenden oder noch einfacher: \red{inc-python.vim}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1941}}.
 
-Seine eigenen Plugins schreiben
-Um Vim in jeder erdenklichen Weise zu erweitern, können Sie Ihre eigenen Plugins schreiben. Hier ist mal
-eine Aufgabe, an die Sie sich ranmachen können:
-Schreiben Sie ein Vim-Plugin, das das aktuelle Wort nimmt, und einen Browser öffnet, mit der
-Dokumentation zu genau diesem Wort (das Wort kann ein Funktionsname oder der Name einer
-Klasse etc. sein).
-Wenn Ihnen so gar nicht einfallen will, wie Sie dies erreichen können, dann werfen Sie mal einen Blick auf
-den Online documentation for word under cursor-Tipp im Vim-Tipps-Wiki.[20]
-Ich habe denselben Tipp erweitert, und etwas allgemeiner gehalten:
+\subsubsection{Integration von SCM (\textrightarrow SCM=software configuration
+management)} Wenn Sie damit anfangen eine Datei zu editieren, können Sie sie
+sogar automatisch durch \textit{Perforce} überprüfen lassen, indem Sie das
+\red{perforce}-Plugin
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=240}}
+verwenden. Ganz ähnlich verhält es sich mit dem
+CVS/SVN/SVK/Git Integrations-\blue{Plugin}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=90}}.
 
-Zugriff auf Datenbanken
-Mit dem dbext.vim[21] -Plugin können Sie sogar auf etwa 10 verschiedene Datenbanken aus Vim heraus
-zugreifen, von Oracle über MySQL über PostgreSQL über Sybase bis SQLite. Das beste daran ist, dass Sie
-mit diesem Plugin SQL editieren können, geschrieben innerhalb von PHP, Perl, Java, etc., und Sie können
-sogar eine direkte Datenbankabfrage ausführen, obwohl es in einer anderen Programmiersprache eingebettet
-ist, und Sie sogar nach Variablenwerten fragt.
-Zusammenfassung
-Wir haben gelernt wie man Vim mit Hilfe verschiedener Plugins und Einstellungen zum Programmieren
-benutzen kann. Wenn wir eine Funktion brauchen, wird dies durch das Schreiben eigener Plugins
-bewerkstelligt (so wie im Skripte-Kapitel besprochen).
-Eine gute Quelle für Diskussionen in diesem Zusammenhang gibt es auf Stack Overflow [22]und Peteris
-Krumins's Blog.[23]
+\subsubsection{Mehr}
+Um weitere \blue{Plugins} ausfindig zu machen, die ein IDE-artiges Verhalten im
+Vim erzeugen, sehen Sie sich hier um:
+\begin{itemize}
+	\item Vim Tip: Der Vim als eierlegende Wollmilchsau-Entwicklungsumgebung
+		\footnote{\url{http://vim.wikia.com/wiki/Using_vim_as_an_IDE_all_in_one}}
+	\item C++/Python Vim+IDE \blue{Plugin}-Liste
+		\footnote{\url{http://phraktured.net/vimmity-vim-vim.html}}.
+\end{itemize}
+Es gibt noch mehr sprachspezifische \blue{Plugins}, mit denen Sie raffinierte
+Dinge tun können. Im Falle von Python könnten diese \blue{Plugins} hilfreich
+sein:
+
+\begin{itemize}
+	\item \red{SuperTab}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1643}}
+		erlaubt Ihnen Omni-completion durch einfaches
+		Drücken von '\red{tab}' aufzurufen, und die verschiedenen Optionen mit
+		den Pfeiltasten auszuwählen.
+	\item \red{python\_calltips}
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1074}}
+		zeigt ein Fenster im unteren Bereich, das
+		Ihnen eine Liste von Möglichkeiten für Ergänzungen gibt. Richtig klasse
+		hierbei ist -- im Vergleich zu Omni-completion -- dass Sie sich die
+		Dokumentation für jede dieser Möglichkeiten anschauen können.
+	\item VimPdb
+		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=2043}}
+		hilft Ihnen beim Ausbessern von Pythonprogrammen, ohne Vim zu
+		verlassen.
+\end{itemize}
+
+\subsubsection{Seine eigenen \blue{Plugins} schreiben}
+Um Vim in jeder erdenklichen Weise zu erweitern, können Sie Ihre eigenen
+\blue{Plugins} schreiben. Hier ist mal eine Aufgabe, an die Sie sich ranmachen
+können:
+\begin{quote}
+	Schreiben Sie ein Vim-\blue{Plugin}, das das aktuelle Wort nimmt, und einen
+	\blue{Browser} öffnet, mit der Dokumentation zu genau diesem Wort (das Wort
+	kann ein Funktionsname oder der Name einer Klasse etc. sein).
+\end{quote}
+Wenn Ihnen so gar nicht einfallen will, wie Sie dies erreichen können, dann
+werfen Sie mal einen Blick auf den \textit{"`Online documentation for word
+under cursor"'}-Tipp im Vim-Tipps-Wiki.
+\footnote{\url{http://vim.wikia.com/wiki/Online_documentation_for_word_under_cursor}}
+
+Ich habe denselben Tipp erweitert, und etwas allgemeiner gehalten:\\
+\includegraphics[scale=0.5]{1-115}\\
+\includegraphics[scale=0.5]{1-116}
+
+\subsection{Zugriff auf Datenbanken}
+Mit dem \red{dbext.vim}
+\footnote{\url{http://www.vim.org/scripts/script.php?script_id=356}}
+-\blue{Plugin} können Sie sogar auf etwa 10
+verschiedene Datenbanken aus Vim heraus zugreifen, von Oracle über MySQL über
+PostgreSQL über Sybase bis SQLite. Das beste daran ist, dass Sie mit diesem
+\blue{Plugin} SQL editieren können, geschrieben innerhalb von PHP, Perl, Java,
+etc., und Sie können sogar eine direkte Datenbankabfrage ausführen, obwohl es
+in einer anderen Programmiersprache eingebettet ist, und Sie sogar nach
+Variablenwerten fragt.
+
+\subsection{Zusammenfassung}
+Wir haben gelernt wie man Vim mit Hilfe verschiedener \blue{Plugins} und
+Einstellungen zum Programmieren benutzen kann. Wenn wir eine Funktion brauchen,
+wird dies durch das Schreiben eigener \blue{Plugins} bewerkstelligt (so wie im
+Skripte-Kapitel besprochen).
+
+Eine gute Quelle für Diskussionen in diesem Zusammenhang gibt es auf
+\textit{Stack Overflow}
+\footnote{\url{http://stackoverflow.com/questions/tagged/vim}}
+und Peteris Krumins's Blog.
+\footnote{\url{http://www.catonmat.net/tag/vim}}
+%extern links
+%Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Programmers_Editor&oldid=1245
+%Principal Authors: Swaroop
 
 \section{Mehr}
 Einführung
