@@ -3123,183 +3123,279 @@ benutzt.
 Globale \blue{\textit{Plugins}} werden benutzt, um allgemeine Funktionen zur
 Verfügung zu stellen. Globale \blue{\textit{Plugins}} liegen an zwei Orten:
 %lesezeichen 66 70
-1. \verb $VIMRUNTIME/plugin/ für Standardplugins, die Vim schon bei seiner Installation einrichtet.
-2. Um Ihre eigenen \blue{\textit{Plugins}} bzw. \blue{\textit{Plugins}}, die Sie von irgendwo heruntergeladen haben, zu installieren,
-nehmen Sie Ihr eigenes \blue{\textit{Plugin}}-Verzeichnis:
- \verb $HOME/.vim/plugin/  auf Unixoiden Systemen (GNU/Linux/BSD/MacOSX)
- \verb %HOME%/vimfiles/plugin/  für Windows
- Sehen sich sich :help runtimepath für Einzelheiten zu Ihren \blue{\textit{Plugin}}-Verzeichnissen an.
-Jetzt wollen wir so ein Plugin einmal anwenden.
-Ein nützliches Plugin ist \verb highlight_current_line.vim[5]  von Ansuman Mohanty, das genau das tut, was der
-Name schon suggeriert. Laden Sie sich neuste Version der Datei \verb highlight_current_line.vim  herunter, und
-legen Sie sie in Ihr Plugin-Verzeichnis (wie oben erwähnt). Starten Sie Vim erneut, und öffnen Sie irgendeine
-Datei. Achten Sie darauf, wie die aktuelle Zeile hervorgehoben ist, im Vergleich zu den anderen Zeilen dieser
+\begin{enumerate}
+	\item \red{\$VIMRUNTIME/plugin/} für Standard\blue{plugins}, die Vim schon
+		bei seiner Installation einrichtet.
+	\item Um Ihre eigenen \blue{\textit{Plugins}} bzw. \blue{\textit{Plugins}},
+		die Sie von irgendwo heruntergeladen haben, zu installieren, nehmen Sie
+		Ihr eigenes \blue{\textit{Plugin}}-Verzeichnis:
+	\begin{itemize}
+		\item \red{\$VIMRUNTIME/plugin/} für Standard\blue{plugins}, die Vim schon
+		\item \red{\$HOME/.vim/plugin/}  auf Unixoiden Systemen (GNU/ Linux/ BSD/ MacOSX)
+		\item \red{\%HOME\%/vimfiles/plugin/}  für Windows
+		\item Sehen sich sich \red{:help runtimepath} für Einzelheiten zu Ihren
+			\blue{\textit{Plugin}}- Verzeichnissen an.
+	\end{itemize}
+\end{enumerate}
+
+Jetzt wollen wir so ein \blue{\textit{Plugin}} einmal anwenden.
+
+Ein nützliches \blue{\textit{Plugin}} ist \red{highlight\_current\_line.vim}[5]
+von Ansuman Mohanty, das genau das tut, was der Name schon suggeriert. Laden
+Sie sich neuste Version der Datei \red{highlight\_current\_line.vim}  herunter,
+und legen Sie sie in Ihr \blue{\textit{Plugin}}-Verzeichnis (wie oben erwähnt).
+Starten Sie Vim erneut, und öffnen Sie irgendeine Datei. Achten Sie darauf, wie
+die aktuelle Zeile hervorgehoben ist, im Vergleich zu den anderen Zeilen dieser
 Datei.
-Aber was ist, wenn Ihnen das gar nicht gefällt? Na, dann löschen Sie das Plugin einfach wieder, und starten
-den Vim nochmal.
-Ganz genauso können wir unser eigenes related.vim oder captialize.vim aus dem 'Skripte'-Kapitel in unser
-Plugin-Verzeichnis installieren, und dies erspart uns den Ärger, jedesmal :source eingeben zu müssen.
-Letztendlich sollte jede Art von Plugin, das Sie schreiben, irgendwo in Ihrem .vim/vimfiles plugin-Ordner
-landen.
-Dateitypplugin
-Dateitypplugins wurden geschrieben, damit man an bestimmten Arten von Dateien arbeiten kann. Programme
-z.B., die in der Programmiersprache C geschrieben wurden, können ihren eigenen Einrückstil, Faltungen,
-Syntaxhervorhebung und sogar ihre eigene Fehleranzeige haben. Solche Plugins sind nicht für allgemeine
-Zwecke, sie funktionieren für diese bestimmten Dateitypen.
-Ein Filetype-Plugin benutzen
-Versuchen wir mal ein Dateitypplugin für XML. XML ist eine beschreibende Sprache, die Marken benutzt,
-um die Dokumentstruktur selbst zu beschreiben. Wenn Sie z.B. einen Text wie diesen hier haben:
 
-In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:
+Aber was ist, wenn Ihnen das gar nicht gefällt? Na, dann löschen Sie das Plugin
+einfach wieder, und starten den Vim nochmal.
 
-Beachten Sie, dass die Struktur des Dokumentes in der XML-Version noch ausführlicher ist. Dies macht es
-für Konvertierungsprogramme einfacher XML in andere Formate zu übertragen, einschließlich PDF und
-Druckversionen. Der Nachteil wiederum ist, dass das Erstellen in XML schwieriger für denjenigen ist, der
-die Seite schreibt.
-Wollen mal sehen inwiefern ftplugins einem Vim-Benutzer beim Verfassen von XML helfen kann.
-1. Laden Sie sich zuerstmal das xmledit ftplugin[6] runter, und werfen Sie es in Ihr ~/.vim/ftplugin/Verzeichnis.
-2. Fügen Sie Ihrer ~/.vimrc noch folgende Zeile hinzu:
+Ganz genauso können wir unser eigenes \red{related.vim} oder captialize.vim aus
+dem 'Skripte'-Kapitel in unser \blue{\textit{Plugin}}-Verzeichnis installieren,
+und dies erspart uns den Ärger, jedesmal :source eingeben zu müssen.
+Letztendlich sollte jede Art von \blue{\textit{Plugin}}, das Sie schreiben,
+irgendwo in Ihrem .vim/vimfiles \blue{\textit{plugin}}-Ordner landen.
 
-(Stellen Sie sicher, das richtige Verzeichnis anzugeben, gemäß Ihres Betriebssystems)
+\subsection{Dateityp\blue{plugin}}
+Dateityp\blue{plugins} wurden geschrieben, damit man an bestimmten Arten von
+Dateien arbeiten kann. Programme z.B., die in der Programmiersprache C
+geschrieben wurden, können ihren eigenen Einrückstil, Faltungen,
+Syntaxhervorhebung und sogar ihre eigene Fehleranzeige haben. Solche
+\blue{Plugins} sind nicht für allgemeine Zwecke, sie funktionieren für diese
+bestimmten Dateitypen.
 
-Dies ruft das xmledit ftplugin jedesmal auf, wenn Sie eine Datei mit der Erweiterung .xml öffnen.
-3. Öffnen Sie Vim und bearbeiten Sie eine Datei mit Namen test.xml.
-4. Tippen Sie <article.
-5. Jetzt geben Sie das schließende > ein, und sehen wie das xmledit ftplugin die schließende Marke
-automatisch für Sie einfügt. Ihr Dokument sollte nun so aussehen:
+\subsection{Ein Filetype-\blue{Plugin} benutzen}
+Versuchen wir mal ein Dateityp\blue{plugin} für XML. XML ist eine beschreibende
+Sprache, die Marken benutzt, um die Dokumentstruktur selbst zu beschreiben.
+Wenn Sie z.B. einen Text wie diesen hier haben:\\
+\includegraphics[scale=0.5]{1-080}
 
-6. Tippen Sie nun ein weiteres mal > und sehen Sie wie die Marke expandiert, so dass Sie weitere
-Marken eingeben können. Das Dokument sollte nun so aussehen:
+In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:\\
+\includegraphics[scale=0.5]{1-081}\\
+\includegraphics[scale=0.5]{1-082}
 
-7. Sie werden bemerkt haben, dass auch der Cursor eingerückt ist, so dass Sie das Dokument ordentlich
-strukturiert schreiben können, was der Struktur des Dokuments entspricht.
-8. Wiederholen Sie diesen Prozeß, bis Sie das ganze Dokument geschrieben haben.
-Beachten Sie wie ein spezielles ftplugin für XML, es für Sie viel leichter macht XML-Dokumente zu
-schreiben. Dafür wurden ftplugins in der Regel gemacht.
-Ein Dateityp-Plugin schreiben
+Beachten Sie, dass die Struktur des Dokumentes in der XML-Version noch
+ausführlicher ist. Dies macht es für Konvertierungsprogramme einfacher XML in
+andere Formate zu übertragen, einschließlich PDF und Druckversionen. Der
+Nachteil wiederum ist, dass das Erstellen in XML schwieriger für denjenigen
+ist, der die Seite schreibt.
+
+Wollen mal sehen inwiefern \red{ftplugins} einem Vim-Benutzer beim Verfassen
+von XML helfen kann.
+\begin{enumerate}
+	\item Laden Sie sich zuerstmal das \red{xmledit ftplugin}[6] runter, und
+		werfen Sie es in Ihr \red{~/.vim/ftplugin/Verzeichnis}.
+	\item Fügen Sie Ihrer \red{~/.vimrc} noch folgende Zeile hinzu:\\
+		\includegraphics[scale=0.5]{1-083}\\ 
+		(Stellen Sie sicher, das richtige Verzeichnis anzugeben, gemäß Ihres
+		Betriebssystems) Dies ruft das \red{xmledit ftplugin} jedesmal auf,
+		wenn Sie eine Datei mit der Erweiterung \red{.xml} öffnen.
+	\item Öffnen Sie Vim und bearbeiten Sie eine Datei mit Namen \red{test.xml}.
+	\item Tippen Sie \red{$<$article}.
+	\item Jetzt geben Sie das schließende \red{$>$} ein, und sehen wie das
+		\red{xmledit ftplugin} die schließende Marke automatisch für Sie
+		einfügt. Ihr Dokument sollte nun so aussehen:\\
+		\includegraphics[scale=0.5]{1-084}
+	\item Tippen Sie nun ein weiteres mal $>$ und sehen Sie wie die Marke
+		expandiert, so dass Sie weitere Marken eingeben können. Das Dokument
+		sollte nun so aussehen:\\
+		\includegraphics[scale=0.5]{1-085}
+	\item Sie werden bemerkt haben, dass auch der \blue{Cursor} eingerückt ist,
+		so dass Sie das Dokument ordentlich strukturiert schreiben können, was
+		der Struktur des Dokuments entspricht.
+	\item Wiederholen Sie diesen Prozeß, bis Sie das ganze Dokument geschrieben
+		haben.
+\end{enumerate}
+
+Beachten Sie wie ein spezielles ftplugin für XML, es für Sie viel leichter
+macht XML-Dokumente zu schreiben. Dafür wurden ftplugins in der Regel gemacht.
+
+\subsection{Ein Dateityp-\blue{Plugin} schreiben}
 Wir wollen einmal versuchen ein eigenes ftplugin zu schreiben.
-In unserem vorherigen Beispiel, bei dem wir das xmledit ftplugin benutzt, und im XML-Format geschrieben
-haben, haben wir gesehen, dass wir ein paar standard Kopfinformationen, ganz oben in jede DocBook-XMLDatei reinschreiben müssen (das ist genau das Format, das wir benutzt haben). Warum automatisieren wir das
-nicht in Vim, mit Hilfe des ftplugin?
-Unser xml ftplugin muss im Grunde lediglich die folgenden Informationen an den Anfang einer jeden 'neuen'
-XML-Datei setzen:
 
-Jetzt wollen wir dafür sorgen, dass unser neues ftplugin, das wir, sagen wir mal 'xmlheader.vim' nennen, nur
-dann funktioniert, beim Eintreten eines 'BufNewFile'-Ereignisses. Fügen Sie also folgendes in Ihre ~/.vimrc:
+In unserem vorherigen Beispiel, bei dem wir das \red{xmledit ftplugin} benutzt,
+und im XML-Format geschrieben haben, haben wir gesehen, dass wir ein paar
+standard Kopfinformationen, ganz oben in jede \textit{DocBook-XML-Datei}
+reinschreiben müssen (das ist genau das Format, das wir benutzt haben). Warum
+automatisieren wir das nicht in Vim, mit Hilfe des ftplugin?
 
-So! Alles was wir jetzt noch in xmlheader.vim' tun müssen, ist das Setzen der ersten und zweiten Zeile der
-Datei:
+Unser xml ftplugin muss im Grunde lediglich die folgenden Informationen an den
+Anfang einer jeden 'neuen' XML-Datei setzen:\\
+\includegraphics[scale=0.5]{1-086}
 
-Ok - starten Sie den Vim erneut, und stellen Sie sicher, dass es 'test.xml' nicht schon gibt, und führen Sie
-:e test.xml aus. Sie sehen, dass der Dateikopf bereits eingefügt ist!
-Syntaxschema
-Im vorherigen Abschnitt haben wir gerade eben eine DocBook-XML-Datei erstellt. Wäre schon hilfreich
-gewesen, wenn es ein wenig Farbcodierung für die XML-Datei gegeben hätte, für (der Syntax entsprechende)
-gültige DocBook-Marken, um sicherzustellen, dass wir es korrekt eingegeben haben. Es stellt sich heraus,
-das dies möglich ist, wenn wir lediglich :set filetype=docbkxml ausführen. Vim benutzt jetzt die in
-\verb $VIMRUNTIME/syntax/docbkxml.vim  hinterlegte Syntaxdatei.
-Die Syntaxdatei bestimmt, wie die Teile der Datei zueinander stehen. Zum Beispiel, die Syntaxdatei für XML
-bestimmt was Marken (Tags) sind, und welche Farben den Marken-Namen zugewiesen werden sollen, etc.
-Ein Syntaxschema benutzen
-Lassen Sie uns so eine Syntaxdatei einmal hautnah bei der Arbeit erleben. Laden Sie sich mkd.vim[7]
-herunter - das ist ein Syntax-Skript für die Markdown-Syntax.[8] Markdown ist im Grunde ein Format, das es
-Ihnen ermöglicht einfachen Text einzugeben, der später in HTML umgewandelt wird.
-1. Öffnen Sie eine neue Datei mit Vim, die Sie \verb 'test_markdown.txt'  nennen.
-2. Führen Sie \verb|:set syntax=mkd| aus.
-3. Tippen Sie folgenden Text in die Datei:
+Jetzt wollen wir dafür sorgen, dass unser neues ftplugin, das wir, sagen wir mal '\red{xmlheader.vim}' nennen, nur
+dann funktioniert, beim Eintreten eines '\red{BufNewFile}'-Ereignisses. Fügen Sie also folgendes in Ihre \red{~/.vimrc}:\\
+\includegraphics[scale=0.5]{1-087}
 
-4. Beachten Sie, wie verschiedene Teile der Datei, z.B. der Dateikopf und hervorgehobene Wörter
-automatisch hervorgehoben wurden. Dies sollte das Schreiben in Markdown-Syntax hoffentlich
-einfacher machen.
-Ein Syntaxschema schreiben
-Lassen Sie uns jetzt versuchen eine eigene Syntaxdatei für das AmiFormat[9]-Textformat zu schreiben.
-Bei der Syntaxhervorhebung dreht es sich im Kern um zwei Schritte - zuerst müssen wir die Art des
-Textformates bestimmen, nachdem wir suchen, und das zweite ist die Beschreibung, wie es angezeigt wird.
-Angenommen wir wollen z.B. sämtliche Belegstellen finden von <b>irgendein Wort</b> und es fettgedruckt
-angezeigt kriegen. Zuerst müssen wir ein solches Muster in unserem Text finden, und dann den Namen dieses
-Musters mit der Art, wie wir es angezeigt haben wollen, verknüpfen:
+So! Alles was wir jetzt noch in '\red{xmlheader.vim}' tun müssen, ist das
+Setzen der ersten und zweiten Zeile der Datei:\\
+\includegraphics[scale=0.5]{1-088}
 
-Die erste Zeile sagt, dass wir einen neuen Syntaxtyp erschaffen, auf der Grundlage ein Muster zu finden, mit
-Namen 'ourBold' und das regex-Muster, wie oben angegeben (regex  regular expression).
-Die zweite Zeile sagt, dass wir die 'ourBold'-Syntax hervorheben wollen. Das Schema das wir festlegen ist
-das Standardschema, was bedeutet, dass es von anderen Benutzern oder Farbschemata überschrieben werden
-kann. Wir können drei verschiedene Arten festlegen wie ourBold vertreten wird, für die drei verschiedenen
-Anzeigearten, die im Vim laufen - schwarz/weiß-Terminals, Farbterminals und die grafische Benutzerschnittstelle (GUI  Graphical User Interface).
+Ok -- starten Sie den Vim erneut, und stellen Sie sicher, dass es
+'\red{test.xml}' nicht schon gibt, und führen Sie \red{:e test.xml} aus. Sie
+sehen, dass der Dateikopf bereits eingefügt ist!
 
-Manchmal wollen wir eine Aufgabe in unserem Text als todo-Element festlegen, und für gewöhnlich
-schreiben wir dies in Großbuchstaben 'TODO'. Aber was ist, wenn uns das noch nicht reicht?
+\subsection{\blue{Syntax}schema}
+Im vorherigen Abschnitt haben wir gerade eben eine DocBook-XML-Datei erstellt.
+Wäre schon hilfreich gewesen, wenn es ein wenig Farbcodierung für die XML-Datei
+gegeben hätte, für (der Syntax entsprechende) gültige DocBook-Marken, um
+sicherzustellen, dass wir es korrekt eingegeben haben. Es stellt sich heraus,
+das dies möglich ist, wenn wir lediglich \red{:set filetype=docbkxml}
+ausführen. Vim benutzt jetzt die in\\ \red{\$VIMRUNTIME/syntax/docbkxml.vim}
+hinterlegte Syntaxdatei.
 
-Zuerst legen wir fest, dass 'ourTodo' aus Schlüsselwörtern besteht - das sind ganz einfache Wörter, die
-hervorgehoben werden müssen, und wir verknüpfen diese Mustergruppe 'ourTodo' mit einer schon
-vorhandenen Gruppe 'Todo' in Vim. Es gibt viele dieser bereits vorhandenen Gruppen in Vim, die
-vorbestimmte Farbschemata haben. Das beste ist es, unsere Syntaxeigenheiten mit schon vorhandenen
-Gruppen zu verknüpfen. Sehen Sie sich hierzu auch :help group-name an, für eine Liste der zur Verfügung
-stehenden Gruppen.
-Als nächstes können wir spezifizierte Code-Blöcke in der Gruppe haben, die in [code] .. [/code]
-eingeschlossen sind. Wie heben wir diese hervor?
+Die \blue{Syntax}datei bestimmt, wie die Teile der Datei zueinander stehen. Zum
+Beispiel, die Syntaxdatei für XML bestimmt was Marken (\textit{Tags}) sind, und
+welche Farben den Marken-Namen zugewiesen werden sollen, etc.
 
-Zuerst legen wir fest, dass wir eine Textregion definieren, mit einem Start- und Endmuster (was sehr einfach
-ist, in unserem Fall), und dann verknüpfen wir dies mit der schon vorhandenen 'Identifier'-Klasse.
-So ähnlich können wir auch vorgehen um Definitionen zu anderen Textteilen hinzuzufügen, so wie es im
-AmiFormat-Nachschlagehandbuch[10] beschrieben ist, und das endgültige Skript könnte dann so aussehen:
+\subsection{Ein \blue{Syntax}schema benutzen}
+Lassen Sie uns so eine \blue{Syntax}datei einmal hautnah bei der Arbeit
+erleben. Laden Sie sich \red{mkd.vim}[7] herunter - das ist ein
+\blue{Syntax}-Skript für die \textit{Markdown}-\blue{Syntax}.[8]
+\textit{Markdown} ist im Grunde ein Format, das es Ihnen ermöglicht einfachen
+Text einzugeben, der später in HTML umgewandelt wird.
+\begin{enumerate}
+	\item Öffnen Sie eine neue Datei mit Vim, die Sie
+		'\red{test\_markdown.txt}'  nennen.
+	\item Führen Sie \red{:set syntax=mkd} aus.
+	\item Tippen Sie folgenden Text in die Datei:\\
+		\includegraphics[scale=0.5]{1-090}
+	\item Beachten Sie, wie verschiedene Teile der Datei, z.B. der Dateikopf
+		und hervorgehobene Wörter automatisch hervorgehoben wurden. Dies sollte
+		das Schreiben in \textit{Markdown}-Syntax hoffentlich einfacher machen.
+\end{enumerate}
+\subsection{Ein Syntaxschema schreiben}
+Lassen Sie uns jetzt versuchen eine eigene \blue{Syntax}datei für das
+\textit{AmiFormat}[9]-Textformat zu schreiben.
 
-Jetzt wo das Skript tatsächlich funktioniert, habe ich es in die Vim-Skripte-Abteilung[11] hochgeladen, und
-zwar als ich es geschrieben habe! Jetzt kann jeder auf dem Planeten die AmiFormat-Syntaxhervorhebung in
-Vim benutzen.
-Um noch mehr über Syntaxhervorhebungsskripte für den Vim zu erfahren, nehmen Sie:
+Bei der \textit{Syntax}hervorhebung dreht es sich im Kern um zwei Schritte -
+zuerst müssen wir die Art des Textformates bestimmen, nachdem wir suchen, und
+das zweite ist die Beschreibung, wie es angezeigt wird.
 
-\begin{verbatim}
-:help syntax
-:help usr_44.txt
-:help group-name
-:help pattern-overview
-:help mysyntaxfile
-:help new-filetpye
-\end{verbatim}
+Angenommen wir wollen z.B. sämtliche Belegstellen finden von $<$b$>$irgendein
+Wort$<$/b$>$ und es fettgedruckt angezeigt kriegen. Zuerst müssen wir ein
+solches Muster in unserem Text finden, und dann den Namen dieses Musters mit
+der Art, wie wir es angezeigt haben wollen, verknüpfen:\\
+\includegraphics[scale=0.5]{1-091}
 
-Hinweis
-Wenn Sie Ihren Bildschirm mal zeichnerisch auffrischen möchten, weil die Syntaxdatei, Ihre Ausgabe
-verhunzt, drücken Sie CTRL-L.
-Hinweis
-Sie haben es vielleicht schon erraten, dass, wenn wir früher den Dateityp gesetzt haben, Vim
-die Syntax seinerseits automatisch auf denselben Namen setzt.
+Die erste Zeile sagt, dass wir einen neuen \blue{Syntax}typ erschaffen, auf der
+Grundlage ein Muster zu finden, mit Namen '\textit{ourBold}' und das
+regex-Muster, wie oben angegeben (\textit{regex  \textrightarrow regular
+expression}).
 
-Compiler-Plugins
-Compiler-Plugins werden benutzt um Programme, die in verschiedenen Sprachen geschrieben wurden, in
-Maschinensprache zu übersetzen. Sie sind überall dort nützlich, wo eine Umformung nötig ist, von einem
-einfachen Text in ein anderes Format. Selbst wenn Sie einen einfachen Text in Markdown nach HTML
-umwandeln wollen, benutzen Sie ein Umwandlungsprogramm.
-Lassen Sie uns die Benutzung eines Compiler-Plugins für Python untersuchen.
-1. Laden Sie sich das compiler/python.vim[12]-Skript herunter und schieben Sie es in Ihr
-~/.vim/compiler/-Verzeichnis.
-2. Fügen Sie die folgende Zeile in Ihre ~/.vimrc ein:
+Die zweite Zeile sagt, dass wir die '\red{ourBold}'-\blue{Syntax} hervorheben
+wollen. Das Schema das wir festlegen ist das Standardschema, was bedeutet, dass
+es von anderen Benutzern oder Farbschemata überschrieben werden kann. Wir
+können drei verschiedene Arten festlegen wie \textit{ourBold} vertreten wird,
+für die drei verschiedenen Anzeigearten, die im Vim laufen -
+schwarz/weiß-Terminals, Farbterminals und die grafische Benutzerschnittstelle
+(GUI \textrightarrow  Graphical User Interface).
 
-3. Starten Sie den Vim erneut, und öffnen Sie eine Python-Datei, sagen wir mal test.py, und geben Sie
-das folgende Programm ein:
 
-4. Führen Sie :make aus, und Sie sollten eine erfolgreiche Übersetzung sehen.
-5. Lassen Sie uns absichtlich einen Fehler in das Programm einfügen, indem wir 'print'  (drucken),
-ändern in 'pritn':
+Manchmal wollen wir eine Aufgabe in unserem Text als \textit{todo}-Element
+festlegen, und für gewöhnlich schreiben wir dies in Großbuchstaben 'TODO'. Aber
+was ist, wenn uns das noch nicht reicht?\\
+\includegraphics[scale=0.5]{1-092}
 
-Führen Sie jetzt wieder :make aus, und Sie sehen, dass der Fehler angezeigt wird, und Vim den
-Cursor automatisch auf die fehlerbehaftete Zeile setzt!
-6. Führen Sie :clist aus, um die ganze Fehlerliste zu sehen.
-7. Nachdem Sie einen Fehler behoben haben, können Sie :cnext ausführen, um zum nächsten Fehler zu
-springen.
-Wenn Sie das compiler/python.vim-Skript, das wir heruntergeladen haben, öffnen, werden Sie feststellen,
-dass es geradezu trivial ist  es sind nur zwei Variablen definiert  eine davon ist makeprg, welche definiert,
-wie die Datei 'gemacht' werden soll, d.h. wie sie zu kompilieren ist, und die zweite ist errorformat, welche die
-Form der Compilerfehlerausgabe bestimmt.
-Ich habe  mit den gleichen beiden Variablen  ein Compiler-Plugin für Adobe Flex[13] geschrieben.
-Für weitere Details, sehen Sie sich hierzu auch :help write-compiler-plugin und :help quickfix an, wie Sie
-Ihre eigenen Compiler-Plugins schreiben.
-Hausaufgabe : Schreiben Sie ein globales Plugin
-Um Ihre neuerworbenen Plugin-Programmierfähigkeiten zu praktizieren, versuchen Sie sich mal an dieser
-Übung:
+Zuerst legen wir fest, dass 'ourTodo' aus Schlüsselwörtern besteht - das sind
+ganz einfache Wörter, die hervorgehoben werden müssen, und wir verknüpfen diese
+Mustergruppe 'ourTodo' mit einer schon vorhandenen Gruppe 'Todo' in Vim. Es
+gibt viele dieser bereits vorhandenen Gruppen in Vim, die vorbestimmte
+Farbschemata haben. Das beste ist es, unsere \blue{Syntax}eigenheiten mit schon
+vorhandenen Gruppen zu verknüpfen. Sehen Sie sich hierzu auch \red{:help
+group-name} an, für eine Liste der zur Verfügung stehenden Gruppen.
+
+Als nächstes können wir spezifizierte Code-Blöcke in der Gruppe haben, die in
+\red{[code] .. [/code]} eingeschlossen sind. Wie heben wir diese hervor?\\
+\includegraphics[scale=0.5]{1-093}
+
+Zuerst legen wir fest, dass wir eine Textregion definieren, mit einem Start-
+und Endmuster (was sehr einfach ist, in unserem Fall), und dann verknüpfen wir
+dies mit der schon vorhandenen '\red{Identifier}'-Klasse.
+
+So ähnlich können wir auch vorgehen um Definitionen zu anderen Textteilen
+hinzuzufügen, so wie es im \textit{AmiFormat}-Nachschlagehandbuch[10]
+beschrieben ist, und das endgültige Skript könnte dann so aussehen:\\
+\includegraphics[scale=0.5]{1-094}\\
+\includegraphics[scale=0.5]{1-095}
+
+Jetzt wo das Skript tatsächlich funktioniert, habe ich es in die
+Vim-Skripte-Abteilung[11] hochgeladen, und zwar als ich es geschrieben habe!
+Jetzt kann jeder auf dem Planeten die
+\textit{AmiFormat}-\blue{Syntax}hervorhebung in Vim benutzen.
+
+Um noch mehr über \blue{Syntax}hervorhebungsskripte für den Vim zu erfahren,
+nehmen Sie:
+\begin{itemize}
+	\item \red{:help syntax}
+	\item \red{:help usr\_44.txt}
+	\item \red{:help group-name}
+	\item \red{:help pattern-overview}
+	\item \red{:help mysyntaxfile}
+	\item \red{:help new-filetpye}
+\end{itemize}
+\begin{description}
+	\item [Hinweis] Wenn Sie Ihren Bildschirm mal zeichnerisch auffrischen
+		möchten, weil die \blue{Syntax}datei, Ihre Ausgabe verhunzt, drücken
+		Sie \red{CTRL-L}.
+	\item [Hinweis] Sie haben es vielleicht schon erraten, dass, wenn wir
+		früher den Dateityp gesetzt haben, Vim die \red{Syntax} seinerseits
+		automatisch auf denselben Namen setzt.
+\end{description}
+
+\subsection{Compiler-\blue{Plugins}}
+Compiler-\blue{Plugins} werden benutzt um Programme, die in verschiedenen
+Sprachen geschrieben wurden, in Maschinensprache zu übersetzen. Sie sind
+überall dort nützlich, wo eine Umformung nötig ist, von einem einfachen Text in
+ein anderes Format. Selbst wenn Sie einen einfachen Text in \textit{Markdown}
+nach HTML umwandeln wollen, benutzen Sie ein Umwandlungsprogramm.
+
+Lassen Sie uns die Benutzung eines Compiler-\blue{Plugins} für Python untersuchen.
+
+\begin{enumerate}
+	\item Laden Sie sich das \red{compiler/python.vim}[12]-Skript herunter und
+		schieben Sie es in Ihr \red{~/.vim/compiler/}-Verzeichnis.
+	\item Fügen Sie die folgende Zeile in Ihre \red{~/.vimrc} ein:\\
+		\includegraphics[scale=0.5]{1-096}
+
+	\item Starten Sie den Vim erneut, und öffnen Sie eine
+		\textit{Python}-Datei, sagen wir mal \red{test.py}, und geben Sie das
+		folgende Programm ein:\\
+		\includegraphics[scale=0.5]{1-097}
+
+	\item Führen Sie \red{:make} aus, und Sie sollten eine erfolgreiche
+		Übersetzung sehen.
+	\item Lassen Sie uns absichtlich einen Fehler in das Programm einfügen,
+		indem wir 'print' \textrightarrow (drucken), ändern in 'pritn':\\
+		\includegraphics[scale=0.5]{1-098}\\
+		Führen Sie jetzt wieder \red{:make} aus, und Sie sehen, dass der Fehler
+		angezeigt wird, und Vim den \blue{Cursor} automatisch auf die
+		fehlerbehaftete Zeile setzt!
+	\item Führen Sie \red{:clist} aus, um die ganze Fehlerliste zu sehen.
+	\item Nachdem Sie einen Fehler behoben haben, können Sie \red{:cnext}
+		ausführen, um zum nächsten Fehler zu springen.
+\end{enumerate}
+Wenn Sie das \red{compiler/python.vim}-Skript, das wir heruntergeladen haben,
+öffnen, werden Sie feststellen, dass es geradezu trivial ist  es sind nur zwei
+Variablen definiert -- eine davon ist \red{makeprg}, welche definiert, wie die
+Datei 'gemacht' werden soll, d.h. wie sie zu kompilieren ist, und die zweite
+ist \red{errorformat}, welche die Form der Compilerfehlerausgabe bestimmt.
+
+Ich habe  mit den gleichen beiden Variablen -- ein Compiler-\blue{Plugin} für
+\textit{Adobe Flex}[13] geschrieben.
+
+Für weitere Details, sehen Sie sich hierzu auch \red{:help write-compiler-plugin} und \red{:help quickfix} an, wie Sie
+Ihre eigenen Compiler-\blue{Plugins} schreiben.
+
+\subsection{Hausaufgabe : Schreiben Sie ein globales \blue{Plugin}}
+Um Ihre neuerworbenen \blue{Plugin}-Programmierfähigkeiten zu praktizieren,
+versuchen Sie sich mal an dieser Übung:
+
 Schreiben Sie ein Plugin, dass sämtliche doppelten Zeilen, und überflüssige Leerzeilen des
 Dokumentes löscht.
 
-Entweder Sie benutzen hierfür Vim's eigene Skriptsprache oder jede andere Sprache, die eine Schnittstelle zu
+Entweder Sie benutzen hierfür Vim's eigene Skriptsprache oder jede andere Sprache, die eine Schnittstelle zu
 Vim hat.
 Wenn Sie einen kleinen 'Anstubser' brauchen, nehmen Sie diesen Tipp[14].
 Oder wie wär's hiermit?
