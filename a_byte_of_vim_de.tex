@@ -1264,9 +1264,8 @@ Tastaturspickzettel von 'jng'.
 Obwohl Sie da jede Menge Befehle aufgelistet
 sehen, genügt es erst einmal die grundlegenden Tasten 'hjkl', die den
 Pfeiltasten (links, rechts, oben, unten) entsprechen, zu lernen.  Darüber
-lernen Sie dann noch mehr im nächsten Kapitel.
-
-\includegraphics[scale=0.6]{1-013}
+lernen Sie dann noch mehr im nächsten Kapitel.\\
+\includegraphics[scale=0.52]{1-013}
 
 \subsection{Zusammenfassung}
 Seien Sie sich darüber im Klaren, daß die Effektivität den Vim zu nutzen
@@ -1678,8 +1677,12 @@ Satz jeweils auftaucht, nehmen Sie \red{:clist}.
 
 \subsection{Schnelle Hilfe}
 Erstellen Sie eine Datei (z.B. mit dem Namen quickhelp) mit Vim, und geben Sie
-den folgenden Text ein.\\
-\includegraphics[scale=0.6]{1-016}
+den folgenden Text ein.  
+\lstset{language=vim}
+\begin{lstlisting}
+:let &keywordprg=':help'
+\end{lstlisting}
+
 Verlassen Sie den Einfügemodus mit \red{$<$ESC$>$} und geben Sie die gleiche
 Zeile im Befehlsmodus nochmal ein.
 
@@ -1757,8 +1760,12 @@ im Kapitel 'Erste Schritte'.
 \subsubsection{Auslagern}
 Nun werden Sie bemerkt haben, daß im selben Verzeichnis eine weitere Datei
 erstellt wurde, die sowas wie \red{.hallo.txt.swp} heißt. Führen Sie den
-folgenden Befehl aus, um den exakten Namen der Datei herauszufinden:\\
-\includegraphics[scale=0.6]{1-017}
+folgenden Befehl aus, um den exakten Namen der Datei herauszufinden:
+\lstset{language=vim}
+\begin{lstlisting}
+:swapname
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-017}
 Was ist das denn für eine Datei? Vim behält eine Sicherungskopie des
 Zwischenspeichers in einer Datei, die es in regelmäßigen Abständen auf die
 Festplatte schreibt, damit Sie, sollte doch einmal etwas schiefgehen (daß der
@@ -1783,12 +1790,22 @@ verändert wurde. Das heißt, Vim hat die Änderungen lediglich im
 Zwischenspeicher vorgenommen, aber noch nicht auf die Festplatte geschrieben.
 
 Wir können den Zwischenspeicher in die Originaldatei auf der Festplatte
-zurückschreiben, indem wir dies ausführen:\\
-\includegraphics[scale=0.6]{1-018}
+zurückschreiben, indem wir dies ausführen:
+\lstset{language=vim}
+\begin{lstlisting}
+:write
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-018}
 \subsubsection{Hinweis}
 Um sich das Speichern einfacher zu machen, fügen Sie Ihrer \red{vimrc}
-folgendes hinzu:\\
-\includegraphics[scale=0.6]{1-019}
+folgendes hinzu:
+\lstset{language=vim}
+\begin{lstlisting}
+" Speichern ctrl-s.
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-019}
 Jetzt drücken Sie einfach nur noch \red{ctrl-s}, um die Datei abzuspeichern.
 
 \subsubsection{Arbeiten in meinem Verzeichnis}
@@ -1796,16 +1813,29 @@ Vim startet voreingestellt in Ihrem Heimatverzeichnis, und alle Operationen
 werden in diesem Verzeichnis durchgeführt.
 
 Um Dateien aus anderen Verzeichnissen zu öffnen, können Sie volle oder relative
-Pfadangaben benutzen, wie solche:\\
-\includegraphics[scale=0.6]{1-021}
-Oder Sie veranlassen Vim, in dieses Verzeichnis zu wechseln:\\
-\includegraphics[scale=0.6]{1-022}
+Pfadangaben benutzen, wie solche:
+\lstset{language=vim}
+\begin{lstlisting}
+:e ../tmp/test.txt
+:e C:\\shopping\\monday.txt
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-021}
+Oder Sie veranlassen Vim, in dieses Verzeichnis zu wechseln:
+\lstset{language=vim}
+\begin{lstlisting}
+:cd ../tmp
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-022}
 \red{:cd} ist die Abkürzung für \textit{wechsle} Verzeichnis ['\red{c}'hange
 '\red{d}'irectory]
 
 Um herauszufinden in welchem aktuellen Verzeichnis Vim gerade nach Dateien
-sucht:\\
-\includegraphics[scale=0.6]{1-023}
+sucht:
+\lstset{language=vim}
+\begin{lstlisting}
+:pwd
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-023}
 \red{:pwd} ist die Abkürzung für \textit{zeige das aktuelle Verzeichnis}
 [\textrightarrow '\red{p}'rint '\red{w}'orking' '\red{d}'irectory]
 \subsubsection{Herausschneiden, Kopieren und Einfügen}
@@ -2043,8 +2073,12 @@ Jetzt wollen wir uns mal ein paar Dinger reinziehen, die die fortschrittliche
 Sache, auf die andere Editoren neidisch sein werden: Vim ist nicht nur Ihr
 Editor, sondern er arbeitet auch wie eine Zeitmaschine.
 
-Zum Beispiel,\\
-\includegraphics[scale=0.6]{1-028}
+Zum Beispiel,
+\lstset{language=vim}
+\begin{lstlisting}
+:earlier 4m
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-028}
 
 wirft Sie zeitlich 4 Minuten zurück, d.h. zum Status vor 4 Minuten.
 
@@ -2054,15 +2088,27 @@ dann weiter redigieren, dann ist diese Änderung mit dem einfachen
 \red{u}-Operator, nie wiederzuerlangen. Aber mit Vim ist es möglich den
 \red{:earlier}-Befehl zu benutzen.
 
-Sie können in der Zeit auch vorwärts gehen:\\
-\includegraphics[scale=0.6]{1-029}
+Sie können in der Zeit auch vorwärts gehen:
+\lstset{language=vim}
+\begin{lstlisting}
+:later 45s
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-029}
 
 was Sie zum Zustand 45 Sekunden später bringen wird.  Eine einfachere
-Herangehensweise, 5 Änderungen zurückzugehen, ist natürlich:\\
-\includegraphics[scale=0.6]{1-031}
+Herangehensweise, 5 Änderungen zurückzugehen, ist natürlich:
+\lstset{language=vim}
+\begin{lstlisting}
+:undo 5
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-031}
 
-Hiermit können Sie sich die Baumstruktur ansehen:\\
-\includegraphics[scale=0.6]{1-030}
+Hiermit können Sie sich die Baumstruktur ansehen:
+\lstset{language=vim}
+\begin{lstlisting}
+:undolist
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-030}
 
 Sehen Sie sich \red{:help :undolist} an, um eine Erklärung des Ergebnisses
 dieses Befehls zu erhalten.  Sehen Sie sich \red{:help :undo-redo} und
@@ -2105,17 +2151,29 @@ Was, wenn Sie nur einen Teil des Satzes kennen, oder die exakte Schreibweise
 nicht kennen? Wäre es nicht hilfreich, wenn Vim mit der Suche schon mal
 anfangen könnte, während Sie noch den Suchbegriff eintippen?
 
-Mit\\
-\includegraphics[scale=0.6]{1-032}
+Mit
+\lstset{language=vim}
+\begin{lstlisting}
+set incsearch
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-032}
 
 können Sie das einschalten.
 
 Sie können Vim auch beibringen, daß er die Groß-, Kleinschreibung Ihres
-Suchbegriffes ignoriert:\\
-\includegraphics[scale=0.6]{1-033}
+Suchbegriffes ignoriert:
+\lstset{language=vim}
+\begin{lstlisting}
+set ignorecase
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-033}
 
-Oder Sie nehmen:\\
-\includegraphics[scale=0.6]{1-034}
+Oder Sie nehmen:
+\lstset{language=vim}
+\begin{lstlisting}
+set smartcase
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-034}
 
 Smartcase eingeschaltet:
 \begin{itemize}
@@ -2203,8 +2261,12 @@ Die grundlegenden Kommandos sind \red{zo} und \red{zc}, mit denen wir
 Einfaltungen öffnen bzw. schließen. Sie können za benutzen, um zwischen
 öffnen/schließen einer Einfaltung hin- und herzuwechseln ('\red{a}'lternate).
 Sie können es sich sogar noch einfacher machen, indem Sie die Leertaste im
-Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen:\\
-\includegraphics[scale=0.6]{1-038}
+Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen:
+\lstset{language=vim}
+\begin{lstlisting}
+:nnoremap <space> za
+\end{lstlisting}
+%\includegraphics[scale=0.6]{1-038}
 
 Einfaltungen sind ein ganz großes Thema für sich, mit mehreren Möglichkeiten
 (händisch, Markierung, Ausdruck), und zahlreichen Möglichkeiten Hierachien von
@@ -2365,8 +2427,16 @@ Zeilen in Ihre \textit{vimrc} ein:
 \end{minipage}
 
 \vspace{10pt}
-\noindent
-\includegraphics[scale=0.5]{1-045}
+%\noindent
+%\includegraphics[scale=0.5]{1-045}
+\lstset{language=vim}
+\begin{lstlisting}
+" Tastaturkürzel, um sich zwischen verschiedenen Reitern zu bewegen
+" Alt-j um zum Reiter links zu gelangen
+noremap <A-j> gT
+" Alt-k um zum rechten Reiter zu springen
+noremap <A-k> gt
+\end{lstlisting}
 
 \noindent
 Um einen \blue{Tab} zu schließen, führen Sie \red{:tabc} oder \red{:q} aus.
@@ -2506,11 +2576,21 @@ aber ich persönlich mag das nicht. Ich will, daß nur ausdrücklich bezeichnete
 einen echten Namen - mit KamelSchrift - benutzt habe, der aber kein \blue{Link}
 sein soll (z.B. das Wort "`JavaScript"').  Um die KamelSchrift-Schreibweise zu
 unterbinden tippen Sie, \red{:edit \$vimfiles/plugin/viki.vim}, und ändern die
-folgende Zeile (Zeile 120 gemäß dieses Schreibens):\\
-\includegraphics[scale=0.5]{1-050}
+folgende Zeile (Zeile 120 gemäß dieses Schreibens):
+\lstset{language=vim}
+\begin{lstlisting}
+if !exists("g:vikiNameTypes") | let g:vikiNameTypes = "csSeuix"
+	| endif "{{{2
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-050}
 
-zu\\
-\includegraphics[scale=0.5]{1-051}
+zu
+%\includegraphics[scale=0.5]{1-051}
+\lstset{language=vim}
+\begin{lstlisting}
+if !exists("g:vikiNameTypes") | let g:vikiNameTypes = "sSeuix"
+	| endif "{{{2
+\end{lstlisting}
 
 Haben Sie gesehen -- das 'c' ist weg!
 
@@ -2686,8 +2766,12 @@ Skripte schreiben können, um Entscheidungen zu treffen, Dinge "`tun"', und den
 Text zu manipulieren.
 
 \subsection{Aktionen}
-Wie ändern Sie das Farbschema, das Vim benutzt? Führen Sie dies aus:\\
-\includegraphics[scale=0.5]{1-056}
+Wie ändern Sie das Farbschema, das Vim benutzt? Führen Sie dies aus:
+\lstset{language=vim}
+\begin{lstlisting}
+:colorscheme desert
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-056}
 
 Hier benutze ich das 'Wüsten'-Farbschema, welches auch mein Lieblingsschema
 ist. Die anderen, zur Verfügung stehenden Schemata können Sie sich ansehen mit
@@ -2695,8 +2779,12 @@ ist. Die anderen, zur Verfügung stehenden Schemata können Sie sich ansehen mit
 durchlaufen.
 
 Was ist denn, wenn Sie wissen möchten, wieviele Buchstaben die aktuelle Zeile
-enthält?\\
-\includegraphics[scale=0.5]{1-057}
+enthält?  
+\lstset{language=vim}
+\begin{lstlisting}
+:echo strlen(getline("."))
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-057}
 
 Beachten Sie die Namen '\red{strlen}' und '\red{getline}'. Das sind Funktionen.
 Funktionen sind fertig erstellte Skriptstücke, denen man bereits einen Namen
@@ -2713,8 +2801,13 @@ strlen(getline("'."')) nennt man einen Ausdruck. Die Ergebnisse solcher
 Ausdrücke können wir speichern, indem wir Variablen benutzen.
 \textit{Variablen} tun das, was der Name schon andeutet -- Sie sind Namen, die
 auf Werte zeigen, und diese Werte können alles mögliche sein, d.h. es variiert.
-Die Länge können wir z.B. so speichern:\\
-\includegraphics[scale=0.5]{1-058}
+Die Länge können wir z.B. so speichern:
+\lstset{language=vim}
+\begin{lstlisting}
+:let len = strlen(getline("."))
+:echo "We have" len "characters in this line."
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-058}
 
 Wenn Sie diese Zeile ausführen, angewandt auf die zweite Zeile oberhalb dieses
 Textes, kriegen Sie folgendes Ergebnis:\\
@@ -2726,18 +2819,35 @@ Die Möglichkeiten, was Sie mit Hilfe dieser Variablen, Ausdrücke und Befehle
 erreichen können, sind endlos.
 
 Vim stellt über Präfixe viele Typen von Variablen zur Verfügung, wie \$, für
-Umgebunsvariablen, \&, für Optionen, und @, für Register:\\
-\includegraphics[scale=0.5]{1-060}
+Umgebunsvariablen, \&, für Optionen, und @, für Register:
+\lstset{language=vim}
+\begin{lstlisting}
+:echo $HOME
+:echo &filetype
+:echo @a
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-060}
 
 Sehen Sie sich auch \red{:help} function-list an, mit einer riesigen Liste von
 verfügbaren Funktionen.
 
-Sie können auch Ihre eigenen Funktionen erstellen:\\
-\includegraphics[scale=0.5]{1-061}
+Sie können auch Ihre eigenen Funktionen erstellen:
+\lstset{language=vim}
+\begin{lstlisting}
+:function CurrentLineLength()
+:    let len = strlen(getline("."))
+:    return len
+:endfunction
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-061}
 
 Jetzt setzen Sie Ihren \blue{Cursor} mal auf irgendeine Zeile und führen den
-folgenden Befehl aus:\\
-\includegraphics[scale=0.5]{1-062}
+folgenden Befehl aus:
+\lstset{language=vim}
+\begin{lstlisting}
+:echo CurrentLineLength()
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-062}
 
 Sie sollten eine Nummer ausgedruckt sehen.
 
@@ -2753,8 +2863,16 @@ CurrentLineLength()}.
 \subsection{Entscheidungen}
 Angenommen Sie möchten ein anderes Farbschema anzeigen, abhängig davon, ob Vim
 im Terminal oder in der grafischen Variante läuft, d.h. Sie brauchen das
-Skript, um Entscheidungen zu fällen. Dann nehmen Sie dies hier:\\
-\includegraphics[scale=0.5]{1-063}
+Skript, um Entscheidungen zu fällen. Dann nehmen Sie dies hier:
+\lstset{language=vim}
+\begin{lstlisting}
+:if has("gui_running")
+:    colorscheme desert
+:else
+:    colorscheme darkblue
+:endif
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-063}
 
 \noindent
 Das funktioniert so:
@@ -2773,16 +2891,30 @@ Das funktioniert so:
 \end{itemize}
 
 \noindent
-Die Schleifenausdrücke '\red{for}' und '\red{while}' kennt Vim auch:\\
-\includegraphics[scale=0.5]{1-064}
+Die Schleifenausdrücke '\red{for}' und '\red{while}' kennt Vim auch:
+\lstset{language=vim}
+\begin{lstlisting}
+:let i = 0
+:while i < 5
+:    echo i
+:    let i += 1
+:endwhile
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-064}
 
 \noindent
 Das kommt dabei heraus:\\
 \includegraphics[scale=0.5]{1-065}
 
 Mit den programmimmanenten Funktionen des Vim, kann dasselbe auch so
-geschrieben werden:\\
-\includegraphics[scale=0.5]{1-066}
+geschrieben werden:
+\lstset{language=vim}
+\begin{lstlisting}
+:for i in range(5)
+:    echo i
+:endfor
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-066}
 \begin{itemize}
 	\item range() ist eine programmimmanente Funktion, mit der man eine Reihe
 		von Zahlen generiert. Sehen Sie sich hierzu auch \red{:help range()}
@@ -2793,8 +2925,32 @@ geschrieben werden:\\
 \subsection{Datenstrukturen}
 Das Erstellen von Skripten mit Vim unterstützt auch Listen und Wörterbücher.
 Bei Verwendung jener, können Sie komplizierte Programme und Datenstrukturen
-aufbauen.\\
-\includegraphics[scale=0.5]{1-067}
+aufbauen.
+\lstset{language=vim}
+\begin{lstlisting}
+:let fruits = ['apple', 'mango', 'coconut']
+
+:echo fruits[0]
+" apple
+
+:echo len(fruits)
+" 3
+
+:call remove(fruits, 0)
+:echo fruits
+" ['mango', 'coconut']
+
+:call sort(fruits)
+:echo fruits
+" ['coconut', 'mango']
+
+:for fruit in fruits
+:   echo "I like" fruit
+:endfor
+" I like coconut
+" I like mango
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-067}
 
 Es stehen viele Funktionen zur Verfügung  schauen Sie sich die Abschnitte
 '\red{List manipulation}' und '\red{Dictionary manipulation}' in \red{:help
@@ -2815,8 +2971,23 @@ Kleinbuchstaben eintippen, und dann einfach die Funktion aufrufen, um ihn mit
 Großbuchstaben zu versehen.
 
 Wir fangen mit einem einfachen Vorlageskript an. Speichern Sie das folgende
-Skript als \red{captitalize.vim}:\\
-\includegraphics[scale=0.5]{1-070}
+Skript als \red{captitalize.vim}:
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim global plugin for capitalizing first letter of each word
+"       in the current line.
+" Last Change: 2008-11-21 Fri 08:23 AM IST
+" Maintainer: www.swaroopch.com/contact/
+" License: www.opensource.org/licenses/bsd-license.php
+
+if exists("loaded_capitalize")
+    finish
+endif
+let loaded_capitalize = 1
+
+" TODO : The real functionality goes in here.
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-070}
 
 \noindent
 Funktionsweise:
@@ -2848,8 +3019,33 @@ Jetzt machen wir weiter, indem wir die aktuelle Funktion schreiben.
 Wir können eine Funktion festlegen, um die Umformung -- Umwandlung des ersten
 Buchstaben eines jeden Wortes in einen Großbuchstaben  zu erreichen, und diese
 Funktion nennen wir \red{Capitalize()}. Da sich die Funktion auf einen Bereich
-bezieht, können wir festlegen, dass sie in einem Bereich von Zeilen arbeitet.\\
-\includegraphics[scale=0.5]{1-072}
+bezieht, können wir festlegen, dass sie in einem Bereich von Zeilen arbeitet.
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim global plugin for capitalizing first letter of each word
+"       in the current line
+" Last Change: 2008-11-21 Fri 08:23 AM IST
+" Maintainer: www.swaroopch.com/contact/
+" License: www.opensource.org/licenses/bsd-license.php
+
+" Make sure we run only once
+if exists("loaded_capitalize")
+    finish
+endif
+let loaded_capitalize = 1
+
+" Capitalize the first letter of each word
+function Capitalize() range
+    for line_number in range(a:firstline, a:lastline)
+        let line_content = getline(line_number)
+" Luckily, the Vim manual had the solution already!
+" Refer ":help s%" and see 'Examples' section
+        let line_content = substitute(line_content, "\\w\\+", "\\u\\0", "g")
+        call setline(line_number, line_content)
+    endfor
+endfunction
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-072}
 
 \noindent
 Funktionsweise:
@@ -2889,8 +3085,40 @@ Um diesen Befehl auszuführen:
 	\item In der Zeile sollte nun '\red{das ist ein Test}' stehen.
 \end{enumerate}
 Jedesmal \red{:call Captialize()} auszuführen, ist jedoch ermüdend, und deshalb
-weisen wir dem Aufruf ein Tastaturkürzel zu:\\
-\includegraphics[scale=0.5]{1-073}
+weisen wir dem Aufruf ein Tastaturkürzel zu:
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim global plugin for capitalizing first letter of each word
+" in the current line
+" Last Change: 2008-11-21 Fri 08:23 AM IST
+" Maintainer: www.swaroopch.com/contact/
+" License: www.opensource.org/licenses/bsd-license.php
+
+" Make sure we run only once
+if exists("loaded_capitalize")
+    finish
+endif
+let loaded_capitalize = 1
+
+" Refer ':help using-<Plug>'
+if !hasmapto('<Plug>Capitalize')
+    map <unique> <Leader>c <Plug>Capitalize
+endif
+noremap <unique> <script> <Plug>Capitalize <SID>Capitalize
+noremap <SID>Capitalize :call <SID>Capitalize()<CR>
+
+" Capitalize the first letter of each word
+function s:Capitalize() range
+    for line_number in range(a:firstline, a:lastline)
+        let line_content = getline(line_number)
+" Luckily, the Vim manual had the solution already!
+" Refer ":help s%" and see 'Examples' section
+        let line_content = substitute(line_content, "\\w\\+", "\\u\\0", "g")
+        call setline(line_number, line_content)
+    endfor
+endfunction
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-073}
 
 \begin{itemize}
 	\item Die Funktion '\red{Capitalize}' haben wir einfach in
@@ -2940,8 +3168,12 @@ Wie schon erwähnt, wenn Sie Bock haben Python zu lernen, interessiert Sie
 möglicherweise mein anderes freies Buch "`\blue{A Byte Of Python}"'.
 
 Zuerst müssen wir mal checken, ob Python auf Ihrem System schon eingerichtet
-ist.\\
-\includegraphics[scale=0.5]{1-071}
+ist.
+\lstset{language=vim}
+\begin{lstlisting}
+:echo has("python")
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-071}
 
 Wenn Sie hier eine 1 zurückkriegen, kann's losgehen, ansonsten sollten Sie
 \textit{Python} auf Ihrem Rechner installieren, und es dann nochmal versuchen.
@@ -2962,8 +3194,33 @@ herausstellt ist die Lösung recht einfach, dank \red{Yahoo! Search}.
 
 Zuerst wollen wir mal herausfinden, wie wir \textit{Python} dazu nutzen können
 um auf den aktuellen Text zuzugreifen, um die im Zusammenhang stehenden Sätze
-zu generieren.\\
-\includegraphics[scale=0.5]{1-072}
+zu generieren.
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim plugin for looking up popular search queries related
+"       to the current line
+" Last Updated: 2008-11-21 Fri 08:36 AM IST
+" Maintainer: www.swaroopch.com/contact/
+" License: www.opensource.org/licenses/bsd-license.php
+
+" Make sure we run only once
+if exists("loaded_related")
+    finish
+endif
+let loaded_related = 1
+
+" Look up Yahoo Search and show results to the user
+function Related()
+python <<EOF
+
+import vim
+
+print 'Length of the current line is', len(vim.current.line)
+
+EOF
+endfunction
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-072}
 
 Die grundsätzliche Herangehensweise \blue{Plugins} in mit Schnittstellen
 ausgestattete Programmiersprachen zu schreiben, ist die gleiche wie unter
@@ -2988,8 +3245,44 @@ man zugreifen indem man eine Python-API* nutzt, die von \red{Yahoo!  Search
 pYSearch}
 \footnote{\url{http://pysearch.sourcefroge.net}}
 zur Verfügung gestellt wird: {\scriptsize *(API=Application Programming
-Interface  Programmierschnittstelle)}\\
-\includegraphics[scale=0.5]{1-073}
+Interface  Programmierschnittstelle)}
+
+\vspace{20pt}
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim plugin for looking up popular search queries related
+" to the current line
+" Last Updated: 2008-11-21 Fri 08:36 AM IST
+" Maintainer: www.swaroopch.com/contact/
+" License: www.opensource.org/licenses/bsd-license.php
+
+" Make sure we run only once
+if exists("loaded_related")
+    finish
+endif
+let loaded_related = 1
+
+" Look up Yahoo Search and show results to the user
+function Related()
+python <<EOF
+
+import vim
+from yahoo.search.web import RelatedSuggestion
+
+search = RelatedSuggestion(app_id='vimsearch', query=vim.current.line)
+results = search.parse_results()
+
+msg = 'Related popular searches are:\n'
+i = 1
+for result in results:
+    msg += '%d. %s\n' % (i, result)
+    i += 1
+print msg
+
+EOF
+endfunction
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-073}
 
 Beachten Sie, dass wir die aktuelle Zeile in Vim, als den aktuellen Text
 verwenden, der uns interessiert. Dies können Sie auf jeden beliebigen Text
@@ -3081,8 +3374,26 @@ dass es sich um Befehle des Normalmodus handelt.
 Wenn Sie den eingehenden Gebrauch jeder einzelnen oben erwähnten Einstellung
 erlernen wollen, verweise ich auf \red{:help}.
 
-Noch einen Teil aus meiner \textit{gvimrc}:\\
-\includegraphics[scale=0.5]{1-079}
+Noch einen Teil aus meiner \textit{gvimrc}:
+\lstset{language=vim}
+\begin{lstlisting}
+" Size of GVim window
+set lines=35 columns=99
+
+" Don't display the menu or toolbar. Just the screen.
+set guioptions-=m
+set guioptions-=T
+
+" Font. Very important.
+if has('win32') || has('win64')
+" set guifont=Monaco:h16
+" http://jeffmilner.com/index.php/2005/07/30/windows-vista-fonts-now-available/
+    set guifont=Consolas:h12:cANSI
+elseif has('unix')
+    let &guifont="Monospace 10"
+endif
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-079}
 
 Da draussen gibt es jede Menge an Beispielen von \textit{vimrc's}
 \footnote{\url{http://dotfiles.org/.vimrc}}
@@ -3155,9 +3466,12 @@ Sprache, die Marken benutzt, um die Dokumentstruktur selbst zu beschreiben.
 Wenn Sie z.B. einen Text wie diesen hier haben:\\
 \includegraphics[scale=0.5]{1-080}
 
-In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:\\
-\includegraphics[scale=0.5]{1-081}\\
-\includegraphics[scale=0.5]{1-082}
+In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:
+\lstset{language=HTML,
+		tagstyle=\color[rgb]{0,0.5,0}}
+\lstinputlisting{listings/source-37.xml}
+%\includegraphics[scale=0.5]{1-081}\\
+%\includegraphics[scale=0.5]{1-082}
 
 Beachten Sie, dass die Struktur des Dokumentes in der XML-Version noch
 ausführlicher ist. Dies macht es für Konvertierungsprogramme einfacher XML in
@@ -3172,8 +3486,12 @@ von XML helfen kann.
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=301}}
 		runter, und
 		werfen Sie es in Ihr \red{~/.vim/ftplugin/Verzeichnis}.
-	\item Fügen Sie Ihrer \red{~/.vimrc} noch folgende Zeile hinzu:\\
-		\includegraphics[scale=0.5]{1-083}\\ 
+	\item Fügen Sie Ihrer \red{~/.vimrc} noch folgende Zeile hinzu:
+		\lstset{language=vim}
+		\begin{lstlisting}
+:autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-083}\\ 
 		(Stellen Sie sicher, das richtige Verzeichnis anzugeben, gemäß Ihres
 		Betriebssystems) Dies ruft das \red{xmledit ftplugin} jedesmal auf,
 		wenn Sie eine Datei mit der Erweiterung \red{.xml} öffnen.
@@ -3181,12 +3499,22 @@ von XML helfen kann.
 	\item Tippen Sie \red{$<$article}.
 	\item Jetzt geben Sie das schließende \red{$>$} ein, und sehen wie das
 		\red{xmledit ftplugin} die schließende Marke automatisch für Sie
-		einfügt. Ihr Dokument sollte nun so aussehen:\\
-		\includegraphics[scale=0.5]{1-084}
+		einfügt. Ihr Dokument sollte nun so aussehen:
+		\lstset{language=HTML}
+		\begin{lstlisting}
+<article></article>
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-084}
 	\item Tippen Sie nun ein weiteres mal $>$ und sehen Sie wie die Marke
 		expandiert, so dass Sie weitere Marken eingeben können. Das Dokument
-		sollte nun so aussehen:\\
-		\includegraphics[scale=0.5]{1-085}
+		sollte nun so aussehen:
+		\lstset{language=HTML}
+		\begin{lstlisting}
+<article>
+	
+</article>
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-085}
 	\item Sie werden bemerkt haben, dass auch der \blue{Cursor} eingerückt ist,
 		so dass Sie das Dokument ordentlich strukturiert schreiben können, was
 		der Struktur des Dokuments entspricht.
@@ -3207,16 +3535,34 @@ reinschreiben müssen (das ist genau das Format, das wir benutzt haben). Warum
 automatisieren wir das nicht in Vim, mit Hilfe des ftplugin?
 
 Unser xml ftplugin muss im Grunde lediglich die folgenden Informationen an den
-Anfang einer jeden 'neuen' XML-Datei setzen:\\
-\includegraphics[scale=0.5]{1-086}
+Anfang einer jeden 'neuen' XML-Datei setzen:
+\lstset{language=HTML}
+\begin{lstlisting}
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+          "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-086}
 
-Jetzt wollen wir dafür sorgen, dass unser neues ftplugin, das wir, sagen wir mal '\red{xmlheader.vim}' nennen, nur
-dann funktioniert, beim Eintreten eines '\red{BufNewFile}'-Ereignisses. Fügen Sie also folgendes in Ihre \red{~/.vimrc}:\\
-\includegraphics[scale=0.5]{1-087}
+Jetzt wollen wir dafür sorgen, dass unser neues ftplugin, das wir, sagen wir
+mal '\red{xmlheader.vim}' nennen, nur dann funktioniert, beim Eintreten eines
+'\red{BufNewFile}'-Ereignisses. Fügen Sie also folgendes in Ihre
+\red{~/.vimrc}:
+\lstset{language=vim}
+\begin{lstlisting}
+:autocmd BufNewFile *.xml source ~/.vim/ftplugin/xmlheader.vim
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-087}
 
 So! Alles was wir jetzt noch in '\red{xmlheader.vim}' tun müssen, ist das
-Setzen der ersten und zweiten Zeile der Datei:\\
-\includegraphics[scale=0.5]{1-088}
+Setzen der ersten und zweiten Zeile der Datei:
+\lstset{language=vim}
+\begin{lstlisting}
+" Vim plugin to add XML header information to a new XML file
+call setline(1, '<?xml version="1.0"?>')
+call setline(2, '<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">')
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-088}
 
 Ok -- starten Sie den Vim erneut, und stellen Sie sicher, dass es
 '\red{test.xml}' nicht schon gibt, und führen Sie \red{:e test.xml} aus. Sie
@@ -3267,8 +3613,13 @@ das zweite ist die Beschreibung, wie es angezeigt wird.
 Angenommen wir wollen z.B. sämtliche Belegstellen finden von $<$b$>$irgendein
 Wort$<$/b$>$ und es fettgedruckt angezeigt kriegen. Zuerst müssen wir ein
 solches Muster in unserem Text finden, und dann den Namen dieses Musters mit
-der Art, wie wir es angezeigt haben wollen, verknüpfen:\\
-\includegraphics[scale=0.5]{1-091}
+der Art, wie wir es angezeigt haben wollen, verknüpfen:
+\lstset{language=vim}
+\begin{lstlisting}
+:syntax match ourBold /&lt;b&gt;.*&lt;\/b&gt;/
+:highlight default ourBold term=bold cterm=bold gui=bold
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-091}
 
 Die erste Zeile sagt, dass wir einen neuen \blue{Syntax}typ erschaffen, auf der
 Grundlage ein Muster zu finden, mit Namen '\textit{ourBold}' und das
@@ -3286,8 +3637,13 @@ schwarz/weiß-Terminals, Farbterminals und die grafische Benutzerschnittstelle
 
 Manchmal wollen wir eine Aufgabe in unserem Text als \textit{todo}-Element
 festlegen, und für gewöhnlich schreiben wir dies in Großbuchstaben 'TODO'. Aber
-was ist, wenn uns das noch nicht reicht?\\
-\includegraphics[scale=0.5]{1-092}
+was ist, wenn uns das noch nicht reicht?
+\lstset{language=vim}
+\begin{lstlisting}
+:syntax keyword ourTodo TODO FIXME XXX
+:hi def link ourTodo Todo
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-092}
 
 Zuerst legen wir fest, dass 'ourTodo' aus Schlüsselwörtern besteht - das sind
 ganz einfache Wörter, die hervorgehoben werden müssen, und wir verknüpfen diese
@@ -3298,8 +3654,13 @@ vorhandenen Gruppen zu verknüpfen. Sehen Sie sich hierzu auch \red{:help
 group-name} an, für eine Liste der zur Verfügung stehenden Gruppen.
 
 Als nächstes können wir spezifizierte Code-Blöcke in der Gruppe haben, die in
-\red{[code] .. [/code]} eingeschlossen sind. Wie heben wir diese hervor?\\
-\includegraphics[scale=0.5]{1-093}
+\red{[code] .. [/code]} eingeschlossen sind. Wie heben wir diese hervor?
+\lstset{language=vim}
+\begin{lstlisting}
+:syn region amiCode excludenl start=/\[code\]/ end=/\[\/code\]/
+:hi def link amiCode Identifier
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-093}
 
 Zuerst legen wir fest, dass wir eine Textregion definieren, mit einem Start-
 und Endmuster (was sehr einfach ist, in unserem Fall), und dann verknüpfen wir
@@ -3308,9 +3669,12 @@ dies mit der schon vorhandenen '\red{Identifier}'-Klasse.
 So ähnlich können wir auch vorgehen um Definitionen zu anderen Textteilen
 hinzuzufügen, so wie es im \textit{AmiFormat}-Nachschlagehandbuch
 \footnote{\url{http://orangoo.com/labs/AmiNation/AmiFormat/online\%20reference/}}
-beschrieben ist, und das endgültige Skript könnte dann so aussehen:\\
-\includegraphics[scale=0.5]{1-094}\\
-\includegraphics[scale=0.5]{1-095}
+beschrieben ist, und das endgültige Skript könnte dann so aussehen:
+\vfill
+\lstset{language=vim}
+\lstinputlisting{listings/source-47.vim}
+%\includegraphics[scale=0.5]{1-094}\\
+%\includegraphics[scale=0.5]{1-095}
 
 Jetzt wo das Skript tatsächlich funktioniert, habe ich es in die
 Vim-Skripte-Abteilung\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1745}}
@@ -3351,19 +3715,32 @@ Lassen Sie uns die Benutzung eines Compiler-\blue{Plugins} für Python untersuche
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1439}}
 		-Skript herunter und
 		schieben Sie es in Ihr \red{~/.vim/compiler/}-Verzeichnis.
-	\item Fügen Sie die folgende Zeile in Ihre \red{~/.vimrc} ein:\\
-		\includegraphics[scale=0.5]{1-096}
+	\item Fügen Sie die folgende Zeile in Ihre \red{~/.vimrc} ein:
+		\lstset{language=vim}
+		\begin{lstlisting}
+:autocmd BufNewFile,BufRead *.py compiler python
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-096}
 
 	\item Starten Sie den Vim erneut, und öffnen Sie eine
 		\textit{Python}-Datei, sagen wir mal \red{test.py}, und geben Sie das
-		folgende Programm ein:\\
-		\includegraphics[scale=0.5]{1-097}
+		folgende Programm ein:
+		\lstset{language=Python}
+		\begin{lstlisting}
+#!python
+print 'Hello World'
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-097}
 
 	\item Führen Sie \red{:make} aus, und Sie sollten eine erfolgreiche
 		Übersetzung sehen.
 	\item Lassen Sie uns absichtlich einen Fehler in das Programm einfügen,
-		indem wir 'print' \textrightarrow (drucken), ändern in 'pritn':\\
-		\includegraphics[scale=0.5]{1-098}\\
+		indem wir 'print' \textrightarrow (drucken), ändern in 'pritn':
+		\lstset{language=python}
+		\begin{lstlisting}
+pritn 'Hello World'
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-098}\\
 		Führen Sie jetzt wieder \red{:make} aus, und Sie sehen, dass der Fehler
 		angezeigt wird, und Vim den \blue{Cursor} automatisch auf die
 		fehlerbehaftete Zeile setzt!
@@ -3645,10 +4022,18 @@ wiederholt benutzen, können Sie ein Tastaturkürzel nehmen, um Vim nach einer
 Auto-Vervollständigung zu fragen, und Vim erledigt den Rest.
 
 Vim erreicht dies über ftplugins, besonders diejenigen mit dem Namen
-\red{ftplugin/<Sprache>complete.vim}, wie \red{pythoncomplete.vim}.
+\\ \red{ftplugin/<Sprache>complete.vim}, wie \red{pythoncomplete.vim}.
 
-Anfangen wollen wir mit einem einfachen Pythonprogramm:\\
-\includegraphics[scale=0.5]{1-104}
+Anfangen wollen wir mit einem einfachen Pythonprogramm:
+\lstset{language=python}
+\begin{lstlisting}
+def hello():
+    print 'hello world'
+
+def helpme():
+    print 'help yourself'
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-104}
 
 \vspace{5pt}
 \noindent
@@ -3692,8 +4077,12 @@ können.
 \end{description}
 Ich bevorzuge ein einfaches \red{ctrl-Leertaste} statt der sperrigen
 \red{ctrl-x ctrl-o}-Tastenkombination. Mit einem Eintrag in Ihre
-\textit{vimrc}, können Sie das auch haben:\\
-\includegraphics[scale=0.5]{1-106}
+\textit{vimrc}, können Sie das auch haben:
+\lstset{language=vim}
+\begin{lstlisting}
+:autocmd FileType python runtime! autoload/pythoncomplete.vim
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-106}
 
 Das \textit{PySmell}
 \footnote{\url{http://code.google.com/p/pysmell/}}
@@ -3726,8 +4115,17 @@ So! Jetzt probieren wir das \blue{Plugin} mal aus.
 		\red{$<$tab$>$}.
 	\item Bitte schön! Haben Sie gesehen, wie snippetsEmu bereits die Struktur
 		Ihrer Funktion erstellt hat?  Jetzt sollten Sie dies hier in Ihrer
-		Datei sehen:\\
-		\includegraphics[scale=0.5]{1-107}
+		Datei sehen:
+		\lstset{language=python}
+		\begin{lstlisting}
+def <{fname}>(<{args}>):
+    """
+    <{}>
+    <{args}>"""
+    <{pass}>
+    <{}>
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-107}
 	\item Ihr \blue{Cursor} steht jetzt auf dem Funktionsnamen, d.h. \red{fname}.
 	\item Tippen Sie den Funktionsnamen, sagen wir, \red{test}.
 	\item Drücken Sie \red{$<$tab$>$} und der \blue{Cursor} bewegt sich
@@ -3738,8 +4136,16 @@ So! Jetzt probieren wir das \blue{Plugin} mal aus.
 	\item Auf '\red{tab}' drücken.
 	\item Fertig ist Ihr Programm!
 \end{enumerate}
-Sehen sollten Sie jetzt:\\
-\includegraphics[scale=0.5]{1-108}
+Sehen sollten Sie jetzt:
+\lstset{language=python}
+\begin{lstlisting}
+def test():
+    """
+    Just say Hi
+    """
+    print 'Hello World'
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-108}
 
 Das beste daran ist, dass SnippetsEmu eine Standardkonvention ermöglicht, die
 man zu befolgen hat, und dass niemand in der Arbeitsgruppe dies 'vergisst'.
@@ -3747,8 +4153,22 @@ man zu befolgen hat, und dass niemand in der Arbeitsgruppe dies 'vergisst'.
 \subsubsection{Schnipsel erstellen}
 Wir machen jetzt mal unsere eigenen Schnipsel. Lassen Sie uns einmal den Fall
 durchgehen, wo ich dazu neige, immer wieder dieselbe Art folgenden
-Programmcodes in ActionScript3 zu schreiben:\\
-\includegraphics[scale=0.5]{1-109}
+Programmcodes in ActionScript3 zu schreiben:
+\lstset{language=Delphi}
+\begin{lstlisting}
+private var _foo:Object;
+
+public function get foo():Object
+{
+    return _foo;
+}
+
+public function set foo(value:Object)
+{
+    _foo = value;
+}
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-109}
 
 Das ist eine einfache \textit{getter/setter-Kombination}, die eine stützende
 Variable benutzt. Das Problem ist nur, dass das fürchterlich viel
@@ -3759,22 +4179,37 @@ Die SnippetsEmu-Sprachschnipsel-\blue{Plugins} nehmen \red{st} als
 Startmarkierung, und \red{et} als Endmarkierung. Das sind die gleichen
 pfeiltypischen Symbole die Sie im Zwischenraum unseres Codes sehen.
 
-Fangen wir mit einem einfachen Beispiel an.\\
-\includegraphics[scale=0.5]{1-110}
+Fangen wir mit einem einfachen Beispiel an.
+\lstset{language=vim}
+\begin{lstlisting}
+:exec "Snippet pubfun public function ".st.et.":".st.et."<CR>{<CR>".st.et."<CR>}<CR>"
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-110}
 
 Fügen Sie die obige Zeile in Ihr
 \red{~/.vim/after/ftplugin/actionscript\_snippets.vim}  ein.
 
 Jetzt öffnen Sie eine neue Datei, sagen wir, \red{test.as}, und dann tippen Sie
-\red{pubfun} und \red{$<$tab$>$} und sehen es erweitert zu:\\
-\includegraphics[scale=0.5]{1-111}
+\red{pubfun} und \red{$<$tab$>$} und sehen es erweitert zu:
+\lstset{language=Delphi}
+\begin{lstlisting}
+public function <{}>:<{}>
+{
+    
+}
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-111}
 
 Der \blue{Cursor} wird auf den Funktionsnamen gesetzt '\red{tab}', um den
 Rückgabetyp der Funktion zu bekommen nochmal '\red{tab}', um den
 Funktionskörper einzugeben.
 
-Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:\\
-\includegraphics[scale=0.5]{1-112}
+Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:
+\lstset{language=vim}
+\begin{lstlisting}
+:exec "Snippet getset private var _".st."name".et.";<CR><CR>public function get ".st."name".et."():".st."type".et."<CR>{<CR><tab>return _".st."name".et.";<CR>}<CR><CR>public function set ".st."name".et."(value:".st."type".et.")<CR>{<CR><tab>_".st."name".et." = value;<CR>}<CR>"
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-112}
 \begin{description}
 	\item [Hinweis] Alle Schnipsel für dieses \blue{Plugin} \textit{müssen} in
 		einer einzigen Zeile eingegeben werden. Das ist eine technische
@@ -3786,13 +4221,41 @@ Folgen Sie derselben Prozedur wie oben, um das neue Schnipsel zu benutzen:
 		\red{~/.vim/after/ftplugin/actionsscript\_snippets.vim} ein.
 	\item Öffnen Sie eine neue Datei, wie \red{test.as}.
 	\item Tippen Sie \red{getset}, drücken Sie \red{$<$tab$>$} und Sie werden
-		das hier sehen:\\
-		\includegraphics[scale=0.5]{1-113}
+		das hier sehen:
+		\lstset{language=Delphi}
+		\begin{lstlisting}
+private var _<{name}>;
+
+public function get <{name}>():<{type}>
+{
+        return _<{name}>;
+}
+
+public function set <{name}>(value:<{type}>)
+{
+        _<{name}> = value;
+}
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-113}
 	\item Geben Sie \red{color} ein und drücken Sie \red{$<$tab$>$}. Beachten
 		Sie, dass der Variablenname \textit{color} überall ersetzt worden ist.
 	\item Tippen Sie \red{Number} und drücken Sie \red{$<$tab$>$}. Der Code
-		sieht nun so aus:\\
-		\includegraphics[scale=0.5]{1-114}
+		sieht nun so aus:
+		\lstset{language=Delphi}
+		\begin{lstlisting}
+private var _color;
+
+public function get color():Number
+{
+        return _color;
+}
+
+public function set color(value:Number)
+{
+        _color = value;
+}
+		\end{lstlisting}
+		%\includegraphics[scale=0.5]{1-114}
 \end{enumerate}
 
 Beachten Sie, wieviele Tastaturanschläge wir vermieden haben! Mit einer
@@ -3959,9 +4422,16 @@ Können wir dies innerhalb der Datei erzwingen?
 Ja! Legen Sie einfach ein \red{vim: noexpandtab} innerhalb der ersten oder
 letzten beiden Zeilen Ihrer Datei ab.
 
-Ein Beispiel:\\
-\includegraphics[scale=0.5]{1-120}
-%da is was faul
+Ein Beispiel:
+\lstset{language=make}
+\begin{lstlisting}
+# Sample Makefile
+.cpp:
+    $(CXX) $(CXXFLAGS) $< -o $@
+
+# vim: noexpandtab
+\end{lstlisting}
+%\includegraphics[scale=0.5]{1-120}
 
 Diese hinzugefügte Zeile nennt sich "`Moduszeile"'.
 

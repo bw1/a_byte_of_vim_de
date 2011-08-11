@@ -3,16 +3,18 @@
 			function,endfunction,
 			let,return,call,echo,
 			if,else,elseif,endif,
-			set
+			set,for,in,endfor
 			},
 		%morestring=[d]{'},
 		morestring=[bd]{"},
 		morecomment=[f]{"},
 	 morendkeywords={
-	 		silent,
+	 		silent,write,
 			noremap,inoremap,
 			nmap,imap,
-			syntax}
+			hi,def,syn,
+			syntax},
+	 keywordsprefix=:
 	}
 
 \lstset{language=vim,
