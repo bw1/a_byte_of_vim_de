@@ -1,0 +1,32 @@
+\lstdefinelanguage{vim}
+	{morekeywords={
+			function,endfunction,
+			let,return,call,echo,
+			if,else,elseif,endif,
+			set
+			},
+		%morestring=[d]{'},
+		morestring=[bd]{"},
+		morecomment=[f]{"},
+	 morendkeywords={
+	 		silent,
+			noremap,inoremap,
+			nmap,imap,
+			syntax}
+	}
+
+\lstset{language=vim,
+		showtabs=false,
+		showspaces=false,
+		showstringspaces=false,
+		basicstyle=\tt\small,
+		basewidth=0.45em,
+		breaklines=true,
+		keywordstyle=\color[rgb]{0,0.6,0}\bf,
+		ndkeywordstyle=\color[rgb]{0,0.7,0},
+		stringstyle=\color{red},
+		commentstyle=\color{blue},
+		tabsize=2,
+		%numbers=left,
+		backgroundcolor=\color[rgb]{0.95,0.95,0.95}
+		}
