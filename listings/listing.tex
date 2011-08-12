@@ -1,3 +1,23 @@
+%eine hellgraue box über die ganze seite
+% \begin{lgbox}
+% \end{lgbox}
+\newlength{\myboxilength}%
+\newsavebox{\mybox}%
+\newenvironment{lgbox}%%%%
+{%
+\noindent%
+\small%
+%\setlength{\myboxilength}{\textwidth}%
+\setlength{\myboxilength}{\linewidth}%
+\addtolength{\myboxilength}{-2\fboxsep}%
+\begin{lrbox}{\mybox}%
+\minipage{\myboxilength}}%%%%
+{\endminipage%
+\end{lrbox}%
+\colorbox[rgb]{0.95,0.95,0.95}%
+{\usebox{\mybox}}%
+}%
+%
 \lstdefinelanguage{vim}
 	{morekeywords={
 			function,endfunction,

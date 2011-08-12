@@ -14,7 +14,12 @@
 \newcommand{\Vim}{\textit{\large{V}\small{im}}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{\texttt{#1}}}
-\newcommand{\tsc}[1]{\colorbox[rgb]{0.9,0.9,0.9}{\footnotesize\texttt{#1}}}
+% fuer ein paar text zeilen
+\newlength{\mytsclength}%
+\newcommand{\tsc}[1]{\colorbox[rgb]{0.9,0.9,0.9}{%
+\setlength{\mytsclength}{\linewidth}%
+\addtolength{\mytsclength}{-2\fboxsep}%
+\minipage{\mytsclength}\small\texttt{#1}\endminipage}}
 
 \graphicspath{{bilder/}}
 
@@ -425,7 +430,7 @@ herumgebaut, mit denen Sie komplexere Funktionen leicht erlernen können.
 Vielfältig bedeutet, Aufgaben schneller, besser und leichter zu erledigen.
 Vielfältig bedeutet 'nicht-soeinfache-Dinge' zu ermöglichen. Vielfältig
 bedeutet nicht, dass es kompliziert sein muß. Vielfältig folgt dem Paradigma
-\textbf{"`minimale Anstrengung. Höchstmöglicher Effekt."'}
+\textbf{"`minimale Anstrengung. Höchst\-möglicher Effekt."'}
 
 \subsection{Wozu ist Vim in der Lage?}
 
@@ -609,6 +614,7 @@ kennen. Wenn Sie das gelernt haben, erlernen Sie alle anderen Funktionen
 leicht, wenn Sie sie brauchen.
 
 \section{Installation}
+\subsection{Windows}
 Wenn Sie Microsoft Windows verwenden, dann werden Ihnen die folgenden Schritte
 dabei helfen, die neueste Version von Vim 7 auf Ihrem Rechner zu installieren:
 \begin{enumerate}
@@ -623,7 +629,7 @@ dabei helfen, die neueste Version von Vim 7 auf Ihrem Rechner zu installieren:
 \subsection{Mac OS X}
 Wenn Sie Mac OS X benutzen, dann haben Sie die Kommandozeilen-Version vom Vim
 bereits installiert.  Starten Sie den Menübefehl Finder  \textrightarrow
-Anwendungen \textrightarrow Zubehör \textrightarrow  Terminal. Im Terminal
+Anwendungen \textrightarrow  Zubehör \textrightarrow\\  Terminal. Im Terminal
 starten Sie den Befehl \red{vim} und drücken die \red{Enter}-Taste.  Jetzt
 sollten Sie den Begrüßungsbildschirm von Vim sehen.
 
@@ -638,7 +644,7 @@ kopieren Sie die MacVim-Anwendung in Ihr Anwendungen-Verzeichnis.
 Nähere Einzelheiten zu den MacVim Unterschieden, einschließlich wie Sie MacVim
 von der Kommandozeile starten, finden Sie in der MacVim-Referenz:
 \begin{enumerate}
-	\item Klick auf Finder \textrightarrow Anwendungen \textrightarrow MacVim
+	\item Klick auf Finder \textrightarrow  Anwendungen \textrightarrow  MacVim
 	\item Geben Sie ein \red{:help macvim} und drücken Sie die \red{Enter}-Taste.
 \end{enumerate}
 
@@ -668,8 +674,8 @@ So! Jetzt wo Vim auf Ihrem Computer eingerichtet ist, wollen wir ihn im nächsten
 \subsection{Den Vim starten}
 Der erste Schritt ist, na klar, wie man den Vim startet.
 
-
-\begin{minipage}{7cm}
+\noindent
+\begin{minipage}{8cm}
 \subsubsection{Grafische Version}
 \paragraph{Windows}
 Klicken Sie auf Start \textrightarrow Programme \textrightarrow    
@@ -701,13 +707,16 @@ und drücken Sie die 'Enter'-Taste.
 Geben Sie dann \red{vim} ein, und
 drücken Sie 'Enter'.
 \end{minipage}
-\begin{minipage}{8cm}
-\includegraphics[scale=0.3]{1-002-vimgui}
+\hfill
+\begin{minipage}{6cm}
+\includegraphics[width=\linewidth]{1-002-vimgui}
 \vspace{1cm}
 
-\includegraphics[scale=0.3]{1-003-vimterm}
+\includegraphics[width=\linewidth]{1-003-vimterm}
 \end{minipage}
 
+\vspace{10pt}
+\noindent
 Von jetzt an gilt: Wenn wir sagen 'Öffnen Sie Vim', benutzen Sie eine der
 beiden oben genannten Methoden.
 
@@ -1183,8 +1192,9 @@ arbeiten, nehmen Sie den Großbuchstaben \red{V}.
 
 Hier ist eine Zeichnung, die die Beziehung zwischen den verschiedenen Modi
 deutlich macht:
-
-\includegraphics[scale=0.6]{1-011}
+\lstset{language=}
+\lstinputlisting{listings/modus.txt}
+%\includegraphics[scale=0.6]{1-011}
 
 (Das Bild wurde mit Vim und Dr.Chip's DrawIt
 \footnote{\url{http://vim.sourceforge.net/scripts/script.php?script_id=40}}
@@ -1238,7 +1248,8 @@ im Bild zu sehen (Künstler unbekannt).
 Das Vertrautsein Ihrer Hände in dieser Position, ist einer der wichtigsten
 Schritte, um die Tastatur wirklich nutzbringend einsetzen zu können.
 
-\includegraphics[scale=0.6]{1-012}
+\noindent
+\includegraphics[width=\linewidth]{1-012}
 
 Die dahinter stehende Idee ist, daß Sie in der Lage sein sollten, jede Taste
 mit dem nächstgelegenen Finger anzuschlagen, und das Ihr Finger danach
@@ -1264,8 +1275,11 @@ Tastaturspickzettel von 'jng'.
 Obwohl Sie da jede Menge Befehle aufgelistet
 sehen, genügt es erst einmal die grundlegenden Tasten 'hjkl', die den
 Pfeiltasten (links, rechts, oben, unten) entsprechen, zu lernen.  Darüber
-lernen Sie dann noch mehr im nächsten Kapitel.\\
-\includegraphics[scale=0.52]{1-013}
+lernen Sie dann noch mehr im nächsten Kapitel.
+
+\vspace{5pt}
+\noindent
+\includegraphics[width=\linewidth]{1-013}
 
 \subsection{Zusammenfassung}
 Seien Sie sich darüber im Klaren, daß die Effektivität den Vim zu nutzen
@@ -1290,7 +1304,7 @@ Hier sind ein paar Beispiele, die die Schnelligkeit des Vim demonstrieren sollen
 	\item Zum dritten Erscheinen des Buchstabens 'h' gehen? Drücken Sie \red{3fh}.
 	\item 35 Zeilen nach unten gehen? Drücken Sie \red{35j}.
 	\item Wollen Sie nach einer der obigen Bewegungen, wieder zur
-		Ausgangsposition? Drücken Sie \red{ctrl-o}.
+		Ausgangsposition?\\ Drücken Sie \red{ctrl-o}.
 	\item Lust, zu lernen, wie das alles funktioniert? Tauchen wir ab.
 \end{itemize}
 Zunächst öffnen (erstellen) Sie eine Datei mit Namen chandrayaan.txt und geben
@@ -1330,7 +1344,9 @@ Halten Sie fest, die Finger Ihrer rechten Hand sollten sich immer auf den
 Tasten \red{jklö} befinden (und der Daumen auf der Leertaste). Jetzt wollen wir
 die vier Tasten mal kennenlernen.
 
+\begin{center}
 \includegraphics[scale=0.4]{1-014}
+\end{center}
 
 h,j,k,l anstatt der Pfeiltasten benutzen
 
@@ -1371,7 +1387,7 @@ In diesem besonderen Fall neigen die Leute dazu nach diesen Spezialtasten auf
 die Jagd zu gehen, aber das können wir alles weglassen.
 
 \noindent
-\begin{tabular}[c]{ll}
+\begin{tabular}[l]{ll}
 \\
 Herkömmlich & Vim\\
 'Pos1'-Taste springt zum Zeilenanfang & \^-Taste (denken Sie an 'verankert am Start')\\
@@ -1629,7 +1645,16 @@ arbeiten, am nächsten bringt.
 
 \subsection{Wie man das \red{:help topic} [\textrightarrow Thema] liest}
 Nehmen wir mal einen Textauszug von \red{:help abbriviate}:\\
-\includegraphics[scale=0.6]{1-015}
+\begin{lgbox}
+\begin{verbatim}
+    :ab[breviate] [<expr>] {lhs} {rhs}
+                add abbreviation for {lhs} to {rhs}.  If {lhs} already
+                existed it is replaced with the new {rhs}.  {rhs} may
+                contain spaces.
+                See |:map-<expr>| for the optional <expr> argument.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-015}
 
 Beachten Sie, daß es einen festgelegten Standard bezüglich des Vim-Hilfesystems
 gibt, um es uns leicht zu machen, genau die Teile herauszufinden, die wir
@@ -1888,7 +1913,15 @@ bedeutet dies, daß wir eine schier endlose Zahl an Möglichkeiten haben, um
 Texte zu manipulieren. Schauen wir uns mal ein paar Beispiele an.
 
 Schreiben Sie diesen Text (genauso wie er hier steht) mit Vim:\\
-\includegraphics[scale=0.6]{1-024}
+\begin{lgbox}
+\begin{verbatim}
+This is the rthe first paragraph.
+This is the second line.
+
+This is the second paragraph.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-024}
 
 Setzen Sie den \blue{Cursor} an die oberste, linkste Stelle, indem Sie \red{1G}
 drücken und \red{|} was Sie zur ersten Zeile, bzw. zur ersten Reihe bringt.
@@ -1939,11 +1972,26 @@ die Zeile angewandt.  Also \red{dd} löscht die aktuelle Zeile und \red{yy}
 zieht die aktuelle Zeile heraus (\textit{kopiert sie}).
 
 Unser Beispiel in Vim sollte nun so aussehen:\\
-\includegraphics[scale=0.6]{1-025}
+\begin{lgbox}
+\begin{verbatim}
+This is the rthe first paragraph.
+This is the second line.
+
+This is the second paragraph.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-025}
 
 Gehen Sie, durch drücken von \red{j} auf die zweite Zeile, und drücken Sie
 \red{dd} , jetzt sollte sie gelöscht sein. Sie sollten jetzt das hier sehen:\\
-\includegraphics[scale=0.6]{1-026}
+\begin{lgbox}
+\begin{verbatim}
+This is the rthe first paragraph.
+
+This is the second paragraph.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-026}
 
 Betrachten wir mal einen größeren Fall: Wie ziehen wir den aktuellen Abschnitt
 heraus (\red{kopieren})?
@@ -1960,7 +2008,15 @@ y & ap\\
 haben -- wie fügen wir ihn wieder ein?  Einfach mit '\red{p}'!
 
 Sie sollten jetzt dies hier sehen:\\
-\includegraphics[scale=0.6]{1-027}
+\begin{lgbox}
+\begin{verbatim}
+This is the rthe first paragraph.
+This is the rthe first paragraph.
+
+This is the second paragraph.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-027}
 
 Beachten Sie, daß die Leerzeile auch kopiert wird, wenn wir \red{yap}
 ausführen, \red{p} fügt diese zusätzliche Leerzeile mit hinzu.
@@ -2240,9 +2296,11 @@ konzentrieren?
 Das nennen wir in Vim Zusammenfalten.
 
 Nehmen wir das Beispiel, wo Ihr Dokument derart strukturiert ist, daß jede
-Textebene ein Stück weiter eingerückt ist, so wie das folgende Stück Text:\\
-\includegraphics[scale=0.6]{1-036}\\
-\includegraphics[scale=0.6]{1-037}
+Textebene ein Stück weiter eingerückt ist, so wie das folgende Stück Text:
+\lstset{language=}
+\lstinputlisting{listings/book.txt}
+%\includegraphics[scale=0.6]{1-036}\\
+%\includegraphics[scale=0.6]{1-037}
 
 \begin{description}
 	\item [Hinweis] Dieser Text stammt von WikiQuote
@@ -2269,7 +2327,7 @@ Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen:
 %\includegraphics[scale=0.6]{1-038}
 
 Einfaltungen sind ein ganz großes Thema für sich, mit mehreren Möglichkeiten
-(händisch, Markierung, Ausdruck), und zahlreichen Möglichkeiten Hierachien von
+(händ\-isch, Markierung, Ausdruck), und zahlreichen Möglichkeiten Hierachien von
 Einfaltungen zu öffnen und zu schließen, usw.  Schauen Sie sich hierzu auch
 \red{:help foldings} an.
 
@@ -2284,12 +2342,33 @@ herschalten können.
 
 Sagen wir mal, Sie haben zwei Dateien, \red{part1.txt} und \red{part2.txt}:
 
-% nix schoen
+\noindent
 \red{part1.txt}\\
-\includegraphics[scale=0.6]{1-039}
+\begin{lgbox}
+\begin{verbatim}
+I have coined a phrase for myself - 'CUT to the G':
 
+1. Concentrate
+2. Understand
+3. Think
+4. Get Things Done
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-039}
+
+\vspace{10pt}
+\noindent%
 \red{part2.txt}\\
-\includegraphics[scale=0.6]{1-040}
+\begin{lgbox}
+\begin{verbatim}
+	Step 4 is eventually what gets you moving, but Steps 2 and 3 are equally
+	important. As Abraham Lincoln once said "If I had eight hours to chop down
+	a tree, I'd spend six hours sharpening my axe." And to get to this stage,
+	you need to do Step 1 which boils down to one thing - It's all in the mind.
+	That's why it's so hard.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.6]{1-040}
 
 Führen Sie nun \red{:e part1.txt} aus, und dann \red{:e part2.txt}. Machen Sie
 sich bewußt, daß Sie nun die zweite Datei zum Editieren geöffnet haben. Wie
@@ -2324,7 +2403,7 @@ Fenster sollte hier *nicht* mit dem Fenster Ihrer Desktop-Anwendung verwechselt
 werden, womit man in der Regel das ganze Programm meint. Bei 'Fenster' denken
 Sie bitte einfach an 'Ansichten' auf verschiedene Dateien.
 
-Nehmen wir also nochmal dieselben Textbeispiele aus dem vorherigen Abschnitt
+Nehmen wir also nochmal dieselben Textbeispiele aus dem vorherigen Abschnitt\\
 \red{part1.txt} und \red{part2.txt}.  Laden Sie zuerst \red{part1.txt} mit
 \red{:e part1.txt}.
 
@@ -2340,7 +2419,7 @@ test.txt}.
 %43 48
 \vspace{10pt}
 \noindent
-\begin{minipage}{7cm}
+\begin{minipage}{8.5cm}
 Wie wechseln Sie zwischen diesen beiden Fenstern hin und her?  Benutzen Sie
 einfach \red{ctrl-w <Bewegungstaste>}, um zwischen den Fenstern umzuschalten.
 
@@ -2361,8 +2440,9 @@ rollen, und weiterarbeiten. Weil beide "`Fenster"' im gleichen Zwischenspeicher
 liegen, werden Änderungen des einen Fensters unmittelbar im anderen Fenster
 abgebildet.  Alternativ zu \red{:sp} können Sie auch \red{ctrl-w s} benutzen.
 \end{minipage}
-\begin{minipage}{7cm}
-\includegraphics[scale=0.47]{1-041}
+\hfill
+\begin{minipage}{6cm}
+\includegraphics[width=\linewidth]{1-041}
 \end{minipage}
 
 \vspace{10pt}
@@ -2404,7 +2484,7 @@ werden.
 
 \vspace{10pt}
 \noindent
-\begin{minipage}{6cm}
+\begin{minipage}{8cm}
 Führen Sie aus \red{:tabnew} um einen neuen
 \blue{Tab} mit neuem Zwischenspeicher
 zu öffnen (entsprechend zu \red{:new}).
@@ -2422,8 +2502,9 @@ Fenster (horizontal) zu teilen. Um dies
 zu aktivieren, fügen Sie die folgenden
 Zeilen in Ihre \textit{vimrc} ein:
 \end{minipage}
-\begin{minipage}{7cm}
-\includegraphics[scale=0.3]{1-043}
+\hfill
+\begin{minipage}{6.5cm}
+\includegraphics[width=\linewidth]{1-043}
 \end{minipage}
 
 \vspace{10pt}
@@ -2518,7 +2599,7 @@ Wir installieren jetzt Viki samt den benötigten \blue{Plugins}:
 \begin{enumerate}
 	\item Laden Sie \red{multvals.vim}
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=171}}
-		herunter und speichern Sie es als
+		herunter und speichern Sie es als\\
 		\red{\$vimfiles/plugin/multvals.vim}
 	\item Laden Sie \red{genutils.zip}
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=197}}
@@ -2567,7 +2648,17 @@ nützlich, weil Sie nicht ausschließlich auf Ihre geistige Vorstellungskraft
 angewiesen sind, sondern die Teile Ihrer Textdatei mit Ihren eigenen Augen
 betrachten können. Nehmen Sie z.B. die '*Zu erledigen-Liste', um daraus einen
 Dateikopf zu machen, und dann erstellen Sie mit Bindestrichen eine Liste:\\
-\includegraphics[scale=0.5]{1-048}
+\begin{lgbox}
+\textit{%
+Zu erledigen-Liste
+\begin{list}{-}{  }
+\item Blogeintrag zu Brahmagiri trek zu Ende bringen
+\item 'footer'-Programmierfehler der IONLAB Webseite beheben
+\item CD-Rohlinge kaufen
+\item Motorrad pflegen lassen
+\end{list}}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-048}
 
 \subsection{KamelSchrift abschalten}
 Schreiben mit KamelSchrift kann in \textit{Viki} einen \blue{Link} erstellen,
@@ -2629,11 +2720,24 @@ folgender Methode:
 		Startseite zu Ihrem persönlichen Organisationssystem ist (hiermit
 		einfach "`Ihr Viki"' genannt).
 	\item Danach erstellen Sie eine Liste für die Hauptabschnitte Ihres Vikis:\\
-\includegraphics[scale=0.5]{1-052}
+\begin{lgbox}
+\begin{verbatim}
+* Getting Things Done
+
+ 1. [[Collect][In Basket]]
+ 2. [[Project][Projects List]]
+ 3. [[NextActions][Next Actions]]
+ 4. [[Calendar]]
+ 5. [[SomedayMaybe][Someday/Maybe]]
+ 6. [[Reference][Reference Material]]
+ 7. [[Waiting][Waiting For]]
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-052}
 
 	\item Entsprechend, verschachteln Sie so tief Sie wollen, erstellen Sie
 		z.B. ein [[Referenz.Karriere]], um Ihre Karrierepläne hinzuschmieren,
-		und [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes Projekt
+		und\\[0pt] [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes Projekt
 		sammeln, usw.
 	\item Jedesmal wenn Sie sich was notieren wollen, benutzen Sie die
 		[[Sammeln]]-Seite, und dann tun Sie, organisieren Sie, überprüfen Sie,
@@ -2676,7 +2780,7 @@ höchster Wahrscheinlichkeit die verschiedenen Einstellungen in dem Programm
 ändern, um es Ihren Bedürfnissen und Ihrem Geschmack anzupassen. Was aber, wenn
 Ihnen das nicht ausreicht? Zum Beispiel, Bedingungen überprüfen wie \red{wenn
 GUI-Version, benutze dieses Farbschema, ansonsten benutze dieses Farbschema}?
-Hier kommt nun \textit{"`Scripting"'} ins Spiel. Scripting bedeutet eigentlich,
+Hier kommt nun\\ \textit{"`Scripting"'} ins Spiel. Scripting bedeutet eigentlich,
 eine Sprache zu benutzen, wo Sie Bedingungen festlegen, und Befehle zusammen in
 einer 'Skript'-Datei ablegen können.
 
@@ -2700,7 +2804,16 @@ Um Makros zu benutzen, können wir Befehlsabfolgen aufzeichnen, und sie dann in
 verschiedenen Zusammenhängen, ablaufen lassen.
 
 Nehmen wir als Beispiel mal diesen Text hier:\\
-\includegraphics[scale=0.5]{1-053}
+\begin{lgbox}
+\begin{verbatim}
+    tansen is the singer
+    daswant is the painter
+    todarmal is the financial wizard
+    abul fazl is the historian
+    birbal is the wazir
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-053}
 
 \noindent
 Da gibt es viel zu korrigieren.
@@ -2711,7 +2824,7 @@ Da gibt es viel zu korrigieren.
 	\item Beenden Sie den Satz mit in "`\red{Akbar's court}"'.
 \end{enumerate}
 
-Eine Möglichkeit wäre eine Serie von Ersetzungsbefehlen zu verwenden, wie
+Eine Möglichkeit wäre eine Serie von Ersetzungsbefehlen zu verwenden, wie\\
 \verb|:s/^\\w/\\u\\0/| aber dafür bräuchten wir vier Ersetzungsbefehle, und
 wenn der Ersetzungsbefehl Textstücke ändert, die wir unverändert lassen
 wollten, dann wird es haarig.
@@ -2742,12 +2855,22 @@ Sieht ganz nach einer langen Prozedur aus, aber manchmal ist das einfacher als
 dass man sich irgendwelche komplizierten Ersetzungsbefehle zusammenkocht!
 
 Zum Schluß sollte die Zeile jedenfalls so aussehen:\\
-\includegraphics[scale=0.5]{1-054}
+\begin{lgbox}
+\begin{verbatim}
+    Tansen was a singer in Akbar's court.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-054}
 
 Super! Jetzt wollen wir dies auch auf die anderen Zeilen anwenden. Bewegen Sie
 sich einfach zum ersten Buchstaben der zweiten Zeile und drücken Sie \red{@a}.
 Na bitte -- die Zeile sollte sich ändern zu:\\
-\includegraphics[scale=0.5]{1-055}
+\begin{lgbox}
+\begin{verbatim}
+    Daswant was a painter in Akbar's court.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-055}
 
 Das zeigt, dass Makros komplizierte Operationen aufzeichnen, und sehr leicht
 wiedergegeben werden können. Damit kann der Benutzer komplizierte
@@ -2811,7 +2934,12 @@ Die Länge können wir z.B. so speichern:
 
 Wenn Sie diese Zeile ausführen, angewandt auf die zweite Zeile oberhalb dieses
 Textes, kriegen Sie folgendes Ergebnis:\\
-\includegraphics[scale=0.5]{1-059}
+\begin{lgbox}
+\begin{verbatim}
+    We have 46 characters in this line.
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-059}
 
 Beachten Sie, wie wir Variablen in anderen 'Ausdrücken' verwenden können.
 
@@ -2904,7 +3032,16 @@ Die Schleifenausdrücke '\red{for}' und '\red{while}' kennt Vim auch:
 
 \noindent
 Das kommt dabei heraus:\\
-\includegraphics[scale=0.5]{1-065}
+\begin{lgbox}
+\begin{verbatim}
+    0
+    1
+    2
+    3
+    4
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-065}
 
 Mit den programmimmanenten Funktionen des Vim, kann dasselbe auch so
 geschrieben werden:
@@ -3297,9 +3434,18 @@ legen wir dann zurück, und zeigen sie dem Benutzer an.
 	\item Führen Sie aus \red{:source related.vim}
 	\item Tippen Sie den Text \red{c v raman}.
 	\item Führen Sie \red{:call Related()} aus
-	\item Was dabei rauskommt, sollte ungefähr so aussehen:
+	\item Was dabei rauskommt, sollte ungefähr so aussehen:\\
+		\begin{lgbox}
+		\begin{verbatim}
+			Related popular searches are:
+			1. raman effect
+			2. c v raman india
+			3. raman research institute
+			4. chandrasekhara venkata raman
+		\end{verbatim}
+		\end{lgbox}
 \end{enumerate}
-\includegraphics[scale=0.5]{1-074}
+%\includegraphics[scale=0.5]{1-074}
 
 \subsection{Zusammenfassung}
 Wir haben einen Ausflug in die Welt des '\textit{Skripte schreibens}'
@@ -3463,8 +3609,11 @@ bestimmten Dateitypen.
 \subsection{Ein Filetype-\blue{Plugin} benutzen}
 Versuchen wir mal ein Dateityp\blue{plugin} für XML. XML ist eine beschreibende
 Sprache, die Marken benutzt, um die Dokumentstruktur selbst zu beschreiben.
-Wenn Sie z.B. einen Text wie diesen hier haben:\\
-\includegraphics[scale=0.5]{1-080}
+Wenn Sie z.B. einen Text wie diesen hier haben:
+\lstset{language=}
+\lstinputlisting{listings/iron_gods.txt}
+%[fillcolor=\color[rgb]{0.95,0.95,0.95}]
+%\includegraphics[scale=0.5]{1-080}
 
 In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:
 \lstset{language=HTML,
@@ -3595,7 +3744,29 @@ Text einzugeben, der später in HTML umgewandelt wird.
 		'\red{test\_markdown.txt}'  nennen.
 	\item Führen Sie \red{:set syntax=mkd} aus.
 	\item Tippen Sie folgenden Text in die Datei:\\
-		\includegraphics[scale=0.5]{1-090}
+		\begin{lgbox}
+		\begin{verbatim}
+			# Bengaluru
+			
+			The name **Bangalore** is an anglicised version of the city's name in
+			the Kannada language, Bengaluru.
+			
+			> A popular anecdote (although one contradicted by historical
+			> evidence) recounts that the 11th-century Hoysala king Veera Ballala
+			> II, while on a hunting expedition, lost his way in the forest. Tired
+			> and hungry, he came across a poor old woman who served him boiled
+			> beans. The grateful king named the place _"benda kaal-ooru"_
+			> (literally, "town of boiled beans"), which was eventually
+			> colloquialised to "Bengaluru".
+			
+			***
+			
+			(This information has been retrieved from
+			[Wikipedia](http://en.wikipedia.org/wiki/Bangalore) 
+			under the GNU Free Documentation License.)
+		\end{verbatim}
+		\end{lgbox}
+		%\includegraphics[scale=0.5]{1-090}
 	\item Beachten Sie, wie verschiedene Teile der Datei, z.B. der Dateikopf
 		und hervorgehobene Wörter automatisch hervorgehoben wurden. Dies sollte
 		das Schreiben in \textit{Markdown}-Syntax hoffentlich einfacher machen.
@@ -3610,13 +3781,13 @@ Bei der \textit{Syntax}hervorhebung dreht es sich im Kern um zwei Schritte -
 zuerst müssen wir die Art des Textformates bestimmen, nachdem wir suchen, und
 das zweite ist die Beschreibung, wie es angezeigt wird.
 
-Angenommen wir wollen z.B. sämtliche Belegstellen finden von $<$b$>$irgendein
-Wort$<$/b$>$ und es fettgedruckt angezeigt kriegen. Zuerst müssen wir ein
+Angenommen wir wollen z.B. sämtliche Belegstellen finden von $<$b$>$ irgendein
+Wort $<$/b$>$ und es fettgedruckt angezeigt kriegen. Zuerst müssen wir ein
 solches Muster in unserem Text finden, und dann den Namen dieses Musters mit
 der Art, wie wir es angezeigt haben wollen, verknüpfen:
 \lstset{language=vim}
 \begin{lstlisting}
-:syntax match ourBold /&lt;b&gt;.*&lt;\/b&gt;/
+:syntax match ourBold /<b>.*<\/b>/
 :highlight default ourBold term=bold cterm=bold gui=bold
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-091}
@@ -3834,7 +4005,7 @@ Programmieren, ist die Syntaxhervorhebung. Dies ermöglicht Ihnen Ihren Code
 schreiben, und Sie machen weniger ganz offensichtliche Fehler.
 
 \subsubsection{\blue{Syntax}hervorhebung}
-\begin{minipage}{7cm}
+\begin{minipage}{7.5cm}
 Angenommen Sie editieren eine vim-\blue{syntax}-Datei. Führen Sie \red{:set
 filetype=vim} aus, und sehen Sie wie Vim Farbe hinzufügt. Ähnlich ist es, wenn
 Sie eine Python-Datei editieren. Führen Sie \red{:set filetype=python} aus.
@@ -3849,8 +4020,9 @@ das \red{\$VIMRUNTIME/syntax/} -Verzeichnis.
 		von seiner Standardeingabe einlesen soll.
 \end{description}
 \end{minipage}
+\hfill
 \begin{minipage}{7cm}
-\includegraphics[scale=0.56]{1-101}
+\includegraphics[width=\linewidth]{1-101}
 \end{minipage}
 
 \subsubsection{Intelligentes Einrücken}
@@ -3926,7 +4098,7 @@ Dateien bewegen und Querverweise haben wollen?  Dann können wir hierfür
 \textit{\blue{tags}} benutzen.
 
 Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.\\
-\begin{minipage}{7cm}
+%\begin{minipage}{7.5cm}
 \begin{enumerate}
 	\item Installieren Sie das üppig überbordende (\textit{\textrightarrow
 		exuberant}) \textit{\red{ctags}}
@@ -3948,24 +4120,29 @@ Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.\
 	\item Benutzen Sie \red{:tnext}, \red{:tprev}, \red{:tfirst}, \red{:tlast},
 		um sich zu den entsprechenden Markierungen hinzubewegen.
 \end{enumerate}
-\end{minipage}
-\begin{minipage}{7cm}
-\includegraphics[scale=0.5]{1-102}
-\end{minipage}
+%\end{minipage}
+%\hfill
+%\begin{minipage}{7cm}
+
+%\includegraphics[width=\linewidth]{1-102}
+\begin{center}
+\includegraphics[scale=0.6]{1-102}
+\end{center}
+%\end{minipage}
 
 \vspace{5pt}
 \noindent
 Beachten Sie bitte, dass das herrlich überschäumende und prickelnde Programm
 \textit{Ctags}, zum Zeitpunkt der Fertigstellung dieses Buches, 33
 Programmiersprachen unterstützt, und es leicht auf weitere Programmiersprachen
-erweitert werden kann.
+erweitert werden kann.\\
 \red{:help taglist-intro} gibt Ihnen hierzu die Einzelheiten.
 
 \subsubsection{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
 Um in der Lage zu sein, dateiübergreifend zu Defintionen zu springen, brauchen wir ein Programm wie
 \textit{cscope}. Wie auch immer, der Name deutet es ja schon an, dieses
 spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
-\begin{minipage}{7cm}
+%\begin{minipage}{7cm}
 \begin{enumerate}
 	\item Installieren Sie \textit{cscope}. Bemühen Sie \red{:help cscope-info}
 		und \red{:help cscope-win32} was die Installation betrifft.
@@ -3982,10 +4159,12 @@ spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
 		lokalisieren. Der Befehl lässt sich auf folgende Weise abkürzen
 		\red{:cs f s foo}.
 \end{enumerate}
-\end{minipage}
-\begin{minipage}{7cm}
-\includegraphics[scale=0.5]{1-103}
-\end{minipage}\\
+%\end{minipage}
+%\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.6]{1-103}
+\end{center}
+%\end{minipage}\\
 Sie können auch:
 \begin{itemize}
 	\item Diese Definition finden - \red{:cs f g}
@@ -4049,8 +4228,9 @@ omnicompletion-Plugin zu laden.
 Damit Sie dies nicht jedesmal tun müssen, fügen Sie folgende Zeile in Ihre
 \red{~/.vimrc} ein:
 \end{minipage}
+\hfill
 \begin{minipage}{7cm}
-\includegraphics[scale=0.5]{1-105}
+\includegraphics[width=\linewidth]{1-105}
 \end{minipage}
 
 \vspace{5pt}
@@ -4076,7 +4256,7 @@ können.
 		\footnote{\url{http://www.vim.org/tips/tip.php?tip_id=1228}} an.
 \end{description}
 Ich bevorzuge ein einfaches \red{ctrl-Leertaste} statt der sperrigen
-\red{ctrl-x ctrl-o}-Tastenkombination. Mit einem Eintrag in Ihre
+\red{ctrl-x ctrl-o}- Tastenkombination. Mit einem Eintrag in Ihre
 \textit{vimrc}, können Sie das auch haben:
 \lstset{language=vim}
 \begin{lstlisting}
@@ -4217,7 +4397,7 @@ Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:
 \end{description}
 Folgen Sie derselben Prozedur wie oben, um das neue Schnipsel zu benutzen:
 \begin{enumerate}
-	\item Fügen Sie diese Zeile in Ihr
+	\item Fügen Sie diese Zeile in Ihr\\
 		\red{~/.vim/after/ftplugin/actionsscript\_snippets.vim} ein.
 	\item Öffnen Sie eine neue Datei, wie \red{test.as}.
 	\item Tippen Sie \red{getset}, drücken Sie \red{$<$tab$>$} und Sie werden
@@ -4473,12 +4653,26 @@ Ein anderes Lieblingsskript ist \red{Align.vim}
 \footnote{\url{http://www.vim.org/scripts/script.php?script_id=294}}
 , mit dem Sie aufeinanderfolgende Zeilen bündig ausrichten können. Nehmen wir
 mal dieses Stück Programmiercode:\\
-\includegraphics[scale=0.5]{1-121}
+\begin{lgbox}
+\begin{verbatim}
+a = 1
+bbbbb = 2
+cccccccccc = 3
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-121}
 
 Markieren Sie einfach die drei Zeilen visuell (\red{v} \textit{im
 Normalmodus}), und drücken Sie dann {\color{red}\verb|\t=|}, und -- tataa! --
 es ändert sich zu dem hier:\\
-\includegraphics[scale=0.5]{1-122}
+\begin{lgbox}
+\begin{verbatim}
+a          = 1
+bbbbb      = 2
+cccccccccc = 3
+\end{verbatim}
+\end{lgbox}
+%\includegraphics[scale=0.5]{1-122}
 
 Das ist viel leichter zu lesen, als der Ausgangstext, und Ihr Programmcode
 sieht dadurch professioneller aus.
@@ -4547,7 +4741,7 @@ Wir haben einen großen Bereich Vim-bezogenen Stoffs gesehen, und wie wir davon
 profitieren. Fühlen Sie sich ermutigt diese, und viele weitere Skripte zu
 erkunden \footnote{\url{http://www.vim.org/scripts/}} um Ihnen das Editieren
 leichter und bequemer zu machen.
-%lesezeichen 93 99
+%93 99
 %externe links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:More&oldid=1043
 %Principal Authors: Swaroop
