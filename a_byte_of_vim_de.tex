@@ -26,6 +26,7 @@
 \begin{document}
 \input{listings/listing.tex}
 \title{Vim}
+\date{17. Februar 2010}
 \author{Swaroop C H\\(Übersetzung von Christoph Koydl)}
 \maketitle
 \section*{Einführung}
@@ -1628,7 +1629,7 @@ mehr, wie die Funktion angewandt wird. Was tun Sie?
 Jetzt schauen wir uns mal die verschiedenen Möglichkeiten an, Hilfe zu finden,
 wie man Vim benutzen kann.
 
-\subsection{Der \red{:help}-Befehl}
+\subsection[Der :help-Befehl]{Der \red{:help}-Befehl}
 Die erste und wichtigste Anlaufstelle, zu versuchen, Hilfe zu finden, ist die
 programmimmanente Dokumentation, und Vim besitzt eine der bestverständlichsten
 Benutzerhandbücher, die ich je gesehen habe.
@@ -1643,7 +1644,7 @@ durch die Inhaltsliste des gesamten Benutzerhandbuches, und lesen das Kapitel,
 von dem Sie glauben, daß es Sie der Lösung Ihres Problems, an dem Sie gerade
 arbeiten, am nächsten bringt.
 
-\subsection{Wie man das \red{:help topic} [\textrightarrow Thema] liest}
+\subsection[Wie man das :help topic liest]{Wie man das \red{:help topic} [\textrightarrow Thema] liest}
 Nehmen wir mal einen Textauszug von \red{:help abbriviate}:\\
 \begin{lgbox}
 \begin{verbatim}
@@ -1716,7 +1717,7 @@ drücken Sie einfach \red{K}. Sofort gelangen Sie zur Hilfe für dieses Wort.
 Dieses Tastaturkürzel verhindert, daß Sie \red{:help keywordprg} tippen müssen.
 
 %naja
-\subsection{Internetforum und IRC (\textrightarrow Internet Relay Chat)}
+\subsection[Internetforum und IRC]{Internetforum und IRC (\textrightarrow Internet Relay Chat)}
 Sollten Sie immer noch nicht in der Lage sein, herauszufinden, was Sie tun
 wollen, dann wird das nächstbeste wohl sein, andere Vim-Benutzer zu
 kontaktieren um Ihnen auszuhelfen. Keine Bange, das ist ganz einfach, und die
@@ -1758,7 +1759,7 @@ Gemeinschaft bei.
 %Externe Links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Help&oldid=1229
 %Principal Authors: Swaroop
-\section{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
+\section[Bearbeiten]{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
 \subsection{Einführung}
 Jetzt lernen wir mal die grundlegenden Editierungsbefehle in Vim für das Lesen
 und Schreiben von Dateien, Herausschneiden/Kopieren/Einfügen/Rückgängig
@@ -2072,7 +2073,7 @@ können.
 
 Sehen Sie sich hierzu auch \red{:help mark-motions} an.
 
-\subsection{Eine Zeitmaschine mit 'rückgängig' / 'wiederholen' [\textrightarrow undo/redo]}
+\subsection[Zeitmaschine]{Eine Zeitmaschine mit 'rückgängig' / 'wiederholen' [\textrightarrow undo/redo]}
 Nehmen wir mal an, Sie redigieren einen Absatz, aber es endet damit, daß Sie
 sich böse verzetteln, mit dem was Sie versucht haben umzuändern, und jetzt
 möchten Sie zu Ihrem früheren Ausgangspunkt zurückkehren.  An diesem Punkt
@@ -2473,7 +2474,7 @@ wollen wir mit der Ansicht noch ein bisschen weiter herumspielen.
 Sehen Sie sich hierzu \red{:help windows} an, um nähere Einzelheiten zu
 erfahren, was Sie mit Fenstern alles tun können.
 
-\subsection{Mehrere \blue{Tabs} (\textrightarrow Reiter)}
+\subsection[Mehrere Reiter]{Mehrere \blue{Tabs} (\textrightarrow Reiter)}
 Wenn Sie Firefox benutzen, haben Sie vielleicht schon einmal die Möglichkeit
 der \blue{Tabs} genutzt, die es Ihnen, in einem einzigen Fenster erlauben,
 mehrere Webseiten aufzurufen, womit Sie zwischen diesen Webseiten hin- und
@@ -4091,7 +4092,7 @@ Es gibt viele Möglichkeiten im Programmcode herumzuspringen.
 Benutzen Sie \red{:Vex} oder \red{:Sex} um das Dateisystem innerhalb von Vim zu
 durchstöbern, und anschließend die entsprechende Datei zu öffnen.
 
-\subsubsection{ctags (\textrightarrow etwa: C-Kennzeichnungen / C-Markierungen)}
+\subsubsection[ctags]{ctags (\textrightarrow etwa: C-Kennzeichnungen / C-Markierungen)}
 Wir haben nun gesehen, wie wir einfache Bewegungen innerhalb ein und derselben
 Datei bewerkstelligen.  Aber was ist, wenn wir uns zwischen unterschiedlichen
 Dateien bewegen und Querverweise haben wollen?  Dann können wir hierfür
@@ -4138,7 +4139,7 @@ Programmiersprachen unterstützt, und es leicht auf weitere Programmiersprachen
 erweitert werden kann.\\
 \red{:help taglist-intro} gibt Ihnen hierzu die Einzelheiten.
 
-\subsubsection{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
+\subsubsection[cscope]{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
 Um in der Lage zu sein, dateiübergreifend zu Defintionen zu springen, brauchen wir ein Programm wie
 \textit{cscope}. Wie auch immer, der Name deutet es ja schon an, dieses
 spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
@@ -4192,7 +4193,7 @@ bezüglich der Programme, die wir schreiben gesehen, also wiederholen wir es
 hier nicht.
 
 \subsection{Schreiben  leicht gemacht}
-\subsubsection{Omnicompletion (\textrightarrow etwa: die Allesvervollständigung)}
+\subsubsection[Omnicompletion]{Omnicompletion (\textrightarrow etwa: die Allesvervollständigung)}
 Eine der Funktionen, nach denen am meisten verlangt wurde, und die dem Vim 7
 hinzugefügt wurde, ist \textit{"`omnicompletion"'}, bei der Text
 auto-vervollständigt werden kann, auf Grundlage des aktuellen Kontextes.  Wenn
@@ -4449,7 +4450,8 @@ Sehen Sie sich hierzu \red{:help snippets\_emu.txt} für weitere Einzelheiten an
 (Diese Hilfedatei steht Ihnen nur dann zur Verfügung, wenn Sie das
 \blue{Plugin} installiert haben).
 
-\subsection{Integrierte Entwicklungsumgebung (\textrightarrow IDE=integrated developer environment)}
+\subsection[Integrierte Entwicklungsumgebung]%
+{Integrierte Entwicklungsumgebung (\textrightarrow IDE=integrated developer environment)}
 
 Mit ein paar \blue{Plugins} kann Vim als Entwicklungsumgebung genutzt werden.
 
@@ -4502,8 +4504,10 @@ Sie können Programmcode direkt aus Vim heraus starten, in dem Sie
 verwenden oder noch einfacher: \red{inc-python.vim}
 \footnote{\url{http://www.vim.org/scripts/script.php?script_id=1941}}.
 
-\subsubsection{Integration von SCM (\textrightarrow SCM=software configuration
-management)} Wenn Sie damit anfangen eine Datei zu editieren, können Sie sie
+\subsubsection[Integration von SCM]%
+{Integration von SCM (\textrightarrow SCM=software configuration
+management)} 
+Wenn Sie damit anfangen eine Datei zu editieren, können Sie sie
 sogar automatisch durch \textit{Perforce} überprüfen lassen, indem Sie das
 \red{perforce}-Plugin
 \footnote{\url{http://www.vim.org/scripts/script.php?script_id=240}}
@@ -4629,7 +4633,7 @@ Einfach in ein Verzeichnis auf dem USB-Stick entpacken, und
 und andere damit in Zusammenhang stehende Dateien auf dem Stick abspeichern,
 und überall dort, wo ein Microsoft Windows Computer steht, benutzen.
 
-\subsection{\blue{Plugins} aufrüsten (\textrightarrow upgrade)}
+\subsection[Plugins aufrüsten]{\blue{Plugins} aufrüsten (\textrightarrow upgrade)}
 Jeder ausreichend fortgeschrittene Vim-Anwender würde einen ganzen Haufen von
 \blue{Plugins} und Skripten verwenden, die er in seinem \red{~/.vim} oder
 \red{~/vimfiles}-Verzeichnis ablegt. Was, wenn wir die alle aufrüsten wollen,
@@ -4724,7 +4728,7 @@ und bei der Dokumentation helfen
 
 Wenn Sie bei der Entwicklung des Vim mitarbeiten möchten - \red{:help development}.
 
-\subsection{Die Gemeinschaft (\textrightarrow community)}
+\subsection[Die Gemeinschaft]{Die Gemeinschaft (\textrightarrow community)}
 Viele Vim-Anwender hängen in der vim@vim.org-Mailingliste rum
 \footnote{\url{http://www.vim.org/maillist.php\#vim}} wo Fragen und Zweifel
 nachgefragt, und beantwortet werden. Die beste Art, mehr über Vim zu lernen,
@@ -4825,7 +4829,7 @@ Bekannte Lücken sind:
 %Source: http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Feedback&oldid=1106
 %Principal Authors: Swaroop
 
-\section{Wohltätigkeits-Software (\textrightarrow charityware)}
+\section[Wohltätigkeits-Software]{Wohltätigkeits-Software (\textrightarrow charityware)}
 Vim ist "`charityware"'. Wenn Sie Vim nützlich finden, fühlen Sie sich
 aufgerufen der ICCF Holland-Foundation 
 \footnote{\url{http://iccf-holland.org}}
