@@ -19,6 +19,7 @@
 %sonderzeichen
 \newcommand{\ntilde}{\symbol{"7E}}
 \newcommand{\nanf}{\symbol{"22}}
+\newcommand{\nhut}{\symbol{"5E}}
 % fuer ein paar text zeilen
 \newlength{\mytsclength}%
 \newcommand{\tsc}[1]{\colorbox[rgb]{0.9,0.9,0.9}{%
@@ -1347,7 +1348,10 @@ Teilstück zurückgehen, wo der Protagonist in die neue Stadt kommt (oder sowas
 in der Art)... Wie bewegen Sie sich in Ihrem Text so schnell, daß Sie Ihren
 Gedankengang nicht gleich wieder verlieren?
 
-Hier sind ein paar Beispiele, die die Schnelligkeit des Vim demonstrieren sollen.
+\smallskip
+\noindent
+Hier sind ein paar Beispiele, die die Schnelligkeit des Vim demonstrieren
+sollen.
 \begin{itemize}
 	\item Den \blue{Cursor} zum nächsten Wort bewegen? Drücken Sie \red{w}.
 	\item Zum nächsten Absatz gehen? Drücken Sie \red{\}}.
@@ -1358,26 +1362,30 @@ Hier sind ein paar Beispiele, die die Schnelligkeit des Vim demonstrieren sollen
 	\item Lust, zu lernen, wie das alles funktioniert? Tauchen wir ab.
 \end{itemize}
 Zunächst öffnen (erstellen) Sie eine Datei mit Namen chandrayaan.txt und geben
-den folgenden Text ein (aus der Wikipedia):[1]
+den folgenden Text ein (aus der Wikipedia%
+\footnote{\url{http://en.wikipedia.org/wiki/Chandrayaan-1}}):
 \begin{quote}
-Chandrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen Indischen
-Raumfahrtagentur, der ISRO (Indian Space Research Organisation). Die unbemannte
-Monderforschungsmission umfasst einen Mondumkreiser und einen Stoßkörper. Der
-Raumflugkörper wurde durch eine modifizierte Version der PSLV XL am 22. Oktober 2008
-vom Satish Dhawan Raumfahrtzentrum, Sriharikota, Andrah Pradesh um 6:23 Uhr IST (00:52
-UTC) hochgeschossen. Der Raumflugkörper wurde erfolgreich in die Mondumlaufbahn am 8.
-November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes um
-20:31 Uhr, am 14. November 2008 abgesetzt.
+Chandrayaan-1 ist Indiens erste Mondmission, initiiert von der Nationalen
+Indischen Raumfahrtagentur, der ISRO (Indian Space Research Organisation). Die
+unbemannte Monderforschungsmission umfasst einen Mondumkreiser und einen
+Stoßkörper. Der Raumflugkörper wurde durch eine modifizierte Version der PSLV
+XL am 22. Oktober 2008 vom Satish Dhawan Raumfahrtzentrum, Sriharikota, Andrah
+Pradesh um 6:23 Uhr IST (00:52 UTC) hochgeschossen. Der Raumflugkörper wurde
+erfolgreich in die Mondumlaufbahn am 8.  November 2008 gebracht. Die
+Mondmesssonde wurde erfolgreich am Südpol des Mondes um 20:31 Uhr, am 14.
+November 2008 abgesetzt.
 
-Der ferngesteuerte Satellit hatte zum Startzeitpunkt eine Masse von 1,380 kg (3,042 lb) und
-675 kg (1,488 lb) in der Mondumlaufbahn, und trägt hochauflösende Gerätschaften für den
-sichtbaren Bereich (Infrarotbereich), und für harte und weiche Röntgenstrahlungsfrequenzen.
-Über einen Zeitabschnitt von zwei Jahren, ist beabsichtigt die Mondoberfläche zu vermessen,
-um eine vollständige Karte seiner chemischen Eigenschaften und eine dreidimensionale
-Topografie anzufertigen. Die Polregionen sind dabei von besonderem Interesse, da sie
-möglicherweise Eis enthalten. Die Mondmission befördert fünf ISRO-Ladungen und sechs
-Ladungen aus anderen internationalen Raumfahrtagenturen einschließlich der NASA, ESA,
-und der bulgarischen Raumfahrtagentur, die kostenlos transportiert wurden.
+Der ferngesteuerte Satellit hatte zum Startzeitpunkt eine Masse von 1,380 kg
+(3,042 lb) und 675 kg (1,488 lb) in der Mondumlaufbahn, und trägt
+hochauflösende Gerätschaften für den sichtbaren Bereich (Infrarotbereich), und
+für harte und weiche Röntgenstrahlungsfrequenzen.  Über einen Zeitabschnitt von
+zwei Jahren, ist beabsichtigt die Mondoberfläche zu vermessen, um eine
+vollständige Karte seiner chemischen Eigenschaften und eine dreidimensionale
+Topografie anzufertigen. Die Polregionen sind dabei von besonderem Interesse,
+da sie möglicherweise Eis enthalten. Die Mondmission befördert fünf
+ISRO-Ladungen und sechs Ladungen aus anderen internationalen Raumfahrtagenturen
+einschließlich der NASA, ESA, und der bulgarischen Raumfahrtagentur, die
+kostenlos transportiert wurden.
 \end{quote}
 \subsection{Den \blue{Cursor} bewegen nach Vim-Art}
 Die grundlegendsten Tasten, die Sie benutzen sollten sind '\red{hjkl}'. Diese
@@ -1398,24 +1406,27 @@ die vier Tasten mal kennenlernen.
 \includegraphics[scale=0.4]{1-014}
 \end{center}
 
+\noindent
 h,j,k,l anstatt der Pfeiltasten benutzen
 
 \begin{longtable}{lp{13cm}}
-\\
 h & Sie müssen Ihren Zeigefinger nach links ausstrecken, (der ist auf 'j') um
 'h' zu drücken. Dies ist die am weitesten links liegende Taste, gibt also an,
 daß es nach links geht.\\
 j & Das fallende 'j', weist die Richtung nach unten.\\
 k & Das nach oben weisende 'k' heißt, es geht nach oben.\\
 l & Der am weitesten rechts stehende Buchstabe 'l' signalisiert, es geht nach rechts.\\
-\\
 \end{longtable}
 
+\noindent
 Beachten Sie, daß wir die Operation wiederholen können, indem wir eine Zahl
 davor setzen. Zum Beispiel, \red{2j} wird den Befehl '\red{j}' zweimal
 ausführen.
 
-Öffnen Sie nun die \red{chandrayaan.txt}-Datei und probieren Sie diese Tasten aus:
+\smallskip
+\noindent
+Öffnen Sie nun die \red{chandrayaan.txt}-Datei und probieren Sie diese Tasten
+aus:
 \begin{itemize}
 	\item Setzen Sie Ihre Schreibmarke auf das erste 'C' des Dokuments.
 	\item Geben Sie \red{2j} ein und die aktuelle lange Zeile und die Leerzeile
@@ -1424,9 +1435,9 @@ ausführen.
 	\item Geben Sie \red{2k} ein, um an Ihren Ausgangspunkt zurückzukehren. Sie
 		können aber auch ctrl-o drücken, um zurückzuspringen.
 	\item Geben Sie \red{5l} ein, um 5 Zeichen nach rechts zu gehen.
-	\item Geben Sie \red{5h} ein, um 5 Zeichen nach links zu gehen, oder Sie drücken ctrl-o.
+	\item Geben Sie \red{5h} ein, um 5 Zeichen nach links zu gehen, oder Sie
+		drücken ctrl-o.
 \end{itemize}
-
 Machen Sie es sich zur Angewohnheit die Tasten '\red{hjkl}' anstatt der
 Pfeiltasten zu benutzen. Nach ein paar Versuchen werden Sie gemerkt haben,
 wieviel schneller Sie mit diesen Tasten sein können.
@@ -1437,16 +1448,22 @@ In diesem besonderen Fall neigen die Leute dazu nach diesen Spezialtasten auf
 die Jagd zu gehen, aber das können wir alles weglassen.
 
 \noindent
+{\small%
 \begin{tabular}[l]{ll}
 \\
-Herkömmlich & Vim\\
-'Pos1'-Taste springt zum Zeilenanfang & \^-Taste (denken Sie an 'verankert am Start')\\
-'Ende'-Taste springt zum Zeilenende & \$-Taste (denken Sie an 'Der Dollar stoppt hier')\\
-'Bild hoch'-Taste, eine Seite nach oben & ctrl-b das bedeutet, eine Seite zurück (backward)\\
-'Bild runter'-Taste, eine Seite nach unten & ctrl-f das bedeutet, eine Seite weiter (forward)\\
+\textbf{Herkömmlich} & \textbf{Vim}\\[5pt]
+'Pos1'-Taste springt zum Zeilenanfang 
+& \red{\nhut}-Taste (denken Sie an 'verankert am Start')\\
+'Ende'-Taste springt zum Zeilenende 
+& \red{\$}-Taste (denken Sie an 'Der Dollar stoppt hier')\\
+'Bild hoch'-Taste, eine Seite nach oben 
+& \red{ctrl-b} das bedeutet, eine Seite zurück (backward)\\
+'Bild runter'-Taste, eine Seite nach unten 
+& \red{ctrl-f} das bedeutet, eine Seite weiter (forward)\\
 \\
-\end{tabular}
+\end{tabular}}
 
+\noindent
 Wenn Sie die Zeilennummer ganz genau kennen, zu der Sie springen möchten, sagen
 wir mal Zeile 50, tippen Sie \red{50G} und Vim springt direkt zur Zeile 50.
 Wenn keine Nummer angegeben wurde, kommen Sie mit \red{G} zur letzten Zeile
@@ -1454,9 +1471,10 @@ Ihres Dokumentes. Wie kommen Sie an den Anfang Ihrer Datei? Einfach \red{1G}
 tippen. Sehen Sie, was man mit \textit{einer einzigen} Taste alles erreichen
 kann?
 \begin{itemize}
-	\item Setzen Sie den \blue{Cursor} auf die erste Zeile, indem Sie \red{1G} eingeben.
+	\item Setzen Sie den \blue{Cursor} auf die erste Zeile, indem Sie \red{1G}
+		eingeben.
 	\item 20 Buchstaben nach rechts, indem Sie \red{20l} eingeben.
-	\item Zurückgehen zum ersten Buchstaben mit \red{\^}.
+	\item Zurückgehen zum ersten Buchstaben mit \red{\nhut}.
 	\item Mit \red{\$} zum letzten Buchstaben springen.
 	\item Geben Sie \red{G} ein, um zur letzten Zeile zu gelangen.
 \end{itemize}
@@ -1472,6 +1490,7 @@ Bildschirm füllt?
 Es kann Ihnen nicht entgangen sein, welchen Nachdruck wir auf das
 Blindschreiben gelegt haben, und daß Sie mit Ihren Händen die Grundhaltung noch
 nie verlassen mussten. Das ist eine gute Sache.
+%leszeichen
 
 \subsection{Worte, Sätze, Absätze}
 
@@ -1515,10 +1534,12 @@ Um ein Wort zurückzuspringen, drücken Sie \red{b} [b=backward]. Mit einem
 Zähler davor, \red{2b}, springen Sie 2 Worte zurück.
 
 \tsc{Die Polregionen [s]ind dabei von besonderem Interesse, da sie möglicherweise Eis enthalten.}
-
-\vspace{5pt}
-Für Details, sehen Sie sich auch \red{:help word-motions} an.
 \end{flushleft}
+
+\smallskip
+\noindent
+Für Details, sehen Sie sich auch \red{:help word-motions} an.
+
 Wir haben gesehen, wie man buchstabenweise und wortweise navigieren kann, jetzt
 gehen wir weiter zu Sätzen.
 \begin{quote}
@@ -1546,6 +1567,8 @@ November 2008 gebracht. Die Mondmesssonde wurde erfolgreich am Südpol des Mondes
 \end{quote}
 Wie cool ist das denn?
 
+\smallskip
+\noindent
 Um zum vorhergehenden Satz zu springen, drücken Sie \red{(}.
 
 Na los, probieren Sie es aus, und erfahren Sie selbst, wie schnell Sie damit
