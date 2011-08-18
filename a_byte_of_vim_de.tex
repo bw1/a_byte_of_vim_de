@@ -1613,7 +1613,7 @@ Position, und \red{ctrl-i}, um wieder vorwärts, zur nächsten Position zu springe
 Es gibt zahlreiche Wege, Textobjekte im Vim zu definieren, um sie anschließend
 einem Befehl zu übergeben.  Sie wollen z.B. einen Textteil sichtbar selektieren
 und anschließend alle Großbuchstaben in Kleinbuchstaben, bzw. umgekehrt, mit
-dem \red{~} Operator (Tildezeichen) umwandeln.
+dem \red{\ntilde} Operator (Tildezeichen) umwandeln.
 
 Öffnen Sie die \red{dapping.txt}-Datei, die wir im vorhergehenden Kapitel
 erstellt haben. Benutzen Sie die zahlreichen Tastaturbefehle, um auf den ersten
@@ -1627,8 +1627,8 @@ Be a dapper.
 \end{quote}
 Drücken Sie \red{v}, um in den visuellen Modus zu gelangen, und tippen Sie
 \red{ap}, um '\red{a}' '\red{p}'aragraph (Absatz) zu selektieren. Drücken Sie
-~, um die Groß- / Kleinbuchstaben zu verkehren. Wenn Sie die Selektion aufheben
-wollen, drücken Sie einfach \red{$<$ESC$>$}.
+\red{\ntilde}, um die Groß- / Kleinbuchstaben zu verkehren. Wenn Sie die
+Selektion aufheben wollen, drücken Sie einfach \red{$<$ESC$>$}.
 \begin{quote}
 Dapping means being determined about being determined and being passionate
 about being passionate.
@@ -1850,7 +1850,7 @@ Details.
 %33 37
 \subsubsection{Sichere meine Datei}
 Jetzt wo die Datei geladen wurde, lassen Sie uns eine geringfügige Änderung
-vornehmen. Drücken Sie die \red{~}-Taste [Das Tildezeichen kriegen Sie, indem
+vornehmen. Drücken Sie die \red{\ntilde}-Taste [Das Tildezeichen kriegen Sie, indem
 Sie \red{AltGr} gedrückt halten und zweimal hintereinander die Tildetaste
 drücken!], um das Zeichen, auf dem der \blue{Cursor} steht, von Großbuchstabe
 auf Kleinbuchstabe vice versa zu ändern. Sie werden bemerkt haben, daß Vim die
@@ -3680,8 +3680,8 @@ von XML helfen kann.
 	\item Laden Sie sich zuerstmal das \red{xmledit ftplugin}%
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=301}}
 		runter, und
-		werfen Sie es in Ihr \red{~/.vim/ftplugin/Verzeichnis}.
-	\item Fügen Sie Ihrer \red{~/.vimrc} noch folgende Zeile hinzu:
+		werfen Sie es in Ihr \red{\ntilde/.vim/ftplugin/Verzeichnis}.
+	\item Fügen Sie Ihrer \red{\ntilde/.vimrc} noch folgende Zeile hinzu:
 		\lstset{language=vim}
 		\begin{lstlisting}
 :autocmd BufNewFile,BufRead *.xml source ~/.vim/ftplugin/xml.vim
@@ -3742,7 +3742,7 @@ Anfang einer jeden 'neuen' XML-Datei setzen:
 Jetzt wollen wir dafür sorgen, dass unser neues ftplugin, das wir, sagen wir
 mal '\red{xmlheader.vim}' nennen, nur dann funktioniert, beim Eintreten eines
 '\red{BufNewFile}'-Ereignisses. Fügen Sie also folgendes in Ihre
-\red{~/.vimrc}:
+\red{\ntilde/.vimrc}:
 \lstset{language=vim}
 \begin{lstlisting}
 :autocmd BufNewFile *.xml source ~/.vim/ftplugin/xmlheader.vim
@@ -3931,8 +3931,8 @@ Lassen Sie uns die Benutzung eines Compiler-\blue{Plugins} für Python untersuche
 	\item Laden Sie sich das \red{compiler/python.vim}%
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1439}}
 		-Skript herunter und
-		schieben Sie es in Ihr \red{~/.vim/compiler/}-Verzeichnis.
-	\item Fügen Sie die folgende Zeile in Ihre \red{~/.vimrc} ein:
+		schieben Sie es in Ihr \red{\ntilde/.vim/compiler/}-Verzeichnis.
+	\item Fügen Sie die folgende Zeile in Ihre \red{\ntilde/.vimrc} ein:
 		\lstset{language=vim}
 		\begin{lstlisting}
 :autocmd BufNewFile,BufRead *.py compiler python
@@ -4194,7 +4194,7 @@ spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
 		und \red{:help cscope-win32} was die Installation betrifft.
 	\item Kopieren Sie \red{cscope\_maps.vim}%
 		\footnote{\url{http://cscope.sourceforge.net/cscope_maps.vim}} in Ihr
-		\red{~/.vim/plugin}-Verzeichnis.
+		\red{\ntilde/.vim/plugin}-Verzeichnis.
 	\item Wechseln Sie in Ihr Quellcodeverzeichnis und führen Sie \red{cscope
 		-R -b} aus, um den Datenbestand (die Datenbank) '\red{r}'ekursiv für
 		alle Unterverzeichnisse zu erstellen (\textrightarrow '\red{b}'uild).
@@ -4272,7 +4272,7 @@ führen Sie \red{:runtime! autoload/} \red{pythoncomplete.vim} aus, um das
 omnicompletion-Plugin zu laden.
 
 Damit Sie dies nicht jedesmal tun müssen, fügen Sie folgende Zeile in Ihre
-\red{~/.vimrc} ein:
+\red{\ntilde/.vimrc} ein:
 \end{minipage}
 \hfill
 \begin{minipage}{7cm}
@@ -4325,7 +4325,7 @@ phantastische \red{SnippetsEmu}-Plugin.
 	\item Laden Sie sich das \red{snippetsEmu}-\blue{Plugin}%
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=1318}}
 		herunter.
-	\item Erstellen Sie Ihr \red{~/.vim/after/}-Verzeichnis, so es nicht
+	\item Erstellen Sie Ihr \red{\ntilde/.vim/after/}-Verzeichnis, so es nicht
 		bereits existiert
 	\item Starten Sie Vim indem Sie diesen \blue{Plugin}namen in der
 		Kommandozeile hinzufügen. Zum Beispiel; \red{gvim snippy\_bundles.vba}.
@@ -4413,7 +4413,7 @@ Fangen wir mit einem einfachen Beispiel an.
 %\includegraphics[scale=0.5]{1-110}
 
 Fügen Sie die obige Zeile in Ihr
-\red{~/.vim/after/ftplugin/actionscript\_snippets.vim}  ein.
+\red{\ntilde/.vim/after/ftplugin/actionscript\_snippets.vim}  ein.
 
 Jetzt öffnen Sie eine neue Datei, sagen wir, \red{test.as}, und dann tippen Sie
 \red{pubfun} und \red{$<$tab$>$} und sehen es erweitert zu:
@@ -4444,7 +4444,7 @@ Aber zurück, zu unserem eigentlichen Problem. So habe ich das gelöst:
 Folgen Sie derselben Prozedur wie oben, um das neue Schnipsel zu benutzen:
 \begin{enumerate}
 	\item Fügen Sie diese Zeile in Ihr\\
-		\red{~/.vim/after/ftplugin/actionsscript\_snippets.vim} ein.
+		\red{\ntilde/.vim/after/ftplugin/actionsscript\_snippets.vim} ein.
 	\item Öffnen Sie eine neue Datei, wie \red{test.as}.
 	\item Tippen Sie \red{getset}, drücken Sie \red{$<$tab$>$} und Sie werden
 		das hier sehen:
@@ -4507,8 +4507,8 @@ für den Vim zu erschaffen.
 	\item Laden Sie sich das \red{project plugin}%
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=69}}
 		herunter.
-	\item Entpacken Sie es in Ihrem \red{~/vim/}-Verzeichnis.
-	\item Führen Sie \red{:helptags ~/.vim/doc/} aus.
+	\item Entpacken Sie es in Ihrem \red{\ntilde/vim/}-Verzeichnis.
+	\item Führen Sie \red{:helptags \ntilde/.vim/doc/} aus.
 	\item Laden Sie sich den Vim-Quellcode von
 		\url{http://www.vim.org/subversion.php} herunter.
 	\item Führen Sie \red{:Project} aus. Es öffnet sich links eine
@@ -4680,9 +4680,9 @@ und überall dort, wo ein Microsoft Windows Computer steht, benutzen.
 
 \subsection[Plugins aufrüsten]{\blue{Plugins} aufrüsten (\textrightarrow upgrade)}
 Jeder ausreichend fortgeschrittene Vim-Anwender würde einen ganzen Haufen von
-\blue{Plugins} und Skripten verwenden, die er in seinem \red{~/.vim} oder
-\red{~/vimfiles}-Verzeichnis ablegt. Was, wenn wir die alle aufrüsten wollen,
-auf die letzte Version? Sie könnten natürlich für jedes einzelne die
+\blue{Plugins} und Skripten verwenden, die er in seinem \red{\ntilde/.vim} oder
+\red{\ntilde/vimfiles}-Verzeichnis ablegt. Was, wenn wir die alle aufrüsten
+wollen, auf die letzte Version? Sie könnten natürlich für jedes einzelne die
 Skriptseite aufrufen, herunterladen, und sie installieren. Aber es gibt eine
 bessere Methode -- Führen Sie einfach \red{:GLVS} aus (das steht für
 '\red{G}'et '\red{L}'atest '\red{V}'im '\red{S}'cripts).
