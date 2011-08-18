@@ -999,7 +999,7 @@ Ausdruck suchen, und zu diesem Ausdruck springen, sobald er das erste mal
 erscheint.
 
 Das waren gerade zwei einfache Beispiele der Art, wie sie im Normalmodus zur
-Verfügung stehen. In späteren Kapiteln werden wir noch viel mehr von solchen
+Ver\-fü\-gung stehen. In späteren Kapiteln werden wir noch viel mehr von solchen
 Befehlen zu sehen bekommen.
 
 \subsection{Wie Sie das Hilfesystem verwenden}
@@ -1010,7 +1010,7 @@ Befehle erfahren, die im Vim zur Verfügung stehen.
 Halten Sie fest, daß es nicht nötig ist jeden Vim-Befehl zu kennen. Es ist
 einfach besser zu wissen, wo man sie findet, wenn man sie braucht. Schauen Sie
 sich mal das hier an {\color{red}\verb/:help usr_toc/} zeigt uns das
-Inhaltsverzeichnis des Referenzhandbuches {\red{toc}=table of contents}. Oder
+Inhaltsverzeichnis des Referenzhandbuches (\red{toc}=table of contents). Oder
 sehen Sie mal hier nach \red{:help} index, um genau nach dem Thema zu suchen,
 das Sie gerade interessiert. Geben Sie dann z.B. ein \red{/insert mode}, um die
 zutreffenden Informationen, den Einfügemodus betreffend zu sehen.
@@ -1026,9 +1026,9 @@ Normalmodus in den Einfügemodus zu wechseln:
 	\item Tippen Sie \red{:e} dapping.txt
 	\item \red{i} drücken
 	\item Geben Sie den folgenden Absatz ein (mit allen Rechtschreibfehlern,
-		wir korrigieren das später): \textit{means
-		being determined about being determined and being passionate about
-		being passionate}
+		wir korrigieren das später):\\
+		\sloppy\texttt{means being determined about being determined and being
+		passionate about being passionate}
 	\item Drücken Sie die \red{$<$ESC$>$}-Taste, um in den Normalmodus zurückzugelangen.
 	\item Geben Sie ein \red{:w}
 \end{itemize}
@@ -1081,8 +1081,7 @@ Um die vier Befehlsoperatoren, die wir bisher kennengelernt haben, zusammenzufas
 
 \begin{tabular}{ll}
 \\
-Befehl& Bewirkt\\
-\\
+\textbf{Befehl}& \textbf{Bewirkt}\\[5pt]
 i& fügt Text \textit{vor} dem \blue{Cursor} ein\\
 I& fügt Text am Zeilenanfang ein\\
 a& hängt Text \textit{nach} dem \blue{Cursor} an\\
@@ -1112,13 +1111,13 @@ Fassen wir die beiden eben gelernten Befehlsoperatoren, nochmal zusammen:
 
 \begin{tabular}{ll}
 \\
-Befehl & Wirkung\\
-\\
+\textbf{Befehl} & \textbf{Wirkung}\\[5pt]
 o & eine neue Zeile unterhalb eröffnen\\
 O & eine neue Zeile oberhalb eröffnen\\
 \\
 \end{tabular}
 
+\noindent
 Beachten Sie, daß die Großbuchstaben-, Kleinbuchstaben-Befehle, hinsichtlich
 der Richtung, in der sie die Zeilen eröffnen, das jeweilige Gegenteil sind.
 
@@ -1133,7 +1132,7 @@ vier Einzelschritte, für so eine banale Korrektur! Gibts dafür was besseres?
 Hier können Sie den \red{s}-Operator nehmen ['s'ubstitute].
 \begin{itemize}
 	\item Bewegen Sie den Cursor zum Buchstaben r (oder drücken Sie einfach
-		\red{b} um an den Wortanfang zu gelangen [b='b'ack]
+		\red{b} um an den Wortanfang zu gelangen [b='b'ack])
 	\item \red{s} drücken
 	\item \red{d} tippen
 	\item und mit \red{$<$ESC$>$} wieder zurück in den Einfügemodus
@@ -1156,13 +1155,13 @@ Sie die ganze Zeile aus, anstatt den aktuellen Buchstaben.
 
 \begin{tabular}{ll}
 \\
-Befehl & Wirkung\\
-\\
+\textbf{Befehl} & \textbf{Wirkung}\\[5pt]
 s & ersetzt den aktuellen Buchstaben\\
 S & ersetzt die aktuelle Zeile\\
 \\
 \end{tabular}
 
+\noindent
 Gehn wir nochmal zu unserer letzten Aktion zurück... Können wir das nicht
 effektiver machen, wo wir doch lediglich einen einzelnen Buchstaben austauschen
 wollen? Ja -- können wir. Wir nehmen dazu den \red{r}-Operator ['r'eplace].
@@ -1184,13 +1183,13 @@ fortlaufende Buchstaben.
 
 \begin{tabular}{ll}
 \\
-Befehl & Wirkung\\
-\\
+\textbf{Befehl} & \textbf{Wirkung}\\[5pt]
 r & den aktuellen Buchstaben ersetzen\\
 R & fortlaufende Buchstaben ersetzen\\
 \\
 \end{tabular}
 
+\noindent
 Der Text sollte nun so aussehen:
 
 "`Dapping means being determined about being determined and being passionate
@@ -1199,15 +1198,18 @@ about being passionate.  Be a dapper."'
 Puh! Damit haben wir vieles abgedeckt in diesem Kapitel, aber ich garantiere
 Ihnen, das ist der einzige, schwierigste Teil.
 
+%übersetzung
 Wenn Sie das erstmal verstanden haben, verstehen Sie Herz \& Seele der
 Arbeitsweise des Vim, und die ganze andere Pracht und Herrlichkeit des Vim, ist
 dann nur noch das Sahnehäuptchen oben drauf.  Um es noch einmal zu sagen; das
 Verständnis über Modi, und wie das Hin- und Herschalten zwischen Modi
 funktioniert, ist der Schlüssel ein Vimmer zu werden. Wenn Sie also die obigen
 Beispiele noch nicht ganz verinnerlicht haben, lesen Sie sie ruhig nochmal, und
-nehmen Sie sich alle dafür notwendige Zeit. Wenn Sie mehr lesen möchten über
-die Einzelheiten dieser Befehle, schauen Sie sich \red{:help inserting} und
-\red{:help replacing} an.
+nehmen Sie sich alle dafür notwendige Zeit. 
+%----------
+
+Wenn Sie mehr lesen möchten über die Einzelheiten dieser Befehle, schauen Sie
+sich \red{:help inserting} und \red{:help replacing} an.
 
 \subsection{Visueller Modus}
 Stellen Sie sich vor, Sie wollen ein paar Worte markieren, um sie durch einen
@@ -1243,6 +1245,7 @@ deutlich macht:
 \lstinputlisting{listings/modus.txt}
 %\includegraphics[scale=0.6]{1-011}
 
+\noindent
 (Das Bild wurde mit Vim und Dr.Chip's DrawIt%
 \footnote{\url{http://vim.sourceforge.net/scripts/script.php?script_id=40}}
 \blue{Plugin} erstellt.)
