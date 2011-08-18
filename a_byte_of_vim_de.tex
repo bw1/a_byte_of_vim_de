@@ -1339,7 +1339,6 @@ Seien Sie sich darüber im Klaren, daß die Effektivität den Vim zu nutzen
 proportional ist, zu Ihren Fähigkeiten mit der Tastatur.
 
 %Externe Links
-%leszeichen
 
 \section{Navigation}
 \subsection{Einführung}
@@ -1493,7 +1492,6 @@ Bildschirm füllt?
 Es kann Ihnen nicht entgangen sein, welchen Nachdruck wir auf das
 Blindschreiben gelegt haben, und daß Sie mit Ihren Händen die Grundhaltung noch
 nie verlassen mussten. Das ist eine gute Sache.
-%leszeichen
 
 \subsection{Worte, Sätze, Absätze}
 
@@ -1732,10 +1730,14 @@ Nehmen wir mal einen Textauszug von \red{:help abbriviate}:\\
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-015}
 
+\smallskip
+\noindent
 Beachten Sie, daß es einen festgelegten Standard bezüglich des Vim-Hilfesystems
 gibt, um es uns leicht zu machen, genau die Teile herauszufinden, die wir
 benötigen, anstatt zu versuchen, den Befehl komplett zu verstehen.
 
+\smallskip
+\noindent
 Die erste Zeile erklärt die Schreibweise, d.h., wie der Befehl anzuwenden ist.
 
 Die eckigen Klammern in \red{:ab[breviate]} weisen darauf hin, daß der letzte
@@ -1771,12 +1773,14 @@ demzufolge eine Befehlskombination von help \& grep.}
 Wenn Sie den Namen des Themas nicht kennen, dann können Sie das ganze Dokument
 nach einem Satz durchsuchen, mit Hilfe von \red{:helpgrep}. Angenommen Sie
 möchten wissen, wie Sie nach dem Beginn eines Wortes zu suchen haben, tippen
-Sie einfach \red{:helpgrep beginning of a word}. Sie können \red{:cnext} und
-\red{:cprev} nutzen, um zum nächsten/vorhergehenden Teil der Dokumentation zu
-springen, wo dieser Satz auftaucht. Um eine komplette Liste zu sehen, wo der
-Satz jeweils auftaucht, nehmen Sie \red{:clist}.
+Sie einfach \red{:helpgrep beginning of a word}. 
+
+Sie können \red{:cnext} und \red{:cprev} nutzen, um zum nächsten/vorhergehenden
+Teil der Dokumentation zu springen, wo dieser Satz auftaucht. Um eine komplette
+Liste zu sehen, wo der Satz jeweils auftaucht, nehmen Sie \red{:clist}.
 
 \subsection{Schnelle Hilfe}
+%Übersetzung oder Version
 Erstellen Sie eine Datei (z.B. mit dem Namen quickhelp) mit Vim, und geben Sie
 den folgenden Text ein.  
 \lstset{language=vim}
@@ -1790,9 +1794,11 @@ Zeile im Befehlsmodus nochmal ein.
 Setzen Sie nun den \blue{Cursor} irgendwo auf das Wort \red{keywordprg} und
 drücken Sie einfach \red{K}. Sofort gelangen Sie zur Hilfe für dieses Wort.
 Dieses Tastaturkürzel verhindert, daß Sie \red{:help keywordprg} tippen müssen.
+%----------
 
 %naja
-\subsection[Internetforum und IRC]{Internetforum und IRC (\textrightarrow Internet Relay Chat)}
+\subsection[Internetforum und IRC]
+{Internetforum und IRC (\textrightarrow Internet Relay Chat)}
 Sollten Sie immer noch nicht in der Lage sein, herauszufinden, was Sie tun
 wollen, dann wird das nächstbeste wohl sein, andere Vim-Benutzer zu
 kontaktieren um Ihnen auszuhelfen. Keine Bange, das ist ganz einfach, und die
@@ -1801,8 +1807,8 @@ Hilfsbereitschaft anderer '\textit{Vimmer}' ist erstaunlich.
 Suchen Sie in einem ersten Schritt nach der Vim-Mailingliste, um
 herauszufinden, ob jemand Ihre Frage bereits beantwortet hat. Gehen Sie auf die
 Vim-Gruppen-Such-Seite%
-\footnote{\url{http://tech.groups.yahoo.com/group/vim/msearch_adv}}
-, und geben Sie die Schlüsselwörter Ihrer Frage ein.
+\footnote{\url{http://tech.groups.yahoo.com/group/vim/msearch_adv}},
+und geben Sie die Schlüsselwörter Ihrer Frage ein.
 Meistens werden viele allgemeine Fragen bereits beantwortet sein, da dies so
 eine hochfrequentierte Mailingliste ist, d.h. viele, viele Leute stellen in
 dieser Gruppe Fragen und geben Antworten.
@@ -1811,7 +1817,7 @@ Wenn Sie keine passende Antwort finden, dann besuchen Sie das Vim IRC-Forum.
 Öffnen Sie eine IRCAnwendung wie z.B. XChat%
 \footnote{\url{http://www.silverex.org/download/}}
 (gibt's für Windows, Linux, BSD)
-oder Colloguy \footnote{\url{http://colloquy.info/}}
+oder Colloguy\footnote{\url{http://colloquy.info/}}
 (für Mac OS X), verbinden Sie sich mit dem "`FreeNode"'-Netzwerk, betreten den
 \red{\#vim} Kanal, stellen manierlich Ihre Frage, und warten dann, bis jemand
 antwortet. Meistens wird jemand innerhalb von Minuten antworten.
@@ -1825,7 +1831,7 @@ Ansonsten hinterlassen Sie eine Nachricht in der oben erwähnten Mailingliste.
 Es gibt eine Fülle von Informationen, wie sich die Dinge bei der Benutzung des
 Vim erledigen lassen, und viele \textit{Vimmer} helfen Ihnen dabei auch gerne.
 Die Vim-Gemeinschaft ist eine der größten Stärken des VimEditors. Nutzen Sie
-also die bestehenden Hilfsquellen weidlich, und treten auch Sie dieser
+also die bestehenden Hilfsquellen reichlich, und treten auch Sie dieser
 Gemeinschaft bei.
 \begin{quote}
 	Wahres Entzücken liegt eher im \textit{Herausfinden} als im
@@ -1834,6 +1840,8 @@ Gemeinschaft bei.
 %Externe Links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Help&oldid=1229
 %Principal Authors: Swaroop
+%leszeichen
+
 \section[Bearbeiten]{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
 \subsection{Einführung}
 Jetzt lernen wir mal die grundlegenden Editierungsbefehle in Vim für das Lesen
