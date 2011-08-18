@@ -18,6 +18,7 @@
 \newcommand{\red}[1]{\textcolor{red}{\texttt{#1}}}
 %sonderzeichen
 \newcommand{\ntilde}{\symbol{"7E}}
+\newcommand{\nanf}{\symbol{"22}}
 % fuer ein paar text zeilen
 \newlength{\mytsclength}%
 \newcommand{\tsc}[1]{\colorbox[rgb]{0.9,0.9,0.9}{%
@@ -988,10 +989,10 @@ Vim kennt drei Grundmodi  Normal, Einfüge, und Visuell.
 Voreingestellt, befinden Sie sich im Normalmodus. Lassen Sie uns mal sehen, was
 man in diesem Modus alles machen kann.
 
-Tippen Sie \red{:echo "`hallo welt"'} und drücken Sie die 'Enter'-Taste. Nun
-sollten Ihnen die berühmten Worte \textit{hallo welt} zurückschallen. Sie haben
-jetzt eben einen Vim-Befehl mit Namen :echo ausgeführt, ihm noch etwas Text mit
-auf den Weg gegeben, der Ihnen dann sofort ausgegeben wurde.
+Tippen Sie \red{:echo \nanf hallo welt\nanf} und drücken Sie die 'Enter'-Taste.
+Nun sollten Ihnen die berühmten Worte \textit{hallo welt} zurückschallen. Sie
+haben jetzt eben einen Vim-Befehl mit Namen :echo ausgeführt, ihm noch etwas
+Text mit auf den Weg gegeben, der Ihnen dann sofort ausgegeben wurde.
 
 Tippen Sie \red{/hallo} und drücken Sie die 'Enter'-Taste. Vim wird nach diesem
 Ausdruck suchen, und zu diesem Ausdruck springen, sobald er das erste mal
@@ -1636,8 +1637,8 @@ about being passionate.
 bE A DAPPER.
 \end{quote}
 Andere Textobjektgedächtniskürzel sind \red{aw}, was '\red{a}' '\red{w}'ord
-bedeutet, \red{a\"}' heißt eine in Anführungsstriche gesetzte Zeichenfolge (wie
-"`Dies ist eine in Anführungsstriche gesetzte Zeichenfolge"'), \red{ab}
+bedeutet, \red{a\nanf}' heißt eine in Anführungsstriche gesetzte Zeichenfolge
+(wie "`Dies ist eine in Anführungsstriche gesetzte Zeichenfolge"'), \red{ab}
 bedeutet '\red{a}' '\red{b}'lock, was wiederum heißt, alles innerhalb eines
 Klammernpaares, usw.
 
