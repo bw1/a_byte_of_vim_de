@@ -1840,15 +1840,19 @@ Gemeinschaft bei.
 %Externe Links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Help&oldid=1229
 %Principal Authors: Swaroop
-%leszeichen
 
-\section[Bearbeiten]{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
+\section[Bearbeiten]
+{Grundlagen des Bearbeitens von Dateien [\textrightarrow Editing]}
 \subsection{Einführung}
 Jetzt lernen wir mal die grundlegenden Editierungsbefehle in Vim für das Lesen
-und Schreiben von Dateien, Herausschneiden/Kopieren/Einfügen/Rückgängig
-machen/das *Rückgängig machen des Rückgängig machens und Suchen. {\scriptsize
-(*Wenn jemand einen besseren Vorschlag für "`undo/redo"' hat, kann er sich ja
-bei mir melden - Der Übersetzer)}
+%und Schreiben von Dateien, Herausschneiden/Kopieren/Einfügen/Rückgängig
+und Schreiben von Dateien, Herausschneiden/Kopieren/Einfügen/Zurücknehmen%
+%machen/das *Rückgängig machen des Rückgängig machens und Suchen. 
+/Wiederherstellen und Suchen. 
+%{\scriptsize (*Wenn jemand einen besseren Vorschlag für "`undo/redo"' hat, kann
+%er sich ja bei mir melden - Der Übersetzer)}
+%Vorschlag bei http://www.florianrehnisch.de/vimhelp/ gefunden
+
 \subsection{Lesen und Schreiben von Dateien}
 \subsubsection{Zwischenspeicher}
 Wenn Sie eine Datei bearbeiten, bringt Vim den Textinhalt der Datei von der
@@ -1885,11 +1889,11 @@ Arbeitsspeicher des Rechners kontinuierlich mit dem Inhalt der Datei auf der
 Festplatte austauscht. Sehen Sie hierzu auch \red{:help swap-file} für weitere
 Details.
 
-%33 37
+%33 37 
 \subsubsection{Sichere meine Datei}
 Jetzt wo die Datei geladen wurde, lassen Sie uns eine geringfügige Änderung
-vornehmen. Drücken Sie die \red{\ntilde}-Taste [Das Tildezeichen kriegen Sie, indem
-Sie \red{AltGr} gedrückt halten und zweimal hintereinander die Tildetaste
+vornehmen. Drücken Sie die \red{\ntilde}-Taste [Das Tildezeichen kriegen Sie,
+indem Sie \red{AltGr} gedrückt halten und zweimal hintereinander die Tildetaste
 drücken!], um das Zeichen, auf dem der \blue{Cursor} steht, von Großbuchstabe
 auf Kleinbuchstabe vice versa zu ändern. Sie werden bemerkt haben, daß Vim die
 Datei nun als \textit{verändert} markiert hat (ein \red{+} Zeichen erscheint
@@ -1938,6 +1942,8 @@ Oder Sie veranlassen Vim, in dieses Verzeichnis zu wechseln:
 \red{:cd} ist die Abkürzung für \textit{wechsle} Verzeichnis ['\red{c}'hange
 '\red{d}'irectory]
 
+\medskip
+\noindent
 Um herauszufinden in welchem aktuellen Verzeichnis Vim gerade nach Dateien
 sucht:
 \lstset{language=vim}
@@ -1963,13 +1969,15 @@ einzufügen. Für Vim gilt hier eine leicht unterschiedliche Terminologie:
 
 \begin{tabular}{lll}
 \\
-\textbf{Klicki-Bunti} & \textbf{die Welt des Vim} & \textbf{Operation}\\
+\textbf{Klicki-Bunti} & \textbf{die Welt des Vim} & \textbf{Operation}\\[5pt]
 herausschneiden & löschen & d \\
 kopieren & 'etwas herausziehen'  'to yank' & y \\
 einfügen & einfügen  'to paste' & p\\
 \\
 \end{tabular}
 
+\smallskip
+\noindent
 In der normalen Terminologie der grafischen Benutzeroberfläche, bedeutet Text
 \textit{'herausschneiden'}, den Text zu entfernen und ihn ans *Klemmbrett zu
 schieben {\scriptsize(* clipboard heißt wörtlich Klemmbrett, bezeichnet aber
@@ -1984,6 +1992,8 @@ Benutzeroberfläche, 'Kopieren' von Text, daß eine Kopie des Textes ans
 Klemmbrett platziert wird. Vim tut dasselbe, es zieht den Text heraus
 (\textit{to yank}) und legt ihn in einem Register ab.
 
+\smallskip
+\noindent
 Keinen Bedeutungsunterschied im Sprachgebrauch gibt es für den Begriff
 Einfügen.
 
@@ -2007,6 +2017,8 @@ This is the second paragraph.
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-024}
 
+\smallskip
+\noindent
 Setzen Sie den \blue{Cursor} an die oberste, linkste Stelle, indem Sie \red{1G}
 drücken und \red{|} was Sie zur ersten Zeile, bzw. zur ersten Reihe bringt.
 
@@ -2020,12 +2032,13 @@ Beachten Sie, daß es hier zwei Teile gibt:
 
 \begin{tabular}{ll}
 \\
-Operation & Text Objekt/Bewegung\\
+\textbf{Operation} & \textbf{Text Objekt/Bewegung}\\[5pt]
 Löschen & Ein Buchstabe an aktueller Position\\
 \red{d} & \red{l}\\
 \\
 \end{tabular}
 
+\noindent
 Um einen Buchstaben zu löschen, drücken wir also lediglich \red{dl} ! Wie Sie
 sehen, benutzen wir hier \red{l} , obwohl dies ein Bewegungsbefehl ist.
 
@@ -2038,12 +2051,13 @@ nicht, lesen Sie bitte weiter.
 
 \begin{tabular}{ll}
 \\
-Operation & Text Objekt/Bewegung\\
+\textbf{Operation} & \textbf{Text Objekt/Bewegung}\\[5pt]
 Löschen & Ein Buchstabe an aktueller Position\\
-d & w\\
+\red{d} & \red{w}\\
 \\
 \end{tabular}
 
+\noindent
 Also: \red{dw} drücken, und -- Voila! --  schon haben Sie ein Wort gelöscht. So
 einfach und wunderschön. Die Schönheit an solch einfachen Konzepten liegt aber
 gerade darin, daß sie miteinander kombiniert werden können, um einen derartigen
@@ -2066,6 +2080,8 @@ This is the second paragraph.
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-025}
 
+\smallskip
+\noindent
 Gehen Sie, durch drücken von \red{j} auf die zweite Zeile, und drücken Sie
 \red{dd} , jetzt sollte sie gelöscht sein. Sie sollten jetzt das hier sehen:\\
 \begin{lgbox}
@@ -2077,17 +2093,20 @@ This is the second paragraph.
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-026}
 
+\smallskip
+\noindent
 Betrachten wir mal einen größeren Fall: Wie ziehen wir den aktuellen Abschnitt
 heraus (\red{kopieren})?
 
 \begin{tabular}{ll}
 \\
-Operation & Text Objekt/Bewegung\\
+\textbf{Operation} & \textbf{Text Objekt/Bewegung}\\
 Kopieren & aktueller Absatz\\
-y & ap\\
+\red{y} & \red{ap}\\
 \\
 \end{tabular}
 
+\noindent
 \red{yap} kopiert also den aktuellen Absatz. Jetzt wo wir den Text kopiert
 haben -- wie fügen wir ihn wieder ein?  Einfach mit '\red{p}'!
 
@@ -2102,6 +2121,8 @@ This is the second paragraph.
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-027}
 
+\smallskip
+\noindent
 Beachten Sie, daß die Leerzeile auch kopiert wird, wenn wir \red{yap}
 ausführen, \red{p} fügt diese zusätzliche Leerzeile mit hinzu.
 
@@ -2115,9 +2136,12 @@ P (Großbuchstabe) & Einfügen vor der aktuellen Schreibmarkenposition\\
 \\
 \end{tabular}
 
+\noindent
 Wenn man diese Idee nun erweitert, dann ergeben sich daraus ganz starke
 Möglichkeiten.
 
+\smallskip
+\noindent
 Zwei Buchstaben vertauschen? Drücken Sie \red{xp}.
 \begin{itemize}
 	\item x\textrightarrow  ein Buchstabe an der aktuellen Position löschen
@@ -2154,18 +2178,22 @@ Drücken Sie `a werden Sie exakt zur Zeile und Reihe der Markierung gebracht.
 Das beste daran ist, daß Sie jederzeit danach zu diesen Markierungen springen
 können.
 
+\smallskip
+\noindent
 Sehen Sie sich hierzu auch \red{:help mark-motions} an.
 
-\subsection[Zeitmaschine]{Eine Zeitmaschine mit 'rückgängig' / 'wiederholen' [\textrightarrow undo/redo]}
+\subsection[Zeitmaschine]
+{Eine Zeitmaschine mit 'zurücknehmen' / 'wiederherstellen' 
+[\textrightarrow undo/redo]}
 Nehmen wir mal an, Sie redigieren einen Absatz, aber es endet damit, daß Sie
 sich böse verzetteln, mit dem was Sie versucht haben umzuändern, und jetzt
 möchten Sie zu Ihrem früheren Ausgangspunkt zurückkehren.  An diesem Punkt
-können wir nun das, was wir eben getan haben, \textit{rückgängig} machen. Wenn
-wir aber wieder zurückkehren wollen, zu dem was wir jetzt haben, dann können
-wir die Änderungen, die wir gemacht haben, \textit{wiederholen}. Beachten Sie,
-eine Änderung, bedeutet eine Änderung am Text. Bewegungen der Schreibmarke, und
-andere Dinge, die nicht in direktem Zusammenhang mit dem Text stehen, werden
-nicht berücksichtigt.
+können wir nun das, was wir eben getan haben \textit{zurücknehmen}.
+Wenn wir aber wieder zurückkehren wollen, zu dem was wir jetzt haben, dann
+können wir die Änderungen, die wir gemacht haben, \textit{wiederherstellen}.
+Beachten Sie, eine Änderung, bedeutet eine Änderung am Text. Bewegungen der
+Schreibmarke, und andere Dinge, die nicht in direktem Zusammenhang mit dem Text
+stehen, werden nicht berücksichtigt.
 
 Nehmen Sie mal diesen Text hier:
 \begin{quote}
@@ -2198,19 +2226,21 @@ Jetzt denken Sie über die Änderung, die wir gerade gemacht haben nach. Ist der
 Satz besser? Hmm.. war der Text vorher besser? Wie schalten wir jetzt hin und
 her?
 
-Drücken Sie \red{u}, um die letzte Änderung rückgängig zu machen, und zu sehen,
+Drücken Sie \red{u}, um die letzte Änderung zurück zu nehmen, und zu sehen,
 was wir vorher hatten. Sie werden jetzt den Text \red{Ich habe für mich einen
 Satz geprägt - 'Cut to the G':} sehen. Um zur letzten Änderung zurückzukommen,
 drücken Sie \red{ctrl-r}, um nun die Zeile \red{Durch reifliche Überlegung,
 habe ich mir einen neuen Satz geprägt, um meine Herangehensweise zu festigen:}
-zu sehen. Ganz wichtig hierbei ist, daß Vim unbegrenzt 'rückgängig' /
-'wiederholen'-Änderungen zur Verfügung stellt, in der Praxis ist es aber durch
-die \red{undolevels}-Einstellungen in Vim, und der Menge an zur Verfügung
+zu sehen. 
+
+Ganz wichtig hierbei ist, daß Vim unbegrenzt 'zurücknehmen' /
+'wiederherstellen'-Stapel zur Verfügung stellt, in der Praxis ist es aber
+durch die \red{undolevels}-Einstellungen in Vim, und der Menge an zur Verfügung
 stehendem Arbeitsspeicher Ihres Rechners begrenzt.
 
 Jetzt wollen wir uns mal ein paar Dinger reinziehen, die die fortschrittliche
-'rückgängig' / 'wiederholen'- Funktion erst so richtig herausstellt. Eine
-Sache, auf die andere Editoren neidisch sein werden: Vim ist nicht nur Ihr
+'zurücknehmen' / 'wiederherstellen'- Funktion erst so richtig herausstellt.
+Eine Sache, auf die andere Editoren neidisch sein werden: Vim ist nicht nur Ihr
 Editor, sondern er arbeitet auch wie eine Zeitmaschine.
 
 Zum Beispiel,
@@ -2219,7 +2249,6 @@ Zum Beispiel,
 :earlier 4m
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-028}
-
 wirft Sie zeitlich 4 Minuten zurück, d.h. zum Status vor 4 Minuten.
 
 Die Stärke hierbei ist, daß es sämtlichen 'rückgängig' / 'wiederholen'-Aktionen
@@ -2235,7 +2264,7 @@ Sie können in der Zeit auch vorwärts gehen:
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-029}
 
-was Sie zum Zustand 45 Sekunden später bringen wird.  Eine einfachere
+Was Sie zum Zustand 45 Sekunden später bringen wird.  Eine einfachere
 Herangehensweise, 5 Änderungen zurückzugehen, ist natürlich:
 \lstset{language=vim}
 \begin{lstlisting}
@@ -2250,8 +2279,16 @@ Hiermit können Sie sich die Baumstruktur ansehen:
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-030}
 
+
+\smallskip
+\noindent
 Sehen Sie sich \red{:help :undolist} an, um eine Erklärung des Ergebnisses
-dieses Befehls zu erhalten.  Sehen Sie sich \red{:help :undo-redo} und
+dieses Befehls zu erhalten.  
+
+%Satz Wiederholung auch im Original
+\smallskip
+\noindent
+Sehen Sie sich \red{:help :undo-redo} und
 \red{:help usr\_32.txt} an, für weitere Einzelheiten.
 
 \subsection{Eine starke Suchmaschine aber kein .com}
@@ -2297,7 +2334,6 @@ Mit
 set incsearch
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-032}
-
 können Sie das einschalten.
 
 Sie können Vim auch beibringen, daß er die Groß-, Kleinschreibung Ihres
@@ -2315,7 +2351,9 @@ set smartcase
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-034}
 
-Smartcase eingeschaltet:
+\medskip
+\noindent
+Wenn Smartcase eingeschaltet ist:
 \begin{itemize}
 	\item Wenn Sie nach \red{/step}, also alles in Kleinbuchstaben eingegeben
 		suchen, dann wird nach jeglicher Kombination in Klein- und
@@ -2334,7 +2372,6 @@ Smartcase eingeschaltet:
 		\red{:help vimrc-intro}) zu übernehmen, damit dies von vornherein
 		eingeschaltet ist.
 \end{description}
-
 Jetzt, da wir '\textit{Suchen}', dem Prinzip nach verstanden haben, erforschen
 wir die wahren Suchfähigkeiten des Vim. Beachten Sie als erstes, was Sie Vim
 liefern, kann nicht nur ein einfacher Satz, sondern ein "`Ausdruck"' sein. Ein
@@ -2352,7 +2389,7 @@ hin.
 Oder Sie wollen mal nach einer Nummer suchen. {\color{red}\verb /\d } wird nach
 einer 'Ziffer' suchen. Aber eine Zahl ist nur eine Gruppe zusammengesetzter
 Ziffern. Damit können wir festlegen eine oder mehr Ziffern zusammen als
-{\color{red} \verb /\d\+ }. Wenn wir nach der Null bzw. mehr Buchstaben suchen,
+{\color{red} \verb /\d\+ }. Wenn wir nach keinen bzw. mehreren Ziffern suchen,
 nehmen wir den \red{*} anstelle des \red{+}.
 
 Es gibt eine ganze Bandbreite solch zauberhaften Zeugs, das wir uns für unsere
@@ -2366,12 +2403,17 @@ diese Konzepte nochmals durchgehen, und sie sich zur Gewohnheit machen}. Es ist
 nicht wichtig, jeden einzelnen Befehl mit all seinen Optionen und Feinheiten
 auswendig zu kennen. Wenn Sie nur wissen wie Sie den Befehl verwenden, und wenn
 Sie wissen wo Sie zu suchen haben, für das was Sie gerade brauchen, dann sind
-Sie eine richtiger \textit{Vimmer.} Jetzt legen Sie aber los -- fangen Sie an
-zu editieren!
+Sie eine richtiger \textit{Vimmer.} 
+
+\bigskip
+\noindent
+Jetzt legen Sie aber los -- fangen Sie an zu editieren!
 %External links
 %Source:
 %http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Editing_Basics&oldid=1235
 %Principal Authors:Swaroop
+%leszeichen
+
 \section{Vielfältigkeit}
 Wenn Sie ein langes Dokument bearbeiten, wäre es dann nicht einfacher Sie
 könnten alle Abschnitte schließen, und sich auf eines zu einer Zeit
