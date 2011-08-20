@@ -2412,13 +2412,30 @@ Jetzt legen Sie aber los -- fangen Sie an zu editieren!
 %Source:
 %http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Editing_Basics&oldid=1235
 %Principal Authors:Swaroop
-%leszeichen
 
 \section{Vielfältigkeit}
+\subsection{Einleitung}
+%In this chapter, let's explore how Vim helps us work between different parts
+%of the file, different files, different 'windows' and different tabs to help
+%us to handle more simultaneously. After all, an important part about good
+%editing is managing files.
+In diesem Kapitel schauen wir uns an. Wie Vim uns bei der Arbeit mit
+verschieden Teilen einer Datei, verschiedenen Dateien, diversen "`Fenstern"'
+und verschiedenen "`tabs"' zum mehrere Dinge gleichzeitig in der Hand zu
+haben unterstützt. 
+%Und am Schluss des Kapitels wie wichtig es ist beim
+%bearbeitet die Dateien im griff zu haben.
+%
+%Übersetzung? Letzter Satz. Auf was verweist das?
+
+%Multiple Sections using Folds
+\subsection{Viele Abschnitte verwenden Falten}
 Wenn Sie ein langes Dokument bearbeiten, wäre es dann nicht einfacher Sie
 könnten alle Abschnitte schließen, und sich auf eines zu einer Zeit
 konzentrieren?
 
+\smallskip
+\noindent
 Das nennen wir in Vim Zusammenfalten.
 
 Nehmen wir das Beispiel, wo Ihr Dokument derart strukturiert ist, daß jede
@@ -2429,28 +2446,30 @@ Textebene ein Stück weiter eingerückt ist, so wie das folgende Stück Text:
 %\includegraphics[scale=0.6]{1-037}
 
 \begin{description}
-	\item [Hinweis] Dieser Text stammt von WikiQuote%
-		\footnote{\url{http://en.wikiquote.org/wiki/The_Fellowship_of_the_Ring}}
+\item [Hinweis] Dieser Text stammt von WikiQuote%
+	\footnote{\url{http://en.wikiquote.org/wiki/The_Fellowship_of_the_Ring}}.
 \end{description}
 Nachdem Sie diesen Text eingetippt haben, geben Sie ein \red{:set
 foldmethod=indent}, platzieren Ihren \blue{Cursor} auf den Text, den Sie
 einrücken möchten, drücken \red{zc} und sehen den Text nun einfalten. Mit
 \red{zo}, klappen Sie den Text wieder aus.
 
+%orginal nicht in ordnung!
+Die grundlegenden Kommandos sind \red{zo} und \red{zc}, mit denen wir
+Einfaltungen öffnen bzw. schließen. Sie können \red{za} benutzen, um zwischen
+öffnen/schließen einer Einfaltung hin- und herzuwechseln ('\red{a}'lternate).
+Sie können es sich sogar noch einfacher machen, indem Sie die Leertaste im
+Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen.
+
 Persönlich bevorzuge ich die Leertaste als Tastaturkürzel, um Einfaltungen zu
 öffen und zu schließen. Dies erreichen Sie, indem Sie folgendes in Ihre
 vimrc-Datei hinzufügen:
-
-Die grundlegenden Kommandos sind \red{zo} und \red{zc}, mit denen wir
-Einfaltungen öffnen bzw. schließen. Sie können za benutzen, um zwischen
-öffnen/schließen einer Einfaltung hin- und herzuwechseln ('\red{a}'lternate).
-Sie können es sich sogar noch einfacher machen, indem Sie die Leertaste im
-Normalmodus nutzen, um eine Faltung zu öffnen und zu schließen:
 \lstset{language=vim}
 \begin{lstlisting}
 :nnoremap <space> za
 \end{lstlisting}
 %\includegraphics[scale=0.6]{1-038}
+%-----------------
 
 Einfaltungen sind ein ganz großes Thema für sich, mit mehreren Möglichkeiten
 (händ\-isch, Markierung, Ausdruck), und zahlreichen Möglichkeiten Hierachien von
@@ -2496,16 +2515,21 @@ I have coined a phrase for myself - 'CUT to the G':
 \end{lgbox}
 %\includegraphics[scale=0.6]{1-040}
 
+\smallskip
+\noindent
 Führen Sie nun \red{:e part1.txt} aus, und dann \red{:e part2.txt}. Machen Sie
 sich bewußt, daß Sie nun die zweite Datei zum Editieren geöffnet haben. Wie
 schalten Sie nun rüber zur ersten Datei? In diesem besonderen Fall können Sie
 einfach dies ausführen \red{:b 1}, um die Zahl des Zwischenspeichers zu
 wechseln ('\red{b}'uffer Nummer '\red{1}'). Sie können auch \red{:e part1.txt}
-ausführen, um den existierenden Zwischenspeicher sichtbar zu machen.  Sie sehen
-jetzt, welche Zwischenspeicher geladen wurden und, im Zusammenhang damit,
-welche Dateien gerade bearbeitet werden, indem Sie dies ausführen
+ausführen, um den existierenden Zwischenspeicher sichtbar zu machen.  
+
+Sie sehen jetzt, welche Zwischenspeicher geladen wurden und, im Zusammenhang
+damit, welche Dateien gerade bearbeitet werden, indem Sie dies ausführen
 \red{:buffers} oder in einer kürzeren Form \red{:ls} (\textrightarrow
-\textit{list} buffers).  Zwischenspeicher werden automatisch entfernt, wenn Sie
+\textit{list} buffers).  
+
+Zwischenspeicher werden automatisch entfernt, wenn Sie
 Vim schließen. Sie müssen also nichts besonderes mehr tun, außer sicher zu
 gehen, daß Sie Ihre Dateien abgespeichert haben. Wie auch immer: Wenn Sie einen
 Zwischenspeicher wirklich entfernen wollen, z.B. um Arbeitsspeicher
@@ -2529,6 +2553,7 @@ Fenster sollte hier *nicht* mit dem Fenster Ihrer Desktop-Anwendung verwechselt
 werden, womit man in der Regel das ganze Programm meint. Bei 'Fenster' denken
 Sie bitte einfach an 'Ansichten' auf verschiedene Dateien.
 
+%das wurde im orginal entfernt
 Nehmen wir also nochmal dieselben Textbeispiele aus dem vorherigen Abschnitt\\
 \red{part1.txt} und \red{part2.txt}.  Laden Sie zuerst \red{part1.txt} mit
 \red{:e part1.txt}.
@@ -2541,14 +2566,14 @@ Fenster, jegliches normales Editieren zu bewerkstelligen, abgesehen davon, daß
 Sie den Text nicht abspeichern können, weil mit dem Zwischenspeicher noch kein
 Name verknüpft ist. Um den Zwischenspeicher abzuspeichern, nehmen Sie \red{:w
 test.txt}.
+%----------
 
 %43 48
-\vspace{10pt}
+\bigskip
 \noindent
 \begin{minipage}{8.5cm}
 Wie wechseln Sie zwischen diesen beiden Fenstern hin und her?  Benutzen Sie
 einfach \red{ctrl-w <Bewegungstaste>}, um zwischen den Fenstern umzuschalten.
-
 Bewegungstaste meint hier \red{h}, \red{j}, \red{k}, \red{l} oder sogar die
 Pfeiltasten (lediglich $\uparrow \downarrow$ macht in diesem Beispiel Sinn).
 Merken Sie sich, \red{ctrl-w}-Operationen nehmen Bezug auf 'Fenster'
@@ -2608,32 +2633,28 @@ Fenstern umzuschalten. Tja also, mit Vim funktionieren diese \blue{Tabs} ganz
 genauso, nur mit dem Unterschied, daß sie \textit{'\blue{Tab}-Seiten'} genannt
 werden.
 
-\vspace{10pt}
+\bigskip
 \noindent
 \begin{minipage}{8cm}
-Führen Sie aus \red{:tabnew} um einen neuen
-\blue{Tab} mit neuem Zwischenspeicher
-zu öffnen (entsprechend zu \red{:new}).
-Wie wechseln Sie zwischen den \blue{Tabs}?
-Durch drücken von gt, um zum nächsten
-\blue{Tab} zu gehen ( '\red{g}'o '\red{t}'ab), und \red{gT},
-um die Laufrichtung zu ändern (also
-zum vorherigen \blue{Tab}).
-Ich persönlich bevorzuge die Tasten
-\red{alt-j} und \red{alt-k} für die gleichen
-Operationen, die analog für die
-Buchstabenbewegungen (\red{j} und \red{k}) gelten,
-und auch \red{ctrl-w j} und \red{ctrl-w k}, um
-Fenster (horizontal) zu teilen. Um dies
-zu aktivieren, fügen Sie die folgenden
-Zeilen in Ihre \textit{vimrc} ein:
+Führen Sie aus \red{:tabnew} um einen neuen \blue{Tab} mit neuem
+Zwischenspeicher zu öffnen (entsprechend zu \red{:new}).  Wie wechseln Sie
+zwischen den \blue{Tabs}?  Durch drücken von gt, um zum nächsten \blue{Tab} zu
+gehen ( '\red{g}'o '\red{t}'ab), und \red{gT}, um die Laufrichtung zu ändern
+(also zum vorherigen \blue{Tab}).
+
+\medskip
+Ich persönlich bevorzuge die Tasten \red{alt-j} und \red{alt-k} für die
+gleichen Operationen, die analog für die Buchstabenbewegungen (\red{j} und
+\red{k}) gelten, und auch \red{ctrl-w j} und \red{ctrl-w k}, um Fenster
+(horizontal) zu teilen. Um dies zu aktivieren, fügen Sie die folgenden Zeilen
+in Ihre \textit{vimrc} ein:
 \end{minipage}
 \hfill
 \begin{minipage}{6.5cm}
 \includegraphics[width=\linewidth]{1-043}
 \end{minipage}
 
-\vspace{10pt}
+\medskip
 %\noindent
 %\includegraphics[scale=0.5]{1-045}
 \lstset{language=vim}
@@ -2675,7 +2696,7 @@ das zu nutzen, was für Sie am angenehmsten und bequemsten ist.
 %http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Multiplicity&oldid=1074
 %Principal Authors: Swaroop
 
-%45 46
+%45 46 leszeichen
 \section{Persönliche Informationsverwaltung}
 \subsection{Einführung}
 Ein Kapitel über 'persönliche Informationsverwaltung' in einem Buch über ein
