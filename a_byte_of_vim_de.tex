@@ -2922,7 +2922,7 @@ die Benutzung programmimmanenter Vim-Funktionen an.
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Personal_Information_Management&oldid=1142
 %Principal Authors: Swaroop, Fuzzymonk
 
-%49 54 leszeichen
+%49 54 
 
 \section{Scripting}
 (lat: \textit{scribere} = Schreiben. 'Script' = Unix-Programm. Scriptdatei.
@@ -2972,6 +2972,7 @@ Nehmen wir als Beispiel mal diesen Text hier:\\
 \end{lgbox}
 %\includegraphics[scale=0.5]{1-053}
 
+\smallskip
 \noindent
 Da gibt es viel zu korrigieren.
 \begin{enumerate}
@@ -2980,12 +2981,12 @@ Da gibt es viel zu korrigieren.
 	\item Ändern Sie '\red{the}' zu '\red{a}'.
 	\item Beenden Sie den Satz mit in "`\red{Akbar's court}"'.
 \end{enumerate}
-
 Eine Möglichkeit wäre eine Serie von Ersetzungsbefehlen zu verwenden, wie\\
 \verb|:s/^\\w/\\u\\0/| aber dafür bräuchten wir vier Ersetzungsbefehle, und
 wenn der Ersetzungsbefehl Textstücke ändert, die wir unverändert lassen
 wollten, dann wird es haarig.
 
+\smallskip
 \noindent
 Da sind Makros schon besser.\\
 \begin{enumerate}
@@ -3059,7 +3060,7 @@ ist. Die anderen, zur Verfügung stehenden Schemata können Sie sich ansehen mit
 durchlaufen.
 
 Was ist denn, wenn Sie wissen möchten, wieviele Buchstaben die aktuelle Zeile
-enthält?  
+enthält?%
 \lstset{language=vim}
 \begin{lstlisting}
 :echo strlen(getline("."))
@@ -3077,8 +3078,8 @@ schließlich übergeben wir das Ergebnis der strlenFunktion an den
 \red{:echo}-Befehl, der uns das Resultat einfach nur anzeigt. Vergegenwärtigen
 Sie sich den Informationsfluß dieses Befehls.
 
-strlen(getline("'."')) nennt man einen Ausdruck. Die Ergebnisse solcher
-Ausdrücke können wir speichern, indem wir Variablen benutzen.
+\red{strlen(getline(\nanf.\nanf))} nennt man einen Ausdruck. Die Ergebnisse
+solcher Ausdrücke können wir speichern, indem wir Variablen benutzen.
 \textit{Variablen} tun das, was der Name schon andeutet -- Sie sind Namen, die
 auf Werte zeigen, und diese Werte können alles mögliche sein, d.h. es variiert.
 Die Länge können wir z.B. so speichern:
@@ -3098,8 +3099,9 @@ Textes, kriegen Sie folgendes Ergebnis:\\
 \end{lgbox}
 %\includegraphics[scale=0.5]{1-059}
 
+\smallskip
+\noindent
 Beachten Sie, wie wir Variablen in anderen 'Ausdrücken' verwenden können.
-
 Die Möglichkeiten, was Sie mit Hilfe dieser Variablen, Ausdrücke und Befehle
 erreichen können, sind endlos.
 
@@ -3134,6 +3136,8 @@ folgenden Befehl aus:
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-062}
 
+\smallskip
+\noindent
 Sie sollten eine Nummer ausgedruckt sehen.
 
 Funktionsnamen müssen mit einem Großbuchstaben beginnen. Dies dient der
@@ -3159,6 +3163,7 @@ Skript, um Entscheidungen zu fällen. Dann nehmen Sie dies hier:
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-063}
 
+\smallskip
 \noindent
 Das funktioniert so:
 \begin{itemize}
@@ -3200,6 +3205,8 @@ Das kommt dabei heraus:\\
 \end{lgbox}
 %\includegraphics[scale=0.5]{1-065}
 
+\smallskip
+\noindent
 Mit den programmimmanenten Funktionen des Vim, kann dasselbe auch so
 geschrieben werden:
 \lstset{language=vim}
@@ -3213,7 +3220,8 @@ geschrieben werden:
 	\item range() ist eine programmimmanente Funktion, mit der man eine Reihe
 		von Zahlen generiert. Sehen Sie sich hierzu auch \red{:help range()}
 		an.
-	\item Die \red{continue} und \red{break} Ausdrücke stehen auch zur Verfügung.
+	\item Die \red{continue} und \red{break} Ausdrücke stehen auch zur
+		Verfügung.
 \end{itemize}
 
 \subsection{Datenstrukturen}
@@ -3307,7 +3315,6 @@ Funktionsweise:
 		überprüfen, ob es den Namen '\red{loaded\_capitalize}' schon gibt, und
 		schließen es, wenn es bereits geladen wurde.
 \end{itemize}
-
 Jetzt machen wir weiter, indem wir die aktuelle Funktion schreiben.
 
 Wir können eine Funktion festlegen, um die Umformung -- Umwandlung des ersten
@@ -3341,6 +3348,7 @@ endfunction
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-072}
 
+\smallskip
 \noindent
 Funktionsweise:
 \begin{itemize}
@@ -3354,7 +3362,7 @@ Funktionsweise:
 		schreiben wir die Funktion so, dass sie nach Worten sucht (das
 		'{\color{red}\verb \\w\\+ }' zeigt dies an), was ein Wort bedeutet (d.h.
 		ein zusammenhängender Satz von Zeichen, die Teil eines Wortes sind).
-	\item Wenn solche Worte gefunden wurden, werden sie mit 
+		Wenn solche Worte gefunden wurden, werden sie mit 
 		{\color{red}\verb \\u\\0 } umgewandelt - das 
 		{\color{red}\verb \\u } heißt: wandle den ersten Buchstaben, der auf
 		diese Sequenz folgt in einen Großbuchstaben um. Das 
@@ -3376,7 +3384,7 @@ Um diesen Befehl auszuführen:
 		ein, so als ob die Befehle innerhalb Vims ausgeführt werden, wie wir es
 		schon zuvor getan haben.
 	\item Führen Sie aus \red{:call Captialize()}.
-	\item In der Zeile sollte nun '\red{das ist ein Test}' stehen.
+	\item In der Zeile sollte nun '\red{Das Ist Ein Test}' stehen.
 \end{enumerate}
 Jedesmal \red{:call Captialize()} auszuführen, ist jedoch ermüdend, und deshalb
 weisen wir dem Aufruf ein Tastaturkürzel zu:
@@ -3418,7 +3426,7 @@ endfunction
 	\item Die Funktion '\red{Capitalize}' haben wir einfach in
 		'\red{s:Capitalize}' geändert -- dies um anzuzeigen, dass die Funktion
 		innerhalb des verfassten Skripts lokal verwandt wird, und sie global
-		nicht zur Verfügung stehen sollte, weil wir ein 'Kreuzen' mit anderen
+		nicht zur Verfügung stehen sollte, weil wir eine Beeinflussung anderer
 		Skripten damit vermeiden wollen.
 	\item Mit dem \red{map}-Befehl definieren wir das Tastaturkürzel.
 	\item Die \red{$<$Leader$>$}-Taste ist üblicherweise der linksseitige
@@ -3433,19 +3441,21 @@ endfunction
 		\red{$<$SID$>$Capitalize} auf einen Aufruf der lokalen Funktion
 		\red{Capitalize()} abbilden.
 \end{itemize}
-
 Nun wiederholen Sie mal diese zuvor erwähnten Schritte, um das Skript zu
 testen. Doch jetzt können Sie {\color{red} \verb \\c } ausführen anstatt
 \red{:call Capitalize()} einzugeben, um Zeilen in Großbuchstaben umzuwandeln.
 
 Diese letzten Schritte waren jetzt vielleicht ein bisschen kompliziert, aber
 das war nur um zu zeigen, dass es eine Fülle von Möglichkeiten gibt,
-Vim-Skripte zu erstellen, mit denen man komplexe Dinge erledigen kann.  Wenn
-irgendetwas nicht klappt in Ihren Skripten, können Sie sich mit \red{v:errmsg}
-die letzte Fehlermeldung anzeigen lassen, die Ihnen vielleicht eine Idee davon
-gibt, was schiefgelaufen ist.  Beachten Sie, dass Sie mit \red{:help} Hilfe zu
-allem finden können, das wir oben schon diskutiert haben, von {\color{red}
-\verb|:help \\w|}  zu \red{:help setline()}.
+Vim-Skripte zu erstellen, mit denen man komplexe Dinge erledigen kann.  
+
+Wenn irgendetwas nicht klappt in Ihren Skripten, können Sie sich mit
+\red{v:errmsg} die letzte Fehlermeldung anzeigen lassen, die Ihnen vielleicht
+eine Idee davon gibt, was schief gelaufen ist.  
+
+Beachten Sie, dass Sie mit \red{:help} Hilfe zu allem finden können, das wir
+oben schon diskutiert haben, von {\color{red} \verb|:help \\w|}  zu \red{:help
+setline()}.
 
 \subsection{Das Verwenden eigenständiger Programmiersprachen}
 Viele Leute haben keine Lust, Zeit damit zu verbringen, Vims eigene
@@ -3455,11 +3465,11 @@ zu schreiben. Das ist möglich, weil Vim das Schreiben von \blue{Plugins} in
 Python, Perl, Ruby und vielen anderen Sprachen unterstützt.
 
 In diesem Kapitel schauen wir auf ein einfaches, in \textit{Python}
-geschriebenes, Programmerweiterungsmodul, aber wir könnten genauso gut jede
+geschriebenes, Programmerweiterungsmodul an, aber wir könnten genauso gut jede
 andere unterstützte Programmiersprache nehmen.
 
 Wie schon erwähnt, wenn Sie Bock haben Python zu lernen, interessiert Sie
-möglicherweise mein anderes freies Buch "`\blue{A Byte Of Python}"'.
+möglicherweise mein anderes freies Buch "`A Byte Of Python"'.
 
 Zuerst müssen wir mal checken, ob Python auf Ihrem System schon eingerichtet
 ist.
@@ -3516,6 +3526,8 @@ endfunction
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-072}
 
+\smallskip
+\noindent
 Die grundsätzliche Herangehensweise \blue{Plugins} in mit Schnittstellen
 ausgestattete Programmiersprachen zu schreiben, ist die gleiche wie unter
 programmimmanenten Skriptsprachen.
@@ -3532,16 +3544,16 @@ sollte sowas wie \red{Length of the current line is 54} anzeigen.
 
 Jetzt steigen wir aber hinab in die Funktionalitätstiefen des Programmes.
 \red{Yahoo! Search} hat was, das nennt sich VergleichbareVorschlag-Suche
-(RelatedSuggestion query)%
-\footnote{\url{http://developer.yahoo.com/search/web/V1/relatedSuggestion.html}}
-, auf die wir durch einen Webservice Zugriff haben.  Auf diesen Webservice kann
+(RelatedSuggestion query%
+\footnote{%
+	\url{http://developer.yahoo.com/search/web/V1/relatedSuggestion.html}}%
+), auf die wir durch einen Webservice Zugriff haben.  Auf diesen Webservice kann
 man zugreifen indem man eine Python-API* nutzt, die von \red{Yahoo!  Search
 pYSearch}%
 \footnote{\url{http://pysearch.sourcefroge.net}}
 zur Verfügung gestellt wird: {\scriptsize *(API=Application Programming
 Interface  Programmierschnittstelle)}
 
-\vspace{20pt}
 \lstset{language=vim}
 \begin{lstlisting}
 " Vim plugin for looking up popular search queries related
@@ -3578,6 +3590,8 @@ endfunction
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-073}
 
+\smallskip
+\noindent
 Beachten Sie, dass wir die aktuelle Zeile in Vim, als den aktuellen Text
 verwenden, der uns interessiert. Dies können Sie auf jeden beliebigen Text
 anwenden, wie z.B. das aktuelle Wort, usw.
@@ -3616,6 +3630,7 @@ perl-using} und \red{:help ruby-commands} für Einzelheiten.
 %Externe Links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Scripting&oldid=1208
 %Principal Authors: Swaroop
+%lesezeichen
 
 \section{Plugins}
 \subsection{Einführung}
