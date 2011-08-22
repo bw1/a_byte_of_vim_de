@@ -2696,7 +2696,7 @@ das zu nutzen, was für Sie am angenehmsten und bequemsten ist.
 %http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Multiplicity&oldid=1074
 %Principal Authors: Swaroop
 
-%45 46 leszeichen
+%45 46 
 \section{Persönliche Informationsverwaltung}
 \subsection{Einführung}
 Ein Kapitel über 'persönliche Informationsverwaltung' in einem Buch über ein
@@ -2735,7 +2735,7 @@ könnten? Tauchen wir ab.
 \subsection{Viki installieren}
 \begin{description}
 \item [Hinweis] Das \$vimfiles-Verzeichnis steht in Verbindung mit 
-	\verb|~/| \verb .vim  auf Linux \verb /Mac,  \verb C:\Documents  und 
+	\verb|~/| \verb .vim  auf Linux/Mac, \verb   \verb C:\Documents  und 
 	\verb Settings\<Ihr-Benutzername>\vimfiles  auf Windows und 
 	\verb C:\Users\<Ihr-Benutzername>\vimfiles  auf Windows Vista. Sehen Sie
 	hierzu \red{:help vimfiles} für nähere Einzelheiten.
@@ -2774,8 +2774,9 @@ Wir installieren jetzt Viki samt den benötigten \blue{Plugins}:
 \end{enumerate}
 Ebenso können Sie jeden Dateinamen (mit gültiger Pfadangabe) eingegeben -- ob
 es sich nun um eine .doc-Datei oder eine .pdf-Datei handelt. Mit
-\red{ctrl+Enter} öffnen Sie die Datei mit dem entsprechenden Programm.  Die
-Idee dabei ist, daß Sie einfache Textdateien benutzen können, um all Ihre
+\red{ctrl+Enter} öffnen Sie die Datei mit dem entsprechenden Programm.  
+
+Die Idee dabei ist, daß Sie einfache Textdateien benutzen können, um all Ihre
 Gedanken zu bündeln, und mit \red{ctrl+Enter} verzweigen Sie, wohin immer Sie
 wollen.
 
@@ -2790,14 +2791,16 @@ Die Viki-Syntaxseite\footnote{\url{http://deplate.sourceforge.net/Markup.html}}
 haben) erklärt, wie Sie den Text schreiben müssen, damit \textit{Viki} Teile
 Ihres Satzbaus hervorheben kann, als auch wie der Link zwischen 'wikiseiten' zu
 bewerkstelligen ist, und sogar wie Sie \textit{Viki}-spezifische Kommentare
-schreiben können.  Die grundlegenden Kenntnisse der Satzbauhervorhebung sind
+schreiben können.  
+
+Die grundlegenden Kenntnisse der Satzbauhervorhebung sind
 nützlich, weil Sie nicht ausschließlich auf Ihre geistige Vorstellungskraft
 angewiesen sind, sondern die Teile Ihrer Textdatei mit Ihren eigenen Augen
 betrachten können. Nehmen Sie z.B. die '*Zu erledigen-Liste', um daraus einen
 Dateikopf zu machen, und dann erstellen Sie mit Bindestrichen eine Liste:\\
 \begin{lgbox}
 \textit{%
-Zu erledigen-Liste
+* Zu erledigen-Liste
 \begin{list}{-}{  }
 \item Blogeintrag zu Brahmagiri trek zu Ende bringen
 \item 'footer'-Programmierfehler der IONLAB Webseite beheben
@@ -2815,6 +2818,7 @@ einen echten Namen - mit KamelSchrift - benutzt habe, der aber kein \blue{Link}
 sein soll (z.B. das Wort "`JavaScript"').  Um die KamelSchrift-Schreibweise zu
 unterbinden tippen Sie, \red{:edit \$vimfiles/plugin/viki.vim}, und ändern die
 folgende Zeile (Zeile 120 gemäß dieses Schreibens):
+%übersetzung in der klammer
 \lstset{language=vim}
 \begin{lstlisting}
 if !exists("g:vikiNameTypes") | let g:vikiNameTypes = "csSeuix"
@@ -2833,10 +2837,14 @@ if !exists("g:vikiNameTypes") | let g:vikiNameTypes = "sSeuix"
 Haben Sie gesehen -- das 'c' ist weg!
 
 \subsection{Was erledigt kriegen}
-Einer der Hauptgründe, dieses \textit{'viki'} für mich selbst zur erstellen, ist die Pflege eines 'Dinge geregelt kriegen'--Systems (\textrightarrow "`GTD"'=Getting Things Done).
-"`GTD"' ist ein System, das von David Allen entwickelt wurde, damit Sie Ihren \textit{'Kram'} in den Griff kriegen --
-was, von Ihren Karriereplänen bis zur täglichen Hausarbeit, alles einschließt. Eine gute Einführung in dieses
-System finden Sie auf \url{www.bnet.com}%
+Einer der Hauptgründe, dieses \textit{'viki'} für mich selbst zur erstellen,
+ist die Pflege eines 'Dinge geregelt kriegen'--Systems (\textrightarrow
+"`GTD"'=Getting Things Done).
+
+"`GTD"' ist ein System, das von David Allen entwickelt wurde, damit Sie Ihren
+\textit{'Kram'} in den Griff kriegen -- was, von Ihren Karriereplänen bis zur
+täglichen Hausarbeit, alles einschließt.  Eine gute Einführung in dieses System
+finden Sie auf \url{www.bnet.com}%
 \footnote{\url{http://www.bnet.com/2403-13074_23-52958.html}}.
 \begin{description}
 	\item [Aus David Allens Buch:] "`Machen Sie Ihren Kopf komplett frei.
@@ -2848,7 +2856,6 @@ System finden Sie auf \url{www.bnet.com}%
 		spontanen Entscheidungen, was Sie gerade tun (oder nicht tun), zu
 		vertrauen."'
 \end{description}
-
 Das GTD-System besteht im Wesentlichen darin, Ihre Daten in bestimmte
 Seiten/Verzeichnisse zu organisieren:
 \begin{enumerate}
@@ -2881,14 +2888,17 @@ folgender Methode:
 \end{verbatim}
 \end{lgbox}
 %\includegraphics[scale=0.5]{1-052}
+% nummerierung im orginal kaputt
 
 	\item Entsprechend, verschachteln Sie so tief Sie wollen, erstellen Sie
 		z.B. ein [[Referenz.Karriere]], um Ihre Karrierepläne hinzuschmieren,
-		und\\[0pt] [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes Projekt
-		sammeln, usw.
+		und\\[0pt] [[Projekt.StrengGeheim]], wo Sie Gedanken für Ihr nächstes
+		Projekt sammeln, usw.
+		%übersetzung
 	\item Jedesmal wenn Sie sich was notieren wollen, benutzen Sie die
 		[[Sammeln]]-Seite, und dann tun Sie, organisieren Sie, überprüfen Sie,
 		und letztendlich, unternehmen Sie Ihre nächsten physischen Handlungen.
+		%----------
 	\item Es braucht seine Zeit, bis Sie sich daran gewöhnt haben, dieses
 		System zu benutzen, aber wenn Sie sich daran gewöhnt haben, kriegen Sie
 		damit einen klaren Kopf, Vertrauen darin, alle Faktoren in Ihrem Leben
@@ -2912,7 +2922,7 @@ die Benutzung programmimmanenter Vim-Funktionen an.
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Personal_Information_Management&oldid=1142
 %Principal Authors: Swaroop, Fuzzymonk
 
-%49 54
+%49 54 leszeichen
 
 \section{Scripting}
 (lat: \textit{scribere} = Schreiben. 'Script' = Unix-Programm. Scriptdatei.
