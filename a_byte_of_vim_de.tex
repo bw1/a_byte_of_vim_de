@@ -3630,7 +3630,7 @@ perl-using} und \red{:help ruby-commands} für Einzelheiten.
 %Externe Links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Scripting&oldid=1208
 %Principal Authors: Swaroop
-%lesezeichen
+
 
 \section{Plugins}
 \subsection{Einführung}
@@ -3639,7 +3639,6 @@ bestehende Funktionalität des Vim zu erweitern, um mehr Aufgaben zu erledigen.
 Diese Skripte, die die Funktionalität erweitern, bzw.  hinzufügen, nennen wir
 "`\textit{Plugins}"' (\textrightarrow to plug in = einstöpseln).
 
-\noindent
 Es gibt verschiedene Arten von \blue{\textit{Plugins}}, die man schreiben kann:
 \begin{itemize}
 	\item vimrc
@@ -3684,7 +3683,6 @@ Hier ist z.B. ein Auszug aus meiner \textit{vimrc}:\\
 %\includegraphics[scale=0.5]{1-076}\\
 %\includegraphics[scale=0.5]{1-077}\\
 %\includegraphics[scale=0.5]{1-078}
-
 Beachten Sie, dass diesen Befehlen der vorangestellte Doppelpunkt fehlt. Der
 Doppelpunkt ist nicht zwingend bei Dateiskripten, weil hier angenommen wird,
 dass es sich um Befehle des Normalmodus handelt.
@@ -3713,6 +3711,8 @@ endif
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-079}
 
+\smallskip
+\noindent
 Da draussen gibt es jede Menge an Beispielen von \textit{vimrc's}%
 \footnote{\url{http://dotfiles.org/.vimrc}}
 auf die Sie unbedingt mal einen Blick werfen sollten, um die zahlreichen Arten
@@ -3742,14 +3742,13 @@ Verfügung zu stellen. Globale \blue{\textit{Plugins}} liegen an zwei Orten:
 		die Sie von irgendwo heruntergeladen haben, zu installieren, nehmen Sie
 		Ihr eigenes \blue{\textit{Plugin}}-Verzeichnis:
 	\begin{itemize}
-		\item \red{\$VIMRUNTIME/plugin/} für Standard\blue{plugins}, die Vim schon
-		\item \red{\$HOME/.vim/plugin/}  auf Unixoiden Systemen (GNU/ Linux/ BSD/ MacOSX)
+		\item \red{\$HOME/.vim/plugin/}  auf Unixoiden Systemen (GNU/ Linux/
+			BSD/ MacOSX)
 		\item \red{\%HOME\%/vimfiles/plugin/}  für Windows
 		\item Sehen sich sich \red{:help runtimepath} für Einzelheiten zu Ihren
 			\blue{\textit{Plugin}}- Verzeichnissen an.
 	\end{itemize}
 \end{enumerate}
-
 Jetzt wollen wir so ein \blue{\textit{Plugin}} einmal anwenden.
 
 Ein nützliches \blue{\textit{Plugin}} ist \red{highlight\_current\_line.vim}%
@@ -3787,6 +3786,8 @@ Wenn Sie z.B. einen Text wie diesen hier haben:
 %[fillcolor=\color[rgb]{0.95,0.95,0.95}]
 %\includegraphics[scale=0.5]{1-080}
 
+\smallskip
+\noindent
 In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:
 \lstset{language=HTML,
 		tagstyle=\color[rgb]{0,0.5,0}}
@@ -3794,6 +3795,8 @@ In XML (genauer 'Docbook XML'), sieht das ganze dann so aus:
 %\includegraphics[scale=0.5]{1-081}\\
 %\includegraphics[scale=0.5]{1-082}
 
+\smallskip
+\noindent
 Beachten Sie, dass die Struktur des Dokumentes in der XML-Version noch
 ausführlicher ist. Dies macht es für Konvertierungsprogramme einfacher XML in
 andere Formate zu übertragen, einschließlich PDF und Druckversionen. Der
@@ -3806,7 +3809,7 @@ von XML helfen kann.
 	\item Laden Sie sich zuerstmal das \red{xmledit ftplugin}%
 		\footnote{\url{http://www.vim.org/scripts/script.php?script_id=301}}
 		runter, und
-		werfen Sie es in Ihr \red{\ntilde/.vim/ftplugin/Verzeichnis}.
+		werfen Sie es in Ihr \red{\ntilde/.vim/ftplugin/} Verzeichnis.
 	\item Fügen Sie Ihrer \red{\ntilde/.vimrc} noch folgende Zeile hinzu:
 		\lstset{language=vim}
 		\begin{lstlisting}
@@ -3842,7 +3845,6 @@ von XML helfen kann.
 	\item Wiederholen Sie diesen Prozeß, bis Sie das ganze Dokument geschrieben
 		haben.
 \end{enumerate}
-
 Beachten Sie wie ein spezielles ftplugin für XML, es für Sie viel leichter
 macht XML-Dokumente zu schreiben. Dafür wurden ftplugins in der Regel gemacht.
 
@@ -4013,7 +4015,7 @@ So ähnlich können wir auch vorgehen um Definitionen zu anderen Textteilen
 hinzuzufügen, so wie es im \textit{AmiFormat}-Nachschlagehandbuch%
 \footnote{\url{http://orangoo.com/labs/AmiNation/AmiFormat/online\%20reference/}}
 beschrieben ist, und das endgültige Skript könnte dann so aussehen:
-\vfill
+%\vfill
 \lstset{language=vim}
 \lstinputlisting{listings/source-47.vim}
 %\includegraphics[scale=0.5]{1-094}\\
@@ -4147,7 +4149,7 @@ eine Ahnung davon erhalten wie erweiterbar Vim ist, und wie wir \blue{Plugins}
 schreiben können, um uns das Leben zu erleichtern.
 
 %externe links
-%77 81
+%77 81 lesezeichen
 \section{ein Editor für Programmierer}
 \subsection{Einführung}
 Vim neigt schwer dazu von Programmierern eingesetzt zu werden. Die
