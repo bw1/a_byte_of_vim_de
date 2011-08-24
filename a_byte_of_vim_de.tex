@@ -4149,8 +4149,8 @@ eine Ahnung davon erhalten wie erweiterbar Vim ist, und wie wir \blue{Plugins}
 schreiben können, um uns das Leben zu erleichtern.
 
 %externe links
-%77 81 lesezeichen
-\section{ein Editor für Programmierer}
+%77 81 
+\section{Ein Editor für Programmierer}
 \subsection{Einführung}
 Vim neigt schwer dazu von Programmierern eingesetzt zu werden. Die
 Funktionalität, die Bedienerfreundlichkeit, und Flexibilität, die Vim
@@ -4184,6 +4184,7 @@ Angenommen Sie editieren eine vim-\blue{syntax}-Datei. Führen Sie \red{:set
 filetype=vim} aus, und sehen Sie wie Vim Farbe hinzufügt. Ähnlich ist es, wenn
 Sie eine Python-Datei editieren. Führen Sie \red{:set filetype=python} aus.
 
+\smallskip
 Um eine Liste der zur Verfügung stehenden Sprachtypen zu sehen überprüfen Sie
 das \red{\$VIMRUNTIME/syntax/} -Verzeichnis.
 \begin{description}
@@ -4233,6 +4234,8 @@ Das ist nützlich in Situationen, wo Sie mal schnell was in Ihrem Dateisystem
 checken wollen, z.B. den Inhalt des gerade benutzten Verzeichnisses mit
 \red{:!ls} oder \red{:!dir} usw.
 
+\smallskip
+\noindent
 Wenn Sie Zugriff auf eine vollständige \blue{Shell} haben möchten, führen Sie
 \red{:sh} aus.
 
@@ -4271,7 +4274,7 @@ Datei bewerkstelligen.  Aber was ist, wenn wir uns zwischen unterschiedlichen
 Dateien bewegen und Querverweise haben wollen?  Dann können wir hierfür
 \textit{\blue{tags}} benutzen.
 
-Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.\\
+Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.
 %\begin{minipage}{7.5cm}
 \begin{enumerate}
 	\item Installieren Sie das üppig überbordende (\textit{\textrightarrow
@@ -4304,18 +4307,23 @@ Für einfaches Durchsuchen einer Datei, nehmen wir das \red{taglist.vim}-Plugin.\
 \end{center}
 %\end{minipage}
 
-\vspace{5pt}
+\smallskip
 \noindent
 Beachten Sie bitte, dass das herrlich überschäumende und prickelnde Programm
 \textit{Ctags}, zum Zeitpunkt der Fertigstellung dieses Buches, 33
 Programmiersprachen unterstützt, und es leicht auf weitere Programmiersprachen
-erweitert werden kann.\\
+erweitert werden kann.
+
+\smallskip
+\noindent
 \red{:help taglist-intro} gibt Ihnen hierzu die Einzelheiten.
 
-\subsubsection[cscope]{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
+\subsubsection[cscope]
+{cscope (wie ctags aber gedopt \textrightarrow \red{:help cscope})}
+
 Um in der Lage zu sein, dateiübergreifend zu Defintionen zu springen, brauchen wir ein Programm wie
 \textit{cscope}. Wie auch immer, der Name deutet es ja schon an, dieses
-spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.\\
+spezielle Programm arbeitet nur in Zusammenhang mit der Programmiersprache C.
 %\begin{minipage}{7cm}
 \begin{enumerate}
 	\item Installieren Sie \textit{cscope}. Bemühen Sie \red{:help cscope-info}
@@ -4395,10 +4403,12 @@ Nachdem Sie dieses Programm eingegeben haben, beginnen Sie eine neue Zeile in
 derselben Datei. Tippen Sie '\red{he}' und drücken Sie \red{ctrl-x ctrl-o}, was
 Ihnen Vorschläge für die Autovervollständigung anzeigen wird.
 
+\smallskip
 Wenn Sie eine Fehlermeldung wie \red{E764: Option 'omnifunc' is not set}, dann
 führen Sie \red{:runtime! autoload/} \red{pythoncomplete.vim} aus, um das
 omnicompletion-Plugin zu laden.
 
+\smallskip
 Damit Sie dies nicht jedesmal tun müssen, fügen Sie folgende Zeile in Ihre
 \red{\ntilde/.vimrc} ein:
 \end{minipage}
@@ -4407,10 +4417,12 @@ Damit Sie dies nicht jedesmal tun müssen, fügen Sie folgende Zeile in Ihre
 \includegraphics[width=\linewidth]{1-105}
 \end{minipage}
 
-\vspace{5pt}
+\smallskip
 \noindent
-%da is nowas
-autocmd FileType python runtime! autoload/pythoncomplete.vim
+\lstset{language=python}
+\begin{lstlisting}
+:autocmd FileType python runtime! autoload/pythoncomplete.vim
+\end{lstlisting}
 
 Vim benutzt automatisch den ersten Vorschlag, mit \red{ctrl-n} und
 \red{ctrl-p}, können Sie zur nächsten, bzw.  vorherigen Auswahl wechseln.
@@ -4434,7 +4446,7 @@ Ich bevorzuge ein einfaches \red{ctrl-Leertaste} statt der sperrigen
 \textit{vimrc}, können Sie das auch haben:
 \lstset{language=vim}
 \begin{lstlisting}
-:autocmd FileType python runtime! autoload/pythoncomplete.vim
+:imap <c-space> <c-x><c-o>
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-106}
 
@@ -4456,7 +4468,7 @@ phantastische \red{SnippetsEmu}-Plugin.
 	\item Erstellen Sie Ihr \red{\ntilde/.vim/after/}-Verzeichnis, so es nicht
 		bereits existiert
 	\item Starten Sie Vim indem Sie diesen \blue{Plugin}namen in der
-		Kommandozeile hinzufügen. Zum Beispiel; \red{gvim snippy\_bundles.vba}.
+		Kommandozeile hinzufügen. Zum Beispiel: \red{gvim snippy\_bundles.vba}.
 	\item Führen Sie aus \red{:source \%}. Der 'vimball'
 		(\textit{\textrightarrow .vba=vimball}) entpackt sich nun, und legt die
 		vielen Dateien in den richtigen Verzeichnissen ab.
@@ -4480,7 +4492,19 @@ def <{fname}>(<{args}>):
     <{}>
 		\end{lstlisting}
 		%\includegraphics[scale=0.5]{1-107}
-	\item Ihr \blue{Cursor} steht jetzt auf dem Funktionsnamen, d.h. \red{fname}.
+%Note
+%   In case you see def<tab> and nothing else happened, then perhaps the
+%   snippets plugin is not loaded. Run :runtime! ftplugin/python_snippets.vim
+%   and see if that helps.
+		\begin{description}
+			\item [Hinweis] In dem Fall das Sie nach dem Eintippen von 
+				\red{def$<$tab$>$} nichts passiert, dann ist das Schnipsel
+				\blue{Plugin} nicht geladen. Starten Sie \red{:runtime!
+				ftpplugin/python\_snippets.vim}.
+		\end{description}
+
+	\item Ihr \blue{Cursor} steht jetzt auf dem Funktionsnamen, d.h.
+		\red{fname}.
 	\item Tippen Sie den Funktionsnamen, sagen wir, \red{test}.
 	\item Drücken Sie \red{$<$tab$>$} und der \blue{Cursor} bewegt sich
 		automatisch zu den Argumenten. '\red{tab}' nochmal drücken, um sich zum
@@ -4505,9 +4529,10 @@ Das beste daran ist, dass SnippetsEmu eine Standardkonvention ermöglicht, die
 man zu befolgen hat, und dass niemand in der Arbeitsgruppe dies 'vergisst'.
 
 \subsubsection{Schnipsel erstellen}
-Wir machen jetzt mal unsere eigenen Schnipsel. Lassen Sie uns einmal den Fall
-durchgehen, wo ich dazu neige, immer wieder dieselbe Art folgenden
-Programmcodes in ActionScript3 zu schreiben:
+Wir machen jetzt mal unsere eigenen Schnipsel. 
+
+Lassen Sie uns einmal den Fall durchgehen, wo ich dazu neige, immer wieder
+dieselbe Art folgenden Programmcodes in ActionScript3 zu schreiben:
 \lstset{language=Delphi}
 \begin{lstlisting}
 private var _foo:Object;
@@ -4524,6 +4549,8 @@ public function set foo(value:Object)
 \end{lstlisting}
 %\includegraphics[scale=0.5]{1-109}
 
+\smallskip
+\noindent
 Das ist eine einfache \textit{getter/setter-Kombination}, die eine stützende
 Variable benutzt. Das Problem ist nur, dass das fürchterlich viel
 'Textbausteincode' ist, den man immer wieder schreiben muss. Das wollen wir
@@ -4611,7 +4638,6 @@ public function set color(value:Number)
 		\end{lstlisting}
 		%\includegraphics[scale=0.5]{1-114}
 \end{enumerate}
-
 Beachten Sie, wieviele Tastaturanschläge wir vermieden haben! Mit einer
 einzigen Vim-Skript-Zeile haben wir etwa 11 Zeilen, sich wiederholenden
 Programmiercodes ersetzt.
@@ -4641,7 +4667,7 @@ für den Vim zu erschaffen.
 		\url{http://www.vim.org/subversion.php} herunter.
 	\item Führen Sie \red{:Project} aus. Es öffnet sich links eine
 		Seitenleiste, die Ihnen als 'Projekt-Fenster' dient.
-	\item Führen Sie {\color{red}\verb|\\c|} aus (Gegenschrägstrich, gefolgt
+	\item Führen Sie {\color{red}\verb|\c|} aus (Gegenschrägstrich, gefolgt
 		von '\red{c}').
 	\item Beantworten Sie die folgenden Optionen
 	\begin{itemize}
@@ -4719,7 +4745,7 @@ sein:
 		verlassen.
 \end{itemize}
 
-\subsubsection{Seine eigenen \blue{Plugins} schreiben}
+\subsection{Seine eigenen \blue{Plugins} schreiben}
 Um Vim in jeder erdenklichen Weise zu erweitern, können Sie Ihre eigenen
 \blue{Plugins} schreiben. Hier ist mal eine Aufgabe, an die Sie sich ranmachen
 können:
@@ -4763,7 +4789,7 @@ und Peteris Krumins's Blog%
 %extern links
 %Source:http://www.swaroopch.com/mediawiki/index.php?title=Vim_en:Programmers_Editor&oldid=1245
 %Principal Authors: Swaroop
-%90 97
+%90 97 lesezeichen
 
 \section{Mehr}
 \subsection{Einführung}
